@@ -5,14 +5,20 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QMap>
+#include <QJsonObject>
+#include <QJsonDocument>
 #include <QVector>
 #include <memory>
 #include "orderstatus.h"
 #include "orderstatusobserver.h"
+#include "databasemanager.h"
+#include "authsystem.h"
+#include "websocketserver.h"
 
 class DatabaseManager;
 class AuthSystem;
 class Invoker;
+class WebSocketServer;
 
 class Server : public QObject
 {
@@ -20,29 +26,29 @@ class Server : public QObject
 
 public:
     static Server* getInstance();
-    bool startServer(quint16 port = 8080);
-    void stopServer();
+    bool start(quint16 tcpPort = 1234, quint16 wsPort = 8080);
+    void stop();
 
 private:
     explicit Server(QObject *parent = nullptr);
     ~Server();
     static Server* instance;
 
-    QTcpServer* tcpServer;
-    QMap<QTcpSocket*, QString> connectedClients; // socket -> userId mapping
-    std::unique_ptr<DatabaseManager> databaseManager;
-    std::unique_ptr<AuthSystem> authSystem;
+    QTcpServer* m_tcpServer;
+    QMap<QTcpSocket*, QString> m_clients; // socket -> userId mapping
+    DatabaseManager* m_dbManager;
+    AuthSystem* m_authSystem;
+    WebSocketServer* m_wsServer;
     std::unique_ptr<Invoker> invoker;
     std::unique_ptr<OrderStatus> orderStatus;
     std::unique_ptr<OrderStatusObserver> orderStatusObserver;
 
     void handleNewConnection();
-    void handleClientDisconnection();
-    void handleClientMessage(QTcpSocket* clientSocket, const QByteArray& message);
-    void processRequest(const QJsonObject& request, QTcpSocket* clientSocket);
-    void sendResponse(QTcpSocket* clientSocket, const QJsonObject& response);
-    void handleOrderStatusSubscription(const QString& orderId, QTcpSocket* clientSocket);
-    void handleOrderStatusUnsubscription(const QString& orderId, QTcpSocket* clientSocket);
+    void handleReadyRead();
+    void handleDisconnection();
+    void processRequest(QTcpSocket* client, const QJsonObject& request);
+    void sendResponse(QTcpSocket* client, const QJsonObject& response);
+    void broadcastOrderUpdate(const QString& orderId, const QString& status);
 
 signals:
     void clientConnected(QTcpSocket* client);

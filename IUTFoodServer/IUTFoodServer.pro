@@ -1,4 +1,4 @@
-QT += core network sql
+QT += core network sql websockets
 QT -= gui
 
 CONFIG += c++17 console
@@ -17,7 +17,8 @@ SOURCES += \
     observer.cpp \
     orderstatus.cpp \
     orderstatusobserver.cpp \
-    securityutils.cpp
+    securityutils.cpp \
+    websocketserver.cpp
 
 HEADERS += \
     server.h \
@@ -29,7 +30,8 @@ HEADERS += \
     observer.h \
     orderstatus.h \
     orderstatusobserver.h \
-    securityutils.h
+    securityutils.h \
+    websocketserver.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
