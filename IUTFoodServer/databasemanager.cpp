@@ -55,11 +55,11 @@ bool DatabaseManager::isConnected() const
     return connected;
 }
 
-bool DatabaseManager::createUser(const QString& username, const QString& password, const QString& email, const QString& userType)
+bool DatabaseManager::createUser(const QString& username, const QString& passwordHash, const QString& email, const QString& userType)
 {
     QVariantMap params;
     params[":username"] = username;
-    params[":password"] = password; // Note: Should be hashed in production
+    params[":password"] = passwordHash;
     params[":email"] = email;
     params[":user_type"] = userType;
 
@@ -69,16 +69,46 @@ bool DatabaseManager::createUser(const QString& username, const QString& passwor
     return executeQuery(query, params);
 }
 
-bool DatabaseManager::authenticateUser(const QString& username, const QString& password)
+QString DatabaseManager::getUserId(const QString& username)
 {
     QVariantMap params;
     params[":username"] = username;
-    params[":password"] = password; // Note: Should be hashed in production
 
-    QString query = "SELECT id FROM users WHERE username = :username AND password = :password";
+    QString query = "SELECT id FROM users WHERE username = :username";
     
     QSqlQuery result = prepareQuery(query, params);
-    return result.next(); // Returns true if user exists
+    if (result.next()) {
+        return result.value(0).toString();
+    }
+    return QString();
+}
+
+QString DatabaseManager::getUserPasswordHash(const QString& userId)
+{
+    QVariantMap params;
+    params[":id"] = userId;
+
+    QString query = "SELECT password FROM users WHERE id = :id";
+    
+    QSqlQuery result = prepareQuery(query, params);
+    if (result.next()) {
+        return result.value(0).toString();
+    }
+    return QString();
+}
+
+QString DatabaseManager::getUserType(const QString& userId)
+{
+    QVariantMap params;
+    params[":id"] = userId;
+
+    QString query = "SELECT user_type FROM users WHERE id = :id";
+    
+    QSqlQuery result = prepareQuery(query, params);
+    if (result.next()) {
+        return result.value(0).toString();
+    }
+    return QString();
 }
 
 bool DatabaseManager::updateUser(const QString& userId, const QVariantMap& updates)
@@ -199,8 +229,9 @@ bool DatabaseManager::deleteMenuItem(const QString& menuId, const QString& itemI
 
 bool DatabaseManager::createOrder(const QString& customerId, const QString& restaurantId, const QVariantList& items)
 {
-    // Start transaction
-    db.transaction();
+    if (!beginTransaction()) {
+        return false;
+    }
 
     try {
         // Create order
@@ -236,13 +267,13 @@ bool DatabaseManager::createOrder(const QString& customerId, const QString& rest
             }
         }
 
-        // Commit transaction
-        db.commit();
+        if (!commitTransaction()) {
+            throw std::runtime_error("Failed to commit transaction");
+        }
         return true;
     }
     catch (const std::exception& e) {
-        // Rollback transaction on error
-        db.rollback();
+        rollbackTransaction();
         qDebug() << "Error creating order:" << e.what();
         return false;
     }
@@ -292,4 +323,19 @@ QSqlQuery DatabaseManager::prepareQuery(const QString& query, const QVariantMap&
 void DatabaseManager::logError(const QString& operation, const QSqlError& error)
 {
     qDebug() << "Database error during" << operation << ":" << error.text();
+}
+
+bool DatabaseManager::beginTransaction()
+{
+    return db.transaction();
+}
+
+bool DatabaseManager::commitTransaction()
+{
+    return db.commit();
+}
+
+bool DatabaseManager::rollbackTransaction()
+{
+    return db.rollback();
 } 

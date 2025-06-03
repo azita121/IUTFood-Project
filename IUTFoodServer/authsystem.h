@@ -4,8 +4,16 @@
 #include <QObject>
 #include <QString>
 #include <QMap>
-#include <QCryptographicHash>
+#include <QDateTime>
 #include "databasemanager.h"
+#include "securityutils.h"
+
+struct Session {
+    QString userId;
+    QString userType;
+    QString token;
+    QDateTime lastActivity;
+};
 
 class AuthSystem : public QObject
 {
@@ -15,32 +23,34 @@ public:
     static AuthSystem* getInstance();
     
     // Authentication methods
-    bool login(const QString& username, const QString& password);
+    QString login(const QString& username, const QString& password);
     bool registerUser(const QString& username, const QString& password, const QString& email, const QString& userType);
-    bool logout(const QString& userId);
-    
-    // User management
-    bool updateProfile(const QString& userId, const QVariantMap& updates);
-    bool changePassword(const QString& userId, const QString& oldPassword, const QString& newPassword);
-    bool deleteAccount(const QString& userId);
+    bool logout(const QString& token);
     
     // Session management
-    bool isUserLoggedIn(const QString& userId) const;
-    QString getCurrentUserType(const QString& userId) const;
-    QString getCurrentUsername(const QString& userId) const;
+    bool validateSession(const QString& token);
+    bool refreshSession(const QString& token);
+    Session* getSession(const QString& token);
+    QString getUserIdFromToken(const QString& token);
+    QString getUserTypeFromToken(const QString& token);
+    
+    // User management
+    bool updateProfile(const QString& token, const QVariantMap& updates);
+    bool changePassword(const QString& token, const QString& oldPassword, const QString& newPassword);
+    bool deleteAccount(const QString& token);
 
 private:
     explicit AuthSystem(QObject *parent = nullptr);
     ~AuthSystem();
     static AuthSystem* instance;
 
-    QMap<QString, QString> activeSessions; // userId -> userType mapping
+    QMap<QString, Session> activeSessions; // token -> Session mapping
     DatabaseManager* dbManager;
 
-    QString hashPassword(const QString& password) const;
     bool validatePassword(const QString& password) const;
     bool validateUsername(const QString& username) const;
     bool validateEmail(const QString& email) const;
+    void cleanupExpiredSessions();
 };
 
 #endif // AUTHSYSTEM_H 

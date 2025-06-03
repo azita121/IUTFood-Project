@@ -16,7 +16,8 @@ SOURCES += \
     ordercommand.cpp \
     observer.cpp \
     orderstatus.cpp \
-    orderstatusobserver.cpp
+    orderstatusobserver.cpp \
+    securityutils.cpp
 
 HEADERS += \
     server.h \
@@ -27,7 +28,8 @@ HEADERS += \
     ordercommand.h \
     observer.h \
     orderstatus.h \
-    orderstatusobserver.h
+    orderstatusobserver.h \
+    securityutils.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

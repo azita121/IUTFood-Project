@@ -19,8 +19,10 @@ public:
     bool isConnected() const;
 
     // User operations
-    bool createUser(const QString& username, const QString& password, const QString& email, const QString& userType);
-    bool authenticateUser(const QString& username, const QString& password);
+    bool createUser(const QString& username, const QString& passwordHash, const QString& email, const QString& userType);
+    QString getUserId(const QString& username);
+    QString getUserPasswordHash(const QString& userId);
+    QString getUserType(const QString& userId);
     bool updateUser(const QString& userId, const QVariantMap& updates);
     bool deleteUser(const QString& userId);
 
@@ -51,6 +53,9 @@ private:
     bool executeQuery(const QString& query, const QVariantMap& params = QVariantMap());
     QSqlQuery prepareQuery(const QString& query, const QVariantMap& params = QVariantMap());
     void logError(const QString& operation, const QSqlError& error);
+    bool beginTransaction();
+    bool commitTransaction();
+    bool rollbackTransaction();
 };
 
 #endif // DATABASEMANAGER_H 

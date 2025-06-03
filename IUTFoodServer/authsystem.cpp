@@ -20,35 +20,51 @@ AuthSystem::AuthSystem(QObject *parent)
 
 AuthSystem::~AuthSystem()
 {
-    // Clear all active sessions
     activeSessions.clear();
 }
 
-bool AuthSystem::login(const QString& username, const QString& password)
+QString AuthSystem::login(const QString& username, const QString& password)
 {
     // Validate input
     if (!validateUsername(username) || !validatePassword(password)) {
-        return false;
+        return QString();
     }
 
-    // Hash the password
-    QString hashedPassword = hashPassword(password);
-
-    // Authenticate with database
-    if (!dbManager->authenticateUser(username, hashedPassword)) {
-        qDebug() << "Authentication failed for user:" << username;
-        return false;
+    // Get user from database
+    QString userId = dbManager->getUserId(username);
+    if (userId.isEmpty()) {
+        qDebug() << "User not found:" << username;
+        return QString();
     }
 
-    // Get user type from database (you'll need to add this method to DatabaseManager)
-    QString userType = "customer"; // Default to customer, implement proper user type retrieval
+    // Get stored password hash
+    QString storedHash = dbManager->getUserPasswordHash(userId);
+    if (storedHash.isEmpty()) {
+        qDebug() << "No password hash found for user:" << username;
+        return QString();
+    }
 
+    // Verify password
+    if (!SecurityUtils::verifyPassword(password, storedHash)) {
+        qDebug() << "Invalid password for user:" << username;
+        return QString();
+    }
+
+    // Generate session token
+    QString token = SecurityUtils::generateSessionToken();
+    
     // Create session
-    QString userId = username; // Use username as userId for now, implement proper userId generation
-    activeSessions[userId] = userType;
+    Session session;
+    session.userId = userId;
+    session.userType = dbManager->getUserType(userId);
+    session.token = token;
+    session.lastActivity = QDateTime::currentDateTime();
+    
+    // Store session
+    activeSessions[token] = session;
 
     qDebug() << "User logged in successfully:" << username;
-    return true;
+    return token;
 }
 
 bool AuthSystem::registerUser(const QString& username, const QString& password, const QString& email, const QString& userType)
@@ -59,7 +75,7 @@ bool AuthSystem::registerUser(const QString& username, const QString& password, 
     }
 
     // Hash the password
-    QString hashedPassword = hashPassword(password);
+    QString hashedPassword = SecurityUtils::hashPassword(password);
 
     // Create user in database
     if (!dbManager->createUser(username, hashedPassword, email, userType)) {
@@ -71,31 +87,91 @@ bool AuthSystem::registerUser(const QString& username, const QString& password, 
     return true;
 }
 
-bool AuthSystem::logout(const QString& userId)
+bool AuthSystem::logout(const QString& token)
 {
-    if (!activeSessions.contains(userId)) {
-        qDebug() << "No active session found for user:" << userId;
+    if (!activeSessions.contains(token)) {
+        qDebug() << "No active session found for token";
         return false;
     }
 
-    activeSessions.remove(userId);
-    qDebug() << "User logged out successfully:" << userId;
+    activeSessions.remove(token);
+    qDebug() << "User logged out successfully";
     return true;
 }
 
-bool AuthSystem::updateProfile(const QString& userId, const QVariantMap& updates)
+bool AuthSystem::validateSession(const QString& token)
 {
-    if (!isUserLoggedIn(userId)) {
-        qDebug() << "User not logged in:" << userId;
+    cleanupExpiredSessions();
+
+    if (!activeSessions.contains(token)) {
         return false;
     }
+
+    Session& session = activeSessions[token];
+    if (SecurityUtils::isTokenExpired(token)) {
+        activeSessions.remove(token);
+        return false;
+    }
+
+    // Update last activity
+    session.lastActivity = QDateTime::currentDateTime();
+    return true;
+}
+
+bool AuthSystem::refreshSession(const QString& token)
+{
+    if (!validateSession(token)) {
+        return false;
+    }
+
+    // Generate new token
+    QString newToken = SecurityUtils::generateSessionToken();
+    Session session = activeSessions[token];
+    session.token = newToken;
+    session.lastActivity = QDateTime::currentDateTime();
+
+    // Update session
+    activeSessions.remove(token);
+    activeSessions[newToken] = session;
+
+    return true;
+}
+
+Session* AuthSystem::getSession(const QString& token)
+{
+    if (!validateSession(token)) {
+        return nullptr;
+    }
+    return &activeSessions[token];
+}
+
+QString AuthSystem::getUserIdFromToken(const QString& token)
+{
+    Session* session = getSession(token);
+    return session ? session->userId : QString();
+}
+
+QString AuthSystem::getUserTypeFromToken(const QString& token)
+{
+    Session* session = getSession(token);
+    return session ? session->userType : QString();
+}
+
+bool AuthSystem::updateProfile(const QString& token, const QVariantMap& updates)
+{
+    if (!validateSession(token)) {
+        qDebug() << "Invalid session token";
+        return false;
+    }
+
+    QString userId = getUserIdFromToken(token);
 
     // Validate updates
     if (updates.contains("password")) {
         if (!validatePassword(updates["password"].toString())) {
             return false;
         }
-        updates["password"] = hashPassword(updates["password"].toString());
+        updates["password"] = SecurityUtils::hashPassword(updates["password"].toString());
     }
 
     if (updates.contains("email") && !validateEmail(updates["email"].toString())) {
@@ -112,12 +188,14 @@ bool AuthSystem::updateProfile(const QString& userId, const QVariantMap& updates
     return true;
 }
 
-bool AuthSystem::changePassword(const QString& userId, const QString& oldPassword, const QString& newPassword)
+bool AuthSystem::changePassword(const QString& token, const QString& oldPassword, const QString& newPassword)
 {
-    if (!isUserLoggedIn(userId)) {
-        qDebug() << "User not logged in:" << userId;
+    if (!validateSession(token)) {
+        qDebug() << "Invalid session token";
         return false;
     }
+
+    QString userId = getUserIdFromToken(token);
 
     // Validate new password
     if (!validatePassword(newPassword)) {
@@ -125,21 +203,26 @@ bool AuthSystem::changePassword(const QString& userId, const QString& oldPasswor
     }
 
     // Verify old password
-    QString hashedOldPassword = hashPassword(oldPassword);
-    // TODO: Implement password verification with database
+    QString storedHash = dbManager->getUserPasswordHash(userId);
+    if (!SecurityUtils::verifyPassword(oldPassword, storedHash)) {
+        qDebug() << "Invalid old password";
+        return false;
+    }
 
     // Update password
     QVariantMap updates;
-    updates["password"] = hashPassword(newPassword);
-    return updateProfile(userId, updates);
+    updates["password"] = SecurityUtils::hashPassword(newPassword);
+    return updateProfile(token, updates);
 }
 
-bool AuthSystem::deleteAccount(const QString& userId)
+bool AuthSystem::deleteAccount(const QString& token)
 {
-    if (!isUserLoggedIn(userId)) {
-        qDebug() << "User not logged in:" << userId;
+    if (!validateSession(token)) {
+        qDebug() << "Invalid session token";
         return false;
     }
+
+    QString userId = getUserIdFromToken(token);
 
     // Delete user from database
     if (!dbManager->deleteUser(userId)) {
@@ -147,50 +230,42 @@ bool AuthSystem::deleteAccount(const QString& userId)
         return false;
     }
 
-    // Remove from active sessions
-    activeSessions.remove(userId);
+    // Remove session
+    activeSessions.remove(token);
     qDebug() << "Account deleted successfully for user:" << userId;
     return true;
 }
 
-bool AuthSystem::isUserLoggedIn(const QString& userId) const
-{
-    return activeSessions.contains(userId);
-}
-
-QString AuthSystem::getCurrentUserType(const QString& userId) const
-{
-    return activeSessions.value(userId, "");
-}
-
-QString AuthSystem::getCurrentUsername(const QString& userId) const
-{
-    // TODO: Implement proper username retrieval from database
-    return userId;
-}
-
-QString AuthSystem::hashPassword(const QString& password) const
-{
-    return QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex());
-}
-
 bool AuthSystem::validatePassword(const QString& password) const
 {
-    // Password must be at least 8 characters long and contain at least one number and one special character
-    QRegularExpression regex("^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$");
-    return regex.match(password).hasMatch();
+    // Password must be at least 8 characters long and contain at least one number
+    return password.length() >= 8 && password.contains(QRegularExpression("\\d"));
 }
 
 bool AuthSystem::validateUsername(const QString& username) const
 {
     // Username must be 3-20 characters long and contain only letters, numbers, and underscores
-    QRegularExpression regex("^[a-zA-Z0-9_]{3,20}$");
-    return regex.match(username).hasMatch();
+    return username.length() >= 3 && username.length() <= 20 &&
+           username.contains(QRegularExpression("^[a-zA-Z0-9_]+$"));
 }
 
 bool AuthSystem::validateEmail(const QString& email) const
 {
     // Basic email validation
-    QRegularExpression regex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
-    return regex.match(email).hasMatch();
+    QRegularExpression emailRegex("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    return emailRegex.match(email).hasMatch();
+}
+
+void AuthSystem::cleanupExpiredSessions()
+{
+    QList<QString> expiredTokens;
+    for (auto it = activeSessions.begin(); it != activeSessions.end(); ++it) {
+        if (SecurityUtils::isTokenExpired(it.key())) {
+            expiredTokens.append(it.key());
+        }
+    }
+
+    for (const QString& token : expiredTokens) {
+        activeSessions.remove(token);
+    }
 } 
