@@ -351,4 +351,346 @@ double RestaurantManager::calculateDistance(double lat1, double lon1, double lat
                sin(dLon/2) * sin(dLon/2);
     double c = 2 * atan2(sqrt(a), sqrt(1-a));
     return R * c;
+}
+
+// Enhanced Search Methods Implementation
+QJsonArray RestaurantManager::searchRestaurantsByLocation(const QString& location, double radius)
+{
+    QJsonObject filters;
+    filters["location"] = location;
+    filters["radius"] = radius;
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::searchRestaurantsByType(const QString& type)
+{
+    QJsonObject filters;
+    filters["type"] = type;
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::searchRestaurantsByPriceRange(double minPrice, double maxPrice)
+{
+    QJsonObject filters;
+    filters["min_price"] = minPrice;
+    filters["max_price"] = maxPrice;
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::searchRestaurantsByCuisine(const QString& cuisine)
+{
+    QJsonObject filters;
+    filters["cuisine"] = cuisine;
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::searchRestaurantsByOperatingHours(const QString& day, const QString& time)
+{
+    QJsonObject filters;
+    filters["day"] = day;
+    filters["time"] = time;
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::searchRestaurantsByFeatures(const QStringList& features)
+{
+    QJsonObject filters;
+    filters["features"] = QJsonArray::fromStringList(features);
+    return searchRestaurants("", filters);
+}
+
+QJsonArray RestaurantManager::advancedRestaurantSearch(const QJsonObject& criteria)
+{
+    QStringList conditions;
+    QVariantMap bindValues;
+
+    QString baseQuery = "SELECT r.*, "
+                       "(SELECT AVG(rating) FROM ratings WHERE restaurant_id = r.id) as avg_rating, "
+                       "(SELECT COUNT(*) FROM ratings WHERE restaurant_id = r.id) as rating_count "
+                       "FROM restaurants r WHERE 1=1";
+
+    if (criteria.contains("name")) {
+        conditions << "r.name LIKE :name";
+        bindValues[":name"] = "%" + criteria["name"].toString() + "%";
+    }
+
+    if (criteria.contains("cuisine")) {
+        conditions << "r.cuisine = :cuisine";
+        bindValues[":cuisine"] = criteria["cuisine"].toString();
+    }
+
+    if (criteria.contains("min_price") && criteria.contains("max_price")) {
+        conditions << "EXISTS (SELECT 1 FROM menu_items mi WHERE mi.restaurant_id = r.id "
+                   "AND mi.price BETWEEN :min_price AND :max_price)";
+        bindValues[":min_price"] = criteria["min_price"].toDouble();
+        bindValues[":max_price"] = criteria["max_price"].toDouble();
+    }
+
+    if (criteria.contains("features")) {
+        QJsonArray features = criteria["features"].toArray();
+        QStringList featureConditions;
+        for (int i = 0; i < features.size(); ++i) {
+            QString param = ":feature" + QString::number(i);
+            featureConditions << "r.features LIKE " + param;
+            bindValues[param] = "%" + features[i].toString() + "%";
+        }
+        conditions << "(" + featureConditions.join(" OR ") + ")";
+    }
+
+    if (criteria.contains("min_rating")) {
+        conditions << "(SELECT AVG(rating) FROM ratings WHERE restaurant_id = r.id) >= :min_rating";
+        bindValues[":min_rating"] = criteria["min_rating"].toDouble();
+    }
+
+    if (criteria.contains("is_open")) {
+        conditions << "r.is_open = :is_open";
+        bindValues[":is_open"] = criteria["is_open"].toBool();
+    }
+
+    return executeSearchQuery(buildSearchQuery(baseQuery, conditions, bindValues), bindValues);
+}
+
+// Menu Item Search and Filtering Methods
+QJsonArray RestaurantManager::searchMenuItems(const QString& query, const QJsonObject& filters)
+{
+    QStringList conditions;
+    QVariantMap bindValues;
+
+    QString baseQuery = "SELECT mi.*, r.name as restaurant_name, r.cuisine "
+                       "FROM menu_items mi "
+                       "JOIN restaurants r ON mi.restaurant_id = r.id "
+                       "WHERE 1=1";
+
+    if (!query.isEmpty()) {
+        conditions << "(mi.name LIKE :query OR mi.description LIKE :query)";
+        bindValues[":query"] = "%" + query + "%";
+    }
+
+    if (filters.contains("category")) {
+        conditions << "mi.category = :category";
+        bindValues[":category"] = filters["category"].toString();
+    }
+
+    if (filters.contains("min_price")) {
+        conditions << "mi.price >= :min_price";
+        bindValues[":min_price"] = filters["min_price"].toDouble();
+    }
+
+    if (filters.contains("max_price")) {
+        conditions << "mi.price <= :max_price";
+        bindValues[":max_price"] = filters["max_price"].toDouble();
+    }
+
+    if (filters.contains("is_available")) {
+        conditions << "mi.is_available = :is_available";
+        bindValues[":is_available"] = filters["is_available"].toBool();
+    }
+
+    return executeMenuItemSearchQuery(buildMenuItemSearchQuery(baseQuery, conditions, bindValues), bindValues);
+}
+
+QJsonArray RestaurantManager::getMenuItemsByCategory(const QString& restaurantId, const QString& category)
+{
+    QJsonObject filters;
+    filters["category"] = category;
+    return searchMenuItems("", filters);
+}
+
+QJsonArray RestaurantManager::getMenuItemsByPriceRange(const QString& restaurantId, double minPrice, double maxPrice)
+{
+    QJsonObject filters;
+    filters["min_price"] = minPrice;
+    filters["max_price"] = maxPrice;
+    return searchMenuItems("", filters);
+}
+
+QJsonArray RestaurantManager::getMenuItemsByDietaryRestrictions(const QString& restaurantId, const QStringList& restrictions)
+{
+    QStringList conditions;
+    QVariantMap bindValues;
+
+    QString baseQuery = "SELECT mi.* FROM menu_items mi "
+                       "WHERE mi.restaurant_id = :restaurant_id";
+
+    bindValues[":restaurant_id"] = restaurantId;
+
+    for (int i = 0; i < restrictions.size(); ++i) {
+        QString param = ":restriction" + QString::number(i);
+        conditions << "mi.dietary_info LIKE " + param;
+        bindValues[param] = "%" + restrictions[i] + "%";
+    }
+
+    if (!conditions.isEmpty()) {
+        baseQuery += " AND (" + conditions.join(" OR ") + ")";
+    }
+
+    return executeMenuItemSearchQuery(baseQuery, bindValues);
+}
+
+QJsonArray RestaurantManager::getMenuItemsByIngredients(const QString& restaurantId, const QStringList& ingredients)
+{
+    QStringList conditions;
+    QVariantMap bindValues;
+
+    QString baseQuery = "SELECT mi.* FROM menu_items mi "
+                       "WHERE mi.restaurant_id = :restaurant_id";
+
+    bindValues[":restaurant_id"] = restaurantId;
+
+    for (int i = 0; i < ingredients.size(); ++i) {
+        QString param = ":ingredient" + QString::number(i);
+        conditions << "mi.ingredients LIKE " + param;
+        bindValues[param] = "%" + ingredients[i] + "%";
+    }
+
+    if (!conditions.isEmpty()) {
+        baseQuery += " AND (" + conditions.join(" OR ") + ")";
+    }
+
+    return executeMenuItemSearchQuery(baseQuery, bindValues);
+}
+
+QJsonArray RestaurantManager::getMenuItemsByAvailability(const QString& restaurantId, bool available)
+{
+    QJsonObject filters;
+    filters["is_available"] = available;
+    return searchMenuItems("", filters);
+}
+
+QJsonArray RestaurantManager::advancedMenuItemSearch(const QString& restaurantId, const QJsonObject& criteria)
+{
+    QStringList conditions;
+    QVariantMap bindValues;
+
+    QString baseQuery = "SELECT mi.*, r.name as restaurant_name, r.cuisine "
+                       "FROM menu_items mi "
+                       "JOIN restaurants r ON mi.restaurant_id = r.id "
+                       "WHERE mi.restaurant_id = :restaurant_id";
+
+    bindValues[":restaurant_id"] = restaurantId;
+
+    if (criteria.contains("name")) {
+        conditions << "mi.name LIKE :name";
+        bindValues[":name"] = "%" + criteria["name"].toString() + "%";
+    }
+
+    if (criteria.contains("category")) {
+        conditions << "mi.category = :category";
+        bindValues[":category"] = criteria["category"].toString();
+    }
+
+    if (criteria.contains("min_price")) {
+        conditions << "mi.price >= :min_price";
+        bindValues[":min_price"] = criteria["min_price"].toDouble();
+    }
+
+    if (criteria.contains("max_price")) {
+        conditions << "mi.price <= :max_price";
+        bindValues[":max_price"] = criteria["max_price"].toDouble();
+    }
+
+    if (criteria.contains("dietary_restrictions")) {
+        QJsonArray restrictions = criteria["dietary_restrictions"].toArray();
+        QStringList restrictionConditions;
+        for (int i = 0; i < restrictions.size(); ++i) {
+            QString param = ":restriction" + QString::number(i);
+            restrictionConditions << "mi.dietary_info LIKE " + param;
+            bindValues[param] = "%" + restrictions[i].toString() + "%";
+        }
+        conditions << "(" + restrictionConditions.join(" OR ") + ")";
+    }
+
+    if (criteria.contains("ingredients")) {
+        QJsonArray ingredients = criteria["ingredients"].toArray();
+        QStringList ingredientConditions;
+        for (int i = 0; i < ingredients.size(); ++i) {
+            QString param = ":ingredient" + QString::number(i);
+            ingredientConditions << "mi.ingredients LIKE " + param;
+            bindValues[param] = "%" + ingredients[i].toString() + "%";
+        }
+        conditions << "(" + ingredientConditions.join(" OR ") + ")";
+    }
+
+    if (criteria.contains("is_available")) {
+        conditions << "mi.is_available = :is_available";
+        bindValues[":is_available"] = criteria["is_available"].toBool();
+    }
+
+    return executeMenuItemSearchQuery(buildMenuItemSearchQuery(baseQuery, conditions, bindValues), bindValues);
+}
+
+// Helper Methods for Search
+QString RestaurantManager::buildSearchQuery(const QString& baseQuery, const QStringList& conditions, const QVariantMap& bindValues)
+{
+    QString query = baseQuery;
+    if (!conditions.isEmpty()) {
+        query += " AND " + conditions.join(" AND ");
+    }
+    query += " ORDER BY avg_rating DESC, rating_count DESC";
+    return query;
+}
+
+QString RestaurantManager::buildMenuItemSearchQuery(const QString& baseQuery, const QStringList& conditions, const QVariantMap& bindValues)
+{
+    QString query = baseQuery;
+    if (!conditions.isEmpty()) {
+        query += " AND " + conditions.join(" AND ");
+    }
+    query += " ORDER BY mi.category, mi.name";
+    return query;
+}
+
+QJsonArray RestaurantManager::executeSearchQuery(const QString& query, const QVariantMap& bindValues)
+{
+    QJsonArray results;
+    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query);
+
+    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
+        sqlQuery.bindValue(it.key(), it.value());
+    }
+
+    if (sqlQuery.exec()) {
+        while (sqlQuery.next()) {
+            QJsonObject restaurant;
+            restaurant["id"] = sqlQuery.value("id").toString();
+            restaurant["name"] = sqlQuery.value("name").toString();
+            restaurant["description"] = sqlQuery.value("description").toString();
+            restaurant["category"] = sqlQuery.value("category").toString();
+            restaurant["address"] = sqlQuery.value("address").toString();
+            restaurant["is_open"] = sqlQuery.value("is_open").toBool();
+            restaurant["avg_rating"] = sqlQuery.value("avg_rating").toDouble();
+            restaurant["rating_count"] = sqlQuery.value("rating_count").toInt();
+            results.append(restaurant);
+        }
+    }
+
+    return results;
+}
+
+QJsonArray RestaurantManager::executeMenuItemSearchQuery(const QString& query, const QVariantMap& bindValues)
+{
+    QJsonArray results;
+    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query);
+
+    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
+        sqlQuery.bindValue(it.key(), it.value());
+    }
+
+    if (sqlQuery.exec()) {
+        while (sqlQuery.next()) {
+            QJsonObject item;
+            item["id"] = sqlQuery.value("id").toString();
+            item["restaurant_id"] = sqlQuery.value("restaurant_id").toString();
+            item["restaurant_name"] = sqlQuery.value("restaurant_name").toString();
+            item["name"] = sqlQuery.value("name").toString();
+            item["description"] = sqlQuery.value("description").toString();
+            item["price"] = sqlQuery.value("price").toDouble();
+            item["category"] = sqlQuery.value("category").toString();
+            item["is_available"] = sqlQuery.value("is_available").toBool();
+            item["image_url"] = sqlQuery.value("image_url").toString();
+            results.append(item);
+        }
+    }
+
+    return results;
 } 

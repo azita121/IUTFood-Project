@@ -6,6 +6,8 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QString>
+#include <QVariantMap>
+#include <QVariantList>
 #include <memory>
 
 class DatabaseManager : public QObject
@@ -14,33 +16,56 @@ class DatabaseManager : public QObject
 
 public:
     static DatabaseManager* getInstance();
+
+    // Connection Management
     bool connect(const QString& host, const QString& database, const QString& username, const QString& password);
     void disconnect();
     bool isConnected() const;
 
-    // User operations
-    bool createUser(const QString& username, const QString& passwordHash, const QString& email, const QString& userType);
-    QString getUserId(const QString& username);
-    QString getUserPasswordHash(const QString& userId);
-    QString getUserType(const QString& userId);
-    bool updateUser(const QString& userId, const QVariantMap& updates);
-    bool deleteUser(const QString& userId);
+    // Customer Management
+    bool createCustomer(const QString& name, const QString& lastName, const QString& email, 
+                       const QString& passwordHash, const QString& phone, const QString& address);
+    bool updateCustomer(const QString& customerId, const QVariantMap& updates);
+    bool deleteCustomer(const QString& customerId);
+    QString getCustomerId(const QString& email);
+    QString getCustomerPasswordHash(const QString& customerId);
+    QVariantMap getCustomerProfile(const QString& customerId);
 
-    // Restaurant operations
+    // Restaurant Owner Management
+    bool createRestaurantOwner(const QString& name, const QString& lastName, const QString& email,
+                             const QString& passwordHash, const QString& phone, const QString& restaurantId);
+    bool updateRestaurantOwner(const QString& ownerId, const QVariantMap& updates);
+    bool deleteRestaurantOwner(const QString& ownerId);
+    QString getRestaurantOwnerId(const QString& email);
+    QString getRestaurantOwnerPasswordHash(const QString& ownerId);
+    QVariantMap getRestaurantOwnerProfile(const QString& ownerId);
+    QString getRestaurantIdByOwner(const QString& ownerId);
+
+    // Restaurant Management
     bool createRestaurant(const QString& name, const QString& address, const QString& type);
     bool updateRestaurant(const QString& restaurantId, const QVariantMap& updates);
     bool deleteRestaurant(const QString& restaurantId);
 
-    // Menu operations
+    // Menu Management
     bool createMenu(const QString& restaurantId);
     bool addMenuItem(const QString& menuId, const QString& name, const QString& description, double price);
     bool updateMenuItem(const QString& menuId, const QString& itemId, const QVariantMap& updates);
     bool deleteMenuItem(const QString& menuId, const QString& itemId);
 
-    // Order operations
+    // Order Management
     bool createOrder(const QString& customerId, const QString& restaurantId, const QVariantList& items);
     bool updateOrderStatus(const QString& orderId, const QString& status);
     bool deleteOrder(const QString& orderId);
+
+    // Query Execution
+    bool executeQuery(const QString& query, const QVariantMap& params);
+    QSqlQuery prepareQuery(const QString& query, const QVariantMap& params);
+    void logError(const QString& operation, const QSqlError& error);
+
+    // Transaction Management
+    bool beginTransaction();
+    bool commitTransaction();
+    bool rollbackTransaction();
 
 private:
     explicit DatabaseManager(QObject *parent = nullptr);
@@ -49,13 +74,6 @@ private:
 
     QSqlDatabase db;
     bool connected;
-
-    bool executeQuery(const QString& query, const QVariantMap& params = QVariantMap());
-    QSqlQuery prepareQuery(const QString& query, const QVariantMap& params = QVariantMap());
-    void logError(const QString& operation, const QSqlError& error);
-    bool beginTransaction();
-    bool commitTransaction();
-    bool rollbackTransaction();
 };
 
 #endif // DATABASEMANAGER_H 
