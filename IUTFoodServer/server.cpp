@@ -1,9 +1,4 @@
 #include "server.h"
-#include "databasemanager.h"
-#include "authsystem.h"
-#include "invoker.h"
-#include <QJsonDocument>
-#include <QJsonObject>
 #include <QDebug>
 
 Server* Server::instance = nullptr;
@@ -18,118 +13,115 @@ Server* Server::getInstance()
 
 Server::Server(QObject *parent)
     : QObject(parent)
-    , tcpServer(new QTcpServer(this))
-    , databaseManager(std::make_unique<DatabaseManager>())
-    , authSystem(std::make_unique<AuthSystem>())
-    , invoker(std::make_unique<Invoker>())
-    , orderStatus(std::make_unique<OrderStatus>())
-    , orderStatusObserver(std::make_unique<OrderStatusObserver>())
+    , m_tcpServer(nullptr)
+    , m_dbManager(DatabaseManager::getInstance())
+    , m_authSystem(AuthSystem::getInstance())
+    , m_wsServer(WebSocketServer::getInstance())
 {
-    connect(tcpServer, &QTcpServer::newConnection, this, &Server::onNewConnection);
-    
-    // Attach the observer to the order status subject
-    orderStatus->attach(orderStatusObserver.get());
 }
 
 Server::~Server()
 {
-    stopServer();
+    stop();
 }
 
-bool Server::startServer(quint16 port)
+bool Server::start(quint16 tcpPort, quint16 wsPort)
 {
-    if (!tcpServer->listen(QHostAddress::Any, port)) {
-        qDebug() << "Server failed to start. Error:" << tcpServer->errorString();
+    // Start TCP server
+    m_tcpServer = new QTcpServer(this);
+    if (!m_tcpServer->listen(QHostAddress::Any, tcpPort)) {
+        qDebug() << "TCP server failed to start:" << m_tcpServer->errorString();
         return false;
     }
-    qDebug() << "Server started on port" << port;
+
+    connect(m_tcpServer, &QTcpServer::newConnection, this, &Server::handleNewConnection);
+    qDebug() << "TCP server started on port" << tcpPort;
+
+    // Start WebSocket server
+    if (!m_wsServer->start(wsPort)) {
+        qDebug() << "WebSocket server failed to start";
+        m_tcpServer->close();
+        return false;
+    }
+
+    qDebug() << "Server started successfully";
     return true;
 }
 
-void Server::stopServer()
+void Server::stop()
 {
-    if (tcpServer->isListening()) {
-        tcpServer->close();
-        qDebug() << "Server stopped";
+    if (m_tcpServer) {
+        m_tcpServer->close();
+        delete m_tcpServer;
+        m_tcpServer = nullptr;
     }
+
+    m_wsServer->stop();
+    qDebug() << "Server stopped";
 }
 
-void Server::onNewConnection()
+void Server::handleNewConnection()
 {
-    QTcpSocket* clientSocket = tcpServer->nextPendingConnection();
-    
-    connect(clientSocket, &QTcpSocket::readyRead, this, &Server::onReadyRead);
-    connect(clientSocket, &QTcpSocket::disconnected, this, &Server::onClientDisconnected);
-    
-    connectedClients[clientSocket] = ""; // Empty userId initially
-    emit clientConnected(clientSocket);
-    
-    qDebug() << "New client connected:" << clientSocket->peerAddress().toString();
+    QTcpSocket* client = m_tcpServer->nextPendingConnection();
+    connect(client, &QTcpSocket::readyRead, this, &Server::handleReadyRead);
+    connect(client, &QTcpSocket::disconnected, this, &Server::handleDisconnection);
+    qDebug() << "New client connected:" << client->peerAddress().toString();
 }
 
-void Server::onReadyRead()
+void Server::handleReadyRead()
 {
-    QTcpSocket* clientSocket = qobject_cast<QTcpSocket*>(sender());
-    if (!clientSocket) return;
+    QTcpSocket* client = qobject_cast<QTcpSocket*>(sender());
+    if (!client) return;
 
-    QByteArray data = clientSocket->readAll();
-    handleClientMessage(clientSocket, data);
-}
-
-void Server::onClientDisconnected()
-{
-    QTcpSocket* clientSocket = qobject_cast<QTcpSocket*>(sender());
-    if (!clientSocket) return;
-
-    // Remove all order status subscriptions for this client
-    orderStatusObserver->removeClientSubscriptions(clientSocket);
-
-    connectedClients.remove(clientSocket);
-    clientSocket->deleteLater();
-    
-    emit clientDisconnected(clientSocket);
-    qDebug() << "Client disconnected:" << clientSocket->peerAddress().toString();
-}
-
-void Server::handleClientMessage(QTcpSocket* clientSocket, const QByteArray& message)
-{
-    QJsonDocument doc = QJsonDocument::fromJson(message);
-    if (doc.isNull() || !doc.isObject()) {
-        qDebug() << "Invalid JSON message received";
+    QByteArray data = client->readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (!doc.isObject()) {
+        QJsonObject error;
+        error["status"] = "error";
+        error["message"] = "Invalid request format";
+        sendResponse(client, error);
         return;
     }
 
-    QJsonObject request = doc.object();
-    processRequest(request, clientSocket);
+    processRequest(client, doc.object());
 }
 
-void Server::processRequest(const QJsonObject& request, QTcpSocket* clientSocket)
+void Server::handleDisconnection()
+{
+    QTcpSocket* client = qobject_cast<QTcpSocket*>(sender());
+    if (client) {
+        m_clients.remove(client);
+        client->deleteLater();
+        qDebug() << "Client disconnected:" << client->peerAddress().toString();
+    }
+}
+
+void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
 {
     QString type = request["type"].toString();
     QJsonObject response;
 
     if (type == "login") {
-        // Handle login request
         QString username = request["username"].toString();
         QString password = request["password"].toString();
-        
-        if (authSystem->login(username, password)) {
-            connectedClients[clientSocket] = username;
+        QString token = m_authSystem->login(username, password);
+
+        if (!token.isEmpty()) {
             response["status"] = "success";
-            response["message"] = "Login successful";
+            response["token"] = token;
+            m_clients[client] = m_authSystem->getUserIdFromToken(token);
         } else {
             response["status"] = "error";
             response["message"] = "Invalid credentials";
         }
     }
     else if (type == "register") {
-        // Handle registration request
         QString username = request["username"].toString();
         QString password = request["password"].toString();
         QString email = request["email"].toString();
         QString userType = request["userType"].toString();
 
-        if (authSystem->registerUser(username, password, email, userType)) {
+        if (m_authSystem->registerUser(username, password, email, userType)) {
             response["status"] = "success";
             response["message"] = "Registration successful";
         } else {
@@ -137,49 +129,72 @@ void Server::processRequest(const QJsonObject& request, QTcpSocket* clientSocket
             response["message"] = "Registration failed";
         }
     }
-    else if (type == "subscribe_order_status") {
-        QString orderId = request["orderId"].toString();
-        handleOrderStatusSubscription(orderId, clientSocket);
-        response["status"] = "success";
-        response["message"] = "Subscribed to order status updates";
-    }
-    else if (type == "unsubscribe_order_status") {
-        QString orderId = request["orderId"].toString();
-        handleOrderStatusUnsubscription(orderId, clientSocket);
-        response["status"] = "success";
-        response["message"] = "Unsubscribed from order status updates";
+    else if (type == "order") {
+        QString token = request["token"].toString();
+        if (!m_authSystem->validateSession(token)) {
+            response["status"] = "error";
+            response["message"] = "Invalid session";
+            sendResponse(client, response);
+            return;
+        }
+
+        QString customerId = m_authSystem->getUserIdFromToken(token);
+        QString restaurantId = request["restaurantId"].toString();
+        QJsonArray items = request["items"].toArray();
+
+        if (m_dbManager->createOrder(customerId, restaurantId, items.toVariantList())) {
+            response["status"] = "success";
+            response["message"] = "Order created successfully";
+            
+            // Notify restaurant about new order
+            QJsonObject notification;
+            notification["type"] = "new_order";
+            notification["orderId"] = response["orderId"].toString();
+            m_wsServer->broadcastToRestaurant(restaurantId, notification);
+        } else {
+            response["status"] = "error";
+            response["message"] = "Failed to create order";
+        }
     }
     else if (type == "update_order_status") {
+        QString token = request["token"].toString();
+        if (!m_authSystem->validateSession(token)) {
+            response["status"] = "error";
+            response["message"] = "Invalid session";
+            sendResponse(client, response);
+            return;
+        }
+
         QString orderId = request["orderId"].toString();
         QString status = request["status"].toString();
-        
-        // Update order status in database
-        if (databaseManager->updateOrderStatus(orderId, status)) {
-            // Notify all observers about the status change
-            orderStatus->notifyObservers(orderId, status);
+        QString userId = m_authSystem->getUserIdFromToken(token);
+
+        if (m_dbManager->updateOrderStatus(orderId, status)) {
             response["status"] = "success";
             response["message"] = "Order status updated";
+            
+            // Broadcast status update
+            broadcastOrderUpdate(orderId, status);
         } else {
             response["status"] = "error";
             response["message"] = "Failed to update order status";
         }
     }
+    else {
+        response["status"] = "error";
+        response["message"] = "Unknown request type";
+    }
 
-    sendResponse(clientSocket, response);
+    sendResponse(client, response);
 }
 
-void Server::handleOrderStatusSubscription(const QString& orderId, QTcpSocket* clientSocket)
-{
-    orderStatusObserver->addClientSubscription(orderId, clientSocket);
-}
-
-void Server::handleOrderStatusUnsubscription(const QString& orderId, QTcpSocket* clientSocket)
-{
-    orderStatusObserver->removeClientSubscription(orderId, clientSocket);
-}
-
-void Server::sendResponse(QTcpSocket* clientSocket, const QJsonObject& response)
+void Server::sendResponse(QTcpSocket* client, const QJsonObject& response)
 {
     QJsonDocument doc(response);
-    clientSocket->write(doc.toJson());
+    client->write(doc.toJson());
+}
+
+void Server::broadcastOrderUpdate(const QString& orderId, const QString& status)
+{
+    m_wsServer->broadcastOrderUpdate(orderId, status);
 } 

@@ -18,7 +18,9 @@ SOURCES += \
     orderstatus.cpp \
     orderstatusobserver.cpp \
     securityutils.cpp \
-    websocketserver.cpp
+    websocketserver.cpp \
+    adminmanager.cpp \
+    restaurantmanager.cpp
 
 HEADERS += \
     server.h \
@@ -31,7 +33,9 @@ HEADERS += \
     orderstatus.h \
     orderstatusobserver.h \
     securityutils.h \
-    websocketserver.h
+    websocketserver.h \
+    adminmanager.h \
+    restaurantmanager.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
