@@ -22,8 +22,13 @@ Server::Server(QObject *parent)
     , databaseManager(std::make_unique<DatabaseManager>())
     , authSystem(std::make_unique<AuthSystem>())
     , invoker(std::make_unique<Invoker>())
+    , orderStatus(std::make_unique<OrderStatus>())
+    , orderStatusObserver(std::make_unique<OrderStatusObserver>())
 {
     connect(tcpServer, &QTcpServer::newConnection, this, &Server::onNewConnection);
+    
+    // Attach the observer to the order status subject
+    orderStatus->attach(orderStatusObserver.get());
 }
 
 Server::~Server()
@@ -76,6 +81,9 @@ void Server::onClientDisconnected()
     QTcpSocket* clientSocket = qobject_cast<QTcpSocket*>(sender());
     if (!clientSocket) return;
 
+    // Remove all order status subscriptions for this client
+    orderStatusObserver->removeClientSubscriptions(clientSocket);
+
     connectedClients.remove(clientSocket);
     clientSocket->deleteLater();
     
@@ -105,19 +113,69 @@ void Server::processRequest(const QJsonObject& request, QTcpSocket* clientSocket
         QString username = request["username"].toString();
         QString password = request["password"].toString();
         
-        // TODO: Implement actual authentication logic
-        response["status"] = "success";
-        response["message"] = "Login successful";
+        if (authSystem->login(username, password)) {
+            connectedClients[clientSocket] = username;
+            response["status"] = "success";
+            response["message"] = "Login successful";
+        } else {
+            response["status"] = "error";
+            response["message"] = "Invalid credentials";
+        }
     }
     else if (type == "register") {
         // Handle registration request
-        // TODO: Implement registration logic
-        response["status"] = "success";
-        response["message"] = "Registration successful";
+        QString username = request["username"].toString();
+        QString password = request["password"].toString();
+        QString email = request["email"].toString();
+        QString userType = request["userType"].toString();
+
+        if (authSystem->registerUser(username, password, email, userType)) {
+            response["status"] = "success";
+            response["message"] = "Registration successful";
+        } else {
+            response["status"] = "error";
+            response["message"] = "Registration failed";
+        }
     }
-    // Add more request types as needed
+    else if (type == "subscribe_order_status") {
+        QString orderId = request["orderId"].toString();
+        handleOrderStatusSubscription(orderId, clientSocket);
+        response["status"] = "success";
+        response["message"] = "Subscribed to order status updates";
+    }
+    else if (type == "unsubscribe_order_status") {
+        QString orderId = request["orderId"].toString();
+        handleOrderStatusUnsubscription(orderId, clientSocket);
+        response["status"] = "success";
+        response["message"] = "Unsubscribed from order status updates";
+    }
+    else if (type == "update_order_status") {
+        QString orderId = request["orderId"].toString();
+        QString status = request["status"].toString();
+        
+        // Update order status in database
+        if (databaseManager->updateOrderStatus(orderId, status)) {
+            // Notify all observers about the status change
+            orderStatus->notifyObservers(orderId, status);
+            response["status"] = "success";
+            response["message"] = "Order status updated";
+        } else {
+            response["status"] = "error";
+            response["message"] = "Failed to update order status";
+        }
+    }
 
     sendResponse(clientSocket, response);
+}
+
+void Server::handleOrderStatusSubscription(const QString& orderId, QTcpSocket* clientSocket)
+{
+    orderStatusObserver->addClientSubscription(orderId, clientSocket);
+}
+
+void Server::handleOrderStatusUnsubscription(const QString& orderId, QTcpSocket* clientSocket)
+{
+    orderStatusObserver->removeClientSubscription(orderId, clientSocket);
 }
 
 void Server::sendResponse(QTcpSocket* clientSocket, const QJsonObject& response)

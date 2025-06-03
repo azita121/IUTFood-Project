@@ -7,6 +7,8 @@
 #include <QMap>
 #include <QVector>
 #include <memory>
+#include "orderstatus.h"
+#include "orderstatusobserver.h"
 
 class DatabaseManager;
 class AuthSystem;
@@ -31,12 +33,16 @@ private:
     std::unique_ptr<DatabaseManager> databaseManager;
     std::unique_ptr<AuthSystem> authSystem;
     std::unique_ptr<Invoker> invoker;
+    std::unique_ptr<OrderStatus> orderStatus;
+    std::unique_ptr<OrderStatusObserver> orderStatusObserver;
 
     void handleNewConnection();
     void handleClientDisconnection();
     void handleClientMessage(QTcpSocket* clientSocket, const QByteArray& message);
     void processRequest(const QJsonObject& request, QTcpSocket* clientSocket);
     void sendResponse(QTcpSocket* clientSocket, const QJsonObject& response);
+    void handleOrderStatusSubscription(const QString& orderId, QTcpSocket* clientSocket);
+    void handleOrderStatusUnsubscription(const QString& orderId, QTcpSocket* clientSocket);
 
 signals:
     void clientConnected(QTcpSocket* client);
