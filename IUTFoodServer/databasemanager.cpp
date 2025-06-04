@@ -386,32 +386,35 @@ bool DatabaseManager::createOrder(const QString& customerId, const QString& rest
     try {
         // Create order
         QVariantMap orderParams;
-        orderParams[":customerId"] = customerId;
-        orderParams[":restaurantId"] = restaurantId;
+        orderParams[":customer_id"] = customerId;
+        orderParams[":restaurant_id"] = restaurantId;
         orderParams[":status"] = "pending";
-        orderParams[":orderDate"] = QDateTime::currentDateTime();
+        orderParams[":created_at"] = QDateTime::currentDateTime();
 
-        QString orderQuery = "INSERT INTO orders (customer_id, restaurant_id, status, order_date) "
-                           "VALUES (:customerId, :restaurantId, :status, :orderDate)";
-        
-        if (!executeQuery(orderQuery, orderParams)) {
+        QSqlQuery query = prepareQuery(
+            "INSERT INTO orders (customer_id, restaurant_id, status, created_at) "
+            "VALUES (:customer_id, :restaurant_id, :status, :created_at)",
+            orderParams
+        );
+
+        if (!query.exec()) {
             throw std::runtime_error("Failed to create order");
         }
 
-        QString orderId = db.lastInsertId().toString();
+        QString orderId = query.lastInsertId().toString();
         Logger::getInstance()->debug(QString("Order created with ID: %1").arg(orderId), "DatabaseManager");
 
         // Add order items
         for (const QVariant& item : items) {
             QVariantMap itemMap = item.toMap();
             QVariantMap itemParams;
-            itemParams[":orderId"] = orderId;
-            itemParams[":menuItemId"] = itemMap["menuItemId"];
+            itemParams[":order_id"] = orderId;
+            itemParams[":menu_item_id"] = itemMap["menuItemId"];
             itemParams[":quantity"] = itemMap["quantity"];
             itemParams[":price"] = itemMap["price"];
 
             QString itemQuery = "INSERT INTO order_items (order_id, menu_item_id, quantity, price) "
-                              "VALUES (:orderId, :menuItemId, :quantity, :price)";
+                              "VALUES (:order_id, :menu_item_id, :quantity, :price)";
             
             if (!executeQuery(itemQuery, itemParams)) {
                 throw std::runtime_error("Failed to add order item");
@@ -474,17 +477,10 @@ QSqlQuery DatabaseManager::prepareQuery(const QString& query, const QVariantMap&
 
 void DatabaseManager::logError(const QString& operation, const QSqlError& error)
 {
-    QString errorMessage = QString("Database error during %1: %2 (Type: %3, Number: %4)")
-        .arg(operation)
-        .arg(error.text())
-        .arg(error.type())
-        .arg(error.number());
-
-    Logger::getInstance()->error(errorMessage, "DatabaseManager");
-
-    if (error.type() == QSqlError::ConnectionError) {
-        Logger::getInstance()->critical("Database connection error", "DatabaseManager");
-    }
+    qDebug() << "Database error in" << operation << ":"
+             << error.text()
+             << "Error code:" << error.nativeErrorCode()
+             << "Driver text:" << error.driverText();
 }
 
 bool DatabaseManager::beginTransaction()

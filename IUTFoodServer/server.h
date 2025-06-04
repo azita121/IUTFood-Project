@@ -9,6 +9,7 @@
 #include <QJsonDocument>
 #include <QVector>
 #include <memory>
+#include "invoker.h"
 #include "orderstatus.h"
 #include "orderstatusobserver.h"
 #include "databasemanager.h"
@@ -17,7 +18,6 @@
 
 class DatabaseManager;
 class AuthSystem;
-class Invoker;
 class WebSocketServer;
 
 class Server : public QObject

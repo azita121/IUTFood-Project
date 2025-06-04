@@ -1,4 +1,5 @@
 #include "restaurantmanager.h"
+#include "websocketserver.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -30,10 +31,12 @@ bool RestaurantManager::validateRestaurantAccess(const QString& restaurantId, co
     QString userType = m_authSystem->getUserTypeFromToken(userId);
     if (userType == "admin") return true;
 
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
     QSqlQuery query = m_dbManager->prepareQuery(
-        "SELECT owner_id FROM restaurants WHERE id = :restaurant_id"
+        "SELECT owner_id FROM restaurants WHERE id = :restaurant_id",
+        params
     );
-    query.bindValue(":restaurant_id", restaurantId);
     
     if (query.exec() && query.next()) {
         return query.value("owner_id").toString() == userId;
@@ -44,21 +47,23 @@ bool RestaurantManager::validateRestaurantAccess(const QString& restaurantId, co
 // Menu Management Methods
 bool RestaurantManager::addMenuItem(const QString& restaurantId, const QJsonObject& item)
 {
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+    params[":name"] = item["name"].toString();
+    params[":description"] = item["description"].toString();
+    params[":price"] = item["price"].toDouble();
+    params[":category"] = item["category"].toString();
+    params[":is_available"] = item["is_available"].toBool();
+    params[":image_url"] = item["image_url"].toString();
+    params[":created_at"] = QDateTime::currentDateTime();
+
     QSqlQuery query = m_dbManager->prepareQuery(
         "INSERT INTO menu_items (restaurant_id, name, description, price, category, "
         "is_available, image_url, created_at) "
         "VALUES (:restaurant_id, :name, :description, :price, :category, "
-        ":is_available, :image_url, :created_at)"
+        ":is_available, :image_url, :created_at)",
+        params
     );
-
-    query.bindValue(":restaurant_id", restaurantId);
-    query.bindValue(":name", item["name"].toString());
-    query.bindValue(":description", item["description"].toString());
-    query.bindValue(":price", item["price"].toDouble());
-    query.bindValue(":category", item["category"].toString());
-    query.bindValue(":is_available", item["is_available"].toBool());
-    query.bindValue(":image_url", item["image_url"].toString());
-    query.bindValue(":created_at", QDateTime::currentDateTime().toString(Qt::ISODate));
 
     return query.exec();
 }
@@ -69,69 +74,71 @@ bool RestaurantManager::updateMenuItem(const QString& restaurantId, const QStrin
         return false;
     }
 
-    QStringList updateFields;
-    QVariantMap bindValues;
+    QStringList setClauses;
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+    params[":item_id"] = itemId;
 
     if (updates.contains("name")) {
-        updateFields << "name = :name";
-        bindValues[":name"] = updates["name"].toString();
+        setClauses << "name = :name";
+        params[":name"] = updates["name"].toString();
     }
     if (updates.contains("description")) {
-        updateFields << "description = :description";
-        bindValues[":description"] = updates["description"].toString();
+        setClauses << "description = :description";
+        params[":description"] = updates["description"].toString();
     }
     if (updates.contains("price")) {
-        updateFields << "price = :price";
-        bindValues[":price"] = updates["price"].toDouble();
+        setClauses << "price = :price";
+        params[":price"] = updates["price"].toDouble();
     }
     if (updates.contains("category")) {
-        updateFields << "category = :category";
-        bindValues[":category"] = updates["category"].toString();
+        setClauses << "category = :category";
+        params[":category"] = updates["category"].toString();
     }
     if (updates.contains("is_available")) {
-        updateFields << "is_available = :is_available";
-        bindValues[":is_available"] = updates["is_available"].toBool();
+        setClauses << "is_available = :is_available";
+        params[":is_available"] = updates["is_available"].toBool();
     }
     if (updates.contains("image_url")) {
-        updateFields << "image_url = :image_url";
-        bindValues[":image_url"] = updates["image_url"].toString();
+        setClauses << "image_url = :image_url";
+        params[":image_url"] = updates["image_url"].toString();
     }
 
-    if (updateFields.isEmpty()) {
+    if (setClauses.isEmpty()) {
         return false;
     }
 
-    QString queryStr = "UPDATE menu_items SET " + updateFields.join(", ") +
-                      " WHERE id = :item_id AND restaurant_id = :restaurant_id";
+    QString queryStr = QString("UPDATE menu_items SET %1 WHERE id = :item_id AND restaurant_id = :restaurant_id")
+        .arg(setClauses.join(", "));
     
-    QSqlQuery query = m_dbManager->prepareQuery(queryStr);
-    query.bindValue(":item_id", itemId);
-    query.bindValue(":restaurant_id", restaurantId);
-
-    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
-        query.bindValue(it.key(), it.value());
-    }
+    QSqlQuery query = m_dbManager->prepareQuery(queryStr, params);
 
     return query.exec();
 }
 
 bool RestaurantManager::deleteMenuItem(const QString& restaurantId, const QString& itemId)
 {
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+    params[":item_id"] = itemId;
+
     QSqlQuery query = m_dbManager->prepareQuery(
-        "DELETE FROM menu_items WHERE id = :item_id AND restaurant_id = :restaurant_id"
+        "DELETE FROM menu_items WHERE id = :item_id AND restaurant_id = :restaurant_id",
+        params
     );
-    query.bindValue(":item_id", itemId);
-    query.bindValue(":restaurant_id", restaurantId);
     return query.exec();
 }
 
 QJsonArray RestaurantManager::getMenuItems(const QString& restaurantId)
 {
-    QJsonArray items;
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+
     QSqlQuery query = m_dbManager->prepareQuery(
-        "SELECT * FROM menu_items WHERE restaurant_id = :restaurant_id ORDER BY category, name"
+        "SELECT * FROM menu_items WHERE restaurant_id = :restaurant_id ORDER BY category, name",
+        params
     );
-    query.bindValue(":restaurant_id", restaurantId);
+    QJsonArray items;
 
     if (query.exec()) {
         while (query.next()) {
@@ -153,16 +160,18 @@ QJsonArray RestaurantManager::getMenuItems(const QString& restaurantId)
 // Rating and Feedback Methods
 bool RestaurantManager::addRating(const QString& restaurantId, const QString& userId, int rating, const QString& comment)
 {
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+    params[":user_id"] = userId;
+    params[":rating"] = rating;
+    params[":comment"] = comment;
+    params[":created_at"] = QDateTime::currentDateTime();
+
     QSqlQuery query = m_dbManager->prepareQuery(
         "INSERT INTO ratings (restaurant_id, user_id, rating, comment, created_at) "
-        "VALUES (:restaurant_id, :user_id, :rating, :comment, :created_at)"
+        "VALUES (:restaurant_id, :user_id, :rating, :comment, :created_at)",
+        params
     );
-
-    query.bindValue(":restaurant_id", restaurantId);
-    query.bindValue(":user_id", userId);
-    query.bindValue(":rating", rating);
-    query.bindValue(":comment", comment);
-    query.bindValue(":created_at", QDateTime::currentDateTime().toString(Qt::ISODate));
 
     if (query.exec()) {
         notifyRatingUpdate(restaurantId);
@@ -173,16 +182,19 @@ bool RestaurantManager::addRating(const QString& restaurantId, const QString& us
 
 QJsonArray RestaurantManager::getRestaurantRatings(const QString& restaurantId, int limit)
 {
-    QJsonArray ratings;
+    QVariantMap params;
+    params[":restaurant_id"] = restaurantId;
+    params[":limit"] = limit;
+
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT r.*, u.username FROM ratings r "
         "JOIN users u ON r.user_id = u.id "
         "WHERE r.restaurant_id = :restaurant_id "
         "ORDER BY r.created_at DESC "
-        "LIMIT :limit"
+        "LIMIT :limit",
+        params
     );
-    query.bindValue(":restaurant_id", restaurantId);
-    query.bindValue(":limit", limit);
+    QJsonArray ratings;
 
     if (query.exec()) {
         while (query.next()) {
@@ -236,7 +248,7 @@ QJsonArray RestaurantManager::searchRestaurants(const QString& query, const QJso
 {
     QJsonArray restaurants;
     QStringList conditions;
-    QVariantMap bindValues;
+    QVariantMap params;
 
     QString baseQuery = "SELECT r.*, "
                        "(SELECT AVG(rating) FROM ratings WHERE restaurant_id = r.id) as avg_rating, "
@@ -245,22 +257,22 @@ QJsonArray RestaurantManager::searchRestaurants(const QString& query, const QJso
 
     if (!query.isEmpty()) {
         conditions << "(r.name LIKE :query OR r.description LIKE :query)";
-        bindValues[":query"] = "%" + query + "%";
+        params[":query"] = "%" + query + "%";
     }
 
     if (filters.contains("category")) {
         conditions << "r.category = :category";
-        bindValues[":category"] = filters["category"].toString();
+        params[":category"] = filters["category"].toString();
     }
 
     if (filters.contains("min_rating")) {
         conditions << "(SELECT AVG(rating) FROM ratings WHERE restaurant_id = r.id) >= :min_rating";
-        bindValues[":min_rating"] = filters["min_rating"].toDouble();
+        params[":min_rating"] = filters["min_rating"].toDouble();
     }
 
     if (filters.contains("is_open")) {
         conditions << "r.is_open = :is_open";
-        bindValues[":is_open"] = filters["is_open"].toBool();
+        params[":is_open"] = filters["is_open"].toBool();
     }
 
     if (!conditions.isEmpty()) {
@@ -269,10 +281,7 @@ QJsonArray RestaurantManager::searchRestaurants(const QString& query, const QJso
 
     baseQuery += " ORDER BY avg_rating DESC, rating_count DESC";
 
-    QSqlQuery sqlQuery = m_dbManager->prepareQuery(baseQuery);
-    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
-        sqlQuery.bindValue(it.key(), it.value());
-    }
+    QSqlQuery sqlQuery = m_dbManager->prepareQuery(baseQuery, params);
 
     if (sqlQuery.exec()) {
         while (sqlQuery.next()) {
@@ -295,6 +304,11 @@ QJsonArray RestaurantManager::searchRestaurants(const QString& query, const QJso
 QJsonArray RestaurantManager::getNearbyRestaurants(double latitude, double longitude, double radius)
 {
     QJsonArray restaurants;
+    QVariantMap params;
+    params[":lat"] = latitude;
+    params[":lon"] = longitude;
+    params[":radius"] = radius;
+
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT r.*, "
         "(SELECT AVG(rating) FROM ratings WHERE restaurant_id = r.id) as avg_rating, "
@@ -303,12 +317,9 @@ QJsonArray RestaurantManager::getNearbyRestaurants(double latitude, double longi
         "POW(69.1 * (:lon - longitude) * COS(latitude / 57.3), 2)) AS distance "
         "FROM restaurants r "
         "HAVING distance < :radius "
-        "ORDER BY distance"
+        "ORDER BY distance",
+        params
     );
-
-    query.bindValue(":lat", latitude);
-    query.bindValue(":lon", longitude);
-    query.bindValue(":radius", radius);
 
     if (query.exec()) {
         while (query.next()) {
@@ -643,11 +654,7 @@ QString RestaurantManager::buildMenuItemSearchQuery(const QString& baseQuery, co
 QJsonArray RestaurantManager::executeSearchQuery(const QString& query, const QVariantMap& bindValues)
 {
     QJsonArray results;
-    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query);
-
-    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
-        sqlQuery.bindValue(it.key(), it.value());
-    }
+    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query, bindValues);
 
     if (sqlQuery.exec()) {
         while (sqlQuery.next()) {
@@ -670,11 +677,7 @@ QJsonArray RestaurantManager::executeSearchQuery(const QString& query, const QVa
 QJsonArray RestaurantManager::executeMenuItemSearchQuery(const QString& query, const QVariantMap& bindValues)
 {
     QJsonArray results;
-    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query);
-
-    for (auto it = bindValues.begin(); it != bindValues.end(); ++it) {
-        sqlQuery.bindValue(it.key(), it.value());
-    }
+    QSqlQuery sqlQuery = m_dbManager->prepareQuery(query, bindValues);
 
     if (sqlQuery.exec()) {
         while (sqlQuery.next()) {

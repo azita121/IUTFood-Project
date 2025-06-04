@@ -268,6 +268,8 @@ Makefile: ../../IUTFoodServer.pro C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++/qmake.c
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uiplugin.pri \
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uitools.pri \
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_websockets.pri \
+		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_websockets_private.pri \
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_widgets.pri \
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_widgets_private.pri \
 		C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_xml.pri \
@@ -294,6 +296,7 @@ Makefile: ../../IUTFoodServer.pro C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++/qmake.c
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/resources_functions.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/resources.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/moc.prf \
+		C:/Qt/6.8.2/mingw_64/mkspecs/features/win32/opengl.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/qmake_use.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/file_copies.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/testcase_targets.prf \
@@ -301,7 +304,10 @@ Makefile: ../../IUTFoodServer.pro C:/Qt/6.8.2/mingw_64/mkspecs/win32-g++/qmake.c
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/yacc.prf \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/lex.prf \
 		../../IUTFoodServer.pro \
+		C:/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl \
+		C:/Qt/6.8.2/mingw_64/lib/Qt6WebSockets.prl \
 		C:/Qt/6.8.2/mingw_64/lib/Qt6Network.prl \
+		C:/Qt/6.8.2/mingw_64/lib/Qt6Sql.prl \
 		C:/Qt/6.8.2/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.8.2/mingw_64/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\..\IUTFoodServer.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -503,6 +509,8 @@ C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_tools_private.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uiplugin.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uitools.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_uitools_private.pri:
+C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_websockets.pri:
+C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_websockets_private.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_widgets.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_widgets_private.pri:
 C:/Qt/6.8.2/mingw_64/mkspecs/modules/qt_lib_xml.pri:
@@ -529,6 +537,7 @@ C:/Qt/6.8.2/mingw_64/mkspecs/features/qt.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/resources_functions.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/resources.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/moc.prf:
+C:/Qt/6.8.2/mingw_64/mkspecs/features/win32/opengl.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/qmake_use.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/file_copies.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/testcase_targets.prf:
@@ -536,7 +545,10 @@ C:/Qt/6.8.2/mingw_64/mkspecs/features/exceptions.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/yacc.prf:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/lex.prf:
 ../../IUTFoodServer.pro:
+C:/Qt/6.8.2/mingw_64/lib/Qt6Gui.prl:
+C:/Qt/6.8.2/mingw_64/lib/Qt6WebSockets.prl:
 C:/Qt/6.8.2/mingw_64/lib/Qt6Network.prl:
+C:/Qt/6.8.2/mingw_64/lib/Qt6Sql.prl:
 C:/Qt/6.8.2/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.8.2/mingw_64/mkspecs/features/build_pass.prf:
 qmake: FORCE

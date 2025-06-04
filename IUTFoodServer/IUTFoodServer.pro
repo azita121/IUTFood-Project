@@ -1,6 +1,7 @@
-QT += core network sql websockets
+# QT += core network sql websockets
 CONFIG += c++17 console
 CONFIG -= app_bundle
+QT += core websockets sql
 
 TEMPLATE = app
 

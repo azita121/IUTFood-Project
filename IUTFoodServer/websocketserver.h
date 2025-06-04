@@ -17,10 +17,12 @@ class WebSocketServer : public QObject
 
 public:
     static WebSocketServer* getInstance();
-    bool start(quint16 port = 8080);
+    bool start(quint16 port);
     void stop();
     void broadcastOrderUpdate(const QString& orderId, const QString& status);
     void sendChatMessage(const QString& fromUserId, const QString& toUserId, const QString& message);
+    void broadcastToUser(const QString& userId, const QJsonObject& message);
+    void broadcastToRestaurant(const QString& restaurantId, const QJsonObject& message);
 
 private:
     explicit WebSocketServer(QObject *parent = nullptr);
@@ -30,6 +32,8 @@ private:
     QWebSocketServer* m_server;
     QMap<QString, QWebSocket*> m_clients; // userId -> WebSocket
     AuthSystem* m_authSystem;
+    QMap<QString, QString> m_userSessions;
+    QMap<QString, QString> m_restaurantSessions;
 
     void handleNewConnection();
     void handleTextMessage(const QString& message, QWebSocket* client);
@@ -38,8 +42,7 @@ private:
     void handleChatMessage(const QJsonObject& message);
     void handleOrderUpdate(const QJsonObject& message);
     void sendError(QWebSocket* client, const QString& error);
-    void broadcastToUser(const QString& userId, const QJsonObject& message);
-    void broadcastToRestaurant(const QString& restaurantId, const QJsonObject& message);
+    void broadcastToAll(const QJsonObject& message);
 };
 
 #endif // WEBSOCKETSERVER_H 

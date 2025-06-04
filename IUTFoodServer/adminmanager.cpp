@@ -3,6 +3,7 @@
 #include <QUuid>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <websocketserver.h>
 
 AdminManager* AdminManager::instance = nullptr;
 
@@ -89,9 +90,11 @@ bool AdminManager::reactivateRestaurant(const QString& restaurantId)
 QJsonArray AdminManager::getPendingRestaurants()
 {
     QJsonArray restaurants;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT * FROM restaurants WHERE status = 'pending' ORDER BY created_at DESC"
-    );
+    ,
+        params);
 
     while (query.next()) {
         QJsonObject restaurant;
@@ -109,9 +112,11 @@ QJsonArray AdminManager::getPendingRestaurants()
 QJsonArray AdminManager::getSuspendedRestaurants()
 {
     QJsonArray restaurants;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT * FROM restaurants WHERE status = 'suspended' ORDER BY suspended_at DESC"
-    );
+    ,
+        params);
 
     while (query.next()) {
         QJsonObject restaurant;
@@ -130,11 +135,12 @@ bool AdminManager::blockUser(const QString& userId, const QString& reason)
 {
     QVariantMap updates;
     updates["status"] = "blocked";
+    updates["blocked_at"] = QDateTime::currentDateTime();
     updates["block_reason"] = reason;
-    updates["blocked_at"] = QDateTime::currentDateTime().toString(Qt::ISODate);
 
-    if (m_dbManager->updateUser(userId, updates)) {
-        logAdminAction("system", "user_blocked", userId + ": " + reason);
+    if (m_dbManager->updateCustomer(userId, updates)) {
+        // logAdminAction("block_user", QString("Blocked user %1: %2").arg(userId, reason));
+        logAdminAction("system", "block_user", QString("Blocked user %1: %2").arg(userId, reason));
         return true;
     }
     return false;
@@ -144,10 +150,12 @@ bool AdminManager::unblockUser(const QString& userId)
 {
     QVariantMap updates;
     updates["status"] = "active";
-    updates["unblocked_at"] = QDateTime::currentDateTime().toString(Qt::ISODate);
+    updates["blocked_at"] = QVariant();
+    updates["block_reason"] = QVariant();
 
-    if (m_dbManager->updateUser(userId, updates)) {
-        logAdminAction("system", "user_unblocked", userId);
+    if (m_dbManager->updateCustomer(userId, updates)) {
+        // logAdminAction("unblock_user", QString("Unblocked user %1").arg(userId));
+        logAdminAction("system", "unblock_user", QString("Unblocked user %1").arg(userId));
         return true;
     }
     return false;
@@ -156,9 +164,11 @@ bool AdminManager::unblockUser(const QString& userId)
 QJsonArray AdminManager::getBlockedUsers()
 {
     QJsonArray users;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT * FROM users WHERE status = 'blocked' ORDER BY blocked_at DESC"
-    );
+    ,
+        params);
 
     while (query.next()) {
         QJsonObject user;
@@ -176,9 +186,11 @@ QJsonArray AdminManager::getBlockedUsers()
 QJsonArray AdminManager::getAllUsers()
 {
     QJsonArray users;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT * FROM users ORDER BY created_at DESC"
-    );
+    ,
+        params);
 
     while (query.next()) {
         QJsonObject user;
@@ -199,14 +211,15 @@ QJsonObject AdminManager::getSalesReport(const QDateTime& startDate, const QDate
 {
     QJsonObject report;
     QJsonArray salesData;
-
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT DATE(created_at) as date, COUNT(*) as order_count, SUM(total_amount) as total_sales "
         "FROM orders "
         "WHERE created_at BETWEEN :start_date AND :end_date "
         "GROUP BY DATE(created_at) "
         "ORDER BY date"
-    );
+    ,
+        params);
     query.bindValue(":start_date", startDate.toString(Qt::ISODate));
     query.bindValue(":end_date", endDate.toString(Qt::ISODate));
 
@@ -231,6 +244,7 @@ QJsonObject AdminManager::getRestaurantPerformanceReport(const QString& restaura
     QJsonObject report;
     QJsonArray performanceData;
 
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT o.created_at, o.total_amount, o.status, "
         "COUNT(oi.id) as item_count, "
@@ -240,7 +254,8 @@ QJsonObject AdminManager::getRestaurantPerformanceReport(const QString& restaura
         "WHERE o.restaurant_id = :restaurant_id "
         "GROUP BY o.id "
         "ORDER BY o.created_at DESC"
-    );
+    ,
+        params);
     query.bindValue(":restaurant_id", restaurantId);
 
     while (query.next()) {
@@ -266,12 +281,14 @@ QJsonObject AdminManager::getSystemAnalytics()
     QJsonObject analytics;
 
     // Get total users
+    QVariantMap params;
     QSqlQuery userQuery = m_dbManager->prepareQuery(
         "SELECT COUNT(*) as total_users, "
         "SUM(CASE WHEN user_type = 'customer' THEN 1 ELSE 0 END) as total_customers, "
         "SUM(CASE WHEN user_type = 'restaurant' THEN 1 ELSE 0 END) as total_restaurants "
         "FROM users"
-    );
+    ,
+        params);
     if (userQuery.next()) {
         analytics["total_users"] = userQuery.value("total_users").toInt();
         analytics["total_customers"] = userQuery.value("total_customers").toInt();
@@ -284,7 +301,8 @@ QJsonObject AdminManager::getSystemAnalytics()
         "SUM(total_amount) as total_revenue, "
         "AVG(total_amount) as avg_order_value "
         "FROM orders"
-    );
+    ,
+        params);
     if (orderQuery.next()) {
         analytics["total_orders"] = orderQuery.value("total_orders").toInt();
         analytics["total_revenue"] = orderQuery.value("total_revenue").toDouble();
@@ -297,6 +315,7 @@ QJsonObject AdminManager::getSystemAnalytics()
 QJsonArray AdminManager::getTopSellingItems(const QDateTime& startDate, const QDateTime& endDate)
 {
     QJsonArray items;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT mi.name, COUNT(oi.id) as order_count, SUM(oi.quantity) as total_quantity "
         "FROM order_items oi "
@@ -306,7 +325,8 @@ QJsonArray AdminManager::getTopSellingItems(const QDateTime& startDate, const QD
         "GROUP BY mi.id, mi.name "
         "ORDER BY total_quantity DESC "
         "LIMIT 10"
-    );
+    ,
+        params);
     query.bindValue(":start_date", startDate.toString(Qt::ISODate));
     query.bindValue(":end_date", endDate.toString(Qt::ISODate));
 
@@ -324,6 +344,7 @@ QJsonArray AdminManager::getTopSellingItems(const QDateTime& startDate, const QD
 QJsonArray AdminManager::getMostActiveUsers(const QDateTime& startDate, const QDateTime& endDate)
 {
     QJsonArray users;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT u.username, COUNT(o.id) as order_count, SUM(o.total_amount) as total_spent "
         "FROM users u "
@@ -332,7 +353,8 @@ QJsonArray AdminManager::getMostActiveUsers(const QDateTime& startDate, const QD
         "GROUP BY u.id, u.username "
         "ORDER BY order_count DESC "
         "LIMIT 10"
-    );
+    ,
+        params);
     query.bindValue(":start_date", startDate.toString(Qt::ISODate));
     query.bindValue(":end_date", endDate.toString(Qt::ISODate));
 
@@ -350,6 +372,7 @@ QJsonArray AdminManager::getMostActiveUsers(const QDateTime& startDate, const QD
 QJsonArray AdminManager::getMostPopularRestaurants(const QDateTime& startDate, const QDateTime& endDate)
 {
     QJsonArray restaurants;
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT r.name, COUNT(o.id) as order_count, SUM(o.total_amount) as total_revenue "
         "FROM restaurants r "
@@ -358,7 +381,8 @@ QJsonArray AdminManager::getMostPopularRestaurants(const QDateTime& startDate, c
         "GROUP BY r.id, r.name "
         "ORDER BY order_count DESC "
         "LIMIT 10"
-    );
+    ,
+        params);
     query.bindValue(":start_date", startDate.toString(Qt::ISODate));
     query.bindValue(":end_date", endDate.toString(Qt::ISODate));
 
@@ -383,9 +407,11 @@ void AdminManager::broadcastReport(const QString& reportType, const QJsonObject&
     message["timestamp"] = QDateTime::currentDateTime().toString(Qt::ISODate);
 
     // Get all active users
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "SELECT id FROM users WHERE status = 'active'"
-    );
+    ,
+        params);
 
     while (query.next()) {
         QString userId = query.value("id").toString();
@@ -413,10 +439,12 @@ QString AdminManager::generateReportId()
 
 void AdminManager::logAdminAction(const QString& adminId, const QString& action, const QString& details)
 {
+    QVariantMap params;
     QSqlQuery query = m_dbManager->prepareQuery(
         "INSERT INTO admin_logs (admin_id, action, details, created_at) "
         "VALUES (:admin_id, :action, :details, :created_at)"
-    );
+    ,
+        params);
     query.bindValue(":admin_id", adminId);
     query.bindValue(":action", action);
     query.bindValue(":details", details);
@@ -479,4 +507,4 @@ QJsonObject AdminManager::generateRestaurantPerformanceChart(const QJsonArray& p
     chart["revenue"] = revenue;
     chart["orders"] = orders;
     return chart;
-} 
+}

@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
 
     // Start server
     Server* server = Server::getInstance();
-    if (!server->startServer(8080)) {
-        qDebug() << "Failed to start server. Exiting...";
-        return 1;
+    if (!server->start(8080)) {
+        qDebug() << "Failed to start server";
+        return -1;
     }
 
     qDebug() << "IUT Food Server is running on port 8080";

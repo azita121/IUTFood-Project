@@ -31,14 +31,14 @@ QString AuthSystem::login(const QString& username, const QString& password)
     }
 
     // Get user from database
-    QString userId = dbManager->getUserId(username);
+    QString userId = dbManager->getCustomerId(username);
     if (userId.isEmpty()) {
         qDebug() << "User not found:" << username;
         return QString();
     }
 
     // Get stored password hash
-    QString storedHash = dbManager->getUserPasswordHash(userId);
+    QString storedHash = dbManager->getCustomerPasswordHash(userId);
     if (storedHash.isEmpty()) {
         qDebug() << "No password hash found for user:" << username;
         return QString();
@@ -56,7 +56,11 @@ QString AuthSystem::login(const QString& username, const QString& password)
     // Create session
     Session session;
     session.userId = userId;
-    session.userType = dbManager->getUserType(userId);
+    
+    // Determine user type by checking if user exists as restaurant owner
+    QString ownerId = dbManager->getRestaurantOwnerId(username);
+    session.userType = ownerId.isEmpty() ? "customer" : "restaurant_owner";
+    
     session.token = token;
     session.lastActivity = QDateTime::currentDateTime();
     
@@ -77,8 +81,16 @@ bool AuthSystem::registerUser(const QString& username, const QString& password, 
     // Hash the password
     QString hashedPassword = SecurityUtils::hashPassword(password);
 
-    // Create user in database
-    if (!dbManager->createUser(username, hashedPassword, email, userType)) {
+    bool success = false;
+    if (userType == "restaurant_owner") {
+        // Create restaurant owner
+        success = dbManager->createRestaurantOwner(username, "", email, hashedPassword, "", "");
+    } else {
+        // Create customer
+        success = dbManager->createCustomer(username, "", email, hashedPassword, "", "");
+    }
+
+    if (!success) {
         qDebug() << "Failed to create user:" << username;
         return false;
     }
@@ -179,7 +191,7 @@ bool AuthSystem::updateProfile(const QString& token, const QVariantMap& updates)
     }
 
     // Update user in database
-    if (!dbManager->updateUser(userId, updates)) {
+    if (!dbManager->updateCustomer(userId, updates)) {
         qDebug() << "Failed to update profile for user:" << userId;
         return false;
     }
@@ -203,7 +215,7 @@ bool AuthSystem::changePassword(const QString& token, const QString& oldPassword
     }
 
     // Verify old password
-    QString storedHash = dbManager->getUserPasswordHash(userId);
+    QString storedHash = dbManager->getCustomerPasswordHash(userId);
     if (!SecurityUtils::verifyPassword(oldPassword, storedHash)) {
         qDebug() << "Invalid old password";
         return false;
@@ -225,7 +237,7 @@ bool AuthSystem::deleteAccount(const QString& token)
     QString userId = getUserIdFromToken(token);
 
     // Delete user from database
-    if (!dbManager->deleteUser(userId)) {
+    if (!dbManager->deleteCustomer(userId)) {
         qDebug() << "Failed to delete account for user:" << userId;
         return false;
     }
