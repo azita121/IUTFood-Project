@@ -1,4 +1,5 @@
 #include "databasemanager.h"
+#include "logger.h"
 #include <QDebug>
 #include <QSqlError>
 #include <QSqlQuery>
@@ -36,12 +37,18 @@ bool DatabaseManager::connect(const QString& host, const QString& database, cons
     db.setUserName(username);
     db.setPassword(password);
 
+    Logger::getInstance()->info(QString("Attempting to connect to database: %1@%2/%3")
+        .arg(username)
+        .arg(host)
+        .arg(database), "DatabaseManager");
+
     if (!db.open()) {
-        qDebug() << "Database connection error:" << db.lastError().text();
+        logError("Connection", db.lastError());
         return false;
     }
 
     connected = true;
+    Logger::getInstance()->info("Database connected successfully", "DatabaseManager");
     return true;
 }
 
@@ -49,8 +56,9 @@ void DatabaseManager::disconnect()
 {
     if (db.isOpen()) {
         db.close();
+        connected = false;
+        Logger::getInstance()->info("Database disconnected", "DatabaseManager");
     }
-    connected = false;
 }
 
 bool DatabaseManager::isConnected() const
@@ -61,6 +69,11 @@ bool DatabaseManager::isConnected() const
 bool DatabaseManager::createCustomer(const QString& name, const QString& lastName, const QString& email,
                                    const QString& passwordHash, const QString& phone, const QString& address)
 {
+    Logger::getInstance()->debug(QString("Creating customer: %1 %2 (%3)")
+        .arg(name)
+        .arg(lastName)
+        .arg(email), "DatabaseManager");
+
     QVariantMap params;
     params[":name"] = name;
     params[":lastName"] = lastName;
@@ -72,7 +85,13 @@ bool DatabaseManager::createCustomer(const QString& name, const QString& lastNam
     QString query = "INSERT INTO customers (name, last_name, email, password_hash, phone, address) "
                    "VALUES (:name, :lastName, :email, :passwordHash, :phone, :address)";
 
-    return executeQuery(query, params);
+    bool success = executeQuery(query, params);
+    if (success) {
+        Logger::getInstance()->info(QString("Customer created successfully: %1").arg(email), "DatabaseManager");
+    } else {
+        Logger::getInstance()->error(QString("Failed to create customer: %1").arg(email), "DatabaseManager");
+    }
+    return success;
 }
 
 bool DatabaseManager::updateCustomer(const QString& customerId, const QVariantMap& updates)
@@ -151,6 +170,11 @@ QVariantMap DatabaseManager::getCustomerProfile(const QString& customerId)
 bool DatabaseManager::createRestaurantOwner(const QString& name, const QString& lastName, const QString& email,
                                           const QString& passwordHash, const QString& phone, const QString& restaurantId)
 {
+    Logger::getInstance()->debug(QString("Creating restaurant owner: %1 %2 (%3)")
+        .arg(name)
+        .arg(lastName)
+        .arg(email), "DatabaseManager");
+
     QVariantMap params;
     params[":name"] = name;
     params[":lastName"] = lastName;
@@ -162,7 +186,13 @@ bool DatabaseManager::createRestaurantOwner(const QString& name, const QString& 
     QString query = "INSERT INTO restaurant_owners (name, last_name, email, password_hash, phone, restaurant_id) "
                    "VALUES (:name, :lastName, :email, :passwordHash, :phone, :restaurantId)";
 
-    return executeQuery(query, params);
+    bool success = executeQuery(query, params);
+    if (success) {
+        Logger::getInstance()->info(QString("Restaurant owner created successfully: %1").arg(email), "DatabaseManager");
+    } else {
+        Logger::getInstance()->error(QString("Failed to create restaurant owner: %1").arg(email), "DatabaseManager");
+    }
+    return success;
 }
 
 bool DatabaseManager::updateRestaurantOwner(const QString& ownerId, const QVariantMap& updates)
@@ -344,7 +374,12 @@ bool DatabaseManager::deleteMenuItem(const QString& menuId, const QString& itemI
 
 bool DatabaseManager::createOrder(const QString& customerId, const QString& restaurantId, const QVariantList& items)
 {
+    Logger::getInstance()->debug(QString("Creating order for customer %1 at restaurant %2")
+        .arg(customerId)
+        .arg(restaurantId), "DatabaseManager");
+
     if (!beginTransaction()) {
+        Logger::getInstance()->error("Failed to begin transaction for order creation", "DatabaseManager");
         return false;
     }
 
@@ -364,6 +399,7 @@ bool DatabaseManager::createOrder(const QString& customerId, const QString& rest
         }
 
         QString orderId = db.lastInsertId().toString();
+        Logger::getInstance()->debug(QString("Order created with ID: %1").arg(orderId), "DatabaseManager");
 
         // Add order items
         for (const QVariant& item : items) {
@@ -386,10 +422,11 @@ bool DatabaseManager::createOrder(const QString& customerId, const QString& rest
             throw std::runtime_error("Failed to commit transaction");
         }
 
+        Logger::getInstance()->info(QString("Order %1 created successfully").arg(orderId), "DatabaseManager");
         return true;
     } catch (const std::exception& e) {
         rollbackTransaction();
-        qDebug() << "Error creating order:" << e.what();
+        Logger::getInstance()->error(QString("Error creating order: %1").arg(e.what()), "DatabaseManager");
         return false;
     }
 }
@@ -437,7 +474,17 @@ QSqlQuery DatabaseManager::prepareQuery(const QString& query, const QVariantMap&
 
 void DatabaseManager::logError(const QString& operation, const QSqlError& error)
 {
-    qDebug() << "Database error during" << operation << ":" << error.text();
+    QString errorMessage = QString("Database error during %1: %2 (Type: %3, Number: %4)")
+        .arg(operation)
+        .arg(error.text())
+        .arg(error.type())
+        .arg(error.number());
+
+    Logger::getInstance()->error(errorMessage, "DatabaseManager");
+
+    if (error.type() == QSqlError::ConnectionError) {
+        Logger::getInstance()->critical("Database connection error", "DatabaseManager");
+    }
 }
 
 bool DatabaseManager::beginTransaction()
