@@ -34,6 +34,7 @@ bool Server::start(quint16 tcpPort, quint16 wsPort)
         return false;
     }
 
+    // Connect signals to handler methods directly
     connect(m_tcpServer, &QTcpServer::newConnection, this, &Server::handleNewConnection);
     qDebug() << "TCP server started on port" << tcpPort;
 
@@ -57,7 +58,7 @@ void Server::stop()
     }
 
     m_wsServer->stop();
-    qDebug() << "Server stopped";
+        qDebug() << "Server stopped";
 }
 
 void Server::handleNewConnection()
@@ -105,9 +106,9 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         QString username = request["username"].toString();
         QString password = request["password"].toString();
         QString token = m_authSystem->login(username, password);
-
+        
         if (!token.isEmpty()) {
-            response["status"] = "success";
+        response["status"] = "success";
             response["token"] = token;
             m_clients[client] = m_authSystem->getUserIdFromToken(token);
         } else {
@@ -122,8 +123,8 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         QString userType = request["userType"].toString();
 
         if (m_authSystem->registerUser(username, password, email, userType)) {
-            response["status"] = "success";
-            response["message"] = "Registration successful";
+        response["status"] = "success";
+        response["message"] = "Registration successful";
         } else {
             response["status"] = "error";
             response["message"] = "Registration failed";

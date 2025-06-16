@@ -52,7 +52,7 @@ QString AuthSystem::login(const QString& username, const QString& password)
 
     // Generate session token
     QString token = SecurityUtils::generateSessionToken();
-    
+
     // Create session
     Session session;
     session.userId = userId;

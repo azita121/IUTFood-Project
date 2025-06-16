@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     // Initialize database connection
     DatabaseManager* dbManager = DatabaseManager::getInstance();
-    if (!dbManager->connect("localhost", "iutfood", "postgres", "your_password")) {
+    if (!dbManager->connect("", "iutfood.db", "", "")) {  // SQLite connection parameters
         qDebug() << "Failed to connect to database. Exiting...";
         return 1;
     }

@@ -26,7 +26,7 @@ class Server : public QObject
 
 public:
     static Server* getInstance();
-    bool start(quint16 tcpPort = 1234, quint16 wsPort = 8080);
+    bool start(quint16 tcpPort = 1234, quint16 wsPort = 8081);
     void stop();
 
 private:
@@ -54,11 +54,6 @@ signals:
     void clientConnected(QTcpSocket* client);
     void clientDisconnected(QTcpSocket* client);
     void messageReceived(QTcpSocket* client, const QByteArray& message);
-
-private slots:
-    void onNewConnection();
-    void onReadyRead();
-    void onClientDisconnected();
 };
 
 #endif // SERVER_H 

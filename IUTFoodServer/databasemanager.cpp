@@ -20,7 +20,7 @@ DatabaseManager::DatabaseManager(QObject *parent)
     : QObject(parent)
     , connected(false)
 {
-    db = QSqlDatabase::addDatabase("QMYSQL"); // Using MySQL
+    db = QSqlDatabase::addDatabase("QSQLITE"); // Using SQLite instead of MySQL
 }
 
 DatabaseManager::~DatabaseManager()

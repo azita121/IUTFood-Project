@@ -44,10 +44,7 @@ static constexpr auto qt_meta_stringdata_ZN6ServerE = QtMocHelpers::stringData(
     "client",
     "clientDisconnected",
     "messageReceived",
-    "message",
-    "onNewConnection",
-    "onReadyRead",
-    "onClientDisconnected"
+    "message"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -59,7 +56,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN6ServerE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,24 +64,14 @@ Q_CONSTINIT static const uint qt_meta_data_ZN6ServerE[] = {
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   50,    2, 0x06,    1 /* Public */,
-       5,    1,   53,    2, 0x06,    3 /* Public */,
-       6,    2,   56,    2, 0x06,    5 /* Public */,
-
- // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       8,    0,   61,    2, 0x08,    8 /* Private */,
-       9,    0,   62,    2, 0x08,    9 /* Private */,
-      10,    0,   63,    2, 0x08,   10 /* Private */,
+       1,    1,   32,    2, 0x06,    1 /* Public */,
+       5,    1,   35,    2, 0x06,    3 /* Public */,
+       6,    2,   38,    2, 0x06,    5 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, 0x80000000 | 3, QMetaType::QByteArray,    4,    7,
-
- // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
 
        0        // eod
 };
@@ -107,13 +94,7 @@ Q_CONSTINIT const QMetaObject Server::staticMetaObject = { {
         // method 'messageReceived'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QTcpSocket *, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QByteArray &, std::false_type>,
-        // method 'onNewConnection'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onReadyRead'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onClientDisconnected'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<const QByteArray &, std::false_type>
     >,
     nullptr
 } };
@@ -126,9 +107,6 @@ void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 0: _t->clientConnected((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1]))); break;
         case 1: _t->clientDisconnected((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1]))); break;
         case 2: _t->messageReceived((*reinterpret_cast< std::add_pointer_t<QTcpSocket*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[2]))); break;
-        case 3: _t->onNewConnection(); break;
-        case 4: _t->onReadyRead(); break;
-        case 5: _t->onClientDisconnected(); break;
         default: ;
         }
     }
@@ -203,14 +181,14 @@ int Server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 3;
     }
     return _id;
 }
