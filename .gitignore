@@ -1,0 +1,48 @@
+# Qt specific
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+*.qm
+*.moc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+Makefile*
+*build-*
+*.prl
+*.pri
+.qmake.cache
+.qmake.stash
+
+# Build directories
+build/
+IUTFoodServer/build/
+server/build/
+debug/
+release/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+*.log.*
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db 
