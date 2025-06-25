@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVariantMap>
 #include <QVariantList>
-#include <memory>
+// #include <memory>
 
 class DatabaseManager : public QObject
 {

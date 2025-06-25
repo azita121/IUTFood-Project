@@ -20,7 +20,7 @@ DatabaseManager::DatabaseManager(QObject *parent)
     : QObject(parent)
     , connected(false)
 {
-    db = QSqlDatabase::addDatabase("QSQLITE"); // Using SQLite instead of MySQL
+    db = QSqlDatabase::addDatabase("QSQLITE");
 }
 
 DatabaseManager::~DatabaseManager()
@@ -119,7 +119,7 @@ bool DatabaseManager::deleteCustomer(const QString& customerId)
     QString query = "DELETE FROM customers WHERE id = :id";
     return executeQuery(query, params);
 }
-
+//if you wnt to login by phon number change email to ph num
 QString DatabaseManager::getCustomerId(const QString& email)
 {
     QVariantMap params;

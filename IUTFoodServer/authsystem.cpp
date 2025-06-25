@@ -1,6 +1,7 @@
 #include "authsystem.h"
 #include <QDebug>
 #include <QRegularExpression>
+#include "securityutils.h"
 
 AuthSystem* AuthSystem::instance = nullptr;
 
@@ -28,6 +29,25 @@ QString AuthSystem::login(const QString& username, const QString& password)
     // Validate input
     if (!validateUsername(username) || !validatePassword(password)) {
         return QString();
+    }
+
+    // Check for hardcoded admin login
+    if (username == "admin" && password == "admin") {
+        // Generate session token
+        QString token = SecurityUtils::generateSessionToken();
+
+        // Create admin session
+        Session session;
+        session.userId = "admin"; // Use "admin" as the admin user ID
+        session.userType = "admin";
+        session.token = token;
+        session.lastActivity = QDateTime::currentDateTime();
+        
+        // Store session
+        activeSessions[token] = session;
+
+        qDebug() << "Admin logged in successfully";
+        return token;
     }
 
     // Get user from database
@@ -177,6 +197,13 @@ bool AuthSystem::updateProfile(const QString& token, const QVariantMap& updates)
     }
 
     QString userId = getUserIdFromToken(token);
+    QString userType = getUserTypeFromToken(token);
+
+    // Admin users don't have database profiles, so skip updates
+    if (userType == "admin") {
+        qDebug() << "Admin profile updates are not supported";
+        return false;
+    }
 
     // Validate updates
     if (updates.contains("password")) {
@@ -250,12 +277,22 @@ bool AuthSystem::deleteAccount(const QString& token)
 
 bool AuthSystem::validatePassword(const QString& password) const
 {
+    // Special case for admin password
+    if (password == "admin") {
+        return true;
+    }
+    
     // Password must be at least 8 characters long and contain at least one number
     return password.length() >= 8 && password.contains(QRegularExpression("\\d"));
 }
 
 bool AuthSystem::validateUsername(const QString& username) const
 {
+    // Special case for admin username
+    if (username == "admin") {
+        return true;
+    }
+    
     // Username must be 3-20 characters long and contain only letters, numbers, and underscores
     return username.length() >= 3 && username.length() <= 20 &&
            username.contains(QRegularExpression("^[a-zA-Z0-9_]+$"));
