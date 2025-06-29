@@ -1,0 +1,6 @@
+[2025-06-29 11:17:27.738] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-06-29 11:17:27.738] [INFO] [DatabaseManager] Database connected successfully
+[2025-06-29 11:59:42.779] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-06-29 11:59:42.780] [INFO] [DatabaseManager] Database connected successfully
+[2025-06-29 13:59:42.015] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-06-29 13:59:42.016] [INFO] [DatabaseManager] Database connected successfully
