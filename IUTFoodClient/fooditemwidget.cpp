@@ -15,7 +15,7 @@ FoodItemWidget::~FoodItemWidget()
 
 void FoodItemWidget::setFoodData(const MenuItem& item)
 {
-    ui->label_5->setText(item.name);
-    ui->label_7->setText(QString::number(item.price));
-    ui->label_6->setText(item.detail);
+    ui->label_foodname->setText(item.name);
+    ui->label_foodprice->setText(QString::number(item.price));
+    ui->label_fooddetails->setText(item.detail);
 }

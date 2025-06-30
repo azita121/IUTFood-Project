@@ -17,9 +17,9 @@ void restaurantitem::setRestaurantData(const Restaurant& data)
 {
     restaurantData = data;
 
-    ui->label_5->setText(data.name);
-    ui->label_6->setText(data.type);
-    ui->label_7->setText(data.location);
+    ui->label_restaurantName->setText(data.name);
+    ui->label_restaurantType->setText(data.type);
+    ui->label_restaurantLocation->setText(data.location);
 
 }
 

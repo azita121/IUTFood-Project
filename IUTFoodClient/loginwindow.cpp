@@ -7,8 +7,8 @@ logInWindow::logInWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->lineEditPassword->setEchoMode(QLineEdit::Password);
-    ui->lineEditPassword_2->setEchoMode(QLineEdit::Password);
-    ui->lineEditRepeatPassword->setEchoMode(QLineEdit::Password);
+    ui->lineEditNewPassword->setEchoMode(QLineEdit::Password);
+    ui->lineEditRepeatNewPassword->setEchoMode(QLineEdit::Password);
 
     foreach (QLineEdit *edit, findChildren<QLineEdit*>()) {
         edit->installEventFilter(this);
@@ -94,7 +94,7 @@ void logInWindow::on_eyePass_clicked()
     static bool isVisible = false;
     isVisible = !isVisible;
 
-    ui->lineEditPassword_2->setEchoMode(
+    ui->lineEditNewPassword->setEchoMode(
         isVisible ? QLineEdit::Normal : QLineEdit::Password
         );
 
@@ -109,7 +109,7 @@ void logInWindow::on_eyeReap_clicked()
     static bool isVisible = false;
     isVisible = !isVisible;
 
-    ui->lineEditRepeatPassword->setEchoMode(
+    ui->lineEditRepeatNewPassword->setEchoMode(
         isVisible ? QLineEdit::Normal : QLineEdit::Password
         );
 

@@ -1,6 +1,7 @@
 #ifndef CUSTOMERMENU_H
 #define CUSTOMERMENU_H
 #include "restaurantitem.h"
+#include <QStandardItemModel>
 
 #include <QWidget>
 
@@ -23,6 +24,9 @@ private slots:
 
 private:
     Ui::CustomerMenu *ui;
+    QList<Restaurant> allRestaurants;
+    void applyFilters();
+    void resetFilters();
 };
 
 #endif // CUSTOMERMENU_H

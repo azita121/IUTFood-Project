@@ -477,7 +477,7 @@ border-top-right-radius: 50px;</string>
        <string>Forgot Password</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
+     <widget class="QLineEdit" name="lineEdit_forgotName">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -504,7 +504,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_21">
+     <widget class="QLineEdit" name="lineEdit_forgotLName">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -531,7 +531,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Last Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_22">
+     <widget class="QLineEdit" name="lineEdit_forgotEmail">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -559,7 +559,7 @@ color:rgba(0, 0, 0, 240);
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_23">
+     <widget class="QLineEdit" name="lineEdit_forgotPhoneNumber">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -690,7 +690,7 @@ border-top-right-radius: 50px;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEditPassword_2">
+     <widget class="QLineEdit" name="lineEditNewPassword">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -717,7 +717,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEditRepeatPassword">
+     <widget class="QLineEdit" name="lineEditRepeatNewPassword">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -955,12 +955,12 @@ border-bottom-left-radius: 50px;</string>
        <string>Sign Up</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="comboBox_SignCustomerLocation">
       <property name="geometry">
        <rect>
         <x>50</x>
         <y>280</y>
-        <width>101</width>
+        <width>190</width>
         <height>31</height>
        </rect>
       </property>
@@ -1110,7 +1110,7 @@ QComboBox::down-arrow {
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="signUpButton_3">
+     <widget class="QPushButton" name="signUpCustomerButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1127,7 +1127,7 @@ QComboBox::down-arrow {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#signUpButton_3 {
+       <string notr="true">QPushButton#signUpCustomerButton {
     background-color: rgba(30, 60, 45, 255);    
     color: #F0F8F2;                        
     border: none;
@@ -1135,11 +1135,11 @@ QComboBox::down-arrow {
     padding: 6px 20px;
 }
 
-QPushButton#signUpButton_3:hover {
+QPushButton#signUpCustomerButton:hover {
     background-color: rgba(45, 80, 60, 255);    
 }
 
-QPushButton#signUpButton_3:pressed {
+QPushButton#signUpCustomerButton:pressed {
     background-color: rgba(20, 40, 30, 255);    
     padding-left: 8px;
     padding-top: 8px;
@@ -1201,7 +1201,7 @@ border-top-right-radius:50px;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
+     <widget class="QLineEdit" name="lineEdit_SignCustomerName">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1220,7 +1220,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_11">
+     <widget class="QLineEdit" name="lineEdit_SignCustomerLName">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -1239,7 +1239,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Last Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_12">
+     <widget class="QLineEdit" name="lineEdit_SignCustomerEmail">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1258,7 +1258,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_13">
+     <widget class="QLineEdit" name="lineEdit_SignCustomerPhoneNumber">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1277,7 +1277,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Phone Number</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_14">
+     <widget class="QLineEdit" name="lineEdit_SignCustomerPassword">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1294,25 +1294,6 @@ color:rgba(0, 0, 0, 240);</string>
       </property>
       <property name="placeholderText">
        <string>Password</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_15">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>270</y>
-        <width>81</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);</string>
-      </property>
-      <property name="placeholderText">
-       <string>Location</string>
       </property>
      </widget>
     </widget>
@@ -1404,12 +1385,12 @@ border-bottom-left-radius: 50px;</string>
        <string>Sign Up</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="comboBox_SignOwnerLocation">
       <property name="geometry">
        <rect>
         <x>50</x>
         <y>350</y>
-        <width>101</width>
+        <width>190</width>
         <height>31</height>
        </rect>
       </property>
@@ -1559,7 +1540,7 @@ QComboBox::down-arrow {
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="signUpButton">
+     <widget class="QPushButton" name="signUpOwnerButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1576,7 +1557,7 @@ QComboBox::down-arrow {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#signUpButton {
+       <string notr="true">QPushButton#signUpOwnerButton {
     background-color: rgba(30, 60, 45, 255);    
     color: #F0F8F2;                        
     border: none;
@@ -1584,11 +1565,11 @@ QComboBox::down-arrow {
     padding: 6px 20px;
 }
 
-QPushButton#signUpButton:hover {
+QPushButton#signUpOwnerButton:hover {
     background-color: rgba(45, 80, 60, 255);    
 }
 
-QPushButton#signUpButton:pressed {
+QPushButton#signUpOwnerButton:pressed {
     background-color: rgba(20, 40, 30, 255);    
     padding-left: 8px;
     padding-top: 8px;
@@ -1616,7 +1597,7 @@ QPushButton#signUpButton:pressed {
         <normaloff>:/images/left-arrow.png</normaloff>:/images/left-arrow.png</iconset>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_10">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerName">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1635,7 +1616,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_16">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerLName">
       <property name="geometry">
        <rect>
         <x>150</x>
@@ -1654,7 +1635,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Last Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_17">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerEmail">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1673,7 +1654,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_18">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerPhoneNumber">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1692,7 +1673,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Phone Number</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_19">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerRestaurantName">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1711,7 +1692,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Name of the restaurant</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_20">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerRestaurantNumber">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1730,7 +1711,7 @@ color:rgba(0, 0, 0, 240);</string>
        <string>Restaurant Number</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_24">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerPassword">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1747,25 +1728,6 @@ color:rgba(0, 0, 0, 240);</string>
       </property>
       <property name="placeholderText">
        <string>Password</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_25">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>340</y>
-        <width>90</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);</string>
-      </property>
-      <property name="placeholderText">
-       <string>Location</string>
       </property>
      </widget>
     </widget>

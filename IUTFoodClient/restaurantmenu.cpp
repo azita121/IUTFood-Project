@@ -11,7 +11,7 @@ RestaurantMenu::RestaurantMenu(const Restaurant& r, QWidget *parent)
     ui->verticalLayout->setContentsMargins(0, 0, 0, 0);
 
     //this->setStyleSheet("background-image: url(:/images/finalback.jpg); background-repeat: no-repeat; background-position: center;");
-    ui->label_5->setText(r.name);  // فرض بر اینه label داری
+    ui->RestaurantName->setText(r.name);  // فرض بر اینه label داری
     // ui->locationLabel->setText(r.location);
     // ui->typeLabel->setText(r.type);
 

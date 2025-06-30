@@ -70,7 +70,7 @@ border-top-right-radius: 50px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="label_foodname">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -103,7 +103,7 @@ border-top-right-radius: 50px;</string>
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="label_fooddetails">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -136,7 +136,7 @@ border-top-right-radius: 50px;</string>
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="label_foodprice">
    <property name="geometry">
     <rect>
      <x>180</x>
