@@ -13,5 +13,11 @@
         <file>rotation-lock.png</file>
         <file>visible.png</file>
         <file>eye (2).png</file>
+        <file>backgroundmenu.jpg</file>
+        <file>backgroundmenu2.jpg</file>
+        <file>minibackgroundmenu.jpg</file>
+        <file>arrow_back_ios_44dp_3E4828_FILL0_wght400_GRAD0_opsz48.png</file>
+        <file>finalback.jpg</file>
+        <file>plus icon.png</file>
     </qresource>
 </RCC>

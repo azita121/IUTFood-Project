@@ -133,3 +133,11 @@ bool logInWindow::eventFilter(QObject *obj, QEvent *event)
     return QMainWindow::eventFilter(obj, event);
 }
 
+
+void logInWindow::on_loginButton_clicked()
+{
+    CustomerMenu* menu = new CustomerMenu(this);
+    menu->setAttribute(Qt::WA_DeleteOnClose);
+    menu->show();
+}
+
