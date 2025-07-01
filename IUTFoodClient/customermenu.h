@@ -16,17 +16,28 @@ class CustomerMenu : public QWidget
 public:
     explicit CustomerMenu(QWidget *parent = nullptr);
     ~CustomerMenu();
+    void showCartPage();
 
 private slots:
     void on_shoppingCartButton_clicked();
 
     void on_HistoryButton_clicked();
 
+    void on_homeButton_2_clicked();
+
+    void on_HistoryButton_2_clicked();
+
+    void on_shoppingCartButton_3_clicked();
+
+    void on_homeButton_3_clicked();
+
 private:
     Ui::CustomerMenu *ui;
     QList<Restaurant> allRestaurants;
     void applyFilters();
     void resetFilters();
+    QList<MenuItem> cartItems;
+
 };
 
 #endif // CUSTOMERMENU_H

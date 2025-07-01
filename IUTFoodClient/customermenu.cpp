@@ -180,12 +180,12 @@ CustomerMenu::~CustomerMenu()
 
 void CustomerMenu::on_shoppingCartButton_clicked()
 {
-    // ui->stackedWidget->
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void CustomerMenu::on_HistoryButton_clicked()
 {
-
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void CustomerMenu::applyFilters()
@@ -252,4 +252,55 @@ void CustomerMenu::resetFilters()
     ui->locationComboBox->setCurrentIndex(0);
     ui->priceComboBox->setCurrentIndex(0);
     applyFilters();  // برگردیم به حالت اولیه
+}
+
+
+
+void CustomerMenu::on_homeButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void CustomerMenu::on_HistoryButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void CustomerMenu::on_shoppingCartButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void CustomerMenu::on_homeButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void CustomerMenu::showCartPage()
+{
+    ui->stackedWidget->setCurrentIndex(2);  // فرض: index 2 = صفحه سبد خرید
+
+    // پاک کردن قبلی‌ها
+    QLayoutItem* item;
+    while ((item = ui->cartLayout->takeAt(0)) != nullptr) {
+        if (item->widget()) item->widget()->deleteLater();
+        delete item;
+    }
+
+    // نمایش آیتم‌ها
+    for (const MenuItem& m : cartItems) {
+        FoodItemWidget* widget = new FoodItemWidget(m, this);
+        widget->setInCartMode(true);  // دکمه رو بکن minus
+
+        // حذف از سبد خرید
+        connect(widget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
+            cartItems.removeOne(removedItem);
+            showCartPage();  // بازسازی مجدد
+        });
+
+        ui->cartLayout->addWidget(widget);
+    }
 }

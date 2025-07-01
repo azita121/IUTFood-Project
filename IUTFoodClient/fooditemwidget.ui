@@ -203,11 +203,11 @@ border-top-right-radius: 50px;</string>
     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QToolButton" name="addFoodButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>15</y>
+     <x>280</x>
+     <y>10</y>
      <width>25</width>
      <height>27</height>
     </rect>
