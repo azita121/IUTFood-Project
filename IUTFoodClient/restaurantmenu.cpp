@@ -25,7 +25,13 @@ RestaurantMenu::RestaurantMenu(const Restaurant& r, QWidget *parent)
         foodWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         foodWidget->setMinimumHeight(80);
         ui->verticalLayout->addWidget(foodWidget);
+
+        connect(foodWidget, &FoodItemWidget::foodAdded, this, [=](const MenuItem& item){
+            emit foodAddedToCart(item);  // این سیگنال رو در RestaurantMenu تعریف کرده‌ای
+        });
+
     }
+
 }
 
 RestaurantMenu::~RestaurantMenu()

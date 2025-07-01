@@ -50,10 +50,10 @@ void logInWindow::on_Forgotback_clicked()
 }
 
 
-void logInWindow::on_Setback_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(0);
-}
+// void logInWindow::on_Setback_clicked()
+// {
+//     ui->stackedWidget->setCurrentIndex(0);
+// }
 
 
 void logInWindow::on_resetButton_clicked()
@@ -136,8 +136,15 @@ bool logInWindow::eventFilter(QObject *obj, QEvent *event)
 
 void logInWindow::on_loginButton_clicked()
 {
-    CustomerMenu* menu = new CustomerMenu(this);
+    CustomerMenu* menu = new CustomerMenu(nullptr);
     menu->setAttribute(Qt::WA_DeleteOnClose);
     menu->show();
+    this->close();
 }
+
+
+// void logInWindow::on_customerButton_triggered(QAction *arg1)
+// {
+
+// }
 

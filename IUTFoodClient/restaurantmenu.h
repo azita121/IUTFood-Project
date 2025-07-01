@@ -18,6 +18,9 @@ public:
     ~RestaurantMenu();
     // void setRestaurantData(const Restaurant& r);
 
+signals:
+    void foodAddedToCart(const MenuItem& item);
+
 private:
     Ui::RestaurantMenu *ui;
     Restaurant currentRestaurant;

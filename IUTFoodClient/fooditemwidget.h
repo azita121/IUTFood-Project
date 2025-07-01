@@ -20,6 +20,10 @@ public:
     void setInCartMode(bool cart);
 
 private slots:
+    // void on_addFoodButton_triggered(QAction *arg1);
+
+    // void on_addFoodButton_clicked();
+
     void on_addFoodButton_triggered(QAction *arg1);
 
 signals:

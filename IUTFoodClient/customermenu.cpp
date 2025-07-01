@@ -8,6 +8,117 @@ CustomerMenu::CustomerMenu(QWidget *parent)
 {
     ui->setupUi(this);
 
+    for (int i = 0; i < ui->stackedWidget->count(); ++i) {
+        qDebug() << "Index:" << i << "Widget:" << ui->stackedWidget->widget(i)->objectName();
+    }
+
+    // ایجاد ScrollArea سبد خرید
+    // scrollArea_cart = new QScrollArea(this);
+    // scrollArea_cart->setWidgetResizable(true);        // خیلی مهمه
+    // scrollArea_cart->setFrameShape(QFrame::NoFrame);  // ظاهری تمیزتر
+    // scrollArea_cart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);  // فقط عمودی
+    // // scrollArea_cart->setGeometry(QRect(50, 80, 600, 500));
+    // scrollArea_cart->setStyleSheet("background-color: rgba(255, 0, 0, 50);"); // شفاف قرمز
+    // the hole page is red....././..../......../..././.......
+
+    // scrollArea_cart = new QScrollArea(this);
+    // scrollArea_cart->setGeometry(50, 100, 100, 100); // (x, y, width, height)
+    // scrollArea_cart->setWidgetResizable(true);
+    // scrollArea_cart->setFrameShape(QFrame::NoFrame);
+    // scrollArea_cart->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    // scrollArea_cart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // scrollArea_cart->setStyleSheet("background-color: red;"); // فقط برای تست
+
+    // // ساخت ویجت داخلی برای قرار گرفتن در اسکرول
+    // cartContainer = new QWidget();
+    // cartContainer->setMinimumSize(100, 200);
+    // cartLayout = new QVBoxLayout(cartContainer);
+    // cartContainer->setLayout(cartLayout);
+
+    // cartContainer->setMinimumSize(400, 600);  // ← اینو می‌تونی تنظیم کنی
+    // scrollArea_cart->setMinimumSize(420, 620);  // ← خود اسکرول اریا هم سایز داشته باشه
+
+    // // // حداقل ارتفاع تنظیم شه تا اسکرول فعال شه
+    // // cartContainer->setMinimumHeight(1);
+    // // cartContainer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+    // // اتصال به ScrollArea
+    // scrollArea_cart->setWidget(cartContainer);
+
+    // // حالا اضافه کردن به layout اصلی صفحه مثلاً:
+    // ui->stackedWidget->insertWidget(1, scrollArea_cart); // یا هرجایی که می‌خوای نمایش بدی
+
+    // ساخت ScrollArea    with widget.../.././..//././
+    // scrollArea_cart = new QScrollArea(ui->cartScrollHolder);
+    // scrollArea_cart->setWidgetResizable(true);
+    // scrollArea_cart->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding); // ❗️مهم
+    // scrollArea_cart->setFrameShape(QFrame::NoFrame);
+    // scrollArea_cart->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    // scrollArea_cart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // scrollArea_cart->setStyleSheet("background-color: red;"); // فقط برای تست
+
+    // // ساخت ویجت داخلی و layout
+    // cartContainer = new QWidget();
+    // cartContainer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum); // ⬅ درست
+    // cartLayout = new QVBoxLayout(cartContainer);
+    // cartContainer->setLayout(cartLayout);
+    // // cartContainer->setMinimumSize(200, 400); // قابل تنظیم
+
+    // scrollArea_cart->setWidget(cartContainer);
+
+    // // ❗ اضافه کردن scroll area به layout اون placeholder
+    // QVBoxLayout* holderLayout = qobject_cast<QVBoxLayout*>(ui->cartScrollHolder->layout());
+    // if (holderLayout) {
+    //     holderLayout->addWidget(scrollArea_cart);
+    // } else {
+    //     qDebug() << "❌ layout not found for cartScrollHolder!";
+    // }
+
+    // cartLayout = qobject_cast<QVBoxLayout*>(ui->cartContainer->layout());
+    // if (!cartLayout) {
+    //     qDebug() << "❌ Layout still not found! Creating manually...";
+    //     cartLayout = new QVBoxLayout(ui->cartContainer);
+    //     ui->cartContainer->setLayout(cartLayout);
+    // } else {
+    //     qDebug() << "✅ Layout found successfully!";
+    // }
+
+    scrollArea_cart = new QScrollArea(this);
+    scrollArea_cart->setWidgetResizable(true);
+    scrollArea_cart->setFrameShape(QFrame::NoFrame);
+    scrollArea_cart->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea_cart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea_cart->setStyleSheet(R"(
+    QScrollArea, QScrollArea > QWidget > QWidget {
+        background-color: rgba(220, 213, 200, 1);
+    }
+    QScrollBar:vertical, QScrollBar:horizontal {
+        width: 0px;
+        height: 0px;
+    }
+)");
+
+
+    cartContainer = new QWidget();
+    cartLayout = new QVBoxLayout(cartContainer);
+    cartContainer->setLayout(cartLayout);
+
+    scrollArea_cart->setWidget(cartContainer);
+
+    // حالا اضافه کن به placeholder ای که داخل صفحه سبد خرید داری:
+    QVBoxLayout* holderLayout = qobject_cast<QVBoxLayout*>(ui->cartScrollHolder->layout());
+    if (holderLayout) {
+        holderLayout->addWidget(scrollArea_cart);
+    } else {
+        // اگر placeholder لایه‌بندی نداشت، یکی ایجاد کن
+        QVBoxLayout* newLayout = new QVBoxLayout(ui->cartScrollHolder);
+        ui->cartScrollHolder->setLayout(newLayout);
+        newLayout->addWidget(scrollArea_cart);
+    }
+
+    // cartLayout = new QVBoxLayout(ui->cartContainer);
+    // ui->cartContainer->setLayout(cartLayout);
+
     connect(ui->typeComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
     connect(ui->locationComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
     connect(ui->priceComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
@@ -166,11 +277,22 @@ CustomerMenu::CustomerMenu(QWidget *parent)
         connect(item, &restaurantitem::restaurantClicked, this, [=](const Restaurant& res) {
             RestaurantMenu* menuPage = new RestaurantMenu(res);
             menuPage->setAttribute(Qt::WA_DeleteOnClose);
+
+            connect(menuPage, &RestaurantMenu::foodAddedToCart, this, [=](const MenuItem& item){
+                cartItems.append(item);       // نگه‌داشتن در لیست
+                addToCartUI(item);            // نمایش در سبد خرید
+            });
+
+
             menuPage->show();
         });
 
         ui->verticalLayout->addWidget(item);
     }
+
+    // MenuItem test = {"Demo Test", 123456, "Added manually"};
+    // addToCartUI(test);
+
 }
 
 CustomerMenu::~CustomerMenu()
@@ -279,28 +401,77 @@ void CustomerMenu::on_homeButton_3_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void CustomerMenu::showCartPage()
+// void CustomerMenu::showCartPage()
+// {
+//     ui->stackedWidget->setCurrentIndex(2);  // فرض: index 2 = صفحه سبد خرید
+
+//     // پاک کردن قبلی‌ها
+//     QLayoutItem* item;
+//     while ((item = ui->cartLayout->takeAt(0)) != nullptr) {
+//         if (item->widget()) item->widget()->deleteLater();
+//         delete item;
+//     }
+
+//     // نمایش آیتم‌ها
+//     for (const MenuItem& m : cartItems) {
+//         FoodItemWidget* widget = new FoodItemWidget(m, this);
+//         widget->setInCartMode(true);  // دکمه رو بکن minus
+
+//         // حذف از سبد خرید
+//         connect(widget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
+//             cartItems.removeOne(removedItem);
+//             showCartPage();  // بازسازی مجدد
+//         });
+
+//         ui->cartLayout->addWidget(widget);
+//     }
+// }
+
+// void CustomerMenu::addToCartUI(const MenuItem& item)
+// {
+//     QLabel* label = new QLabel(this);
+//     label->setText("• " + item.name + " - " + QString::number(item.price) + " تومان");
+//     label->setStyleSheet("padding: 5px; font-size: 14px;");
+
+//     // فرض: layout مربوط به سبد خرید اسمش هست cartLayout
+//     ui->cartLayout->addWidget(label);
+// }
+
+// void CustomerMenu::addToCartUI(const MenuItem& item)
+// {
+//     // ساخت یک FoodItemWidget جدید برای سبد خرید
+//     FoodItemWidget* cartItemWidget = new FoodItemWidget(item, this);
+//     cartItemWidget->setInCartMode(true);  // حالت حذف (minus)
+
+//     // اتصال دکمه minus برای حذف از سبد خرید
+//     // connect(cartItemWidget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
+//     //     cartItems.removeOne(removedItem);
+//     //     cartItemWidget->deleteLater();  // ویجت رو از UI هم حذف کن
+//     // });
+
+//     // اضافه کردن ویجت به layout مربوط به سبد خرید
+//     ui->cartLayout->addWidget(cartItemWidget);
+// }
+
+// void CustomerMenu::addToCartUI(const MenuItem& item)
+// {
+//     auto* widget = new FoodItemWidget(item, this);
+//     widget->setFoodData(item);         // اطلاعات رو ست کن
+//     widget->setInCartMode(true);       // حالت minus یا سبد خریدی
+//     cartLayout->addWidget(widget);     // اضافه به layout
+// }
+
+void CustomerMenu::addToCartUI(const MenuItem& item)
 {
-    ui->stackedWidget->setCurrentIndex(2);  // فرض: index 2 = صفحه سبد خرید
+    auto* widget = new FoodItemWidget(item, this);
+    widget->setFoodData(item);
+    widget->setInCartMode(true);
 
-    // پاک کردن قبلی‌ها
-    QLayoutItem* item;
-    while ((item = ui->cartLayout->takeAt(0)) != nullptr) {
-        if (item->widget()) item->widget()->deleteLater();
-        delete item;
-    }
+    // برای حذف از سبد خرید
+    // connect(widget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
+    //     cartItems.removeOne(removedItem);
+    //     widget->deleteLater();
+    // });
 
-    // نمایش آیتم‌ها
-    for (const MenuItem& m : cartItems) {
-        FoodItemWidget* widget = new FoodItemWidget(m, this);
-        widget->setInCartMode(true);  // دکمه رو بکن minus
-
-        // حذف از سبد خرید
-        connect(widget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
-            cartItems.removeOne(removedItem);
-            showCartPage();  // بازسازی مجدد
-        });
-
-        ui->cartLayout->addWidget(widget);
-    }
+    cartLayout->addWidget(widget);
 }

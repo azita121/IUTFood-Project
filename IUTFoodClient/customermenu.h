@@ -1,5 +1,8 @@
 #ifndef CUSTOMERMENU_H
 #define CUSTOMERMENU_H
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QScrollArea>
 #include "restaurantitem.h"
 #include <QStandardItemModel>
 
@@ -17,6 +20,7 @@ public:
     explicit CustomerMenu(QWidget *parent = nullptr);
     ~CustomerMenu();
     void showCartPage();
+    void addToCartUI(const MenuItem& item);
 
 private slots:
     void on_shoppingCartButton_clicked();
@@ -37,6 +41,13 @@ private:
     void applyFilters();
     void resetFilters();
     QList<MenuItem> cartItems;
+    // QVBoxLayout* cartLayout;
+
+    QScrollArea* scrollArea_cart;
+    QWidget* cartContainer;
+    QVBoxLayout* cartLayout;
+
+    // QVBoxLayout* cartLayout;
 
 };
 

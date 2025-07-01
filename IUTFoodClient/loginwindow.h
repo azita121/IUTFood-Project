@@ -30,7 +30,7 @@ private slots:
 
     void on_Forgotback_clicked();
 
-    void on_Setback_clicked();
+    // void on_Setback_clicked();
 
     void on_resetButton_clicked();
 

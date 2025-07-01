@@ -113,7 +113,7 @@ QScrollBar:vertical, QScrollBar:horizontal {
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
-       <number>7</number>
+       <number>0</number>
       </property>
       <property name="sizeConstraint">
        <enum>QLayout::SizeConstraint::SetNoConstraint</enum>

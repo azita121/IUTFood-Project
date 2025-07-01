@@ -206,7 +206,7 @@ border-top-right-radius: 50px;</string>
   <widget class="QToolButton" name="addFoodButton">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>270</x>
      <y>10</y>
      <width>25</width>
      <height>27</height>

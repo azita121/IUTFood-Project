@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="HistoryButton">
@@ -394,7 +394,23 @@ QPushButton#resetFiltersButton:pressed {
     </widget>
    </widget>
    <widget class="QWidget" name="shoppingCartPage">
-    <widget class="QLabel" name="label_4">
+    <widget class="QFrame" name="cartScrollHolder">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>70</y>
+       <width>360</width>
+       <height>390</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -417,7 +433,7 @@ border-top-left-radius: 50px;</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -450,66 +466,12 @@ border-top-left-radius: 50px;</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QScrollArea" name="scrollArea_2">
+    <widget class="QLabel" name="label_16">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>330</x>
        <y>80</y>
-       <width>320</width>
-       <height>370</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QScrollArea, QScrollArea &gt; QWidget &gt; QWidget {
-    background-color: rgba(220, 213, 200, 1);
-	
-}
-QScrollBar:vertical, QScrollBar:horizontal {
-    width: 0px;
-    height: 0px;
-}</string>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>318</width>
-        <height>20000</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>20000</height>
-       </size>
-      </property>
-      <widget class="QWidget" name="verticalLayoutWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>320</width>
-         <height>540</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="cartLayout">
-        <property name="sizeConstraint">
-         <enum>QLayout::SizeConstraint::SetFixedSize</enum>
-        </property>
-       </layout>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>80</y>
-       <width>240</width>
+       <width>230</width>
        <height>370</height>
       </rect>
      </property>
@@ -525,12 +487,12 @@ QScrollBar:vertical, QScrollBar:horizontal {
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>330</x>
        <y>80</y>
-       <width>240</width>
+       <width>230</width>
        <height>270</height>
       </rect>
      </property>
@@ -545,110 +507,11 @@ border-top-right-radius: 50px;</string>
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>200</y>
-       <width>241</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>8514oem</family>
-       <pointsize>15</pointsize>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(13, 55, 30, 1);</string>
-     </property>
-     <property name="text">
-      <string>Total price of orders :</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::TextFormat::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="totalPrice">
+    <widget class="QLabel" name="label_17">
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>270</y>
-       <width>170</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Informal Roman</family>
-       <pointsize>25</pointsize>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(13, 55, 30, 1);</string>
-     </property>
-     <property name="text">
-      <string>price</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::TextFormat::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>270</y>
-       <width>40</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Informal Roman</family>
-       <pointsize>25</pointsize>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(13, 55, 30, 1);</string>
-     </property>
-     <property name="text">
-      <string>$</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::TextFormat::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>80</y>
+       <y>90</y>
        <width>241</width>
        <height>60</height>
       </rect>
@@ -677,10 +540,10 @@ border-top-right-radius: 50px;</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="numberOfOrders">
+    <widget class="QLabel" name="numberOfOrders_2">
      <property name="geometry">
       <rect>
-       <x>330</x>
+       <x>350</x>
        <y>150</y>
        <width>170</width>
        <height>31</height>
@@ -710,10 +573,109 @@ border-top-right-radius: 50px;</string>
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>190</y>
+       <width>230</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>8514oem</family>
+       <pointsize>15</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>Total price of orders :</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="totalPrice_2">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>260</y>
+       <width>160</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Informal Roman</family>
+       <pointsize>25</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>price</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>260</y>
+       <width>40</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Informal Roman</family>
+       <pointsize>25</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>$</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
     <widget class="QPushButton" name="orderButton">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>390</x>
        <y>370</y>
        <width>110</width>
        <height>60</height>
