@@ -133,7 +133,6 @@ bool logInWindow::eventFilter(QObject *obj, QEvent *event)
     return QMainWindow::eventFilter(obj, event);
 }
 
-
 void logInWindow::on_loginButton_clicked()
 {
     CustomerMenu* menu = new CustomerMenu(nullptr);
@@ -141,3 +140,22 @@ void logInWindow::on_loginButton_clicked()
     menu->show();
     this->close();
 }
+
+void logInWindow::on_signUpCustomerButton_clicked()
+{
+    restaurantownermenu* menu1 = new restaurantownermenu(nullptr);
+    menu1->setAttribute(Qt::WA_DeleteOnClose);
+    menu1->show();
+    this->close();
+}
+
+
+void logInWindow::on_signUpOwnerButton_clicked()
+{
+    adminnenu* menu2 = new adminnenu(nullptr);
+    menu2->setAttribute(Qt::WA_DeleteOnClose);
+    menu2->show();
+    this->close();
+
+}
+

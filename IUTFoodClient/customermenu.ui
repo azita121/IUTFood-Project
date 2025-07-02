@@ -392,6 +392,38 @@ QPushButton#resetFiltersButton:pressed {
       <string>reset filters</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="orderTrackingButton">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>510</y>
+       <width>140</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#orderTrackingButton {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#orderTrackingButton:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#orderTrackingButton:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Order tracking</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="shoppingCartPage">
     <widget class="QFrame" name="cartScrollHolder">
@@ -803,6 +835,38 @@ QPushButton#HistoryButton_2:pressed {
       <string>History</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="orderTrackingButton_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>510</y>
+       <width>140</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#orderTrackingButton_2 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#orderTrackingButton_2:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#orderTrackingButton_2:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Order tracking</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="HistoryPage">
     <widget class="QFrame" name="historyFrame">
@@ -1022,6 +1086,38 @@ QPushButton#HistoryButton_3:pressed {
      </property>
      <property name="text">
       <string>History</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="orderTrackingButton_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>510</y>
+       <width>140</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#orderTrackingButton_3 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#orderTrackingButton_3:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#orderTrackingButton_3:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Order tracking</string>
      </property>
     </widget>
    </widget>

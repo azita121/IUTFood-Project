@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QKeyEvent>
 #include "customermenu.h"
+#include "restaurantownermenu.h"
+#include "adminnenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -45,6 +47,10 @@ private slots:
     void on_eyeReap_clicked();
 
     void on_loginButton_clicked();
+
+    void on_signUpCustomerButton_clicked();
+
+    void on_signUpOwnerButton_clicked();
 
 private:
     Ui::logInWindow *ui;

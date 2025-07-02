@@ -18,6 +18,9 @@ public:
     ~FoodItemWidget();
     void setFoodData(const MenuItem& item);
     void setReadOnly(bool readOnly);
+    void setOwnerMode(bool owner);
+    void setShowAddButton(bool show);
+    void hidePlusMinusButtons();
 
 private slots:
 
@@ -33,6 +36,7 @@ private:
     Ui::FoodItemWidget *ui;
     bool isInCart = false;
     MenuItem menuItem;
+    bool showAddButton = true;  // پیش‌فرض: دکمه پلاس نمایش داده شود
 };
 
 #endif // FOODITEMWIDGET_H

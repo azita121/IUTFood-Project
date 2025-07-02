@@ -53,3 +53,26 @@ void FoodItemWidget::setReadOnly(bool readOnly)
             ui->removeFoodButton->show();
     }
 }
+
+void FoodItemWidget::setOwnerMode(bool owner)
+{
+    if (owner) {
+        ui->addFoodButton->hide();
+        ui->removeFoodButton->show();
+    } else {
+        ui->addFoodButton->show();
+        ui->removeFoodButton->hide();
+    }
+}
+
+void FoodItemWidget::setShowAddButton(bool show)
+{
+    showAddButton = show;
+    ui->addFoodButton->setVisible(showAddButton);  // مخفی یا نمایش دکمه
+}
+
+void FoodItemWidget::hidePlusMinusButtons()
+{
+    ui->addFoodButton->hide();
+    if (ui->removeFoodButton) ui->removeFoodButton->hide(); // اگه داریش
+}
