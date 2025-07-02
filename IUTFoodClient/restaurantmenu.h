@@ -16,7 +16,6 @@ class RestaurantMenu : public QWidget
 public:
     explicit RestaurantMenu(const Restaurant& restaurant, QWidget *parent = nullptr);
     ~RestaurantMenu();
-    // void setRestaurantData(const Restaurant& r);
 
 signals:
     void foodAddedToCart(const MenuItem& item);

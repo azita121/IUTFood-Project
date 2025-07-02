@@ -17,17 +17,17 @@ public:
     explicit restaurantitem(QWidget *parent = nullptr);
     ~restaurantitem();
 
-    void setRestaurantData(const Restaurant& data);  // متد برای تنظیم اطلاعات رستوران
+    void setRestaurantData(const Restaurant& data);
 
 signals:
-    void restaurantClicked(const Restaurant& data);  // سیگنال با اطلاعات
+    void restaurantClicked(const Restaurant& data);
 
 private slots:
     void on_showresButton_clicked();
 
 private:
     Ui::restaurantitem *ui;
-    Restaurant restaurantData;  // نگهداری اطلاعات رستوران برای این آیتم
+    Restaurant restaurantData;
 };
 
 #endif // RESTAURANTITEM_H

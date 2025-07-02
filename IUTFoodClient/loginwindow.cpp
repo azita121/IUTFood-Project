@@ -141,10 +141,3 @@ void logInWindow::on_loginButton_clicked()
     menu->show();
     this->close();
 }
-
-
-// void logInWindow::on_customerButton_triggered(QAction *arg1)
-// {
-
-// }
-

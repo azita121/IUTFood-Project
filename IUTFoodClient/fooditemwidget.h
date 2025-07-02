@@ -17,14 +17,13 @@ public:
     explicit FoodItemWidget(const MenuItem& item, QWidget *parent = nullptr);
     ~FoodItemWidget();
     void setFoodData(const MenuItem& item);
-    void setInCartMode(bool cart);
+    void setReadOnly(bool readOnly);
 
 private slots:
-    // void on_addFoodButton_triggered(QAction *arg1);
-
-    // void on_addFoodButton_clicked();
 
     void on_addFoodButton_triggered(QAction *arg1);
+
+    void on_removeFoodButton_triggered(QAction *arg1);
 
 signals:
     void foodAdded(const MenuItem& item);

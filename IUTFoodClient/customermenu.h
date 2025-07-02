@@ -21,6 +21,7 @@ public:
     ~CustomerMenu();
     void showCartPage();
     void addToCartUI(const MenuItem& item);
+    void updateCartSummary();
 
 private slots:
     void on_shoppingCartButton_clicked();
@@ -35,19 +36,24 @@ private slots:
 
     void on_homeButton_3_clicked();
 
+    void on_orderButton_clicked();
+
+    void on_deleteHistoryButton_clicked();
+
 private:
     Ui::CustomerMenu *ui;
     QList<Restaurant> allRestaurants;
     void applyFilters();
     void resetFilters();
     QList<MenuItem> cartItems;
-    // QVBoxLayout* cartLayout;
 
     QScrollArea* scrollArea_cart;
     QWidget* cartContainer;
     QVBoxLayout* cartLayout;
 
-    // QVBoxLayout* cartLayout;
+    QScrollArea* scrollArea_history;
+    QWidget* historyContainer;
+    QVBoxLayout* historyLayout;
 
 };
 

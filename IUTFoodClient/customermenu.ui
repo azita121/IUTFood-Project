@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="HistoryButton">
@@ -540,7 +540,7 @@ border-top-right-radius: 50px;</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="numberOfOrders_2">
+    <widget class="QLabel" name="numberOfOrders">
      <property name="geometry">
       <rect>
        <x>350</x>
@@ -606,11 +606,11 @@ border-top-right-radius: 50px;</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="totalPrice_2">
+    <widget class="QLabel" name="totalPrice">
      <property name="geometry">
       <rect>
-       <x>340</x>
-       <y>260</y>
+       <x>350</x>
+       <y>255</y>
        <width>160</width>
        <height>31</height>
       </rect>
@@ -642,9 +642,9 @@ border-top-right-radius: 50px;</string>
     <widget class="QLabel" name="label_18">
      <property name="geometry">
       <rect>
-       <x>510</x>
+       <x>520</x>
        <y>260</y>
-       <width>40</width>
+       <width>30</width>
        <height>31</height>
       </rect>
      </property>
@@ -805,6 +805,129 @@ QPushButton#HistoryButton_2:pressed {
     </widget>
    </widget>
    <widget class="QWidget" name="HistoryPage">
+    <widget class="QFrame" name="historyFrame">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>70</y>
+       <width>360</width>
+       <height>390</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>560</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(220, 213, 200, 1);
+border-top-right-radius: 50px;
+border-top-left-radius: 50px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>0</y>
+       <width>261</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bauhaus 93</family>
+       <pointsize>20</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>History</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>80</y>
+       <width>230</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/images/finalback.jpg);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteHistoryButton">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>360</y>
+       <width>141</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#deleteHistoryButton {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                              
+    border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 6px 20px;
+}
+
+QPushButton#deleteHistoryButton:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#deleteHistoryButton:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>delete history</string>
+     </property>
+    </widget>
     <widget class="QPushButton" name="shoppingCartButton_3">
      <property name="geometry">
       <rect>
@@ -899,167 +1022,6 @@ QPushButton#HistoryButton_3:pressed {
      </property>
      <property name="text">
       <string>History</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>560</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgba(220, 213, 200, 1);
-border-top-right-radius: 50px;
-border-top-left-radius: 50px;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_11">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>0</y>
-       <width>261</width>
-       <height>70</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Bauhaus 93</family>
-       <pointsize>20</pointsize>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(13, 55, 30, 1);</string>
-     </property>
-     <property name="text">
-      <string>History</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::TextFormat::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QScrollArea" name="scrollArea_3">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>80</y>
-       <width>320</width>
-       <height>370</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QScrollArea, QScrollArea &gt; QWidget &gt; QWidget {
-    background-color: rgba(220, 213, 200, 1);
-	
-}
-QScrollBar:vertical, QScrollBar:horizontal {
-    width: 0px;
-    height: 0px;
-}</string>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>318</width>
-        <height>20000</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>20000</height>
-       </size>
-      </property>
-      <widget class="QWidget" name="verticalLayoutWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>320</width>
-         <height>540</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <property name="sizeConstraint">
-         <enum>QLayout::SizeConstraint::SetFixedSize</enum>
-        </property>
-       </layout>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>80</y>
-       <width>241</width>
-       <height>371</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-image: url(:/images/finalback.jpg);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="deleteHistoryButton">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>340</y>
-       <width>141</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton#deleteHistoryButton {
-    background-color: rgba(40, 60, 45, 255);   
-    color: #F0F8F2;                              
-    border-bottom-left-radius: 20px;
-	border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 6px 20px;
-}
-
-QPushButton#deleteHistoryButton:hover {
-    background-color: rgba(55, 80, 60, 255);   
-}
-
-QPushButton#deleteHistoryButton:pressed {
-    background-color: rgba(30, 40, 30, 255);    
-    padding-left: 8px;
-    padding-top: 8px;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>delete history</string>
      </property>
     </widget>
    </widget>
