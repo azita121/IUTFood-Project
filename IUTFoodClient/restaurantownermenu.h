@@ -7,6 +7,7 @@
 #include "restaurantitem.h"
 #include "fooditemwidget.h"
 #include <QInputDialog>
+#include <QComboBox>
 
 namespace Ui {
 class restaurantownermenu;
@@ -23,6 +24,7 @@ public:
     void renderOrders();
     void renderMenuItems();
     void addFoodItem(const MenuItem& item);
+    void renderAcceptedOrders();
 
 private slots:
     void on_addFoodButton_clicked();
@@ -53,6 +55,22 @@ private:
     QList<MenuItem> incomingOrders;
 
     QList<MenuItem> orderList;
+
+    struct AcceptedOrder {
+        QString customer;
+        MenuItem item;
+        QString status;
+
+        bool operator==(const AcceptedOrder& other) const {
+            return customer == other.customer && item.name == other.item.name;
+        }
+    };
+
+    QList<AcceptedOrder> acceptedOrders;
+
+    QVBoxLayout* statusLayout; // لی‌آوت مخصوص وضعیت‌ها
+    QWidget* statusContainer;
+    QScrollArea* statusScrollArea;
 
 
 

@@ -10,7 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     adminnenu.cpp \
-    changeofstatus.cpp \
     customermenu.cpp \
     fooditemwidget.cpp \
     main.cpp \
@@ -21,7 +20,6 @@ SOURCES += \
 
 HEADERS += \
     adminnenu.h \
-    changeofstatus.h \
     customermenu.h \
     fooditemwidget.h \
     loginwindow.h \
@@ -32,7 +30,6 @@ HEADERS += \
 
 FORMS += \
     adminnenu.ui \
-    changeofstatus.ui \
     customermenu.ui \
     fooditemwidget.ui \
     loginwindow.ui \

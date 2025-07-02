@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="menuManagementPage">
     <widget class="QFrame" name="menuHolder">
@@ -398,7 +398,7 @@ QPushButton#ChangeOfStatusButton_2:pressed {
     </widget>
    </widget>
    <widget class="QWidget" name="changeOfStatusPage">
-    <widget class="QFrame" name="menuHolder_3">
+    <widget class="QFrame" name="changeStatusHolder">
      <property name="geometry">
       <rect>
        <x>-20</x>
