@@ -1,0 +1,54 @@
+[2025-07-02 01:22:16.846] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-07-02 01:22:16.847] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 02:02:56.723] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-07-02 02:02:56.724] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 03:51:36.182] [INFO] [DatabaseManager] Attempting to connect to database: @/iutfood.db
+[2025-07-02 03:51:36.182] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 03:59:56.272] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 03:59:56.273] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:06:20.516] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:06:20.516] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:07:11.434] [ERROR] [DatabaseManager] Failed to create customer: s@gmail.com
+[2025-07-02 04:14:42.383] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:14:42.384] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:16:05.055] [ERROR] [DatabaseManager] Failed to create customer: azita@gmail.com
+[2025-07-02 04:24:12.471] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:24:12.471] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:25:32.965] [ERROR] [DatabaseManager] Failed to create customer: azita@gmail.com
+[2025-07-02 04:32:15.959] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:32:15.959] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:33:18.119] [ERROR] [DatabaseManager] Failed to create customer: azita@gmail.com
+[2025-07-02 04:51:43.884] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:51:43.885] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:52:30.319] [ERROR] [DatabaseManager] Failed to create customer: azita@gmail.com
+[2025-07-02 04:58:02.014] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 04:58:02.015] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 04:59:23.157] [ERROR] [DatabaseManager] Failed to create customer: fucklife@gmail.com
+[2025-07-02 05:00:01.133] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:00:01.133] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:01:31.958] [ERROR] [DatabaseManager] Failed to create customer: jojo@gmail.com
+[2025-07-02 05:05:07.342] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:05:07.342] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:05:33.352] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:05:33.352] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:06:14.456] [ERROR] [DatabaseManager] Failed to create customer: azita@gmail.com
+[2025-07-02 05:12:05.752] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:12:05.752] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:12:45.761] [ERROR] [DatabaseManager] Failed to create customer: c
+[2025-07-02 05:15:45.095] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:15:45.095] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:17:03.507] [ERROR] [DatabaseManager] Failed to create customer: hiiiii
+[2025-07-02 05:24:32.948] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:24:32.949] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:24:55.577] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:24:55.578] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:25:57.796] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:25:57.798] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:26:01.525] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:26:01.527] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:26:53.099] [ERROR] [DatabaseManager] Failed to create customer: bjnklm;l;
+[2025-07-02 05:35:25.837] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 05:35:25.838] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 05:56:45.418] [ERROR] [DatabaseManager] Failed to create customer: sdfgh
+[2025-07-02 06:05:08.101] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 06:05:08.102] [INFO] [DatabaseManager] Database connected successfully

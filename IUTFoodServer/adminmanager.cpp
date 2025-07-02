@@ -177,6 +177,9 @@ QJsonArray AdminManager::getBlockedUsers()
         user["email"] = query.value("email").toString();
         user["block_reason"] = query.value("block_reason").toString();
         user["blocked_at"] = query.value("blocked_at").toString();
+        user["phone"] = query.value("phone").toString();
+        user["city"] = query.value("city").toString();
+        user["location"] = query.value("location").toString();
         users.append(user);
     }
 
@@ -200,6 +203,9 @@ QJsonArray AdminManager::getAllUsers()
         user["user_type"] = query.value("user_type").toString();
         user["status"] = query.value("status").toString();
         user["created_at"] = query.value("created_at").toString();
+        user["phone"] = query.value("phone").toString();
+        user["city"] = query.value("city").toString();
+        user["location"] = query.value("location").toString();
         users.append(user);
     }
 

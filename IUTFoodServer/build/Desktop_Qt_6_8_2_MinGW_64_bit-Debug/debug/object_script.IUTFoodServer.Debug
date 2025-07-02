@@ -13,6 +13,10 @@ debug/websocketserver.o
 debug/adminmanager.o
 debug/restaurantmanager.o
 debug/logger.o
+debug/customermanager.o
+debug/restaurantownermanager.o
+debug/ordermanager.o
+debug/menumanager.o
 debug/moc_server.o
 debug/moc_databasemanager.o
 debug/moc_authsystem.o
@@ -26,3 +30,7 @@ debug/moc_websocketserver.o
 debug/moc_adminmanager.o
 debug/moc_restaurantmanager.o
 debug/moc_logger.o
+debug/moc_customermanager.o
+debug/moc_restaurantownermanager.o
+debug/moc_ordermanager.o
+debug/moc_menumanager.o

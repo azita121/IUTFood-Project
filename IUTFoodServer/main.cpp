@@ -9,19 +9,19 @@ int main(int argc, char *argv[])
 
     // Initialize database connection
     DatabaseManager* dbManager = DatabaseManager::getInstance();
-    if (!dbManager->connect("localhost", "iutfood", "postgres", "your_password")) {
+    if (!dbManager->connect("", "database.sqlite", "", "")) {  // SQLite connection parameters
         qDebug() << "Failed to connect to database. Exiting...";
         return 1;
     }
 
     // Start server
     Server* server = Server::getInstance();
-    if (!server->start(8080)) {
+    if (!server->start(8080, 8081)) {
         qDebug() << "Failed to start server";
         return -1;
     }
 
-    qDebug() << "IUT Food Server is running on port 8080";
+    qDebug() << "IUT Food Server is running on TCP port 8080 and WebSocket port 8081";
 
     return a.exec();
 } 

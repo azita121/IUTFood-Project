@@ -1,5 +1,11 @@
 #include "server.h"
 #include <QDebug>
+#include "customermanager.h"
+#include "restaurantownermanager.h"
+#include "ordermanager.h"
+#include "menumanager.h"
+#include "orderstatus.h"
+#include "securityutils.h"
 
 Server* Server::instance = nullptr;
 
@@ -34,6 +40,7 @@ bool Server::start(quint16 tcpPort, quint16 wsPort)
         return false;
     }
 
+    // Connect signals to handler methods directly
     connect(m_tcpServer, &QTcpServer::newConnection, this, &Server::handleNewConnection);
     qDebug() << "TCP server started on port" << tcpPort;
 
@@ -57,7 +64,7 @@ void Server::stop()
     }
 
     m_wsServer->stop();
-    qDebug() << "Server stopped";
+        qDebug() << "Server stopped";
 }
 
 void Server::handleNewConnection()
@@ -102,32 +109,160 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
     QJsonObject response;
 
     if (type == "login") {
-        QString username = request["username"].toString();
+        QString loginId = request["loginId"].toString();
         QString password = request["password"].toString();
-        QString token = m_authSystem->login(username, password);
-
+        QString token = m_authSystem->login(loginId, password);
         if (!token.isEmpty()) {
+            QString userId = m_authSystem->getUserIdFromToken(token);
+            QVariantMap userData = m_dbManager->getUserById(userId);
+            
             response["status"] = "success";
             response["token"] = token;
-            m_clients[client] = m_authSystem->getUserIdFromToken(token);
+            response["type"] = "login";
+            response["userData"] = QJsonObject::fromVariantMap(userData);
+            m_clients[client] = userId;
         } else {
             response["status"] = "error";
             response["message"] = "Invalid credentials";
         }
     }
     else if (type == "register") {
-        QString username = request["username"].toString();
-        QString password = request["password"].toString();
+        QString firstName = request["firstName"].toString();
+        QString lastName = request["lastName"].toString();
         QString email = request["email"].toString();
+        QString phone = request["phone"].toString();
+        QString password = request["password"].toString();
         QString userType = request["userType"].toString();
-
-        if (m_authSystem->registerUser(username, password, email, userType)) {
+        if (m_authSystem->registerUser(firstName, lastName, email, phone, password, userType)) {
             response["status"] = "success";
             response["message"] = "Registration successful";
         } else {
             response["status"] = "error";
             response["message"] = "Registration failed";
         }
+    }
+    else if (type == "register_customer") {
+        QString firstName = request["firstName"].toString();
+        QString lastName = request["lastName"].toString();
+        QString email = request["email"].toString();
+        QString phone = request["phone"].toString();
+        QString password = request["password"].toString();
+        QString location = request["location"].toString();
+        bool success = m_dbManager->createCustomer(
+            firstName, lastName, firstName + " " + lastName, email,
+            SecurityUtils::hashPassword(password), phone, "", "", location
+        );
+        if (success) {
+            response["status"] = "success";
+            response["type"] = "register_customer";
+            response["message"] = "Customer registration successful";
+        } else {
+            response["status"] = "error";
+            response["type"] = "register_customer";
+            response["message"] = "Customer registration failed";
+        }
+    }
+    else if (type == "register_owner") {
+        QString firstName = request["firstName"].toString();
+        QString lastName = request["lastName"].toString();
+        QString email = request["email"].toString();
+        QString phone = request["phone"].toString();
+        QString password = request["password"].toString();
+        QString restaurantName = request["restaurantName"].toString();
+        QString restaurantNumber = request["restaurantNumber"].toString();
+        QString location = request["location"].toString();
+        bool success = m_dbManager->createRestaurantOwner(firstName, lastName, firstName + " " + lastName, email, SecurityUtils::hashPassword(password), phone, restaurantName, restaurantNumber, location);
+        if (success) {
+            response["status"] = "success";
+            response["type"] = "register_owner";
+            response["message"] = "Restaurant owner registration successful";
+        } else {
+            response["status"] = "error";
+            response["type"] = "register_owner";
+            response["message"] = "Restaurant owner registration failed";
+        }
+    }
+    else if (type == "get_customer_profile") {
+        QString customerId = request["customerId"].toString();
+        response["profile"] = QJsonObject::fromVariantMap(CustomerManager::getInstance()->getProfile(customerId));
+    }
+    else if (type == "get_customer_order_history") {
+        QString customerId = request["customerId"].toString();
+        response["order_history"] = CustomerManager::getInstance()->getOrderHistory(customerId);
+    }
+    else if (type == "get_owner_profile") {
+        QString ownerId = request["ownerId"].toString();
+        response["profile"] = QJsonObject::fromVariantMap(RestaurantOwnerManager::getInstance()->getProfile(ownerId));
+    }
+    else if (type == "get_owner_restaurants") {
+        QString ownerId = request["ownerId"].toString();
+        response["restaurants"] = RestaurantOwnerManager::getInstance()->getRestaurants(ownerId);
+    }
+    else if (type == "create_order") {
+        QString customerId = request["customerId"].toString();
+        QString restaurantId = request["restaurantId"].toString();
+        QVariantList items = request["items"].toArray().toVariantList();
+        bool ok = OrderManager::getInstance()->createOrder(customerId, restaurantId, items);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "update_order_status") {
+        QString orderId = request["orderId"].toString();
+        QString status = request["status"].toString();
+        
+        // Validate the status
+        if (!OrderStatus::getInstance()->isValidStatus(status)) {
+            response["status"] = "error";
+            response["message"] = "Invalid order status. Valid statuses: " + OrderStatus::getInstance()->getValidStatuses().join(", ");
+        } else {
+            bool ok = OrderManager::getInstance()->updateOrderStatus(orderId, status);
+            response["status"] = ok ? "success" : "error";
+            
+            if (ok) {
+                // Notify observers about status change
+                OrderStatus::getInstance()->notifyObservers(orderId, status);
+            }
+        }
+    }
+    else if (type == "get_order_history") {
+        QString userId = request["userId"].toString();
+        QString userType = request["userType"].toString();
+        response["order_history"] = OrderManager::getInstance()->getOrderHistory(userId, userType);
+    }
+    else if (type == "create_menu") {
+        QString restaurantId = request["restaurantId"].toString();
+        bool ok = MenuManager::getInstance()->createMenu(restaurantId);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "add_menu_item") {
+        QString menuId = request["menuId"].toString();
+        QString name = request["name"].toString();
+        QString description = request["description"].toString();
+        double price = request["price"].toDouble();
+        QString ingredients = request["ingredients"].toString();
+        QString category = request["category"].toString();
+        QString imageUrl = request["imageUrl"].toString();
+        bool ok = MenuManager::getInstance()->addMenuItem(menuId, name, description, price, ingredients, category, imageUrl);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "update_menu_item") {
+        QString menuId = request["menuId"].toString();
+        QString itemId = request["itemId"].toString();
+        QVariantMap updates = request["updates"].toObject().toVariantMap();
+        bool ok = MenuManager::getInstance()->updateMenuItem(menuId, itemId, updates);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "delete_menu_item") {
+        QString menuId = request["menuId"].toString();
+        QString itemId = request["itemId"].toString();
+        bool ok = MenuManager::getInstance()->deleteMenuItem(menuId, itemId);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "get_menu") {
+        QString restaurantId = request["restaurantId"].toString();
+        response["menu"] = MenuManager::getInstance()->getMenu(restaurantId);
+    }
+    else if (type == "get_restaurants") {
+        response["restaurants"] = m_dbManager->getAllRestaurants();
     }
     else if (type == "order") {
         QString token = request["token"].toString();
@@ -156,29 +291,16 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
             response["message"] = "Failed to create order";
         }
     }
-    else if (type == "update_order_status") {
-        QString token = request["token"].toString();
-        if (!m_authSystem->validateSession(token)) {
-            response["status"] = "error";
-            response["message"] = "Invalid session";
-            sendResponse(client, response);
-            return;
-        }
-
+    else if (type == "add_order_comment") {
         QString orderId = request["orderId"].toString();
-        QString status = request["status"].toString();
-        QString userId = m_authSystem->getUserIdFromToken(token);
-
-        if (m_dbManager->updateOrderStatus(orderId, status)) {
-            response["status"] = "success";
-            response["message"] = "Order status updated";
-            
-            // Broadcast status update
-            broadcastOrderUpdate(orderId, status);
-        } else {
-            response["status"] = "error";
-            response["message"] = "Failed to update order status";
-        }
+        QString customerId = request["customerId"].toString();
+        QString comment = request["comment"].toString();
+        bool ok = m_dbManager->addOrderComment(orderId, customerId, comment);
+        response["status"] = ok ? "success" : "error";
+    }
+    else if (type == "get_order_comments") {
+        QString orderId = request["orderId"].toString();
+        response["comments"] = m_dbManager->getOrderComments(orderId);
     }
     else {
         response["status"] = "error";

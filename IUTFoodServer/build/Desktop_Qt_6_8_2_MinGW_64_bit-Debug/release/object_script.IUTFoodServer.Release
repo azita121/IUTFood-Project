@@ -13,6 +13,10 @@ release/websocketserver.o
 release/adminmanager.o
 release/restaurantmanager.o
 release/logger.o
+release/customermanager.o
+release/restaurantownermanager.o
+release/ordermanager.o
+release/menumanager.o
 release/moc_server.o
 release/moc_databasemanager.o
 release/moc_authsystem.o
@@ -26,3 +30,7 @@ release/moc_websocketserver.o
 release/moc_adminmanager.o
 release/moc_restaurantmanager.o
 release/moc_logger.o
+release/moc_customermanager.o
+release/moc_restaurantownermanager.o
+release/moc_ordermanager.o
+release/moc_menumanager.o
