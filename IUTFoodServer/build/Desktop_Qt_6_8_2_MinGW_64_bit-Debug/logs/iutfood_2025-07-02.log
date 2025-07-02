@@ -52,3 +52,14 @@
 [2025-07-02 05:56:45.418] [ERROR] [DatabaseManager] Failed to create customer: sdfgh
 [2025-07-02 06:05:08.101] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
 [2025-07-02 06:05:08.102] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 18:49:40.645] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 18:49:40.646] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 18:50:40.420] [ERROR] [DatabaseManager] Failed to create customer: fffff
+[2025-07-02 22:33:26.813] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 22:33:26.814] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 22:33:36.503] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 22:33:36.504] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 22:34:09.025] [ERROR] [DatabaseManager] Failed to create customer: bhnjm,
+[2025-07-02 23:00:49.910] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 23:00:49.911] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 23:01:12.735] [INFO] [DatabaseManager] Customer created successfully: ghjkl;
