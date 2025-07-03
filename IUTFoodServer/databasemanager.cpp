@@ -77,6 +77,24 @@ bool DatabaseManager::createCustomer(const QString& firstName, const QString& la
         .arg(lastName)
         .arg(email), "DatabaseManager");
 
+    // Check for duplicate email (case-insensitive) or phone across both tables
+    QSqlQuery emailQuery;
+    emailQuery.prepare("SELECT 1 FROM customers WHERE LOWER(email) = LOWER(?) UNION SELECT 1 FROM restaurant_owners WHERE LOWER(email) = LOWER(?) LIMIT 1");
+    emailQuery.addBindValue(email);
+    emailQuery.addBindValue(email);
+    if (emailQuery.exec() && emailQuery.next()) {
+        Logger::getInstance()->error("Email already registered (customer/owner): " + email, "DatabaseManager");
+        return false;
+    }
+    QSqlQuery phoneQuery;
+    phoneQuery.prepare("SELECT 1 FROM customers WHERE phone = ? UNION SELECT 1 FROM restaurant_owners WHERE phone = ? LIMIT 1");
+    phoneQuery.addBindValue(phone);
+    phoneQuery.addBindValue(phone);
+    if (phoneQuery.exec() && phoneQuery.next()) {
+        Logger::getInstance()->error("Phone already registered (customer/owner): " + phone, "DatabaseManager");
+        return false;
+    }
+
     QVariantMap params;
     params["firstName"] = firstName;
     params["lastName"] = lastName;
@@ -108,7 +126,7 @@ bool DatabaseManager::updateCustomer(const QString& customerId, const QVariantMa
 
     for (auto it = updates.begin(); it != updates.end(); ++it) {
         setClauses << QString("%1 = :%2").arg(it.key()).arg(it.key());
-        params["" + it.key()] = it.value();
+        params[it.key()] = it.value();
     }
 
     QString query = QString("UPDATE customers SET %1 WHERE id = :id")
@@ -200,6 +218,24 @@ bool DatabaseManager::createRestaurantOwner(const QString& firstName, const QStr
         .arg(lastName)
         .arg(email), "DatabaseManager");
 
+    // Check for duplicate email (case-insensitive) or phone across both tables
+    QSqlQuery emailQuery;
+    emailQuery.prepare("SELECT 1 FROM customers WHERE LOWER(email) = LOWER(?) UNION SELECT 1 FROM restaurant_owners WHERE LOWER(email) = LOWER(?) LIMIT 1");
+    emailQuery.addBindValue(email);
+    emailQuery.addBindValue(email);
+    if (emailQuery.exec() && emailQuery.next()) {
+        Logger::getInstance()->error("Email already registered (customer/owner): " + email, "DatabaseManager");
+        return false;
+    }
+    QSqlQuery phoneQuery;
+    phoneQuery.prepare("SELECT 1 FROM customers WHERE phone = ? UNION SELECT 1 FROM restaurant_owners WHERE phone = ? LIMIT 1");
+    phoneQuery.addBindValue(phone);
+    phoneQuery.addBindValue(phone);
+    if (phoneQuery.exec() && phoneQuery.next()) {
+        Logger::getInstance()->error("Phone already registered (customer/owner): " + phone, "DatabaseManager");
+        return false;
+    }
+
     QVariantMap params;
     params["firstName"] = firstName;
     params["lastName"] = lastName;
@@ -231,7 +267,7 @@ bool DatabaseManager::updateRestaurantOwner(const QString& ownerId, const QVaria
 
     for (auto it = updates.begin(); it != updates.end(); ++it) {
         setClauses << QString("%1 = :%2").arg(it.key()).arg(it.key());
-        params["" + it.key()] = it.value();
+        params[it.key()] = it.value();
     }
 
     QString query = QString("UPDATE restaurant_owners SET %1 WHERE id = :id")
@@ -350,7 +386,7 @@ bool DatabaseManager::updateRestaurant(const QString& restaurantId, const QVaria
 
     for (auto it = updates.begin(); it != updates.end(); ++it) {
         setClauses << QString("%1 = :%2").arg(it.key()).arg(it.key());
-        params["" + it.key()] = it.value();
+        params[it.key()] = it.value();
     }
 
     QString query = QString("UPDATE restaurants SET %1 WHERE id = :id")
@@ -403,7 +439,7 @@ bool DatabaseManager::updateMenuItem(const QString& menuId, const QString& itemI
 
     for (auto it = updates.begin(); it != updates.end(); ++it) {
         setClauses << QString("%1 = :%2").arg(it.key()).arg(it.key());
-        params["" + it.key()] = it.value();
+        params[it.key()] = it.value();
     }
 
     QString query = QString("UPDATE menu_items SET %1 WHERE menu_id = :menuId AND id = :itemId")
@@ -519,7 +555,7 @@ QSqlQuery DatabaseManager::prepareQuery(const QString& query, const QVariantMap&
     sqlQuery.prepare(query);
 
     for (auto it = params.begin(); it != params.end(); ++it) {
-        sqlQuery.bindValue("" + it.key(), it.value());
+        sqlQuery.bindValue(":" + it.key(), it.value());
     }
 
     return sqlQuery;
@@ -527,7 +563,7 @@ QSqlQuery DatabaseManager::prepareQuery(const QString& query, const QVariantMap&
 
 void DatabaseManager::logError(const QString& operation, const QSqlError& error)
 {
-    qDebug() << "Database error in" << operation << ""
+    qDebug() << "Database error in" << operation << ":"
              << error.text()
              << "Error code:" << error.nativeErrorCode()
              << "Driver text:" << error.driverText();
@@ -729,15 +765,116 @@ QJsonArray DatabaseManager::getOrderComments(const QString& orderId)
     return comments;
 }
 
+bool DatabaseManager::addChatMessage(const QString& orderId, const QString& fromUserId, const QString& toUserId, const QString& content)
+{
+    QVariantMap params;
+    params["orderId"] = orderId;
+    params["fromUserId"] = fromUserId;
+    params["toUserId"] = toUserId;
+    params["content"] = content;
+    QString query = "INSERT INTO chat_messages (order_id, from_user_id, to_user_id, content) VALUES (:orderId, :fromUserId, :toUserId, :content)";
+    return executeQuery(query, params);
+}
+
+QJsonArray DatabaseManager::getChatHistory(const QString& orderId)
+{
+    QVariantMap params;
+    params["orderId"] = orderId;
+    QString query = "SELECT id, order_id, from_user_id, to_user_id, content, timestamp, is_read FROM chat_messages WHERE order_id = :orderId ORDER BY timestamp ASC";
+    QSqlQuery result = prepareQuery(query, params);
+    QJsonArray messages;
+    while (result.next()) {
+        QJsonObject msg;
+        msg["id"] = result.value("id").toInt();
+        msg["orderId"] = result.value("order_id").toString();
+        msg["fromUserId"] = result.value("from_user_id").toString();
+        msg["toUserId"] = result.value("to_user_id").toString();
+        msg["content"] = result.value("content").toString();
+        msg["timestamp"] = result.value("timestamp").toString();
+        msg["isRead"] = result.value("is_read").toInt() != 0;
+        messages.append(msg);
+    }
+    return messages;
+}
+
+bool DatabaseManager::addUserChatMessage(const QString& fromUserId, const QString& toUserId, const QString& content)
+{
+    QVariantMap params;
+    params["fromUserId"] = fromUserId;
+    params["toUserId"] = toUserId;
+    params["content"] = content;
+    QString query = "INSERT INTO user_chat_messages (from_user_id, to_user_id, content) VALUES (:fromUserId, :toUserId, :content)";
+    return executeQuery(query, params);
+}
+
+QJsonArray DatabaseManager::getUserChatHistory(const QString& userA, const QString& userB)
+{
+    QVariantMap params;
+    params["userA"] = userA;
+    params["userB"] = userB;
+    QString query = R"(
+        SELECT id, from_user_id, to_user_id, content, timestamp, is_read
+        FROM user_chat_messages
+        WHERE (from_user_id = :userA AND to_user_id = :userB)
+           OR (from_user_id = :userB AND to_user_id = :userA)
+        ORDER BY timestamp ASC
+    )";
+    QSqlQuery result = prepareQuery(query, params);
+    QJsonArray messages;
+    while (result.next()) {
+        QJsonObject msg;
+        msg["id"] = result.value("id").toInt();
+        msg["fromUserId"] = result.value("from_user_id").toString();
+        msg["toUserId"] = result.value("to_user_id").toString();
+        msg["content"] = result.value("content").toString();
+        msg["timestamp"] = result.value("timestamp").toString();
+        msg["isRead"] = result.value("is_read").toInt() != 0;
+        messages.append(msg);
+    }
+    return messages;
+}
+
+bool DatabaseManager::customerEmailExists(const QString& email) {
+    QVariantMap params;
+    params["email"] = email;
+    QString query = "SELECT 1 FROM customers WHERE email = :email LIMIT 1";
+    QSqlQuery result = prepareQuery(query, params);
+    return result.next();
+}
+
+bool DatabaseManager::customerPhoneExists(const QString& phone) {
+    QVariantMap params;
+    params["phone"] = phone;
+    QString query = "SELECT 1 FROM customers WHERE phone = :phone LIMIT 1";
+    QSqlQuery result = prepareQuery(query, params);
+    return result.next();
+}
+
+bool DatabaseManager::ownerEmailExists(const QString& email) {
+    QVariantMap params;
+    params["email"] = email;
+    QString query = "SELECT 1 FROM restaurant_owners WHERE email = :email LIMIT 1";
+    QSqlQuery result = prepareQuery(query, params);
+    return result.next();
+}
+
+bool DatabaseManager::ownerPhoneExists(const QString& phone) {
+    QVariantMap params;
+    params["phone"] = phone;
+    QString query = "SELECT 1 FROM restaurant_owners WHERE phone = :phone LIMIT 1";
+    QSqlQuery result = prepareQuery(query, params);
+    return result.next();
+}
+
 QVariantMap DatabaseManager::getUserById(const QString& userId)
 {
     QVariantMap userData;
-    
+
     // First try to find in customers table
     QSqlQuery query;
     query.prepare("SELECT id, first_name, last_name, username, email, phone, address, city, location, 'customer' as user_type FROM customers WHERE id = ?");
     query.addBindValue(userId);
-    
+
     if (query.exec() && query.next()) {
         userData["id"] = query.value("id");
         userData["first_name"] = query.value("first_name");
@@ -751,11 +888,11 @@ QVariantMap DatabaseManager::getUserById(const QString& userId)
         userData["user_type"] = query.value("user_type");
         return userData;
     }
-    
+
     // If not found in customers, try restaurant_owners table
     query.prepare("SELECT id, first_name, last_name, username, email, phone, restaurant_id, city, location, 'restaurant_owner' as user_type FROM restaurant_owners WHERE id = ?");
     query.addBindValue(userId);
-    
+
     if (query.exec() && query.next()) {
         userData["id"] = query.value("id");
         userData["first_name"] = query.value("first_name");
@@ -769,7 +906,127 @@ QVariantMap DatabaseManager::getUserById(const QString& userId)
         userData["user_type"] = query.value("user_type");
         return userData;
     }
-    
+
     // If not found in either table, return empty map
     return userData;
-} 
+}
+
+bool DatabaseManager::initializeSchema() {
+    // List of CREATE TABLE statements
+    const char* createStatements[] = {
+        // Customers
+        "CREATE TABLE IF NOT EXISTS customers ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "first_name TEXT NOT NULL,"
+        "last_name TEXT NOT NULL,"
+        "username TEXT NOT NULL,"
+        "email TEXT NOT NULL UNIQUE,"
+        "password_hash TEXT NOT NULL,"
+        "phone TEXT UNIQUE,"
+        "address TEXT,"
+        "city TEXT,"
+        "location TEXT"
+        ");",
+        // Restaurant Owners
+        "CREATE TABLE IF NOT EXISTS restaurant_owners ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "first_name TEXT NOT NULL,"
+        "last_name TEXT NOT NULL,"
+        "username TEXT NOT NULL,"
+        "email TEXT NOT NULL UNIQUE,"
+        "password_hash TEXT NOT NULL,"
+        "phone TEXT UNIQUE,"
+        "restaurant_id INTEGER,"
+        "city TEXT,"
+        "location TEXT"
+        ");",
+        // Restaurants
+        "CREATE TABLE IF NOT EXISTS restaurants ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "name TEXT NOT NULL,"
+        "address TEXT,"
+        "type TEXT,"
+        "image_url TEXT,"
+        "status TEXT DEFAULT 'approved'"
+        ");",
+        // Menus
+        "CREATE TABLE IF NOT EXISTS menus ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "restaurant_id INTEGER NOT NULL,"
+        "FOREIGN KEY(restaurant_id) REFERENCES restaurants(id)"
+        ");",
+        // Menu Items
+        "CREATE TABLE IF NOT EXISTS menu_items ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "menu_id INTEGER NOT NULL,"
+        "name TEXT NOT NULL,"
+        "description TEXT,"
+        "price REAL NOT NULL,"
+        "ingredients TEXT,"
+        "category TEXT,"
+        "image_url TEXT,"
+        "available INTEGER DEFAULT 1,"
+        "FOREIGN KEY(menu_id) REFERENCES menus(id)"
+        ");",
+        // Orders
+        "CREATE TABLE IF NOT EXISTS orders ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "customer_id INTEGER NOT NULL,"
+        "restaurant_id INTEGER NOT NULL,"
+        "status TEXT NOT NULL,"
+        "created_at DATETIME NOT NULL,"
+        "total_amount REAL,"
+        "FOREIGN KEY(customer_id) REFERENCES customers(id),"
+        "FOREIGN KEY(restaurant_id) REFERENCES restaurants(id)"
+        ");",
+        // Order Items
+        "CREATE TABLE IF NOT EXISTS order_items ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "order_id INTEGER NOT NULL,"
+        "menu_item_id INTEGER NOT NULL,"
+        "quantity INTEGER NOT NULL,"
+        "price REAL NOT NULL,"
+        "FOREIGN KEY(order_id) REFERENCES orders(id),"
+        "FOREIGN KEY(menu_item_id) REFERENCES menu_items(id)"
+        ");",
+        // Order Feedback
+        "CREATE TABLE IF NOT EXISTS order_feedback ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "order_id INTEGER NOT NULL,"
+        "customer_id INTEGER NOT NULL,"
+        "comment TEXT,"
+        "created_at DATETIME NOT NULL,"
+        "FOREIGN KEY(order_id) REFERENCES orders(id),"
+        "FOREIGN KEY(customer_id) REFERENCES customers(id)"
+        ");",
+        // Chat Messages
+        "CREATE TABLE IF NOT EXISTS chat_messages ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "order_id INTEGER NOT NULL,"
+        "from_user_id INTEGER NOT NULL,"
+        "to_user_id INTEGER NOT NULL,"
+        "content TEXT NOT NULL,"
+        "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,"
+        "is_read INTEGER DEFAULT 0,"
+        "FOREIGN KEY(order_id) REFERENCES orders(id)"
+        ");",
+        // User Chat Messages
+        "CREATE TABLE IF NOT EXISTS user_chat_messages ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "from_user_id INTEGER NOT NULL,"
+        "to_user_id INTEGER NOT NULL,"
+        "content TEXT NOT NULL,"
+        "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,"
+        "is_read INTEGER DEFAULT 0"
+        ");"
+    };
+
+    for (const char* stmt : createStatements) {
+        QSqlQuery query;
+        if (!query.exec(stmt)) {
+            logError("Schema Initialization", query.lastError());
+            return false;
+        }
+    }
+    return true;
+}

@@ -1,0 +1,17 @@
+[2025-07-03 00:11:59.418] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 00:11:59.419] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 00:12:19.804] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 00:12:19.805] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 00:12:59.698] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 00:12:59.699] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 00:13:54.061] [INFO] [DatabaseManager] Customer created successfully: ddddddddddd
+[2025-07-03 09:13:04.618] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 09:13:04.619] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 09:13:52.366] [INFO] [DatabaseManager] Customer created successfully: asdf
+[2025-07-03 09:15:36.407] [ERROR] [DatabaseManager] Failed to create customer: asdf
+[2025-07-03 09:15:57.434] [ERROR] [DatabaseManager] Failed to create customer: hgfds
+[2025-07-03 09:38:43.447] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 09:38:43.449] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 09:39:34.233] [INFO] [DatabaseManager] Customer created successfully: لالا
+[2025-07-03 10:23:23.953] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 10:23:23.954] [INFO] [DatabaseManager] Database connected successfully

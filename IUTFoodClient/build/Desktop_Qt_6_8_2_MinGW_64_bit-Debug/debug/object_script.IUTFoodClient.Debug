@@ -13,11 +13,13 @@ debug/authmanager.o
 debug/restaurantmanager.o
 debug/ordermanager.o
 debug/chatmanager.o
+debug/adminmenu.o
 debug/customermenu.o
 debug/fooditemwidget.o
 debug/loginwindow.o
 debug/restaurantitem.o
 debug/restaurantmenu.o
+debug/restaurantownermenu.o
 debug/qrc_resources.o
 debug/moc_user.o
 debug/moc_restaurant.o
@@ -33,8 +35,10 @@ debug/moc_authmanager.o
 debug/moc_restaurantmanager.o
 debug/moc_ordermanager.o
 debug/moc_chatmanager.o
+debug/moc_adminmenu.o
 debug/moc_customermenu.o
 debug/moc_fooditemwidget.o
 debug/moc_loginwindow.o
 debug/moc_restaurantitem.o
 debug/moc_restaurantmenu.o
+debug/moc_restaurantownermenu.o

@@ -133,12 +133,13 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         QString phone = request["phone"].toString();
         QString password = request["password"].toString();
         QString userType = request["userType"].toString();
-        if (m_authSystem->registerUser(firstName, lastName, email, phone, password, userType)) {
+        auto [success, errorMsg] = m_authSystem->registerUser(firstName, lastName, email, phone, password, userType);
+        if (success) {
             response["status"] = "success";
             response["message"] = "Registration successful";
         } else {
             response["status"] = "error";
-            response["message"] = "Registration failed";
+            response["message"] = errorMsg.isEmpty() ? "Registration failed" : errorMsg;
         }
     }
     else if (type == "register_customer") {

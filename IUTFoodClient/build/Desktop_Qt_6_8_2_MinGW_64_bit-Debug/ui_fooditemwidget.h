@@ -27,7 +27,8 @@ public:
     QLabel *label_fooddetails;
     QLabel *label_foodprice;
     QLabel *label_8;
-    QToolButton *toolButton;
+    QToolButton *addFoodButton;
+    QToolButton *removeFoodButton;
 
     void setupUi(QWidget *FoodItemWidget)
     {
@@ -108,13 +109,20 @@ public:
 ", 110, 85, 1);"));
         label_8->setTextFormat(Qt::TextFormat::AutoText);
         label_8->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        toolButton = new QToolButton(FoodItemWidget);
-        toolButton->setObjectName("toolButton");
-        toolButton->setGeometry(QRect(270, 15, 25, 27));
-        toolButton->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);"));
+        addFoodButton = new QToolButton(FoodItemWidget);
+        addFoodButton->setObjectName("addFoodButton");
+        addFoodButton->setGeometry(QRect(270, 10, 25, 27));
+        addFoodButton->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/images/plus icon.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        toolButton->setIcon(icon);
+        addFoodButton->setIcon(icon);
+        removeFoodButton = new QToolButton(FoodItemWidget);
+        removeFoodButton->setObjectName("removeFoodButton");
+        removeFoodButton->setGeometry(QRect(270, 40, 25, 27));
+        removeFoodButton->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/minus icon.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        removeFoodButton->setIcon(icon1);
 
         retranslateUi(FoodItemWidget);
 
@@ -130,7 +138,8 @@ public:
         label_fooddetails->setText(QCoreApplication::translate("FoodItemWidget", "food details", nullptr));
         label_foodprice->setText(QCoreApplication::translate("FoodItemWidget", "price", nullptr));
         label_8->setText(QCoreApplication::translate("FoodItemWidget", "$", nullptr));
-        toolButton->setText(QCoreApplication::translate("FoodItemWidget", "...", nullptr));
+        addFoodButton->setText(QCoreApplication::translate("FoodItemWidget", "...", nullptr));
+        removeFoodButton->setText(QCoreApplication::translate("FoodItemWidget", "...", nullptr));
     } // retranslateUi
 
 };

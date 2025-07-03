@@ -14,6 +14,12 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Initialize database schema
+    if (!dbManager->initializeSchema()) {
+        qDebug() << "Failed to initialize database schema. Exiting...";
+        return 2;
+    }
+
     // Start server
     Server* server = Server::getInstance();
     if (!server->start(8080, 8081)) {

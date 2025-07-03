@@ -27,11 +27,13 @@ SOURCES += \
     src/network/restaurantmanager.cpp \
     src/network/ordermanager.cpp \
     src/network/chatmanager.cpp \
+    src/UI/adminmenu.cpp \
     src/UI/customermenu.cpp \
     src/UI/fooditemwidget.cpp \
     src/UI/loginwindow.cpp \
     src/UI/restaurantitem.cpp \
-    src/UI/restaurantmenu.cpp
+    src/UI/restaurantmenu.cpp \
+    src/UI/restaurantownermenu.cpp
 
 HEADERS += \
     src/models/user.h \
@@ -48,19 +50,24 @@ HEADERS += \
     src/network/restaurantmanager.h \
     src/network/ordermanager.h \
     src/network/chatmanager.h \
+    src/UI/adminmenu.h \
     src/UI/customermenu.h \
     src/UI/fooditemwidget.h \
     src/UI/loginwindow.h \
     src/UI/restaurant.h \
     src/UI/restaurantitem.h \
-    src/UI/restaurantmenu.h
+    src/UI/restaurantmenu.h \
+    src/UI/restaurantownermenu.h
 
 FORMS += \
-    src/UI/loginwindow.ui \
+    src/UI/adminmenu.ui \
     src/UI/customermenu.ui \
     src/UI/fooditemwidget.ui \
+    src/UI/loginwindow.ui \
     src/UI/restaurantitem.ui \
-    src/UI/restaurantmenu.ui
+    src/UI/restaurantmenu.ui \
+    src/UI/restaurantownermenu.ui
+
 
    RESOURCES += src/UI/resources.qrc
 

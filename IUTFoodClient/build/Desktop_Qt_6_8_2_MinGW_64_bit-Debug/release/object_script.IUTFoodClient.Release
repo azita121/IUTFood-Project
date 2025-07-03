@@ -13,11 +13,13 @@ release/authmanager.o
 release/restaurantmanager.o
 release/ordermanager.o
 release/chatmanager.o
+release/adminmenu.o
 release/customermenu.o
 release/fooditemwidget.o
 release/loginwindow.o
 release/restaurantitem.o
 release/restaurantmenu.o
+release/restaurantownermenu.o
 release/qrc_resources.o
 release/moc_user.o
 release/moc_restaurant.o
@@ -33,8 +35,10 @@ release/moc_authmanager.o
 release/moc_restaurantmanager.o
 release/moc_ordermanager.o
 release/moc_chatmanager.o
+release/moc_adminmenu.o
 release/moc_customermenu.o
 release/moc_fooditemwidget.o
 release/moc_loginwindow.o
 release/moc_restaurantitem.o
 release/moc_restaurantmenu.o
+release/moc_restaurantownermenu.o

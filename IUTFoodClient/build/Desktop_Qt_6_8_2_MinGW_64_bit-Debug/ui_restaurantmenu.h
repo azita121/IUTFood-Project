@@ -75,7 +75,7 @@ public:
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
         verticalLayoutWidget->setGeometry(QRect(0, 0, 320, 1160));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setSpacing(7);
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setSizeConstraint(QLayout::SizeConstraint::SetNoConstraint);
         verticalLayout->setContentsMargins(0, 0, 0, 0);

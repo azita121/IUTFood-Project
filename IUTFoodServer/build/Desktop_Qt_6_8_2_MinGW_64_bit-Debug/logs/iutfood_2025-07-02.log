@@ -63,3 +63,6 @@
 [2025-07-02 23:00:49.910] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
 [2025-07-02 23:00:49.911] [INFO] [DatabaseManager] Database connected successfully
 [2025-07-02 23:01:12.735] [INFO] [DatabaseManager] Customer created successfully: ghjkl;
+[2025-07-02 23:10:28.316] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-02 23:10:28.317] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-02 23:12:01.920] [INFO] [DatabaseManager] Customer created successfully: azita@gmail.com

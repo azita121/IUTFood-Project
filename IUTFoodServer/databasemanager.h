@@ -17,6 +17,14 @@ class DatabaseManager : public QObject
 
 public:
     static DatabaseManager* getInstance();
+    bool addChatMessage(const QString& orderId, const QString& fromUserId, const QString& toUserId, const QString& content);
+    QJsonArray getChatHistory(const QString& orderId);
+    bool addUserChatMessage(const QString& fromUserId, const QString& toUserId, const QString& content);
+    QJsonArray getUserChatHistory(const QString& userA, const QString& userB);
+    bool customerEmailExists(const QString& email);
+    bool customerPhoneExists(const QString& phone);
+    bool ownerEmailExists(const QString& email);
+    bool ownerPhoneExists(const QString& phone);
 
     // Connection Management
     bool connect(const QString& host, const QString& database, const QString& username, const QString& password);

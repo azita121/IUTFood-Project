@@ -1,6 +1,7 @@
 #include "authsystem.h"
 #include <QDebug>
 #include <QRegularExpression>
+#include <QSqlQuery>
 
 AuthSystem* AuthSystem::instance = nullptr;
 
@@ -68,10 +69,10 @@ QString AuthSystem::login(const QString& loginId, const QString& password)
     return token;
 }
 
-bool AuthSystem::registerUser(const QString& firstName, const QString& lastName, const QString& email, const QString& phone, const QString& password, const QString& userType)
+std::pair<bool, QString> AuthSystem::registerUser(const QString& firstName, const QString& lastName, const QString& email, const QString& phone, const QString& password, const QString& userType)
 {
     if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || userType.isEmpty()) {
-        return false;
+        return {false, "All fields are required."};
     }
     // Hash the password
     QString hashedPassword = SecurityUtils::hashPassword(password);
@@ -83,11 +84,24 @@ bool AuthSystem::registerUser(const QString& firstName, const QString& lastName,
         success = dbManager->createCustomer(firstName, lastName, username, email, hashedPassword, phone, "", "", "");
     }
     if (!success) {
-        qDebug() << "Failed to create user:" << username;
-        return false;
+        // Check for duplicate email/phone for specific error
+        QSqlQuery emailQuery;
+        emailQuery.prepare("SELECT 1 FROM customers WHERE LOWER(email) = LOWER(?) UNION SELECT 1 FROM restaurant_owners WHERE LOWER(email) = LOWER(?) LIMIT 1");
+        emailQuery.addBindValue(email);
+        emailQuery.addBindValue(email);
+        if (emailQuery.exec() && emailQuery.next()) {
+            return {false, "Email already in use."};
+        }
+        QSqlQuery phoneQuery;
+        phoneQuery.prepare("SELECT 1 FROM customers WHERE phone = ? UNION SELECT 1 FROM restaurant_owners WHERE phone = ? LIMIT 1");
+        phoneQuery.addBindValue(phone);
+        phoneQuery.addBindValue(phone);
+        if (phoneQuery.exec() && phoneQuery.next()) {
+            return {false, "Phone already in use."};
+        }
+        return {false, "Registration failed."};
     }
-    qDebug() << "User registered successfully:" << username;
-    return true;
+    return {true, ""};
 }
 
 bool AuthSystem::logout(const QString& token)

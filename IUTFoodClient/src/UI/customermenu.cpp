@@ -8,6 +8,72 @@ CustomerMenu::CustomerMenu(QWidget *parent)
 {
     ui->setupUi(this);
 
+    for (int i = 0; i < ui->stackedWidget->count(); ++i) {
+        qDebug() << "Index:" << i << "Widget:" << ui->stackedWidget->widget(i)->objectName();
+    }
+
+    scrollArea_cart = new QScrollArea(this);
+    scrollArea_cart->setWidgetResizable(true);
+    scrollArea_cart->setFrameShape(QFrame::NoFrame);
+    scrollArea_cart->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea_cart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea_cart->setStyleSheet(R"(
+    QScrollArea, QScrollArea > QWidget > QWidget {
+        background-color: rgba(220, 213, 200, 1);
+    }
+    QScrollBar:vertical, QScrollBar:horizontal {
+        width: 0px;
+        height: 0px;
+    }
+)");
+
+
+    cartContainer = new QWidget();
+    cartLayout = new QVBoxLayout(cartContainer);
+    cartContainer->setLayout(cartLayout);
+
+    scrollArea_cart->setWidget(cartContainer);
+
+    QVBoxLayout* holderLayout = qobject_cast<QVBoxLayout*>(ui->cartScrollHolder->layout());
+    if (holderLayout) {
+        holderLayout->addWidget(scrollArea_cart);
+    } else {
+        QVBoxLayout* newLayout = new QVBoxLayout(ui->cartScrollHolder);
+        ui->cartScrollHolder->setLayout(newLayout);
+        newLayout->addWidget(scrollArea_cart);
+    }
+
+    scrollArea_history = new QScrollArea(this);
+    scrollArea_history->setWidgetResizable(true);
+    scrollArea_history->setFrameShape(QFrame::NoFrame);
+    scrollArea_history->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    scrollArea_history->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea_history->setStyleSheet(R"(
+    QScrollArea, QScrollArea > QWidget > QWidget {
+        background-color: rgba(220, 213, 200, 1);
+    }
+    QScrollBar:vertical, QScrollBar:horizontal {
+        width: 0px;
+        height: 0px;
+    }
+)");
+
+    historyContainer = new QWidget();
+    historyLayout = new QVBoxLayout(historyContainer);
+    historyContainer->setLayout(historyLayout);
+    scrollArea_history->setWidget(historyContainer);
+
+    QVBoxLayout* historyHolderLayout = qobject_cast<QVBoxLayout*>(ui->historyFrame->layout());
+    if (historyHolderLayout) {
+        historyHolderLayout->addWidget(scrollArea_history);
+    } else {
+        QVBoxLayout* newLayout = new QVBoxLayout(ui->historyFrame);
+        ui->historyFrame->setLayout(newLayout);
+        newLayout->addWidget(scrollArea_history);
+    }
+
+    connect(ui->deleteHistoryButton, &QPushButton::clicked, this, &CustomerMenu::on_deleteHistoryButton_clicked);
+
     connect(ui->typeComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
     connect(ui->locationComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
     connect(ui->priceComboBox, &QComboBox::currentTextChanged, this, &CustomerMenu::applyFilters);
@@ -67,11 +133,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
 
     QList<Restaurant> restaurantList;
 
-    // ui->locationComboBox->setPlaceholderText("location");
-    // ui->priceComboBox->setPlaceholderText("price");
-    // ui->typeComboBox->setPlaceholderText("type");
-
-
     Restaurant r1;
     r1.name = "Burger House";
     r1.type = "Fast Food";
@@ -82,7 +143,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r1.menuItems.append({"Coca Cola", 20000, "Chilled Coca Cola bottle"});
     restaurantList.append(r1);
 
-    // === رستوران ۲ ===
     Restaurant r2;
     r2.name = "Pizza Planet";
     r2.type = "Italian";
@@ -93,7 +153,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r2.menuItems.append({"Sprite", 18000, "Cold Sprite bottle"});
     restaurantList.append(r2);
 
-    // === رستوران ۳ ===
     Restaurant r3;
     r3.name = "Kebab King";
     r3.type = "Iranian";
@@ -104,7 +163,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r3.menuItems.append({"Doogh", 15000, "Traditional yogurt drink"});
     restaurantList.append(r3);
 
-    // === رستوران ۴ ===
     Restaurant r4;
     r4.name = "Grill Master";
     r4.type = "Fast Food";
@@ -115,7 +173,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r4.menuItems.append({"Fanta", 15000, "Orange soda"});
     restaurantList.append(r4);
 
-    // === رستوران ۵ ===
     Restaurant r5;
     r5.name = "Saffron Kitchen";
     r5.type = "Iranian";
@@ -126,7 +183,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r5.menuItems.append({"Doogh", 15000, "Yogurt drink"});
     restaurantList.append(r5);
 
-    // === رستوران ۶ ===
     Restaurant r6;
     r6.name = "Pastaria";
     r6.type = "Italian";
@@ -137,7 +193,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r6.menuItems.append({"Iced Tea", 20000, "Cold lemon iced tea"});
     restaurantList.append(r6);
 
-    // === رستوران ۷ ===
     Restaurant r7;
     r7.name = "Hot Bite";
     r7.type = "Fast Food";
@@ -147,7 +202,6 @@ CustomerMenu::CustomerMenu(QWidget *parent)
     r7.menuItems.append({"Lemonade", 18000, "Fresh squeezed lemonade"});
     restaurantList.append(r7);
 
-    // === رستوران ۸ ===
     Restaurant r8;
     r8.name = "Garden Dine";
     r8.type = "Iranian";
@@ -166,11 +220,19 @@ CustomerMenu::CustomerMenu(QWidget *parent)
         connect(item, &restaurantitem::restaurantClicked, this, [=](const Restaurant& res) {
             RestaurantMenu* menuPage = new RestaurantMenu(res);
             menuPage->setAttribute(Qt::WA_DeleteOnClose);
+
+            connect(menuPage, &RestaurantMenu::foodAddedToCart, this, [=](const MenuItem& item){
+                cartItems.append(item);
+                addToCartUI(item);
+            });
+
+
             menuPage->show();
         });
 
         ui->verticalLayout->addWidget(item);
     }
+
 }
 
 CustomerMenu::~CustomerMenu()
@@ -180,12 +242,12 @@ CustomerMenu::~CustomerMenu()
 
 void CustomerMenu::on_shoppingCartButton_clicked()
 {
-    // ui->stackedWidget->
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void CustomerMenu::on_HistoryButton_clicked()
 {
-
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void CustomerMenu::applyFilters()
@@ -194,7 +256,6 @@ void CustomerMenu::applyFilters()
     QString locFilter = ui->locationComboBox->currentText();
     QString priceFilter = ui->priceComboBox->currentText();
 
-    // پاک کردن قبلی‌ها از layout
     QLayoutItem* item;
     while ((item = ui->verticalLayout->takeAt(0)) != nullptr) {
         if (item->widget()) item->widget()->deleteLater();
@@ -202,16 +263,13 @@ void CustomerMenu::applyFilters()
     }
 
     for (const Restaurant& r : allRestaurants) {
-        // بررسی اینکه آیا فیلتر اصلاً فعال هست
         bool isTypeFiltered = (typeFilter != "type");
         bool isLocFiltered = (locFilter != "location");
         bool isPriceFiltered = (priceFilter != "price");
 
-        // بررسی وضعیت هر فیلتر فقط اگر فعال بود
         bool typeOk = (!isTypeFiltered || r.type == typeFilter);
         bool locOk = (!isLocFiltered || r.location == locFilter);
 
-        // محاسبه میانگین قیمت غذا
         int avgPrice = 0;
         for (const MenuItem& m : r.menuItems)
             avgPrice += m.price;
@@ -228,7 +286,6 @@ void CustomerMenu::applyFilters()
             else if (priceFilter == "More than 500,000") priceOk = avgPrice > 500000;
         }
 
-        // فقط اگر تمام فیلترهای فعال برقرار بودن، رستوران رو نشون بده
         if (typeOk && locOk && priceOk) {
             restaurantitem* item = new restaurantitem(this);
             item->setRestaurantData(r);
@@ -251,5 +308,91 @@ void CustomerMenu::resetFilters()
     ui->typeComboBox->setCurrentIndex(0);
     ui->locationComboBox->setCurrentIndex(0);
     ui->priceComboBox->setCurrentIndex(0);
-    applyFilters();  // برگردیم به حالت اولیه
+    applyFilters();
+}
+
+
+
+void CustomerMenu::on_homeButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void CustomerMenu::on_HistoryButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void CustomerMenu::on_shoppingCartButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void CustomerMenu::on_homeButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void CustomerMenu::addToCartUI(const MenuItem& item)
+{
+    auto* widget = new FoodItemWidget(item, this);
+    widget->setFoodData(item);
+
+    connect(widget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
+        cartItems.removeOne(removedItem);
+        widget->deleteLater();
+        updateCartSummary();
+    });
+
+    cartLayout->addWidget(widget);
+    updateCartSummary();
+}
+
+void CustomerMenu::on_orderButton_clicked()
+{
+    for (const MenuItem& item : cartItems) {
+        FoodItemWidget* orderWidget = new FoodItemWidget(item, this);
+        orderWidget->setFoodData(item);
+        orderWidget->setReadOnly(true);
+        historyLayout->addWidget(orderWidget);
+
+    }
+
+    cartItems.clear();
+    updateCartSummary();
+
+    QLayoutItem* item;
+    while ((item = cartLayout->takeAt(0)) != nullptr) {
+        if (item->widget()) item->widget()->deleteLater();
+        delete item;
+    }
+
+}
+
+
+void CustomerMenu::on_deleteHistoryButton_clicked()
+{
+    QLayoutItem* item;
+    while ((item = historyLayout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+}
+
+void CustomerMenu::updateCartSummary()
+{
+    int totalItems = cartItems.size();
+
+    int total = 0;
+    for (const MenuItem& item : cartItems) {
+        total += item.price;
+    }
+
+    ui->numberOfOrders->setText(QString::number(totalItems));
+    ui->totalPrice->setText(QString::number(total));
 }

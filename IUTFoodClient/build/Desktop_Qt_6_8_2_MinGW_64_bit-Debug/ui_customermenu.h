@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
@@ -40,22 +41,33 @@ public:
     QComboBox *typeComboBox;
     QLabel *label_6;
     QPushButton *resetFiltersButton;
+    QPushButton *orderTrackingButton;
     QWidget *shoppingCartPage;
+    QFrame *cartScrollHolder;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
     QLabel *label_4;
-    QLabel *label_7;
-    QLabel *label_8;
-    QPushButton *orderButton;
-    QScrollArea *scrollArea_2;
-    QWidget *scrollAreaWidgetContents_3;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_9;
-    QLabel *label_2;
-    QLabel *label_10;
-    QLabel *totalPrice;
-    QLabel *label_12;
-    QLabel *label_13;
+    QLabel *label_17;
     QLabel *numberOfOrders;
+    QLabel *label_13;
+    QLabel *totalPrice;
+    QLabel *label_18;
+    QPushButton *orderButton;
+    QPushButton *shoppingCartButton_2;
+    QPushButton *homeButton_2;
+    QPushButton *HistoryButton_2;
+    QPushButton *orderTrackingButton_2;
+    QWidget *HistoryPage;
+    QFrame *historyFrame;
+    QLabel *label_9;
+    QLabel *label_12;
+    QLabel *label_2;
+    QPushButton *deleteHistoryButton;
+    QPushButton *shoppingCartButton_3;
+    QPushButton *homeButton_3;
+    QPushButton *HistoryButton_3;
+    QPushButton *orderTrackingButton_3;
 
     void setupUi(QWidget *CustomerMenu)
     {
@@ -256,34 +268,115 @@ public:
 "    padding-top: 8px;\n"
 "}\n"
 ""));
+        orderTrackingButton = new QPushButton(page);
+        orderTrackingButton->setObjectName("orderTrackingButton");
+        orderTrackingButton->setGeometry(QRect(280, 510, 140, 60));
+        orderTrackingButton->setStyleSheet(QString::fromUtf8("QPushButton#orderTrackingButton {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-left-radius: 0px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
         stackedWidget->addWidget(page);
         shoppingCartPage = new QWidget();
         shoppingCartPage->setObjectName("shoppingCartPage");
-        label_4 = new QLabel(shoppingCartPage);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(0, 0, 560, 80));
-        label_4->setFont(font);
-        label_4->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);\n"
+        cartScrollHolder = new QFrame(shoppingCartPage);
+        cartScrollHolder->setObjectName("cartScrollHolder");
+        cartScrollHolder->setGeometry(QRect(-10, 70, 360, 390));
+        cartScrollHolder->setFrameShape(QFrame::Shape::StyledPanel);
+        cartScrollHolder->setFrameShadow(QFrame::Shadow::Raised);
+        label_14 = new QLabel(shoppingCartPage);
+        label_14->setObjectName("label_14");
+        label_14->setGeometry(QRect(0, 0, 560, 80));
+        label_14->setFont(font);
+        label_14->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);\n"
 "border-top-right-radius: 50px;\n"
 "border-top-left-radius: 50px;"));
-        label_7 = new QLabel(shoppingCartPage);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(150, 0, 261, 70));
-        label_7->setFont(font1);
-        label_7->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_7->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
-        label_7->setTextFormat(Qt::TextFormat::AutoText);
-        label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_8 = new QLabel(shoppingCartPage);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(320, 410, 240, 100));
-        label_8->setFont(font);
-        label_8->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);\n"
+        label_15 = new QLabel(shoppingCartPage);
+        label_15->setObjectName("label_15");
+        label_15->setGeometry(QRect(150, 0, 261, 70));
+        label_15->setFont(font1);
+        label_15->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label_15->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        label_15->setTextFormat(Qt::TextFormat::AutoText);
+        label_15->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_16 = new QLabel(shoppingCartPage);
+        label_16->setObjectName("label_16");
+        label_16->setGeometry(QRect(330, 80, 230, 370));
+        label_16->setFont(font);
+        label_16->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);"));
+        label_4 = new QLabel(shoppingCartPage);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(330, 80, 230, 270));
+        label_4->setStyleSheet(QString::fromUtf8("background-color:rgba(0, 0, 0, 80);\n"
 "border-bottom-right-radius: 50px;\n"
-""));
+"border-bottom-left-radius: 50px;\n"
+"border-top-left-radius: 50px;\n"
+"border-top-right-radius: 50px;"));
+        label_17 = new QLabel(shoppingCartPage);
+        label_17->setObjectName("label_17");
+        label_17->setGeometry(QRect(330, 90, 241, 60));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("8514oem")});
+        font3.setPointSize(15);
+        font3.setBold(false);
+        font3.setItalic(false);
+        label_17->setFont(font3);
+        label_17->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label_17->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        label_17->setTextFormat(Qt::TextFormat::AutoText);
+        label_17->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        numberOfOrders = new QLabel(shoppingCartPage);
+        numberOfOrders->setObjectName("numberOfOrders");
+        numberOfOrders->setGeometry(QRect(350, 150, 170, 31));
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Informal Roman")});
+        font4.setPointSize(25);
+        font4.setBold(true);
+        font4.setItalic(false);
+        numberOfOrders->setFont(font4);
+        numberOfOrders->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        numberOfOrders->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        numberOfOrders->setTextFormat(Qt::TextFormat::AutoText);
+        numberOfOrders->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        label_13 = new QLabel(shoppingCartPage);
+        label_13->setObjectName("label_13");
+        label_13->setGeometry(QRect(330, 190, 230, 60));
+        label_13->setFont(font3);
+        label_13->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label_13->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        label_13->setTextFormat(Qt::TextFormat::AutoText);
+        label_13->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        totalPrice = new QLabel(shoppingCartPage);
+        totalPrice->setObjectName("totalPrice");
+        totalPrice->setGeometry(QRect(350, 255, 160, 31));
+        totalPrice->setFont(font4);
+        totalPrice->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        totalPrice->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        totalPrice->setTextFormat(Qt::TextFormat::AutoText);
+        totalPrice->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        label_18 = new QLabel(shoppingCartPage);
+        label_18->setObjectName("label_18");
+        label_18->setGeometry(QRect(520, 260, 30, 31));
+        label_18->setFont(font4);
+        label_18->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label_18->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
+        label_18->setTextFormat(Qt::TextFormat::AutoText);
+        label_18->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         orderButton = new QPushButton(shoppingCartPage);
         orderButton->setObjectName("orderButton");
-        orderButton->setGeometry(QRect(380, 430, 110, 60));
+        orderButton->setGeometry(QRect(390, 370, 110, 60));
         orderButton->setStyleSheet(QString::fromUtf8("QPushButton#orderButton {\n"
 "    background-color: rgba(40, 60, 45, 255);   \n"
 "    color: #F0F8F2;                              \n"
@@ -304,94 +397,217 @@ public:
 "    padding-top: 8px;\n"
 "}\n"
 ""));
-        scrollArea_2 = new QScrollArea(shoppingCartPage);
-        scrollArea_2->setObjectName("scrollArea_2");
-        scrollArea_2->setGeometry(QRect(0, 80, 320, 430));
-        scrollArea_2->setStyleSheet(QString::fromUtf8("QScrollArea, QScrollArea > QWidget > QWidget {\n"
-"    background-color: rgba(220, 213, 200, 1);\n"
-"	\n"
+        shoppingCartButton_2 = new QPushButton(shoppingCartPage);
+        shoppingCartButton_2->setObjectName("shoppingCartButton_2");
+        shoppingCartButton_2->setGeometry(QRect(0, 450, 186, 60));
+        shoppingCartButton_2->setStyleSheet(QString::fromUtf8("QPushButton#shoppingCartButton_2 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                              \n"
+"    border-bottom-left-radius: 50px;\n"
+"    padding: 6px 20px;\n"
 "}\n"
-"QScrollBar:vertical, QScrollBar:horizontal {\n"
-"    width: 0px;\n"
-"    height: 0px;\n"
-"}"));
-        scrollArea_2->setWidgetResizable(true);
-        scrollAreaWidgetContents_3 = new QWidget();
-        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 318, 20000));
-        scrollAreaWidgetContents_3->setMinimumSize(QSize(0, 20000));
-        verticalLayoutWidget_2 = new QWidget(scrollAreaWidgetContents_3);
-        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(0, 0, 320, 540));
-        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_3->setSizeConstraint(QLayout::SizeConstraint::SetFixedSize);
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        scrollArea_2->setWidget(scrollAreaWidgetContents_3);
-        label_9 = new QLabel(shoppingCartPage);
+"\n"
+"QPushButton#shoppingCartButton_2:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#shoppingCartButton_2:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        homeButton_2 = new QPushButton(shoppingCartPage);
+        homeButton_2->setObjectName("homeButton_2");
+        homeButton_2->setGeometry(QRect(186, 450, 186, 60));
+        homeButton_2->setStyleSheet(QString::fromUtf8("QPushButton#homeButton_2 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-left-radius: 0px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#homeButton_2:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#homeButton_2:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        HistoryButton_2 = new QPushButton(shoppingCartPage);
+        HistoryButton_2->setObjectName("HistoryButton_2");
+        HistoryButton_2->setGeometry(QRect(372, 450, 188, 60));
+        HistoryButton_2->setStyleSheet(QString::fromUtf8("QPushButton#HistoryButton_2 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-right-radius: 50px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#HistoryButton_2:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#HistoryButton_2:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        orderTrackingButton_2 = new QPushButton(shoppingCartPage);
+        orderTrackingButton_2->setObjectName("orderTrackingButton_2");
+        orderTrackingButton_2->setGeometry(QRect(280, 510, 140, 60));
+        orderTrackingButton_2->setStyleSheet(QString::fromUtf8("QPushButton#orderTrackingButton_2 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-left-radius: 0px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton_2:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton_2:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        stackedWidget->addWidget(shoppingCartPage);
+        HistoryPage = new QWidget();
+        HistoryPage->setObjectName("HistoryPage");
+        historyFrame = new QFrame(HistoryPage);
+        historyFrame->setObjectName("historyFrame");
+        historyFrame->setGeometry(QRect(210, 70, 360, 390));
+        historyFrame->setFrameShape(QFrame::Shape::StyledPanel);
+        historyFrame->setFrameShadow(QFrame::Shadow::Raised);
+        label_9 = new QLabel(HistoryPage);
         label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(320, 80, 240, 330));
+        label_9->setGeometry(QRect(0, 0, 560, 80));
         label_9->setFont(font);
-        label_9->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);"));
-        label_2 = new QLabel(shoppingCartPage);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(320, 80, 240, 330));
-        label_2->setStyleSheet(QString::fromUtf8("background-color:rgba(0, 0, 0, 80);\n"
-"border-bottom-right-radius: 50px;\n"
-"border-bottom-left-radius: 50px;\n"
-"border-top-left-radius: 50px;\n"
-"border-top-right-radius: 50px;"));
-        label_10 = new QLabel(shoppingCartPage);
-        label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(320, 200, 241, 60));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("8514oem")});
-        font3.setPointSize(15);
-        font3.setBold(false);
-        font3.setItalic(false);
-        label_10->setFont(font3);
-        label_10->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_10->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
-        label_10->setTextFormat(Qt::TextFormat::AutoText);
-        label_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        totalPrice = new QLabel(shoppingCartPage);
-        totalPrice->setObjectName("totalPrice");
-        totalPrice->setGeometry(QRect(330, 270, 170, 31));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Informal Roman")});
-        font4.setPointSize(25);
-        font4.setBold(true);
-        font4.setItalic(false);
-        totalPrice->setFont(font4);
-        totalPrice->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        totalPrice->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
-        totalPrice->setTextFormat(Qt::TextFormat::AutoText);
-        totalPrice->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        label_12 = new QLabel(shoppingCartPage);
+        label_9->setStyleSheet(QString::fromUtf8("background-color:rgba(220, 213, 200, 1);\n"
+"border-top-right-radius: 50px;\n"
+"border-top-left-radius: 50px;"));
+        label_12 = new QLabel(HistoryPage);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(510, 270, 40, 31));
-        label_12->setFont(font4);
+        label_12->setGeometry(QRect(150, 0, 261, 70));
+        label_12->setFont(font1);
         label_12->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         label_12->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
         label_12->setTextFormat(Qt::TextFormat::AutoText);
-        label_12->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        label_13 = new QLabel(shoppingCartPage);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(320, 80, 241, 60));
-        label_13->setFont(font3);
-        label_13->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_13->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
-        label_13->setTextFormat(Qt::TextFormat::AutoText);
-        label_13->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        numberOfOrders = new QLabel(shoppingCartPage);
-        numberOfOrders->setObjectName("numberOfOrders");
-        numberOfOrders->setGeometry(QRect(330, 150, 170, 31));
-        numberOfOrders->setFont(font4);
-        numberOfOrders->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        numberOfOrders->setStyleSheet(QString::fromUtf8("color:rgba(13, 55, 30, 1);"));
-        numberOfOrders->setTextFormat(Qt::TextFormat::AutoText);
-        numberOfOrders->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        stackedWidget->addWidget(shoppingCartPage);
+        label_12->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2 = new QLabel(HistoryPage);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(0, 80, 230, 371));
+        label_2->setStyleSheet(QString::fromUtf8("background-image: url(:/images/finalback.jpg);"));
+        deleteHistoryButton = new QPushButton(HistoryPage);
+        deleteHistoryButton->setObjectName("deleteHistoryButton");
+        deleteHistoryButton->setGeometry(QRect(40, 360, 141, 60));
+        deleteHistoryButton->setStyleSheet(QString::fromUtf8("QPushButton#deleteHistoryButton {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                              \n"
+"    border-bottom-left-radius: 20px;\n"
+"	border-top-left-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    border-top-right-radius: 20px;\n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#deleteHistoryButton:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#deleteHistoryButton:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        shoppingCartButton_3 = new QPushButton(HistoryPage);
+        shoppingCartButton_3->setObjectName("shoppingCartButton_3");
+        shoppingCartButton_3->setGeometry(QRect(0, 450, 186, 60));
+        shoppingCartButton_3->setStyleSheet(QString::fromUtf8("QPushButton#shoppingCartButton_3 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                              \n"
+"    border-bottom-left-radius: 50px;\n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#shoppingCartButton_3:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#shoppingCartButton_3:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        homeButton_3 = new QPushButton(HistoryPage);
+        homeButton_3->setObjectName("homeButton_3");
+        homeButton_3->setGeometry(QRect(186, 450, 186, 60));
+        homeButton_3->setStyleSheet(QString::fromUtf8("QPushButton#homeButton_3 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-left-radius: 0px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#homeButton_3:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#homeButton_3:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        HistoryButton_3 = new QPushButton(HistoryPage);
+        HistoryButton_3->setObjectName("HistoryButton_3");
+        HistoryButton_3->setGeometry(QRect(372, 450, 188, 60));
+        HistoryButton_3->setStyleSheet(QString::fromUtf8("QPushButton#HistoryButton_3 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-right-radius: 50px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#HistoryButton_3:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#HistoryButton_3:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        orderTrackingButton_3 = new QPushButton(HistoryPage);
+        orderTrackingButton_3->setObjectName("orderTrackingButton_3");
+        orderTrackingButton_3->setGeometry(QRect(280, 510, 140, 60));
+        orderTrackingButton_3->setStyleSheet(QString::fromUtf8("QPushButton#orderTrackingButton_3 {\n"
+"    background-color: rgba(40, 60, 45, 255);   \n"
+"    color: #F0F8F2;                \n"
+"    border-bottom-left-radius: 0px;              \n"
+"    padding: 6px 20px;\n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton_3:hover {\n"
+"    background-color: rgba(55, 80, 60, 255);   \n"
+"}\n"
+"\n"
+"QPushButton#orderTrackingButton_3:pressed {\n"
+"    background-color: rgba(30, 40, 30, 255);    \n"
+"    padding-left: 8px;\n"
+"    padding-top: 8px;\n"
+"}\n"
+""));
+        stackedWidget->addWidget(HistoryPage);
 
         retranslateUi(CustomerMenu);
 
@@ -417,17 +633,29 @@ public:
         typeComboBox->setPlaceholderText(QCoreApplication::translate("CustomerMenu", "type", nullptr));
         label_6->setText(QCoreApplication::translate("CustomerMenu", "filters", nullptr));
         resetFiltersButton->setText(QCoreApplication::translate("CustomerMenu", "reset filters", nullptr));
+        orderTrackingButton->setText(QCoreApplication::translate("CustomerMenu", "Order tracking", nullptr));
+        label_14->setText(QString());
+        label_15->setText(QCoreApplication::translate("CustomerMenu", "Shopping Cart", nullptr));
+        label_16->setText(QString());
         label_4->setText(QString());
-        label_7->setText(QCoreApplication::translate("CustomerMenu", "Shopping Cart", nullptr));
-        label_8->setText(QString());
-        orderButton->setText(QCoreApplication::translate("CustomerMenu", "order", nullptr));
-        label_9->setText(QString());
-        label_2->setText(QString());
-        label_10->setText(QCoreApplication::translate("CustomerMenu", "Total price of orders :", nullptr));
-        totalPrice->setText(QCoreApplication::translate("CustomerMenu", "price", nullptr));
-        label_12->setText(QCoreApplication::translate("CustomerMenu", "$", nullptr));
-        label_13->setText(QCoreApplication::translate("CustomerMenu", "Number of orders :", nullptr));
+        label_17->setText(QCoreApplication::translate("CustomerMenu", "Number of orders :", nullptr));
         numberOfOrders->setText(QCoreApplication::translate("CustomerMenu", "number", nullptr));
+        label_13->setText(QCoreApplication::translate("CustomerMenu", "Total price of orders :", nullptr));
+        totalPrice->setText(QCoreApplication::translate("CustomerMenu", "price", nullptr));
+        label_18->setText(QCoreApplication::translate("CustomerMenu", "$", nullptr));
+        orderButton->setText(QCoreApplication::translate("CustomerMenu", "order", nullptr));
+        shoppingCartButton_2->setText(QCoreApplication::translate("CustomerMenu", "Shopping Cart", nullptr));
+        homeButton_2->setText(QCoreApplication::translate("CustomerMenu", "Home", nullptr));
+        HistoryButton_2->setText(QCoreApplication::translate("CustomerMenu", "History", nullptr));
+        orderTrackingButton_2->setText(QCoreApplication::translate("CustomerMenu", "Order tracking", nullptr));
+        label_9->setText(QString());
+        label_12->setText(QCoreApplication::translate("CustomerMenu", "History", nullptr));
+        label_2->setText(QString());
+        deleteHistoryButton->setText(QCoreApplication::translate("CustomerMenu", "delete history", nullptr));
+        shoppingCartButton_3->setText(QCoreApplication::translate("CustomerMenu", "Shopping Cart", nullptr));
+        homeButton_3->setText(QCoreApplication::translate("CustomerMenu", "Home", nullptr));
+        HistoryButton_3->setText(QCoreApplication::translate("CustomerMenu", "History", nullptr));
+        orderTrackingButton_3->setText(QCoreApplication::translate("CustomerMenu", "Order tracking", nullptr));
     } // retranslateUi
 
 };

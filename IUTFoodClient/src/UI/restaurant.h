@@ -14,9 +14,15 @@ struct Restaurant {
     QString name;
     QString type;
     QString location;
-    // QString imagePath;
     QList<MenuItem> menuItems;
 
 };
+
+inline bool operator==(const MenuItem& a, const MenuItem& b)
+{
+    return a.name == b.name &&
+           a.price == b.price &&
+           a.detail == b.detail;
+}
 
 #endif // RESTAURANT_H
