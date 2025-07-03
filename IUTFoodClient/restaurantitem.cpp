@@ -21,6 +21,9 @@ void restaurantitem::setRestaurantData(const Restaurant& data)
     ui->label_restaurantType->setText(data.type);
     ui->label_restaurantLocation->setText(data.location);
 
+    // بعد از setRestaurantData:
+    ui->ratingLabel->setText("⭐ " + QString::number(data.averageRating(), 'f', 1));
+
 }
 
 void restaurantitem::on_showresButton_clicked()

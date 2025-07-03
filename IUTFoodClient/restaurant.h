@@ -16,6 +16,15 @@ struct Restaurant {
     QString location;
     QList<MenuItem> menuItems;
 
+    QList<int> ratings;  // ⭐ امتیازهای دریافتی
+
+    double averageRating() const {
+        if (ratings.isEmpty()) return 0.0;
+        double sum = 0;
+        for (int r : ratings) sum += r;
+        return sum / ratings.size();
+    }
+
 };
 
 inline bool operator==(const MenuItem& a, const MenuItem& b)

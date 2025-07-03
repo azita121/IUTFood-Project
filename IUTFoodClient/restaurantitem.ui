@@ -230,6 +230,19 @@ QPushButton#showresButton:pressed {
     <string>show </string>
    </property>
   </widget>
+  <widget class="QLabel" name="ratingLabel">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>10</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

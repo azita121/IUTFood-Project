@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -1689,10 +1689,10 @@ border-bottom:2px solid rgba(46, 82, 101, 200);
 color:rgba(0, 0, 0, 240);</string>
       </property>
       <property name="placeholderText">
-       <string>Name of the restaurant</string>
+       <string>Name of restaurant</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_SignOwnerRestaurantNumber">
+     <widget class="QLineEdit" name="lineEdit_SignOwnerPassword">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1708,27 +1708,73 @@ border-bottom:2px solid rgba(46, 82, 101, 200);
 color:rgba(0, 0, 0, 240);</string>
       </property>
       <property name="placeholderText">
-       <string>Restaurant Number</string>
+       <string>Password</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_SignOwnerPassword">
+     <widget class="QComboBox" name="comboBox_SignOwnerRestaurantType">
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>300</y>
+        <y>310</y>
         <width>190</width>
-        <height>40</height>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>10</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-color:rgba(0, 0, 0, 240);</string>
+       <string notr="true">QComboBox {
+    background-color: rgba(30, 60, 45, 255);     
+    border: 1px solid rgba(80, 130, 100, 180);
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: #F0F8F2;                              
+}
+
+QComboBox:hover {
+    background-color: rgba(45, 80, 60, 255); 
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid rgba(100, 150, 120, 100);
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgba(35, 70, 50, 255);      
+    selection-background-color: rgba(60, 100, 80, 255);
+    color: #F0F8F2;
+    border: 1px solid rgba(100, 150, 120, 100);
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/images/dropdown-icon.png&quot;);
+    width: 12px;
+    height: 12px;
+}
+</string>
       </property>
       <property name="placeholderText">
-       <string>Password</string>
+       <string>Restaurant Type</string>
       </property>
+      <item>
+       <property name="text">
+        <string>Iranian</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fast Food</string>
+       </property>
+      </item>
      </widget>
     </widget>
    </widget>
