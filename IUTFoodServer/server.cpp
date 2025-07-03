@@ -5,7 +5,9 @@
 #include "ordermanager.h"
 #include "menumanager.h"
 #include "orderstatus.h"
-#include "securityutils.h"
+#include <QJsonObject>
+#include <QJsonArray>
+
 
 Server* Server::instance = nullptr;
 
@@ -64,7 +66,7 @@ void Server::stop()
     }
 
     m_wsServer->stop();
-        qDebug() << "Server stopped";
+    qDebug() << "Server stopped";
 }
 
 void Server::handleNewConnection()
@@ -81,6 +83,8 @@ void Server::handleReadyRead()
     if (!client) return;
 
     QByteArray data = client->readAll();
+        qDebug() << "[Server] Raw data received:" << data; // <--- ADD THIS LINE
+
     QJsonDocument doc = QJsonDocument::fromJson(data);
     if (!doc.isObject()) {
         QJsonObject error;
@@ -92,6 +96,33 @@ void Server::handleReadyRead()
 
     processRequest(client, doc.object());
 }
+
+// void Server::handleReadyRead()
+// {
+//     QTcpSocket* client = qobject_cast<QTcpSocket*>(sender());
+//     if (!client) return;
+
+//     static QByteArray buffer;
+//     buffer += client->readAll();
+//     qDebug() << "[Server] Raw data received:" << buffer;
+
+//     while (true) {
+//         int newline = buffer.indexOf('\n');
+//         if (newline == -1) break;
+//         QByteArray line = buffer.left(newline).trimmed();
+//         buffer = buffer.mid(newline + 1);
+//         if (line.isEmpty()) continue;
+//         QJsonDocument doc = QJsonDocument::fromJson(line);
+//         if (!doc.isObject()) {
+//             QJsonObject error;
+//             error["status"] = "error";
+//             error["message"] = "Invalid request format";
+//             sendResponse(client, error);
+//             continue;
+//         }
+//         processRequest(client, doc.object());
+//     }
+// }
 
 void Server::handleDisconnection()
 {
@@ -105,23 +136,44 @@ void Server::handleDisconnection()
 
 void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
 {
+    qDebug() << "[Server] processRequest called with:" << request;
     QString type = request["type"].toString();
+    qDebug() << "[Server] Request type:" << type;
     QJsonObject response;
 
     if (type == "login") {
         QString loginId = request["loginId"].toString();
         QString password = request["password"].toString();
+        qDebug() << "[Server] Login attempt. loginId:" << loginId << ", password:" << password;
         QString token = m_authSystem->login(loginId, password);
+        qDebug() << "[Server] Token result:" << token;
         if (!token.isEmpty()) {
             QString userId = m_authSystem->getUserIdFromToken(token);
             QVariantMap userData = m_dbManager->getUserById(userId);
-            
+            qDebug() << "[Server] Login success. userId:" << userId << ", userData:" << userData;
+            // Normalize userData fields for client
+            QVariantMap normalizedUserData;
+            for (auto it = userData.begin(); it != userData.end(); ++it) {
+                QString key = it.key();
+                QVariant value = it.value();
+                if (key == "user_type") {
+                    key = "userType";
+                    value = value.toString().trimmed();
+                }
+                if (key == "id") value = value.toString();
+                normalizedUserData[key] = value.toString();
+            }
+            if (!normalizedUserData.contains("userType")) {
+                normalizedUserData["userType"] = "customer";
+            }
+            qDebug() << "[Server] Sending normalizedUserData:" << normalizedUserData;
             response["status"] = "success";
             response["token"] = token;
             response["type"] = "login";
-            response["userData"] = QJsonObject::fromVariantMap(userData);
+            response["userData"] = QJsonObject::fromVariantMap(normalizedUserData);
             m_clients[client] = userId;
         } else {
+            qDebug() << "[Server] Login failed: Invalid credentials";
             response["status"] = "error";
             response["message"] = "Invalid credentials";
         }
@@ -143,6 +195,8 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         }
     }
     else if (type == "register_customer") {
+        qDebug() << "the processRequest (register_customer) fuction called\n";
+
         QString firstName = request["firstName"].toString();
         QString lastName = request["lastName"].toString();
         QString email = request["email"].toString();
@@ -152,7 +206,7 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         bool success = m_dbManager->createCustomer(
             firstName, lastName, firstName + " " + lastName, email,
             SecurityUtils::hashPassword(password), phone, "", "", location
-        );
+            );
         if (success) {
             response["status"] = "success";
             response["type"] = "register_customer";
@@ -209,7 +263,7 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
     else if (type == "update_order_status") {
         QString orderId = request["orderId"].toString();
         QString status = request["status"].toString();
-        
+
         // Validate the status
         if (!OrderStatus::getInstance()->isValidStatus(status)) {
             response["status"] = "error";
@@ -217,7 +271,7 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         } else {
             bool ok = OrderManager::getInstance()->updateOrderStatus(orderId, status);
             response["status"] = ok ? "success" : "error";
-            
+
             if (ok) {
                 // Notify observers about status change
                 OrderStatus::getInstance()->notifyObservers(orderId, status);
@@ -281,7 +335,7 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         if (m_dbManager->createOrder(customerId, restaurantId, items.toVariantList())) {
             response["status"] = "success";
             response["message"] = "Order created successfully";
-            
+
             // Notify restaurant about new order
             QJsonObject notification;
             notification["type"] = "new_order";
@@ -320,4 +374,4 @@ void Server::sendResponse(QTcpSocket* client, const QJsonObject& response)
 void Server::broadcastOrderUpdate(const QString& orderId, const QString& status)
 {
     m_wsServer->broadcastOrderUpdate(orderId, status);
-} 
+}

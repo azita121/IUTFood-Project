@@ -195,16 +195,25 @@ QVariantMap DatabaseManager::getCustomerProfile(const QString& customerId)
 
 QVariantMap DatabaseManager::getCustomerByLoginId(const QString& loginId)
 {
+    qDebug() << "[getCustomerByLoginId] loginId:" << loginId;
     QVariantMap params;
     params["loginId"] = loginId;
     QString query = "SELECT * FROM customers WHERE email = :loginId OR phone = :loginId";
     QSqlQuery result = prepareQuery(query, params);
+    qDebug() << "Query Prepared:" << result.lastQuery();
+    qDebug() << "loginId param bound to:" << loginId;
+    if (!result.exec()) {
+        qDebug() << "Query exec failed:" << result.lastError().text();
+    }
     QVariantMap user;
     if (result.next()) {
         QSqlRecord rec = result.record();
         for (int i = 0; i < rec.count(); ++i) {
             user[rec.fieldName(i)] = result.value(i);
         }
+        qDebug() << "[getCustomerByLoginId] Found user:" << user;
+    } else {
+        qDebug() << "[getCustomerByLoginId] No user found for:" << loginId;
     }
     return user;
 }

@@ -1,5 +1,6 @@
 #include "authmanager.h"
 #include <QDebug>
+#include <QMessageBox>
 
 AuthManager* AuthManager::instance = nullptr;
 
@@ -37,6 +38,9 @@ AuthManager::~AuthManager()
 
 void AuthManager::login(const QString &loginId, const QString &password)
 {
+    static int loginCallCount = 0;
+    ++loginCallCount;
+    qDebug() << "[AuthManager] login called" << loginCallCount << "times";
     m_networkManager->login(loginId, password);
 }
 
@@ -69,6 +73,7 @@ bool AuthManager::isLoggedIn() const
 
 void AuthManager::handleLoginSuccess(const QJsonObject &userData)
 {
+    qDebug() << "[AuthManager] handleLoginSuccess with userData:" << userData;
     if (m_currentUser) {
         delete m_currentUser;
     }
@@ -81,12 +86,12 @@ void AuthManager::handleLoginSuccess(const QJsonObject &userData)
     convertedUserData["id"] = userJson["id"];
     convertedUserData["username"] = userJson["username"];
     convertedUserData["email"] = userJson["email"];
-    convertedUserData["userType"] = userJson["user_type"]; // Convert from user_type to userType
+    convertedUserData["userType"] = userJson["userType"]; // Convert from user_type to userType
     convertedUserData["token"] = userData["token"]; // Token is at the top level
     convertedUserData["phoneNumber"] = userJson["phone"];
     convertedUserData["city"] = userJson["city"];
     convertedUserData["location"] = userJson["location"];
-    
+    //****************
     m_currentUser = new User(convertedUserData, this);
     emit currentUserChanged();
     emit loginStateChanged();
@@ -95,6 +100,7 @@ void AuthManager::handleLoginSuccess(const QJsonObject &userData)
 
 void AuthManager::handleLoginFailed(const QString &error)
 {
+    qDebug() << "[AuthManager] handleLoginFailed with error:" << error;
     emit loginFailed(error);
 }
 

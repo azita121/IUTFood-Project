@@ -33,15 +33,12 @@ logInWindow::logInWindow(QWidget *parent)
 
     // Connect network error signals
     connect(NetworkManager::getInstance(), &NetworkManager::error, this, [this](const QString &error) {
-        QMessageBox::warning(this, "Network Error", "Network error: " + error);
+        QMessageBox::critical(this, "Network Error", "Network error: " + error);
     });
 
     connect(NetworkManager::getInstance(), &NetworkManager::disconnected, this, [this]() {
         QMessageBox::warning(this, "Connection Lost", "Lost connection to server. Please check your connection.");
     });
-
-    // Connect login button
-    connect(ui->loginButton, &QPushButton::clicked, this, &logInWindow::on_loginButton_clicked);
 
     // Note: signUpCustomerButton is auto-connected via naming convention
 
@@ -50,15 +47,16 @@ logInWindow::logInWindow(QWidget *parent)
         User* currentUser = AuthManager::getInstance()->currentUser();
         if (currentUser) {
             QString userType = currentUser->userType();
+            QString msg = QString("Login successful! User type: %1").arg(userType);
             if (userType == "customer") {
                 CustomerMenu* menu = new CustomerMenu(this);
                 menu->setAttribute(Qt::WA_DeleteOnClose);
                 menu->show();
                 this->close();
             } else if (userType == "restaurant_owner") {
-                QMessageBox::information(this, "Login Success", "Restaurant owner login successful. Owner interface not yet implemented.");
+                QMessageBox::information(this, "Login Success", msg + "\nOwner interface not yet implemented.");
             } else if (userType == "admin") {
-                QMessageBox::information(this, "Login Success", "Admin login successful. Admin interface not yet implemented.");
+                QMessageBox::information(this, "Login Success", msg + "\nAdmin interface not yet implemented.");
             } else {
                 QMessageBox::warning(this, "Login Error", "Unknown user type: " + userType);
             }
@@ -67,7 +65,7 @@ logInWindow::logInWindow(QWidget *parent)
         }
     });
     connect(AuthManager::getInstance(), &AuthManager::loginFailed, this, [this](const QString &error) {
-        QMessageBox::warning(this, "Login Failed", error);
+        QMessageBox::critical(this, "Login Failed", "Login failed: " + error);
     });
 
     // Handle registration result
@@ -199,19 +197,6 @@ bool logInWindow::eventFilter(QObject *obj, QEvent *event)
 }
 
 
-void logInWindow::on_loginButton_clicked()
-{
-    QString username = ui->lineEditUsername->text();
-    QString password = ui->lineEditPassword->text();
-
-    if (username.isEmpty() || password.isEmpty()) {
-        QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
-        return;
-    }
-
-    AuthManager::getInstance()->login(username, password);
-}
-
 void logInWindow::on_signUpCustomerButton_clicked()
 {
     QMessageBox::information(this, "Debug", "Sign-up button clicked!");
@@ -233,5 +218,24 @@ void logInWindow::on_signUpCustomerButton_clicked()
 
     QMessageBox::information(this, "Debug", "Calling registerCustomer...");
     AuthManager::getInstance()->registerCustomer(firstName, lastName, email, phone, password, location);
+}
+
+
+
+
+void logInWindow::on_loginButton_clicked()
+{
+    QMessageBox::information(this, "Debug", "loginButton button clicked!");
+
+    QString username = ui->lineEditUsername->text();
+    QString password = ui->lineEditPassword->text();
+
+    if (username.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
+        return;
+    }
+
+    AuthManager::getInstance()->login(username, password);
+
 }
 

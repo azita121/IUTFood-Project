@@ -97,6 +97,7 @@ void NetworkManager::login(const QString &loginId, const QString &password)
     request["type"] = "login";
     request["loginId"] = loginId;
     request["password"] = password;
+    qDebug() << "NetworkManager: Sending login request:" << request;
     sendTcpRequest(request);
 }
 
@@ -291,11 +292,13 @@ void NetworkManager::getOrderComments(const QString& orderId) {
 
 void NetworkManager::handleTcpResponse(const QJsonObject &response)
 {
+    qDebug() << "NetworkManager: Received response:" << response;
     QString type = response["type"].toString();
     QString status = response["status"].toString();
 
     if (status == "error") {
-        emit error(response["message"].toString());
+        QString detailedError = response.contains("message") ? response["message"].toString() : "Unknown error";
+        emit error(detailedError);
         return;
     }
 
@@ -304,7 +307,8 @@ void NetworkManager::handleTcpResponse(const QJsonObject &response)
             m_token = response["token"].toString();
             emit loginSuccess(response);
         } else {
-            emit loginFailed(response["message"].toString());
+            QString detailedError = response.contains("message") ? response["message"].toString() : "Unknown login error";
+            emit loginFailed(detailedError);
         }
     }
     else if (type == "register") {

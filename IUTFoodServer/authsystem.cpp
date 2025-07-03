@@ -26,6 +26,8 @@ AuthSystem::~AuthSystem()
 
 QString AuthSystem::login(const QString& loginId, const QString& password)
 {
+    qDebug() << "[login] loginId:" << loginId;
+    qDebug() << "[login] password:" << password;
     // Validate input
     if (loginId.isEmpty() || password.isEmpty()) {
         return QString();
@@ -48,6 +50,10 @@ QString AuthSystem::login(const QString& loginId, const QString& password)
         qDebug() << "No password hash found for user:" << loginId;
         return QString();
     }
+    qDebug() << "[login] Input password:" << password;
+    qDebug() << "[login] Stored hash:" << storedHash;
+    qDebug() << "[login] Password valid:" << SecurityUtils::verifyPassword(password, storedHash);
+
 
     if (!SecurityUtils::verifyPassword(password, storedHash)) {
         qDebug() << "Invalid password for user:" << loginId;
@@ -59,7 +65,8 @@ QString AuthSystem::login(const QString& loginId, const QString& password)
 
     // Create session
     Session session;
-    session.userId = user["id"].toString();
+    session.userId = QString::number(user["id"].toLongLong());
+    qDebug() << "[login] session.userId set to:" << session.userId << "from QVariant:" << user["id"];
     session.userType = userType;
     session.token = token;
     session.lastActivity = QDateTime::currentDateTime();

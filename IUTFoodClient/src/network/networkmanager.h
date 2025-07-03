@@ -103,4 +103,4 @@ private:
     void reconnect();
 };
 
-#endif // NETWORKMANAGER_H 
+#endif // NETWORKMANAGER_H
