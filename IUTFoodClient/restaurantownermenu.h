@@ -68,7 +68,7 @@ private:
 
     QList<AcceptedOrder> acceptedOrders;
 
-    QVBoxLayout* statusLayout; // لی‌آوت مخصوص وضعیت‌ها
+    QVBoxLayout* statusLayout;
     QWidget* statusContainer;
     QScrollArea* statusScrollArea;
 

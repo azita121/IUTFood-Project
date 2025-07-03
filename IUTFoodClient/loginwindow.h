@@ -5,7 +5,7 @@
 #include <QKeyEvent>
 #include "customermenu.h"
 #include "restaurantownermenu.h"
-#include "adminnenu.h"
+#include "adminmenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

@@ -9,7 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    adminnenu.cpp \
+    adminmenu.cpp \
     customermenu.cpp \
     fooditemwidget.cpp \
     main.cpp \
@@ -19,7 +19,7 @@ SOURCES += \
     restaurantownermenu.cpp
 
 HEADERS += \
-    adminnenu.h \
+    adminmenu.h \
     customermenu.h \
     fooditemwidget.h \
     loginwindow.h \
@@ -29,7 +29,7 @@ HEADERS += \
     restaurantownermenu.h
 
 FORMS += \
-    adminnenu.ui \
+    adminmenu.ui \
     customermenu.ui \
     fooditemwidget.ui \
     loginwindow.ui \

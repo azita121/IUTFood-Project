@@ -68,11 +68,11 @@ void FoodItemWidget::setOwnerMode(bool owner)
 void FoodItemWidget::setShowAddButton(bool show)
 {
     showAddButton = show;
-    ui->addFoodButton->setVisible(showAddButton);  // مخفی یا نمایش دکمه
+    ui->addFoodButton->setVisible(showAddButton);
 }
 
 void FoodItemWidget::hidePlusMinusButtons()
 {
     ui->addFoodButton->hide();
-    if (ui->removeFoodButton) ui->removeFoodButton->hide(); // اگه داریش
+    if (ui->removeFoodButton) ui->removeFoodButton->hide();
 }

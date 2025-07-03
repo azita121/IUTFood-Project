@@ -49,13 +49,6 @@ void logInWindow::on_Forgotback_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-
-// void logInWindow::on_Setback_clicked()
-// {
-//     ui->stackedWidget->setCurrentIndex(0);
-// }
-
-
 void logInWindow::on_resetButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
@@ -152,7 +145,7 @@ void logInWindow::on_signUpCustomerButton_clicked()
 
 void logInWindow::on_signUpOwnerButton_clicked()
 {
-    adminnenu* menu2 = new adminnenu(nullptr);
+    adminmenu* menu2 = new adminmenu(nullptr);
     menu2->setAttribute(Qt::WA_DeleteOnClose);
     menu2->show();
     this->close();

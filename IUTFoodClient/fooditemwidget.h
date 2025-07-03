@@ -36,7 +36,7 @@ private:
     Ui::FoodItemWidget *ui;
     bool isInCart = false;
     MenuItem menuItem;
-    bool showAddButton = true;  // پیش‌فرض: دکمه پلاس نمایش داده شود
+    bool showAddButton = true;
 };
 
 #endif // FOODITEMWIDGET_H

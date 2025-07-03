@@ -9,7 +9,6 @@ restaurantownermenu::restaurantownermenu(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // اسکرول‌ویو وضعیت سفارش‌ها
     statusScrollArea = new QScrollArea(this);
     statusScrollArea->setWidgetResizable(true);
     statusScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -28,7 +27,6 @@ restaurantownermenu::restaurantownermenu(QWidget *parent)
     statusHolderLayout->addWidget(statusScrollArea);
 
 
-    // اسکرول منوی غذا
     scrollArea = new QScrollArea(this);
     scrollArea->setWidgetResizable(true);
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -46,7 +44,6 @@ restaurantownermenu::restaurantownermenu(QWidget *parent)
     }
     mainLayout->addWidget(scrollArea);
 
-    // اسکرول سفارشات
     orderScrollArea = new QScrollArea(this);
     orderScrollArea->setWidgetResizable(true);
     orderScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -64,18 +61,15 @@ restaurantownermenu::restaurantownermenu(QWidget *parent)
     }
     orderHolderLayout->addWidget(orderScrollArea);
 
-    // اتصال دکمه‌ها
     connect(ui->addFoodButton, &QPushButton::clicked, this, &restaurantownermenu::on_addFoodButton_clicked);
     connect(ui->viewOrdersButton, &QPushButton::clicked, this, &restaurantownermenu::on_viewOrdersButton_clicked);
     connect(ui->menuManagementButton, &QPushButton::clicked, this, &restaurantownermenu::on_menuManagementButton_2_clicked);
 
-    // غذاهای تستی
     foodList.append({ "Kebab", 120000, "Delicious Persian kebab" });
     foodList.append({ "Pizza", 180000, "Cheesy Italian pizza" });
     foodList.append({ "Salad", 60000, "Fresh garden salad" });
 
-    // سفارش‌های تستی (برای نمایش در viewOrders)
-    orderList = foodList;  // فرض کنیم همین غذاها رو سفارش دادن
+    orderList = foodList;
 
     renderMenuItems();
 }
@@ -100,7 +94,6 @@ void restaurantownermenu::on_addFoodButton_clicked()
 
 void restaurantownermenu::renderMenuItems()
 {
-    // پاک‌سازی منو
     QLayoutItem* item;
     while ((item = layout->takeAt(0)) != nullptr) {
         if (item->widget()) item->widget()->deleteLater();
@@ -110,10 +103,8 @@ void restaurantownermenu::renderMenuItems()
     for (const MenuItem& m : foodList) {
         auto* foodWidget = new FoodItemWidget(m, this);
         foodWidget->setFoodData(m);
-        foodWidget->setShowAddButton(false);  // مخفی‌سازی دکمه اضافه
-        // foodWidget->hidePlusMinusButtons();   // پنهان‌سازی دکمه‌ها
+        foodWidget->setShowAddButton(false);
 
-        // دکمه حذف از منو
         connect(foodWidget, &FoodItemWidget::foodRemoved, this, [=](const MenuItem& removedItem) {
             foodList.removeOne(removedItem);
             renderMenuItems();
@@ -125,7 +116,6 @@ void restaurantownermenu::renderMenuItems()
 
 void restaurantownermenu::renderOrders()
 {
-    // پاک‌سازی سفارش‌ها
     QLayoutItem* item;
     while ((item = orderLayout->takeAt(0)) != nullptr) {
         if (item->widget()) item->widget()->deleteLater();
@@ -135,49 +125,8 @@ void restaurantownermenu::renderOrders()
     for (const MenuItem& m : orderList) {
         auto* foodWidget = new FoodItemWidget(m, this);
         foodWidget->setFoodData(m);
-        foodWidget->hidePlusMinusButtons();  // پنهان‌سازی دکمه‌ها
-        foodWidget->setShowAddButton(false); // حذف دکمه add
-
-        // دکمه‌های قبول / رد
-        // auto* acceptBtn = new QPushButton("✅ قبول", foodWidget);
-        // auto* rejectBtn = new QPushButton("❌ رد", foodWidget);
-
-//         acceptBtn->setStyleSheet(R"(
-//     QPushButton {
-//         background-color: rgba(220, 213, 200, 1);
-//         color: black;
-//         border-radius: 5px;
-//         padding: 5px 10px;
-//     }
-//     QPushButton:hover {
-//         background-color: rgba(200, 190, 170, 1);
-//     }
-// )");
-
-//         rejectBtn->setStyleSheet(R"(
-//     QPushButton {
-//         background-color: rgba(220, 213, 200, 1);
-//         color: black;
-//         border-radius: 5px;
-//         padding: 5px 10px;
-//     }
-//     QPushButton:hover {
-//         background-color: rgba(200, 190, 170, 1);
-//     }
-// )");
-
-        // connect(rejectBtn, &QPushButton::clicked, this, [=]() {
-        //     orderList.removeOne(m);
-        //     renderOrders();
-        // });
-
-        // QHBoxLayout* btns = new QHBoxLayout();
-        // btns->addWidget(acceptBtn);
-        // btns->addWidget(rejectBtn);
-
-        // QVBoxLayout* wrapper = new QVBoxLayout(foodWidget);
-        // wrapper->addLayout(btns);
-
+        foodWidget->hidePlusMinusButtons();
+        foodWidget->setShowAddButton(false);
         QPushButton* acceptBtn = new QPushButton("Accept");
         QPushButton* rejectBtn = new QPushButton("Reject");
 
@@ -193,6 +142,7 @@ void restaurantownermenu::renderOrders()
     QPushButton:hover {
         background-color: rgba(200, 190, 170, 1);
     }
+
 )");
 
         rejectBtn->setStyleSheet(R"(
@@ -212,18 +162,15 @@ void restaurantownermenu::renderOrders()
         acceptBtn->setFixedSize(100, 35);
         rejectBtn->setFixedSize(100, 35);
 
-        // لایه عمودی برای دکمه‌ها
         QVBoxLayout* buttonsVertical = new QVBoxLayout();
         buttonsVertical->setSpacing(8);
         buttonsVertical->addWidget(acceptBtn);
         buttonsVertical->addWidget(rejectBtn);
 
-        // لایه افقی کلی برای چسباندن دکمه‌ها به راست
         QHBoxLayout* btnsRow = new QHBoxLayout();
-        btnsRow->addStretch();                   // اسپریسر سمت چپ
-        btnsRow->addLayout(buttonsVertical);    // دکمه‌ها سمت راست
+        btnsRow->addStretch();
+        btnsRow->addLayout(buttonsVertical);
 
-        // اضافه به layout اصلی foodWidget
         QVBoxLayout* foodLayout = qobject_cast<QVBoxLayout*>(foodWidget->layout());
         if (!foodLayout) {
             foodLayout = new QVBoxLayout(foodWidget);
@@ -232,7 +179,7 @@ void restaurantownermenu::renderOrders()
         foodLayout->addLayout(btnsRow);
 
         connect(acceptBtn, &QPushButton::clicked, this, [=]() {
-            acceptedOrders.append({ "مشتری تستی", m, "در حال آماده‌سازی" });
+            acceptedOrders.append({ "test customer", m, "در حال آماده‌سازی" });
             orderList.removeOne(m);
             renderOrders();
         });
@@ -257,7 +204,7 @@ void restaurantownermenu::on_viewOrdersButton_clicked()
 void restaurantownermenu::on_ChangeOfStatusButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
-    renderAcceptedOrders(); // نمایش سفارش‌های پذیرفته‌شده
+    renderAcceptedOrders();
 }
 
 
@@ -270,7 +217,7 @@ void restaurantownermenu::on_menuManagementButton_2_clicked()
 void restaurantownermenu::on_ChangeOfStatusButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
-    renderAcceptedOrders(); // نمایش سفارش‌های پذیرفته‌شده
+    renderAcceptedOrders();
 }
 
 
@@ -287,7 +234,6 @@ void restaurantownermenu::on_viewOrdersButton_5_clicked()
 
 void restaurantownermenu::renderAcceptedOrders()
 {
-    // پاک کردن قبلی‌ها
     QLayoutItem* item;
     while ((item = statusLayout->takeAt(0)) != nullptr) {
         if (item->widget()) item->widget()->deleteLater();
@@ -298,7 +244,6 @@ void restaurantownermenu::renderAcceptedOrders()
         QString customer = order.customer;
         MenuItem item = order.item;
 
-        // ویجت اصلی
         QWidget* orderWidget = new QWidget(this);
         orderWidget->setStyleSheet(R"(
             background-color: rgba(220, 213, 200, 1);
@@ -317,7 +262,6 @@ void restaurantownermenu::renderAcceptedOrders()
         QComboBox* statusBox = new QComboBox();
         statusBox->addItems({ "Preparing", "Ready to Ship", "Delivered" });
 
-        // تبدیل وضعیت فعلی به انگلیسی
         QString translatedStatus;
         if (order.status == "در حال آماده‌سازی") translatedStatus = "Preparing";
         else if (order.status == "آماده ارسال") translatedStatus = "Ready to Ship";
@@ -326,7 +270,6 @@ void restaurantownermenu::renderAcceptedOrders()
         int index = statusBox->findText(translatedStatus);
         if (index != -1) statusBox->setCurrentIndex(index);
 
-        // استایل کمبوباکس
         statusBox->setStyleSheet(R"(
             QComboBox {
                 background-color: rgba(0, 0, 0, 0);
@@ -344,7 +287,6 @@ void restaurantownermenu::renderAcceptedOrders()
             }
         )");
 
-        // ذخیره وضعیت جدید (برعکس: انگلیسی → فارسی)
         connect(statusBox, &QComboBox::currentTextChanged, this, [=, &order](const QString& newStatus) {
             if (newStatus == "Preparing") order.status = "در حال آماده‌سازی";
             else if (newStatus == "Ready to Ship") order.status = "آماده ارسال";
