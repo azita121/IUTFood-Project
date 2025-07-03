@@ -15,3 +15,10 @@
 [2025-07-03 09:39:34.233] [INFO] [DatabaseManager] Customer created successfully: لالا
 [2025-07-03 10:23:23.953] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
 [2025-07-03 10:23:23.954] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 12:19:39.506] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 12:19:39.507] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 12:19:52.127] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 12:19:52.128] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 12:20:56.987] [INFO] [DatabaseManager] Customer created successfully: a
+[2025-07-03 12:21:37.554] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 12:21:37.555] [INFO] [DatabaseManager] Database connected successfully
