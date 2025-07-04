@@ -1,0 +1,65 @@
+[2025-07-04 00:48:01.430] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 00:48:01.431] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:17:41.258] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:17:41.260] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:29:28.152] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:29:28.154] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:32:53.327] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:32:53.329] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:33:59.693] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:33:59.695] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:52:36.395] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:52:36.399] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:53:13.961] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:53:13.963] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 01:58:02.012] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 01:58:02.014] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:10:08.358] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:10:08.360] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:12:44.003] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:12:44.005] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:12:55.863] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:12:55.867] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:31:00.134] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:31:00.143] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:40:03.228] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:40:03.228] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 02:40:24.336] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 02:40:24.338] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:18:48.395] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:18:48.400] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:20:45.013] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:20:45.013] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:20:59.685] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:20:59.690] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:21:03.974] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:21:03.974] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:21:51.283] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:21:51.283] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:22:23.518] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:22:23.518] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:36:31.057] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:36:31.057] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 03:42:34.271] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 03:42:34.272] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 04:02:47.916] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 04:02:47.918] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 04:11:34.386] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 04:11:34.388] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 04:17:05.092] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 04:17:05.093] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 04:21:20.989] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 04:21:20.991] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 05:09:48.914] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 05:09:48.920] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 05:15:44.704] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 05:15:44.705] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 05:29:33.725] [INFO] [DatabaseManager] Restaurant owner created successfully: j@
+[2025-07-04 05:37:33.255] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 05:37:33.256] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 05:48:53.600] [INFO] [DatabaseManager] Restaurant owner created successfully: m@
+[2025-07-04 07:32:01.453] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 07:32:01.455] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 07:32:15.408] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-04 07:32:15.410] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-04 07:33:11.664] [INFO] [DatabaseManager] Restaurant owner created successfully: vvvvvvvv

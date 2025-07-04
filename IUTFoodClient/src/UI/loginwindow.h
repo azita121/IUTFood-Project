@@ -48,6 +48,8 @@ private slots:
 
     void on_signUpCustomerButton_clicked();
 
+    void on_signUpOwnerButton_clicked();
+
 private:
     Ui::logInWindow *ui;
 

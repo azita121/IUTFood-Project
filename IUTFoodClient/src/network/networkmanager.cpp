@@ -290,6 +290,22 @@ void NetworkManager::getOrderComments(const QString& orderId) {
     sendTcpRequest(request);
 }
 
+void NetworkManager::forgotPassword(const QString &emailOrPhone)
+{
+    QJsonObject request;
+    request["type"] = "forgot_password";
+    request["emailOrPhone"] = emailOrPhone;
+    sendTcpRequest(request);
+}
+
+void NetworkManager::setPassword(const QString &emailOrPhone, const QString &newPassword) {
+    QJsonObject request;
+    request["type"] = "set_password";
+    request["emailOrPhone"] = emailOrPhone;
+    request["newPassword"] = newPassword;
+    sendTcpRequest(request);
+}
+
 void NetworkManager::handleTcpResponse(const QJsonObject &response)
 {
     qDebug() << "NetworkManager: Received response:" << response;
@@ -389,6 +405,20 @@ void NetworkManager::handleTcpResponse(const QJsonObject &response)
     }
     else if (type == "get_order_comments") {
         emit orderCommentsReceived(response["comments"].toArray());
+    }
+    else if (type == "forgot_password") {
+        if (status == "success") {
+            emit forgotPasswordSuccess(response["message"].toString());
+        } else {
+            emit forgotPasswordFailed(response["message"].toString());
+        }
+    }
+    else if (type == "set_password") {
+        if (status == "success") {
+            emit setPasswordSuccess(response["message"].toString());
+        } else {
+            emit setPasswordFailed(response["message"].toString());
+        }
     }
 }
 

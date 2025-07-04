@@ -88,3 +88,5 @@
 [2025-07-03 20:38:19.425] [INFO] [DatabaseManager] Database connected successfully
 [2025-07-03 20:56:14.956] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
 [2025-07-03 20:56:14.959] [INFO] [DatabaseManager] Database connected successfully
+[2025-07-03 23:54:53.438] [INFO] [DatabaseManager] Attempting to connect to database: @/database.sqlite
+[2025-07-03 23:54:53.441] [INFO] [DatabaseManager] Database connected successfully

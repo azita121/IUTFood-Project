@@ -57,6 +57,10 @@ public:
     void registerCustomer(const QString &firstName, const QString &lastName, const QString &email, const QString &phone, const QString &password, const QString &location);
     void registerRestaurantOwner(const QString &firstName, const QString &lastName, const QString &email, const QString &phone, const QString &password, const QString &restaurantName, const QString &restaurantNumber, const QString &location);
 
+    void forgotPassword(const QString &emailOrPhone);
+
+    void setPassword(const QString &emailOrPhone, const QString &newPassword);
+
 signals:
     void connected();
     void disconnected();
@@ -83,6 +87,10 @@ signals:
     void menuDataReceived(const QJsonArray& menu);
     void orderCommentAdded(bool success);
     void orderCommentsReceived(const QJsonArray& comments);
+    void forgotPasswordSuccess(const QString &message);
+    void forgotPasswordFailed(const QString &error);
+    void setPasswordSuccess(const QString &message);
+    void setPasswordFailed(const QString &error);
 
 private:
     explicit NetworkManager(QObject *parent = nullptr);

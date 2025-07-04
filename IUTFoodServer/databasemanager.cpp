@@ -44,6 +44,8 @@ bool DatabaseManager::connect(const QString& host, const QString& database, cons
         .arg(host)
         .arg(database), "DatabaseManager");
 
+    qDebug() << "[DatabaseManager] Absolute DB path:" << db.databaseName();
+
     if (!db.open()) {
         logError("Connection", db.lastError());
         return false;
@@ -345,16 +347,25 @@ QVariantMap DatabaseManager::getRestaurantOwnerProfile(const QString& ownerId)
 
 QVariantMap DatabaseManager::getRestaurantOwnerByLoginId(const QString& loginId)
 {
+    qDebug() << "[getRestaurantOwnerByLoginId] loginId:" << loginId;
     QVariantMap params;
     params["loginId"] = loginId;
     QString query = "SELECT * FROM restaurant_owners WHERE email = :loginId OR phone = :loginId";
     QSqlQuery result = prepareQuery(query, params);
+    qDebug() << "Query Prepared:" << result.lastQuery();
+    qDebug() << "loginId param bound to:" << loginId;
+    if (!result.exec()) {
+        qDebug() << "Query exec failed:" << result.lastError().text();
+    }
     QVariantMap user;
     if (result.next()) {
         QSqlRecord rec = result.record();
         for (int i = 0; i < rec.count(); ++i) {
             user[rec.fieldName(i)] = result.value(i);
         }
+        qDebug() << "[getRestaurantOwnerByLoginId] Found user:" << user;
+    } else {
+        qDebug() << "[getRestaurantOwnerByLoginId] No user found for:" << loginId;
     }
     return user;
 }
@@ -851,6 +862,7 @@ bool DatabaseManager::customerEmailExists(const QString& email) {
     return result.next();
 }
 
+
 bool DatabaseManager::customerPhoneExists(const QString& phone) {
     QVariantMap params;
     params["phone"] = phone;
@@ -859,12 +871,16 @@ bool DatabaseManager::customerPhoneExists(const QString& phone) {
     return result.next();
 }
 
+
 bool DatabaseManager::ownerEmailExists(const QString& email) {
     QVariantMap params;
-    params["email"] = email;
-    QString query = "SELECT 1 FROM restaurant_owners WHERE email = :email LIMIT 1";
+    params["email"] = email.trimmed();
+    QString query = "SELECT 1 FROM restaurant_owners WHERE LOWER(email) = LOWER(:email) LIMIT 1";
+    qDebug() << "[ownerEmailExists] Query:" << query << "Param:" << params["email"];
     QSqlQuery result = prepareQuery(query, params);
-    return result.next();
+    bool found = result.next();
+    qDebug() << "[ownerEmailExists] Found:" << found;
+    return found;
 }
 
 bool DatabaseManager::ownerPhoneExists(const QString& phone) {
@@ -1038,4 +1054,20 @@ bool DatabaseManager::initializeSchema() {
         }
     }
     return true;
+}
+
+bool DatabaseManager::updateCustomerPassword(const QString& emailOrPhone, const QString& newPasswordHash) {
+    QVariantMap params;
+    params["passwordHash"] = newPasswordHash;
+    params["emailOrPhone"] = emailOrPhone;
+    QString query = "UPDATE customers SET password_hash = :passwordHash WHERE email = :emailOrPhone OR phone = :emailOrPhone";
+    return executeQuery(query, params);
+}
+
+bool DatabaseManager::updateRestaurantOwnerPassword(const QString& emailOrPhone, const QString& newPasswordHash) {
+    QVariantMap params;
+    params["passwordHash"] = newPasswordHash;
+    params["emailOrPhone"] = emailOrPhone;
+    QString query = "UPDATE restaurant_owners SET password_hash = :passwordHash WHERE email = :emailOrPhone OR phone = :emailOrPhone";
+    return executeQuery(query, params);
 }

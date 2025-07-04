@@ -40,6 +40,7 @@ public:
     QString getCustomerPasswordHash(const QString& customer_id);
     QVariantMap getCustomerProfile(const QString& customer_id);
     QVariantMap getCustomerByLoginId(const QString& login_id);
+    bool updateCustomerPassword(const QString& emailOrPhone, const QString& newPasswordHash);
 
     // Restaurant Owner Management
     bool createRestaurantOwner(const QString& first_name, const QString& last_name, const QString& username, const QString& email,
@@ -51,6 +52,7 @@ public:
     QVariantMap getRestaurantOwnerProfile(const QString& owner_id);
     QString getRestaurantIdByOwner(const QString& owner_id);
     QVariantMap getRestaurantOwnerByLoginId(const QString& login_id);
+    bool updateRestaurantOwnerPassword(const QString& emailOrPhone, const QString& newPasswordHash);
 
     // Restaurant Management
     bool createRestaurant(const QString& name, const QString& address, const QString& type, const QString& image_url = "");

@@ -26,6 +26,14 @@ AuthManager::AuthManager(QObject *parent)
             this, &AuthManager::handleRegisterSuccess);
     connect(m_networkManager, &NetworkManager::registerFailed,
             this, &AuthManager::handleRegisterFailed);
+    connect(m_networkManager, &NetworkManager::forgotPasswordSuccess,
+            this, &AuthManager::forgotPasswordSuccess);
+    connect(m_networkManager, &NetworkManager::forgotPasswordFailed,
+            this, &AuthManager::forgotPasswordFailed);
+    connect(m_networkManager, &NetworkManager::setPasswordSuccess,
+            this, &AuthManager::setPasswordSuccess);
+    connect(m_networkManager, &NetworkManager::setPasswordFailed,
+            this, &AuthManager::setPasswordFailed);
 }
 
 AuthManager::~AuthManager()
@@ -91,7 +99,7 @@ void AuthManager::handleLoginSuccess(const QJsonObject &userData)
     convertedUserData["phoneNumber"] = userJson["phone"];
     convertedUserData["city"] = userJson["city"];
     convertedUserData["location"] = userJson["location"];
-    //****************
+    
     m_currentUser = new User(convertedUserData, this);
     emit currentUserChanged();
     emit loginStateChanged();
@@ -122,4 +130,13 @@ void AuthManager::registerCustomer(const QString &firstName, const QString &last
 void AuthManager::registerRestaurantOwner(const QString &firstName, const QString &lastName, const QString &email, const QString &phone, const QString &password, const QString &restaurantName, const QString &restaurantNumber, const QString &location)
 {
     m_networkManager->registerRestaurantOwner(firstName, lastName, email, phone, password, restaurantName, restaurantNumber, location);
+}
+
+void AuthManager::forgotPassword(const QString &emailOrPhone)
+{
+    m_networkManager->forgotPassword(emailOrPhone);
+}
+
+void AuthManager::setPassword(const QString &emailOrPhone, const QString &newPassword) {
+    m_networkManager->setPassword(emailOrPhone, newPassword);
 } 

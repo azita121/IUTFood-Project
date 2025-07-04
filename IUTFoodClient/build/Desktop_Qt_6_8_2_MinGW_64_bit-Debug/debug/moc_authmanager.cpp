@@ -47,6 +47,11 @@ static constexpr auto qt_meta_stringdata_ZN11AuthManagerE = QtMocHelpers::string
     "logoutSuccess",
     "currentUserChanged",
     "loginStateChanged",
+    "forgotPasswordSuccess",
+    "message",
+    "forgotPasswordFailed",
+    "setPasswordSuccess",
+    "setPasswordFailed",
     "currentUser",
     "User*",
     "isLoggedIn"
@@ -61,21 +66,25 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11AuthManagerE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
-       2,   67, // properties
+      11,   14, // methods
+       2,  103, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       7,       // signalCount
+      11,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   56,    2, 0x06,    3 /* Public */,
-       3,    1,   57,    2, 0x06,    4 /* Public */,
-       5,    0,   60,    2, 0x06,    6 /* Public */,
-       6,    1,   61,    2, 0x06,    7 /* Public */,
-       7,    0,   64,    2, 0x06,    9 /* Public */,
-       8,    0,   65,    2, 0x06,   10 /* Public */,
-       9,    0,   66,    2, 0x06,   11 /* Public */,
+       1,    0,   80,    2, 0x06,    3 /* Public */,
+       3,    1,   81,    2, 0x06,    4 /* Public */,
+       5,    0,   84,    2, 0x06,    6 /* Public */,
+       6,    1,   85,    2, 0x06,    7 /* Public */,
+       7,    0,   88,    2, 0x06,    9 /* Public */,
+       8,    0,   89,    2, 0x06,   10 /* Public */,
+       9,    0,   90,    2, 0x06,   11 /* Public */,
+      10,    1,   91,    2, 0x06,   12 /* Public */,
+      12,    1,   94,    2, 0x06,   14 /* Public */,
+      13,    1,   97,    2, 0x06,   16 /* Public */,
+      14,    1,  100,    2, 0x06,   18 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -85,10 +94,14 @@ Q_CONSTINIT static const uint qt_meta_data_ZN11AuthManagerE[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   11,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,   11,
+    QMetaType::Void, QMetaType::QString,    4,
 
  // properties: name, type, flags, notifyId, revision
-      10, 0x80000000 | 11, 0x00015009, uint(5), 0,
-      12, QMetaType::Bool, 0x00015001, uint(6), 0,
+      15, 0x80000000 | 16, 0x00015009, uint(5), 0,
+      17, QMetaType::Bool, 0x00015001, uint(6), 0,
 
        0        // eod
 };
@@ -121,7 +134,19 @@ Q_CONSTINIT const QMetaObject AuthManager::staticMetaObject = { {
         // method 'currentUserChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'loginStateChanged'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'forgotPasswordSuccess'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'forgotPasswordFailed'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'setPasswordSuccess'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'setPasswordFailed'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
@@ -138,6 +163,10 @@ void AuthManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 4: _t->logoutSuccess(); break;
         case 5: _t->currentUserChanged(); break;
         case 6: _t->loginStateChanged(); break;
+        case 7: _t->forgotPasswordSuccess((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 8: _t->forgotPasswordFailed((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->setPasswordSuccess((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 10: _t->setPasswordFailed((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -192,6 +221,34 @@ void AuthManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
                 return;
             }
         }
+        {
+            using _q_method_type = void (AuthManager::*)(const QString & );
+            if (_q_method_type _q_method = &AuthManager::forgotPasswordSuccess; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 7;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (AuthManager::*)(const QString & );
+            if (_q_method_type _q_method = &AuthManager::forgotPasswordFailed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 8;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (AuthManager::*)(const QString & );
+            if (_q_method_type _q_method = &AuthManager::setPasswordSuccess; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 9;
+                return;
+            }
+        }
+        {
+            using _q_method_type = void (AuthManager::*)(const QString & );
+            if (_q_method_type _q_method = &AuthManager::setPasswordFailed; *reinterpret_cast<_q_method_type *>(_a[1]) == _q_method) {
+                *result = 10;
+                return;
+            }
+        }
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
         switch (_id) {
@@ -229,14 +286,14 @@ int AuthManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 11;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 11;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -289,5 +346,33 @@ void AuthManager::currentUserChanged()
 void AuthManager::loginStateChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
+}
+
+// SIGNAL 7
+void AuthManager::forgotPasswordSuccess(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 7, _a);
+}
+
+// SIGNAL 8
+void AuthManager::forgotPasswordFailed(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void AuthManager::setPasswordSuccess(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
+}
+
+// SIGNAL 10
+void AuthManager::setPasswordFailed(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 10, _a);
 }
 QT_WARNING_POP

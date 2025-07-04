@@ -830,7 +830,7 @@ public:
 
         retranslateUi(logInWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(logInWindow);

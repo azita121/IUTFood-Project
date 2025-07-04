@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label">
@@ -312,7 +312,7 @@ QToolButton:checked {
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/user (3).png</normaloff>:/images/user (3).png</iconset>
       </property>
       <property name="iconSize">
@@ -367,7 +367,7 @@ QToolButton:checked {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/cafe (2).png</normaloff>:/images/cafe (2).png</iconset>
       </property>
      </widget>
@@ -413,7 +413,7 @@ QToolButton:checked {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/eye (2).png</normaloff>:/images/eye (2).png</iconset>
       </property>
      </widget>
@@ -648,7 +648,7 @@ QPushButton#resetButton:pressed {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/left-arrow.png</normaloff>:/images/left-arrow.png</iconset>
       </property>
      </widget>
@@ -857,7 +857,7 @@ QToolButton:checked {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/eye (2).png</normaloff>:/images/eye (2).png</iconset>
       </property>
      </widget>
@@ -903,7 +903,7 @@ QToolButton:checked {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/eye (2).png</normaloff>:/images/eye (2).png</iconset>
       </property>
      </widget>
@@ -1163,7 +1163,7 @@ QPushButton#signUpCustomerButton:pressed {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/left-arrow.png</normaloff>:/images/left-arrow.png</iconset>
       </property>
      </widget>
@@ -1593,7 +1593,7 @@ QPushButton#signUpOwnerButton:pressed {
        <string>...</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/images/left-arrow.png</normaloff>:/images/left-arrow.png</iconset>
       </property>
      </widget>
@@ -1745,6 +1745,8 @@ color:rgba(0, 0, 0, 240);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

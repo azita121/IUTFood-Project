@@ -226,11 +226,15 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
         QString restaurantName = request["restaurantName"].toString();
         QString restaurantNumber = request["restaurantNumber"].toString();
         QString location = request["location"].toString();
+        bool suc = m_dbManager->createRestaurant(restaurantName,location,"");
         bool success = m_dbManager->createRestaurantOwner(firstName, lastName, firstName + " " + lastName, email, SecurityUtils::hashPassword(password), phone, restaurantName, restaurantNumber, location);
         if (success) {
+            if(suc){
             response["status"] = "success";
             response["type"] = "register_owner";
             response["message"] = "Restaurant owner registration successful";
+            }else
+                qDebug() << "restaurant failed to creat";
         } else {
             response["status"] = "error";
             response["type"] = "register_owner";
@@ -356,6 +360,72 @@ void Server::processRequest(QTcpSocket* client, const QJsonObject& request)
     else if (type == "get_order_comments") {
         QString orderId = request["orderId"].toString();
         response["comments"] = m_dbManager->getOrderComments(orderId);
+    }
+    else if (type == "forgot_password") {
+        QString emailOrPhone = request["emailOrPhone"].toString();
+        bool customerExists = m_dbManager->customerEmailExists(emailOrPhone) || m_dbManager->customerPhoneExists(emailOrPhone);
+        bool ownerExists = m_dbManager->ownerEmailExists(emailOrPhone) || m_dbManager->ownerPhoneExists(emailOrPhone);
+        
+        qDebug() << "[Server] Forgot password check for:" << emailOrPhone;
+        qDebug() << "[Server] Customer exists:" << customerExists;
+        qDebug() << "[Server] Owner exists:" << ownerExists;
+        
+        QJsonObject response;
+        if (customerExists || ownerExists) {
+            response["status"] = "success";
+            response["message"] = "Password reset instructions sent (simulated).";
+        } else {
+            response["status"] = "error";
+            response["message"] = "No user found with that email or phone.";
+        }
+        sendResponse(client, response);
+    }
+    else if (type == "set_password") {
+        QString emailOrPhone = request["emailOrPhone"].toString();
+        QString newPassword = request["newPassword"].toString();
+        QJsonObject response;
+        if (emailOrPhone.isEmpty() || newPassword.isEmpty()) {
+            response["status"] = "error";
+            response["message"] = "Email/phone and new password required.";
+            sendResponse(client, response);
+            return;
+        }
+        
+        // Check if user exists in either table
+        bool customerExists = m_dbManager->customerEmailExists(emailOrPhone) || m_dbManager->customerPhoneExists(emailOrPhone);
+        bool ownerExists = m_dbManager->ownerEmailExists(emailOrPhone) || m_dbManager->ownerPhoneExists(emailOrPhone);
+        
+        qDebug() << "[Server] Set password check for:" << emailOrPhone;
+        qDebug() << "[Server] Customer exists:" << customerExists;
+        qDebug() << "[Server] Owner exists:" << ownerExists;
+        
+        if (!customerExists && !ownerExists) {
+            response["status"] = "error";
+            response["message"] = "No user found with that email or phone.";
+            sendResponse(client, response);
+            return;
+        }
+        
+        QString hash = SecurityUtils::hashPassword(newPassword);
+        bool ok = false;
+        bool customerOk = false;
+        bool ownerOk = false;
+
+        if (customerExists)
+            customerOk = m_dbManager->updateCustomerPassword(emailOrPhone, hash);
+        if (ownerExists)
+            ownerOk = m_dbManager->updateRestaurantOwnerPassword(emailOrPhone, hash);
+
+        ok = customerOk || ownerOk;
+
+        if (ok) {
+            response["status"] = "success";
+            response["message"] = "Password updated successfully.";
+        } else {
+            response["status"] = "error";
+            response["message"] = "Failed to update password.";
+        }
+        sendResponse(client, response);
     }
     else {
         response["status"] = "error";

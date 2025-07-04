@@ -4,6 +4,8 @@
 #include "network/authmanager.h"
 #include "network/networkmanager.h"
 #include "customermenu.h"
+#include "restaurantownermenu.h"
+#include "adminmenu.h"
 #include <QDebug>
 
 logInWindow::logInWindow(QWidget *parent)
@@ -49,12 +51,15 @@ logInWindow::logInWindow(QWidget *parent)
             QString userType = currentUser->userType();
             QString msg = QString("Login successful! User type: %1").arg(userType);
             if (userType == "customer") {
-                CustomerMenu* menu = new CustomerMenu(this);
+                CustomerMenu* menu = new CustomerMenu(nullptr);
                 menu->setAttribute(Qt::WA_DeleteOnClose);
                 menu->show();
                 this->close();
             } else if (userType == "restaurant_owner") {
-                QMessageBox::information(this, "Login Success", msg + "\nOwner interface not yet implemented.");
+                restaurantownermenu* menu = new restaurantownermenu(nullptr);
+                menu->setAttribute(Qt::WA_DeleteOnClose);
+                menu->show();
+                this->close();
             } else if (userType == "admin") {
                 QMessageBox::information(this, "Login Success", msg + "\nAdmin interface not yet implemented.");
             } else {
@@ -75,6 +80,23 @@ logInWindow::logInWindow(QWidget *parent)
     });
     connect(AuthManager::getInstance(), &AuthManager::registerFailed, this, [this](const QString &error) {
         QMessageBox::warning(this, "Registration Failed", error);
+    });
+
+    // Connect feedback signals
+    connect(AuthManager::getInstance(), &AuthManager::forgotPasswordSuccess, this, [this](const QString &msg) {
+        QMessageBox::information(this, "Forgot Password", msg);
+    });
+    connect(AuthManager::getInstance(), &AuthManager::forgotPasswordFailed, this, [this](const QString &err) {
+        QMessageBox::warning(this, "Forgot Password", err);
+    });
+
+    // Connect new signals
+    connect(AuthManager::getInstance(), &AuthManager::setPasswordSuccess, this, [this](const QString &msg) {
+        QMessageBox::information(this, "Set Password", msg);
+        ui->stackedWidget->setCurrentIndex(0); // Go back to login
+    });
+    connect(AuthManager::getInstance(), &AuthManager::setPasswordFailed, this, [this](const QString &err) {
+        QMessageBox::warning(this, "Set Password", err);
     });
 }
 
@@ -121,7 +143,21 @@ void logInWindow::on_Setback_clicked()
 
 void logInWindow::on_resetButton_clicked()
 {
+    QString email = ui->lineEdit_forgotEmail->text().trimmed();
+    QString phone = ui->lineEdit_forgotPhoneNumber->text().trimmed();
+    QString emailOrPhone;
+    if (!email.isEmpty()) {
+        emailOrPhone = email;
+    } else if (!phone.isEmpty()) {
+        emailOrPhone = phone;
+    } else {
+        QMessageBox::warning(this, "Input Error", "Please enter your email or phone number.");
+        return;
+    }
+
+    AuthManager::getInstance()->forgotPassword(emailOrPhone);
     ui->stackedWidget->setCurrentIndex(2);
+
 }
 
 
@@ -133,6 +169,30 @@ void logInWindow::on_forgotPass_linkActivated(const QString &link)
 
 void logInWindow::on_DoneButton_clicked()
 {
+    QString email = ui->lineEdit_forgotEmail->text().trimmed();
+    QString phone = ui->lineEdit_forgotPhoneNumber->text().trimmed();
+    QString newPassword = ui->lineEditNewPassword->text();
+    QString repeatPassword = ui->lineEditRepeatNewPassword->text();
+
+    if (newPassword.isEmpty() || repeatPassword.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please enter and repeat your new password.");
+        ui->stackedWidget->setCurrentIndex(0);
+        return;
+    }
+    if (newPassword != repeatPassword) {
+        QMessageBox::warning(this, "Input Error", "Passwords do not match.");
+        ui->stackedWidget->setCurrentIndex(0);
+        return;
+    }
+    QString emailOrPhone = !email.isEmpty() ? email : phone;
+    if (emailOrPhone.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please enter your email or phone number.");
+        ui->stackedWidget->setCurrentIndex(0);
+        return;
+    }
+    AuthManager::getInstance()->setPassword(emailOrPhone, newPassword);
+    QMessageBox::information(this, "succeed", "Password reset and changed");
+
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -234,8 +294,38 @@ void logInWindow::on_loginButton_clicked()
         QMessageBox::warning(this, "Input Error", "Please enter both username and password.");
         return;
     }
-
+    if(username == "admin" && password == "admin"){
+        adminmenu* menu = new adminmenu(nullptr);
+        menu->setAttribute(Qt::WA_DeleteOnClose);
+        menu->show();
+        this->close();
+    }
     AuthManager::getInstance()->login(username, password);
 
+}
+
+
+void logInWindow::on_signUpOwnerButton_clicked()
+{
+    QMessageBox::information(this, "Debug", "signUpOwner button clicked!");
+
+    QString firstName = ui->lineEdit_SignOwnerName->text().trimmed();
+    QString lastName = ui->lineEdit_SignOwnerLName->text().trimmed();
+    QString email = ui->lineEdit_SignOwnerEmail->text().trimmed();
+    QString phone = ui->lineEdit_SignOwnerPhoneNumber->text().trimmed();
+    QString restaurantName = ui->lineEdit_SignOwnerRestaurantName->text().trimmed();
+    QString restaurantNumber = ui->lineEdit_SignOwnerRestaurantNumber->text().trimmed();
+    QString password = ui->lineEdit_SignOwnerPassword->text();
+    QString location = ui->comboBox_SignOwnerLocation->currentText().trimmed();
+
+    if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || phone.isEmpty() ||
+        restaurantName.isEmpty() || restaurantNumber.isEmpty() || password.isEmpty() || location.isEmpty()) {
+        QMessageBox::warning(this, "Input Error", "Please fill in all fields.");
+        return;
+    }
+
+    AuthManager::getInstance()->registerRestaurantOwner(
+        firstName, lastName, email, phone, password, restaurantName, restaurantNumber, location
+    );
 }
 
