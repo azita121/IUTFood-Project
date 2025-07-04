@@ -1,0 +1,291 @@
+\doxysection{Customer\+Manager Class Reference}
+\hypertarget{class_customer_manager}{}\label{class_customer_manager}\index{CustomerManager@{CustomerManager}}
+
+
+{\ttfamily \#include $<$customermanager.\+h$>$}
+
+
+
+Inheritance diagram for Customer\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_customer_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Customer\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_customer_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_customer_manager_af2489f395d34842ad7f1c3c56d696c60}{restaurants\+Received}} (const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&restaurants)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a5b6984dedf26154aeab37f8335f38f3b}{menu\+Received}} (const QString \&restaurant\+Id, const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&menu)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a16d91458265390e01adc149cecb6637c}{orders\+Received}} (const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&orders)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a66d93239c3d05ebb4afc5dd85b9ad66b}{order\+Placed}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a289b5ab48adb77eb96481e3f39f1ff0b}{order\+Cancelled}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_customer_manager_abaecd24783a57827f8c3495d3a2f2335}{error}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{class_customer_manager_af0563c69f1d1392e50422c34f8133a7e}{profile\+Received}} (const QJson\+Object \&profile)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}{\texorpdfstring{$\sim$}{\string~}\+Customer\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_customer_manager_a305e44734a7442d4c3b35628153316ea}{get\+Restaurants}} ()
+\item 
+void \mbox{\hyperlink{class_customer_manager_a693a39582a7038249a8847db1453fe84}{get\+Restaurant\+Menu}} (const QString \&restaurant\+Id)
+\item 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_manager_a5680ea06e1aae91af0fa361cb0982766}{get\+Restaurant\+List}} () const
+\item 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_customer_manager_a5d9475ad91a95950226d9e2668a7f413}{get\+Restaurant}} (const QString \&restaurant\+Id) const
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_manager_a0f811c1e6a80f18f609e9acdf94ec3b7}{get\+Menu\+Items}} (const QString \&restaurant\+Id) const
+\item 
+void \mbox{\hyperlink{class_customer_manager_ad280acae02ac11f1d2bbf6fc43b437ac}{place\+Order}} (const QString \&restaurant\+Id, const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&items)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a75219a45ba5d433addc15b00cff182c5}{get\+Orders}} ()
+\item 
+void \mbox{\hyperlink{class_customer_manager_a6b427c530b551399f715438e4b528b35}{cancel\+Order}} (const QString \&order\+Id)
+\item 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_manager_ad5423ef36bec47d1099b1638d382db97}{get\+Order\+List}} () const
+\item 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_customer_manager_abe654b7eeea0816dcacf5ca8718b10f6}{get\+Order}} (const QString \&order\+Id) const
+\item 
+void \mbox{\hyperlink{class_customer_manager_a717cf555d9f319081878cdf3c2d1a26e}{add\+To\+Cart}} (const QString \&restaurant\+Id, \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item, int quantity)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a35f55c600ffa2207d1a2bb5add4757f0}{remove\+From\+Cart}} (const QString \&restaurant\+Id, \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a947f38b22295bd15e7fbd45c94d24d8b}{clear\+Cart}} (const QString \&restaurant\+Id)
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_manager_a417b04c0db0dbb9b118604cc34ef3915}{get\+Cart\+Items}} (const QString \&restaurant\+Id) const
+\item 
+int \mbox{\hyperlink{class_customer_manager_ac63bd59643fbc7afe5d0330667c956f1}{get\+Cart\+Item\+Quantity}} (const QString \&restaurant\+Id, \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item) const
+\item 
+void \mbox{\hyperlink{class_customer_manager_a554734fcd4ccfb93cbff5479660df235}{fetch\+Profile}} (const QString \&customer\+Id)
+\item 
+void \mbox{\hyperlink{class_customer_manager_a2b7d8a3cc378dfe3cdc7b4a733d44f0d}{fetch\+Order\+History}} (const QString \&customer\+Id)
+\item 
+\mbox{\hyperlink{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}{\texorpdfstring{$\sim$}{\string~}\+Customer\+Manager}} ()
+\item 
+QVariant\+Map \mbox{\hyperlink{class_customer_manager_ac10d6323b594e99ef35a795f128e06fc}{get\+Profile}} (const QString \&customer\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_customer_manager_a07df90d3553a0c87d765726e478f9b85}{get\+Order\+History}} (const QString \&customer\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_customer_manager}{Customer\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_customer_manager_aef4ca214bca395fb2fb8625b6429f577}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_customer_manager}{Customer\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_customer_manager_a611c727112b729e0cfda9ac380396662}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_customer_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}\index{CustomerManager@{CustomerManager}!````~CustomerManager@{\texorpdfstring{$\sim$}{\string~}CustomerManager}}
+\index{````~CustomerManager@{\texorpdfstring{$\sim$}{\string~}CustomerManager}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CustomerManager()}{\string~CustomerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f} 
+Customer\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Customer\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}\index{CustomerManager@{CustomerManager}!````~CustomerManager@{\texorpdfstring{$\sim$}{\string~}CustomerManager}}
+\index{````~CustomerManager@{\texorpdfstring{$\sim$}{\string~}CustomerManager}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CustomerManager()}{\string~CustomerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f} 
+Customer\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Customer\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_customer_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_manager_a717cf555d9f319081878cdf3c2d1a26e}\index{CustomerManager@{CustomerManager}!addToCart@{addToCart}}
+\index{addToCart@{addToCart}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{addToCart()}{addToCart()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a717cf555d9f319081878cdf3c2d1a26e} 
+void Customer\+Manager\+::add\+To\+Cart (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a6b427c530b551399f715438e4b528b35}\index{CustomerManager@{CustomerManager}!cancelOrder@{cancelOrder}}
+\index{cancelOrder@{cancelOrder}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{cancelOrder()}{cancelOrder()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a6b427c530b551399f715438e4b528b35} 
+void Customer\+Manager\+::cancel\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a947f38b22295bd15e7fbd45c94d24d8b}\index{CustomerManager@{CustomerManager}!clearCart@{clearCart}}
+\index{clearCart@{clearCart}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{clearCart()}{clearCart()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a947f38b22295bd15e7fbd45c94d24d8b} 
+void Customer\+Manager\+::clear\+Cart (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_abaecd24783a57827f8c3495d3a2f2335}\index{CustomerManager@{CustomerManager}!error@{error}}
+\index{error@{error}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_customer_manager_abaecd24783a57827f8c3495d3a2f2335} 
+void Customer\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_a2b7d8a3cc378dfe3cdc7b4a733d44f0d}\index{CustomerManager@{CustomerManager}!fetchOrderHistory@{fetchOrderHistory}}
+\index{fetchOrderHistory@{fetchOrderHistory}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{fetchOrderHistory()}{fetchOrderHistory()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a2b7d8a3cc378dfe3cdc7b4a733d44f0d} 
+void Customer\+Manager\+::fetch\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a554734fcd4ccfb93cbff5479660df235}\index{CustomerManager@{CustomerManager}!fetchProfile@{fetchProfile}}
+\index{fetchProfile@{fetchProfile}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{fetchProfile()}{fetchProfile()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a554734fcd4ccfb93cbff5479660df235} 
+void Customer\+Manager\+::fetch\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_ac63bd59643fbc7afe5d0330667c956f1}\index{CustomerManager@{CustomerManager}!getCartItemQuantity@{getCartItemQuantity}}
+\index{getCartItemQuantity@{getCartItemQuantity}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getCartItemQuantity()}{getCartItemQuantity()}}
+{\footnotesize\ttfamily \label{class_customer_manager_ac63bd59643fbc7afe5d0330667c956f1} 
+int Customer\+Manager\+::get\+Cart\+Item\+Quantity (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_a417b04c0db0dbb9b118604cc34ef3915}\index{CustomerManager@{CustomerManager}!getCartItems@{getCartItems}}
+\index{getCartItems@{getCartItems}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getCartItems()}{getCartItems()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a417b04c0db0dbb9b118604cc34ef3915} 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Customer\+Manager\+::get\+Cart\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_aef4ca214bca395fb2fb8625b6429f577}\index{CustomerManager@{CustomerManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_customer_manager_aef4ca214bca395fb2fb8625b6429f577} 
+\mbox{\hyperlink{class_customer_manager}{Customer\+Manager}} \texorpdfstring{$\ast$}{*} Customer\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_customer_manager_a611c727112b729e0cfda9ac380396662}\index{CustomerManager@{CustomerManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_customer_manager_a611c727112b729e0cfda9ac380396662} 
+\mbox{\hyperlink{class_customer_manager}{Customer\+Manager}} \texorpdfstring{$\ast$}{*} Customer\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_customer_manager_a0f811c1e6a80f18f609e9acdf94ec3b7}\index{CustomerManager@{CustomerManager}!getMenuItems@{getMenuItems}}
+\index{getMenuItems@{getMenuItems}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItems()}{getMenuItems()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a0f811c1e6a80f18f609e9acdf94ec3b7} 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Customer\+Manager\+::get\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_abe654b7eeea0816dcacf5ca8718b10f6}\index{CustomerManager@{CustomerManager}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \label{class_customer_manager_abe654b7eeea0816dcacf5ca8718b10f6} 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} Customer\+Manager\+::get\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_a07df90d3553a0c87d765726e478f9b85}\index{CustomerManager@{CustomerManager}!getOrderHistory@{getOrderHistory}}
+\index{getOrderHistory@{getOrderHistory}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getOrderHistory()}{getOrderHistory()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a07df90d3553a0c87d765726e478f9b85} 
+QJson\+Array Customer\+Manager\+::get\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_ad5423ef36bec47d1099b1638d382db97}\index{CustomerManager@{CustomerManager}!getOrderList@{getOrderList}}
+\index{getOrderList@{getOrderList}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getOrderList()}{getOrderList()}}
+{\footnotesize\ttfamily \label{class_customer_manager_ad5423ef36bec47d1099b1638d382db97} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Customer\+Manager\+::get\+Order\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_a75219a45ba5d433addc15b00cff182c5}\index{CustomerManager@{CustomerManager}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getOrders()}{getOrders()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a75219a45ba5d433addc15b00cff182c5} 
+void Customer\+Manager\+::get\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_ac10d6323b594e99ef35a795f128e06fc}\index{CustomerManager@{CustomerManager}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getProfile()}{getProfile()}}
+{\footnotesize\ttfamily \label{class_customer_manager_ac10d6323b594e99ef35a795f128e06fc} 
+QVariant\+Map Customer\+Manager\+::get\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a5d9475ad91a95950226d9e2668a7f413}\index{CustomerManager@{CustomerManager}!getRestaurant@{getRestaurant}}
+\index{getRestaurant@{getRestaurant}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurant()}{getRestaurant()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a5d9475ad91a95950226d9e2668a7f413} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Customer\+Manager\+::get\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_a5680ea06e1aae91af0fa361cb0982766}\index{CustomerManager@{CustomerManager}!getRestaurantList@{getRestaurantList}}
+\index{getRestaurantList@{getRestaurantList}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantList()}{getRestaurantList()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a5680ea06e1aae91af0fa361cb0982766} 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ Customer\+Manager\+::get\+Restaurant\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_manager_a693a39582a7038249a8847db1453fe84}\index{CustomerManager@{CustomerManager}!getRestaurantMenu@{getRestaurantMenu}}
+\index{getRestaurantMenu@{getRestaurantMenu}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantMenu()}{getRestaurantMenu()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a693a39582a7038249a8847db1453fe84} 
+void Customer\+Manager\+::get\+Restaurant\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a305e44734a7442d4c3b35628153316ea}\index{CustomerManager@{CustomerManager}!getRestaurants@{getRestaurants}}
+\index{getRestaurants@{getRestaurants}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurants()}{getRestaurants()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a305e44734a7442d4c3b35628153316ea} 
+void Customer\+Manager\+::get\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_a5b6984dedf26154aeab37f8335f38f3b}\index{CustomerManager@{CustomerManager}!menuReceived@{menuReceived}}
+\index{menuReceived@{menuReceived}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{menuReceived}{menuReceived}}
+{\footnotesize\ttfamily \label{class_customer_manager_a5b6984dedf26154aeab37f8335f38f3b} 
+void Customer\+Manager\+::menu\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{menu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_a289b5ab48adb77eb96481e3f39f1ff0b}\index{CustomerManager@{CustomerManager}!orderCancelled@{orderCancelled}}
+\index{orderCancelled@{orderCancelled}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{orderCancelled}{orderCancelled}}
+{\footnotesize\ttfamily \label{class_customer_manager_a289b5ab48adb77eb96481e3f39f1ff0b} 
+void Customer\+Manager\+::order\+Cancelled (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_a66d93239c3d05ebb4afc5dd85b9ad66b}\index{CustomerManager@{CustomerManager}!orderPlaced@{orderPlaced}}
+\index{orderPlaced@{orderPlaced}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{orderPlaced}{orderPlaced}}
+{\footnotesize\ttfamily \label{class_customer_manager_a66d93239c3d05ebb4afc5dd85b9ad66b} 
+void Customer\+Manager\+::order\+Placed (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_a16d91458265390e01adc149cecb6637c}\index{CustomerManager@{CustomerManager}!ordersReceived@{ordersReceived}}
+\index{ordersReceived@{ordersReceived}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{ordersReceived}{ordersReceived}}
+{\footnotesize\ttfamily \label{class_customer_manager_a16d91458265390e01adc149cecb6637c} 
+void Customer\+Manager\+::orders\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&}]{orders}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_ad280acae02ac11f1d2bbf6fc43b437ac}\index{CustomerManager@{CustomerManager}!placeOrder@{placeOrder}}
+\index{placeOrder@{placeOrder}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{placeOrder()}{placeOrder()}}
+{\footnotesize\ttfamily \label{class_customer_manager_ad280acae02ac11f1d2bbf6fc43b437ac} 
+void Customer\+Manager\+::place\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_af0563c69f1d1392e50422c34f8133a7e}\index{CustomerManager@{CustomerManager}!profileReceived@{profileReceived}}
+\index{profileReceived@{profileReceived}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{profileReceived}{profileReceived}}
+{\footnotesize\ttfamily \label{class_customer_manager_af0563c69f1d1392e50422c34f8133a7e} 
+void Customer\+Manager\+::profile\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_customer_manager_a35f55c600ffa2207d1a2bb5add4757f0}\index{CustomerManager@{CustomerManager}!removeFromCart@{removeFromCart}}
+\index{removeFromCart@{removeFromCart}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{removeFromCart()}{removeFromCart()}}
+{\footnotesize\ttfamily \label{class_customer_manager_a35f55c600ffa2207d1a2bb5add4757f0} 
+void Customer\+Manager\+::remove\+From\+Cart (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_customer_manager_af2489f395d34842ad7f1c3c56d696c60}\index{CustomerManager@{CustomerManager}!restaurantsReceived@{restaurantsReceived}}
+\index{restaurantsReceived@{restaurantsReceived}!CustomerManager@{CustomerManager}}
+\doxysubsubsection{\texorpdfstring{restaurantsReceived}{restaurantsReceived}}
+{\footnotesize\ttfamily \label{class_customer_manager_af2489f395d34842ad7f1c3c56d696c60} 
+void Customer\+Manager\+::restaurants\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2customermanager_8h}{customermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2customermanager_8h}{customermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2customermanager_8cpp}{customermanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2customermanager_8cpp}{customermanager.\+cpp}}\end{DoxyCompactItemize}

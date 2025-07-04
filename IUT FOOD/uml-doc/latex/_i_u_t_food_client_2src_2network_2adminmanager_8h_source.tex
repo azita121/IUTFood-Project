@@ -1,0 +1,71 @@
+\doxysection{adminmanager.\+h}
+\hypertarget{_i_u_t_food_client_2src_2network_2adminmanager_8h_source}{}\label{_i_u_t_food_client_2src_2network_2adminmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/adminmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/adminmanager.h}}
+\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2adminmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\ \#ifndef\ ADMINMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADMINMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{../models/user.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurant_8h}{../models/restaurant.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{order_8h}{../models/order.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }AdminManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ AdminManager*\ \mbox{\hyperlink{class_admin_manager_af002eeaa3faee94aeec2e2e53f8829f4}{getInstance}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_admin_manager_aeb6041be0a075c2ca58141321283cf57}{\string~AdminManager}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ User\ management}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_ad11170ccecdabc77b8e850e4be71a690}{getUsers}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a3eea80df03adace4aed6d5186c718b1f}{updateUserStatus}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keywordtype}{bool}\ isActive);}
+\DoxyCodeLine{00024\ \ \ \ \ QList<User*>\ \mbox{\hyperlink{class_admin_manager_abd31a2478f8803d6b279d6f38d872a13}{getUserList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_admin_manager_ad651aa6dd91fa81120ee1c3a76aa11d5}{getUser}}(\textcolor{keyword}{const}\ QString\&\ userId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ management}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a5a0ad82fc8209506eaf2f08bfa1cf44f}{getRestaurants}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a5c51e79d3024462bbce4864a0723d2af}{updateRestaurantStatus}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keywordtype}{bool}\ isApproved);}
+\DoxyCodeLine{00030\ \ \ \ \ QList<Restaurant*>\ \mbox{\hyperlink{class_admin_manager_a0677e212806986e450b3c7ff65540605}{getRestaurantList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}*\ \mbox{\hyperlink{class_admin_manager_a64213beb78b9553c4bc5773e30509b9d}{getRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Order\ management}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_aaddfb93a14b758179391dd7a17579f55}{getOrders}}();}
+\DoxyCodeLine{00035\ \ \ \ \ QList<Order*>\ \mbox{\hyperlink{class_admin_manager_ae2882e9d5ce94d00e91cbc6685705b7c}{getOrderList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_order}{Order}}*\ \mbox{\hyperlink{class_admin_manager_a08a0d9df045598d0c408f10ffa495491}{getOrder}}(\textcolor{keyword}{const}\ QString\&\ orderId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Statistics}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a6e7b98b438395f5831b5e1e4a70c281a}{getStatistics}}();}
+\DoxyCodeLine{00040\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_admin_manager_a76e86be1f935bd10a87eca25017e3f91}{getCurrentStatistics}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ signals:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a111cadafd59cbb9956deb52318d6cc41}{usersReceived}}(\textcolor{keyword}{const}\ QList<User*>\&\ users);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_af4e6370c3b21d7911d8d70db0238e90e}{restaurantsReceived}}(\textcolor{keyword}{const}\ QList<Restaurant*>\&\ restaurants);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a61317ff04400225f8b427d00978bd679}{ordersReceived}}(\textcolor{keyword}{const}\ QList<Order*>\&\ orders);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_afaeada38ef90152750f3afeee9f4aade}{statisticsReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ stats);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a108b897dd22ffc685b74dc0f146e6092}{error}}(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{explicit}\ AdminManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ AdminManager*\ instance;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00054\ \ \ \ \ QList<User*>\ m\_users;}
+\DoxyCodeLine{00055\ \ \ \ \ QList<Restaurant*>\ m\_restaurants;}
+\DoxyCodeLine{00056\ \ \ \ \ QList<Order*>\ m\_orders;}
+\DoxyCodeLine{00057\ \ \ \ \ QJsonObject\ m\_statistics;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ handleUsersReceived(\textcolor{keyword}{const}\ QJsonArray\&\ users);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRestaurantsReceived(\textcolor{keyword}{const}\ QJsonArray\&\ restaurants);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrdersReceived(\textcolor{keyword}{const}\ QJsonArray\&\ orders);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ handleStatisticsReceived(\textcolor{keyword}{const}\ QJsonObject\&\ stats);}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADMINMANAGER\_H}}
+
+\end{DoxyCode}

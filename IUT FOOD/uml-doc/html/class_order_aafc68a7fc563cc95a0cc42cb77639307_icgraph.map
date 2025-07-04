@@ -1,0 +1,7 @@
+<map id="Order::getValidStatuses" name="Order::getValidStatuses">
+<area shape="rect" id="Node000001" title=" " alt="" coords="493,13,652,40"/>
+<area shape="rect" id="Node000002" href="$class_order_manager.html#a3d131887d1315302fda7301e4e13257f" title=" " alt="" coords="236,13,445,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,29,445,29,445,24,478,24"/>
+<area shape="rect" id="Node000003" href="$class_order_manager.html#ad50e027af09d223a47b0c0c5e6149c90" title=" " alt="" coords="5,5,188,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,29,188,29,188,24,220,24"/>
+</map>

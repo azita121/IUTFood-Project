@@ -1,0 +1,36 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/UI/main.cpp" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/UI/main.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,337,64"/>
+<area shape="rect" id="Node000002" href="$loginwindow_8h.html" title=" " alt="" coords="139,112,241,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,66,209,101,205,97,229,63"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="265,112,360,139"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="273,63,297,97,293,101,269,66"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,187,122,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,142,104,181,101,176,167,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="146,187,234,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,139,192,171,187,171,187,139"/>
+<area shape="rect" id="Node000005" href="$customermenu_8h.html" title=" " alt="" coords="259,187,377,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,137,284,176,281,181,211,142"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,261,108,288"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="273,216,118,259,116,254,272,211"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="282,411,354,437"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="337,212,360,232,378,260,383,279,383,299,375,337,358,372,340,400,335,397,354,369,370,335,378,298,377,280,373,262,356,236,334,216"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="272,261,364,288"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="320,214,320,246,315,246,315,214"/>
+<area shape="rect" id="Node000009" href="$restaurantitem_8h.html" title=" " alt="" coords="132,261,248,288"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="297,216,227,256,224,251,294,212"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="438,261,582,288"/>
+<area shape="poly" id="edge17_Node000005_Node000015" title=" " alt="" coords="352,211,463,253,461,258,350,216"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="226,286,262,305,295,334,310,364,318,395,313,396,305,366,290,338,259,310,224,291"/>
+<area shape="rect" id="Node000010" href="$_u_i_2restaurant_8h.html" title=" " alt="" coords="78,411,168,437"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="182,290,151,337,131,396,126,395,146,335,177,287"/>
+<area shape="rect" id="Node000013" href="$fooditemwidget_8h.html" title=" " alt="" coords="160,336,281,363"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="198,287,212,320,207,323,193,290"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="49,485,114,512"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="118,439,99,473,94,471,114,437"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="138,485,191,512"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="133,437,152,471,148,473,128,439"/>
+<area shape="poly" id="edge14_Node000013_Node000007" title=" " alt="" coords="239,361,291,399,288,404,236,365"/>
+<area shape="poly" id="edge15_Node000013_Node000010" title=" " alt="" coords="205,365,153,404,150,399,202,361"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="193,411,256,437"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="224,363,226,395,220,395,219,363"/>
+</map>

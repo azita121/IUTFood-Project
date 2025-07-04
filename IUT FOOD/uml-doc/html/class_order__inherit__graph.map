@@ -1,0 +1,5 @@
+<map id="Order" name="Order">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,223,939"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="85,5,144,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,89,117,123,112,123,112,89"/>
+</map>

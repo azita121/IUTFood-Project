@@ -1,0 +1,90 @@
+\doxysection{restaurant.\+h}
+\hypertarget{models_2restaurant_8h_source}{}\label{models_2restaurant_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/restaurant.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/restaurant.h}}
+\mbox{\hyperlink{models_2restaurant_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ WRITE\ \mbox{\hyperlink{class_restaurant_a4438105fa1f907895b096e41f08d8512}{setId}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553}{idChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}}\ READ\ \mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f}{setName}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952}{nameChanged}})}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}}\ READ\ \mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a}{setDescription}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_acecc405bacc6046314250d3727c0d73e}{descriptionChanged}})}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}}\ READ\ \mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}}\ WRITE\ \mbox{\hyperlink{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af}{setAddress}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_aec235948cd053dfe6d14fd4d185228fd}{addressChanged}})}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}}\ READ\ \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a332af9d7754894746c8515daaf5280d6}{setLatitude}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd}{latitudeChanged}})}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}}\ READ\ \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a37aa09d75c58051000e62c4083fdccc8}{setLongitude}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705}{longitudeChanged}})}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}}\ READ\ \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa}{setRating}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_a3f2edd70cd0a133291e712685b9e198c}{ratingChanged}})}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f}{ratingCount}}\ READ\ \mbox{\hyperlink{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f}{ratingCount}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805}{setRatingCount}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_a86772058a1fe18675f11a7b013c4d003}{ratingCountChanged}})}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}}\ READ\ \mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}}\ WRITE\ \mbox{\hyperlink{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a}{setType}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a}{typeChanged}})}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{imageUrl}}\ READ\ \mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{imageUrl}}\ WRITE\ \mbox{\hyperlink{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6}{setImageUrl}}\ NOTIFY\ \mbox{\hyperlink{class_restaurant_aa522f6f21c719a646319a2c6ea112451}{imageUrlChanged}})}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ public:}
+\DoxyCodeLine{00024\ \ \ \ \ explicit\ \mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00028\ \ \ \ \ QString\ \textcolor{keywordtype}{id}()\ const;}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}}()\ const;}
+\DoxyCodeLine{00030\ \ \ \ \ QString\ \mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}}()\ const;}
+\DoxyCodeLine{00031\ \ \ \ \ QString\ \mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}}()\ const;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}}()\ const;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}}()\ const;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}}()\ const;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f}{ratingCount}}()\ const;}
+\DoxyCodeLine{00036\ \ \ \ \ QString\ \mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}}()\ const;}
+\DoxyCodeLine{00037\ \ \ \ \ QString\ \mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{imageUrl}}()\ const;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a4438105fa1f907895b096e41f08d8512}{setId}}(const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f}{setName}}(const\ QString\ \&\mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a}{setDescription}}(const\ QString\ \&\mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af}{setAddress}}(const\ QString\ \&\mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a332af9d7754894746c8515daaf5280d6}{setLatitude}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a37aa09d75c58051000e62c4083fdccc8}{setLongitude}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa}{setRating}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805}{setRatingCount}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a}{setType}}(const\ QString\ \&\mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6}{setImageUrl}}(const\ QString\ \&\mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{imageUrl}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00052\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_restaurant_a993df1a224a592804cac67ec429c2027}{toJson}}()\ const;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Static\ methods}}
+\DoxyCodeLine{00056\ \ \ \ \ static\ \mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}}*\ \mbox{\hyperlink{class_restaurant_af2d7de3e18ceff06909c0aad37b35030}{fromJsonObject}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00057\ \ \ \ \ static\ QList<\mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}}*>\ \mbox{\hyperlink{class_restaurant_a61dc77eb2d402e5b185e57872756aaca}{fromJsonArray}}(const\ QJsonArray\ \&array,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ signals:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553}{idChanged}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952}{nameChanged}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_acecc405bacc6046314250d3727c0d73e}{descriptionChanged}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_aec235948cd053dfe6d14fd4d185228fd}{addressChanged}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd}{latitudeChanged}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705}{longitudeChanged}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a3f2edd70cd0a133291e712685b9e198c}{ratingChanged}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a86772058a1fe18675f11a7b013c4d003}{ratingCountChanged}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a}{typeChanged}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_aa522f6f21c719a646319a2c6ea112451}{imageUrlChanged}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ private:}
+\DoxyCodeLine{00072\ \ \ \ \ QString\ m\_id;}
+\DoxyCodeLine{00073\ \ \ \ \ QString\ m\_name;}
+\DoxyCodeLine{00074\ \ \ \ \ QString\ m\_description;}
+\DoxyCodeLine{00075\ \ \ \ \ QString\ m\_address;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_latitude;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_longitude;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_rating;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_ratingCount;}
+\DoxyCodeLine{00080\ \ \ \ \ QString\ m\_type;}
+\DoxyCodeLine{00081\ \ \ \ \ QString\ m\_imageUrl;}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANT\_H\ }}
+
+\end{DoxyCode}

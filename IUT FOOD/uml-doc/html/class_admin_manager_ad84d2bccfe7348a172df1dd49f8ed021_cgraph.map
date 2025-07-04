@@ -1,0 +1,7 @@
+<map id="AdminManager::sendReportToUser" name="AdminManager::sendReportToUser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,189,77"/>
+<area shape="rect" id="Node000002" href="$class_web_socket_server.html#a47d72551a272fa65b1b85e9f0f23c761" title=" " alt="" coords="242,5,434,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,42,226,38,227,43,189,47"/>
+<area shape="rect" id="Node000003" href="$class_web_socket_server.html#ab0aab4f330ad165780f99c2f2338439c" title=" " alt="" coords="237,72,439,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,65,221,68,221,74,189,70"/>
+</map>

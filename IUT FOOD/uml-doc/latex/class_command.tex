@@ -1,0 +1,118 @@
+\doxysection{Command Class Reference}
+\hypertarget{class_command}{}\label{class_command}\index{Command@{Command}}
+
+
+{\ttfamily \#include $<$command.\+h$>$}
+
+
+
+Inheritance diagram for Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_command__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_command__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_ae85e5e5e0fe5954a572605c5426cc1c4}{Command}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()
+\item 
+virtual void \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_command_a04eb1e90604f777c12cf8f0a77e870e9}{get\+Priority}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_command_a215abcdd07a0eae6227787d8a5a5d737}{set\+Priority}} (int \mbox{\hyperlink{class_command_aeb44351c1ac36186171042e27f18d70b}{priority}})=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_command_aeb44351c1ac36186171042e27f18d70b}{priority}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_ae85e5e5e0fe5954a572605c5426cc1c4}\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
+{\footnotesize\ttfamily \label{class_command_ae85e5e5e0fe5954a572605c5426cc1c4} 
+Command\+::\+Command (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_command_ae85e5e5e0fe5954a572605c5426cc1c4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}\index{Command@{Command}!````~Command@{\texorpdfstring{$\sim$}{\string~}Command}}
+\index{````~Command@{\texorpdfstring{$\sim$}{\string~}Command}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Command()}{\string~Command()}}
+{\footnotesize\ttfamily \label{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278} 
+Command\+::\texorpdfstring{$\sim$}{\string~}\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\index{Command@{Command}!execute@{execute}}
+\index{execute@{execute}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7} 
+virtual void Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_order_command_ade67b27b1d3c339752ae6b82257718cf}{Order\+Command}}.
+
+\Hypertarget{class_command_a04eb1e90604f777c12cf8f0a77e870e9}\index{Command@{Command}!getPriority@{getPriority}}
+\index{getPriority@{getPriority}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getPriority()}{getPriority()}}
+{\footnotesize\ttfamily \label{class_command_a04eb1e90604f777c12cf8f0a77e870e9} 
+virtual int Command\+::get\+Priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_order_command_a082e4884773a2b5d14a687e96ef2b01b}{Order\+Command}}.
+
+\Hypertarget{class_command_a215abcdd07a0eae6227787d8a5a5d737}\index{Command@{Command}!setPriority@{setPriority}}
+\index{setPriority@{setPriority}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setPriority()}{setPriority()}}
+{\footnotesize\ttfamily \label{class_command_a215abcdd07a0eae6227787d8a5a5d737} 
+virtual void Command\+::set\+Priority (\begin{DoxyParamCaption}\item[{int}]{priority}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_order_command_a1d895e4d7c2648fe970f85d76a57fe1b}{Order\+Command}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_command_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_command_aeb44351c1ac36186171042e27f18d70b}\index{Command@{Command}!priority@{priority}}
+\index{priority@{priority}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily \label{class_command_aeb44351c1ac36186171042e27f18d70b} 
+int Command\+::priority\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{command_8h}{command.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{command_8cpp}{command.\+cpp}}\end{DoxyCompactItemize}

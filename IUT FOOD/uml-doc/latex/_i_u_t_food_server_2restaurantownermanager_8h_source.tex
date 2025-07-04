@@ -1,0 +1,32 @@
+\doxysection{restaurantownermanager.\+h}
+\hypertarget{_i_u_t_food_server_2restaurantownermanager_8h_source}{}\label{_i_u_t_food_server_2restaurantownermanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/restaurantownermanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/restaurantownermanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2restaurantownermanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTOWNERMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTOWNERMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_restaurant_owner_manager}{RestaurantOwnerManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantOwnerManager*\ \mbox{\hyperlink{class_restaurant_owner_manager_a1dd070499ba72aeb4cb2617af18dbf35}{getInstance}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}{\string~RestaurantOwnerManager}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_restaurant_owner_manager_a463ec8a09b3ddc2f3c1282dff8f9a00a}{getProfile}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00017\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_owner_manager_a65e67135852fac31453ea8215448fe9a}{getRestaurants}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Add\ more\ owner-\/specific\ methods\ as\ needed}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ RestaurantOwnerManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantOwnerManager*\ instance;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTOWNERMANAGER\_H\ }}
+
+\end{DoxyCode}

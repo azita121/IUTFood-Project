@@ -1,0 +1,78 @@
+\doxysection{menuitem.\+h}
+\hypertarget{menuitem_8h_source}{}\label{menuitem_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/menuitem.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/menuitem.h}}
+\mbox{\hyperlink{menuitem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENUITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENUITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}{MenuItem}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ WRITE\ \mbox{\hyperlink{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa}{setId}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909}{idChanged}})}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}}\ READ\ \mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}}\ WRITE\ \mbox{\hyperlink{class_menu_item_afeab17ca6776040c161e7745a44ee365}{setName}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_a995c330ecf2d5e93159e03a967be7a55}{nameChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}}\ READ\ \mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}}\ WRITE\ \mbox{\hyperlink{class_menu_item_af97642bda08149846dcbe9cb23772a92}{setDescription}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_abe20e155b355274a0eac06f785df9b29}{descriptionChanged}})}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}\ READ\ \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}\ WRITE\ \mbox{\hyperlink{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}{setPrice}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c}{priceChanged}})}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}}\ READ\ \mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}}\ WRITE\ \mbox{\hyperlink{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9}{setCategory}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a}{categoryChanged}})}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_menu_item_a125b3426feacb4a50146d1f2eb740b85}{imageUrl}}\ READ\ \mbox{\hyperlink{class_menu_item_a125b3426feacb4a50146d1f2eb740b85}{imageUrl}}\ WRITE\ \mbox{\hyperlink{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b}{setImageUrl}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_ac70e9fee1c0567a86fc11686def0637d}{imageUrlChanged}})}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}}\ READ\ \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}}\ WRITE\ \mbox{\hyperlink{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1}{setAvailable}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7}{availableChanged}})}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}}\ READ\ \mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}}\ WRITE\ \mbox{\hyperlink{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f}{setIngredients}}\ NOTIFY\ \mbox{\hyperlink{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa}{ingredientsChanged}})}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ public:}
+\DoxyCodeLine{00021\ \ \ \ \ explicit\ \mbox{\hyperlink{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}{MenuItem}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}{MenuItem}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \textcolor{keywordtype}{id}()\ const;}
+\DoxyCodeLine{00026\ \ \ \ \ QString\ \mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}}()\ const;}
+\DoxyCodeLine{00027\ \ \ \ \ QString\ \mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}}()\ const;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}()\ const;}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}}()\ const;}
+\DoxyCodeLine{00030\ \ \ \ \ QString\ \mbox{\hyperlink{class_menu_item_a125b3426feacb4a50146d1f2eb740b85}{imageUrl}}()\ const;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}}()\ const;}
+\DoxyCodeLine{00032\ \ \ \ \ QString\ \mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}}()\ const;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa}{setId}}(const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_afeab17ca6776040c161e7745a44ee365}{setName}}(const\ QString\ \&\mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_af97642bda08149846dcbe9cb23772a92}{setDescription}}(const\ QString\ \&\mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}{setPrice}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9}{setCategory}}(const\ QString\ \&\mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b}{setImageUrl}}(const\ QString\ \&url);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1}{setAvailable}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f}{setIngredients}}(const\ QString\ \&\mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00045\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_menu_item_a97142fd93b3fd112418b939b626a6a28}{toJson}}()\ const;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Static\ methods}}
+\DoxyCodeLine{00049\ \ \ \ \ static\ \mbox{\hyperlink{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}{MenuItem}}*\ \mbox{\hyperlink{class_menu_item_a6bbc78f8449383caed57e67cc1933608}{fromJsonObject}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ signals:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909}{idChanged}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a995c330ecf2d5e93159e03a967be7a55}{nameChanged}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_abe20e155b355274a0eac06f785df9b29}{descriptionChanged}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c}{priceChanged}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a}{categoryChanged}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_ac70e9fee1c0567a86fc11686def0637d}{imageUrlChanged}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7}{availableChanged}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa}{ingredientsChanged}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ private:}
+\DoxyCodeLine{00062\ \ \ \ \ QString\ m\_id;}
+\DoxyCodeLine{00063\ \ \ \ \ QString\ m\_name;}
+\DoxyCodeLine{00064\ \ \ \ \ QString\ m\_description;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_price;}
+\DoxyCodeLine{00066\ \ \ \ \ QString\ m\_category;}
+\DoxyCodeLine{00067\ \ \ \ \ QString\ m\_imageUrl;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_available;}
+\DoxyCodeLine{00069\ \ \ \ \ QString\ m\_ingredients;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MENUITEM\_H}}
+
+\end{DoxyCode}

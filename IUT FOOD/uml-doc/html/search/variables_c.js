@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['scrollarea_0',['scrollArea',['../class_ui___customer_menu.html#a2daab40cff76ef00796e247e3fd85f7e',1,'Ui_CustomerMenu::scrollArea'],['../class_ui___restaurant_menu.html#ae9c12007dcf51fde2771786250ad8ece',1,'Ui_RestaurantMenu::scrollArea']]],
+  ['scrollareawidgetcontents_1',['scrollAreaWidgetContents',['../class_ui___customer_menu.html#ae10a661dbcf4e06d897a64857e2e808b',1,'Ui_CustomerMenu::scrollAreaWidgetContents'],['../class_ui___restaurant_menu.html#a149d0c034afa1a650ff6f7ad599e3d11',1,'Ui_RestaurantMenu::scrollAreaWidgetContents']]],
+  ['shoppingcartbutton_2',['shoppingCartButton',['../class_ui___customer_menu.html#a64286b55757c24835e12bda59bdf9a0b',1,'Ui_CustomerMenu']]],
+  ['shoppingcartbutton_5f2_3',['shoppingCartButton_2',['../class_ui___customer_menu.html#a63d05487a960cafcff849cfa245d9966',1,'Ui_CustomerMenu']]],
+  ['shoppingcartbutton_5f3_4',['shoppingCartButton_3',['../class_ui___customer_menu.html#aaf9ef0bffa48002bead5cf4c8a1479d9',1,'Ui_CustomerMenu']]],
+  ['shoppingcartpage_5',['shoppingCartPage',['../class_ui___customer_menu.html#abde2adf8706d97a89bfe9fad8a793019',1,'Ui_CustomerMenu']]],
+  ['showresbutton_6',['showresButton',['../class_ui__restaurantitem.html#aa6c1debe19b9a3aebd5af21e1775eafd',1,'Ui_restaurantitem']]],
+  ['signupcustomerbutton_7',['signUpCustomerButton',['../class_ui__log_in_window.html#a6fe13549a81745756f7b5df0544dc3ad',1,'Ui_logInWindow']]],
+  ['signupownerbutton_8',['signUpOwnerButton',['../class_ui__log_in_window.html#a0a9e5d3420948162328456a6e0605a44',1,'Ui_logInWindow']]],
+  ['stackedwidget_9',['stackedWidget',['../class_ui___customer_menu.html#af74607235b387da414124cada06fb759',1,'Ui_CustomerMenu::stackedWidget'],['../class_ui__log_in_window.html#a7553df1907d76b1d0c13a458ccb0c021',1,'Ui_logInWindow::stackedWidget'],['../class_ui__restaurantownermenu.html#a4f1768119186aa66c962f5e48dcddae0',1,'Ui_restaurantownermenu::stackedWidget']]],
+  ['status_5fcancelled_10',['STATUS_CANCELLED',['../class_order.html#a8a5a0fad8a5d0f035e397a0c5a14f924',1,'Order::STATUS_CANCELLED'],['../class_order_status.html#a636e47319b9f1e2bd8b4c4518648ec4d',1,'OrderStatus::STATUS_CANCELLED']]],
+  ['status_5fconfirmed_11',['STATUS_CONFIRMED',['../class_order.html#a74b881cf14ac042382c14cab3ffddec7',1,'Order::STATUS_CONFIRMED'],['../class_order_status.html#a402ec6be09e85c945e707fc46155d18d',1,'OrderStatus::STATUS_CONFIRMED']]],
+  ['status_5fdelivered_12',['STATUS_DELIVERED',['../class_order.html#af7ccb29c8568ac079c90217266e8ce8d',1,'Order::STATUS_DELIVERED'],['../class_order_status.html#abe5b0fcf712b0fa246104da789e369d2',1,'OrderStatus::STATUS_DELIVERED']]],
+  ['status_5fout_5ffor_5fdelivery_13',['STATUS_OUT_FOR_DELIVERY',['../class_order.html#a90cc1e8bb3e0ce4a9c3e7f16fd21969e',1,'Order::STATUS_OUT_FOR_DELIVERY'],['../class_order_status.html#ac72ebf4d747343b9c0565c6c2ce4f258',1,'OrderStatus::STATUS_OUT_FOR_DELIVERY']]],
+  ['status_5fpending_14',['STATUS_PENDING',['../class_order.html#a715088ecb603498e32973c078d4576b4',1,'Order::STATUS_PENDING'],['../class_order_status.html#a32afb8dbf2f82265f137521d89cc2f2b',1,'OrderStatus::STATUS_PENDING']]],
+  ['status_5fpreparing_15',['STATUS_PREPARING',['../class_order.html#a988e08519ecaa15958cdef4657c8550f',1,'Order::STATUS_PREPARING'],['../class_order_status.html#a00b217c07d1dbfa3abc90627bb3b6e11',1,'OrderStatus::STATUS_PREPARING']]],
+  ['status_5fready_16',['STATUS_READY',['../class_order.html#a9f22826effc30ba94683b94ca9052048',1,'Order::STATUS_READY'],['../class_order_status.html#a707ef27263767c63c79aaee076d9f6f0',1,'OrderStatus::STATUS_READY']]],
+  ['status_5frejected_17',['STATUS_REJECTED',['../class_order.html#abcbb26b4624d74ff013a3a4f12d7c9cf',1,'Order::STATUS_REJECTED'],['../class_order_status.html#ae2e2ded6fbe3a4456900bcc57c8ac5d9',1,'OrderStatus::STATUS_REJECTED']]],
+  ['statusbar_18',['statusbar',['../class_ui__log_in_window.html#ad5b3971b0ff744525cad77c434a16a6a',1,'Ui_logInWindow']]]
+];

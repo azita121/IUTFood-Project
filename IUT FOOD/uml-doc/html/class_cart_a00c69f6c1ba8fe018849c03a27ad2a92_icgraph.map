@@ -1,0 +1,6 @@
+<map id="Cart::itemRemoved" name="Cart::itemRemoved">
+<area shape="rect" id="Node000001" title=" " alt="" coords="177,29,312,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="274,16,264,10,244,8,226,10,216,15,214,20,218,28,214,30,208,21,212,11,224,5,244,3,266,5,277,12"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#a12a4c623b1c03a65703285181490c655" title=" " alt="" coords="5,29,129,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="161,45,129,45,129,40,161,40"/>
+</map>

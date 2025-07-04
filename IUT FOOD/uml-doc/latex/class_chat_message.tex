@@ -1,0 +1,507 @@
+\doxysection{Chat\+Message Class Reference}
+\hypertarget{class_chat_message}{}\label{class_chat_message}\index{ChatMessage@{ChatMessage}}
+
+
+{\ttfamily \#include $<$chatmessage.\+h$>$}
+
+
+
+Inheritance diagram for Chat\+Message\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_chat_message__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Chat\+Message\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_chat_message__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d}{from\+User\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_chat_message_a691a72cded6af451ffa086ba798a2a22}{to\+User\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_chat_message_abce0d87412743a5637de519e1cc3adaf}{content\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_chat_message_af22ddc59329a842ea8fb55672239e05c}{timestamp\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4}{is\+Read\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{Chat\+Message}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_chat_message_a9f7245193bae14fc23d560a7c7527a10}{Chat\+Message}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_chat_message_a60b24eb3bd119dac337423a0cb6ac94d}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_chat_message_a7d2069744245f9b89b5c3661604934ed}{from\+User\+Id}} () const
+\item 
+QString \mbox{\hyperlink{class_chat_message_a8bb429c2c2f54a09ba5999eeaa1804ba}{to\+User\+Id}} () const
+\item 
+QString \mbox{\hyperlink{class_chat_message_a7cd5dcae1aea56310062306eb9e96827}{content}} () const
+\item 
+QDate\+Time \mbox{\hyperlink{class_chat_message_aadd7dd87a2e2f2c567ea43de4ee5166e}{timestamp}} () const
+\item 
+bool \mbox{\hyperlink{class_chat_message_af15f5927c4f06726fafb03d7b9e774b1}{is\+Read}} () const
+\item 
+void \mbox{\hyperlink{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201}{set\+Id}} (const QString \&\mbox{\hyperlink{class_chat_message_aa124e6db39056f407c5967faf8a7bd64}{id}})
+\item 
+void \mbox{\hyperlink{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7}{set\+From\+User\+Id}} (const QString \&\mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{from\+User\+Id}})
+\item 
+void \mbox{\hyperlink{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045}{set\+To\+User\+Id}} (const QString \&\mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{to\+User\+Id}})
+\item 
+void \mbox{\hyperlink{class_chat_message_ab7a9c338f962762e7283a299e0e034cb}{set\+Content}} (const QString \&\mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}})
+\item 
+void \mbox{\hyperlink{class_chat_message_ad629c2ca07954b6815df18536bc31003}{set\+Timestamp}} (const QDate\+Time \&\mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}})
+\item 
+void \mbox{\hyperlink{class_chat_message_afe72f4cb2988ad088390d4999264f2d6}{set\+Is\+Read}} (bool \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{is\+Read}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_chat_message_a078fd1f9a8c288b4b35e4064c1cd078e}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chat_message_a65c2245a07705ba5759c40cc7eb5b3b1}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+static QList$<$ \mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_chat_message_a5ea9c23fa04aa5927dd684f64c89ed4a}{from\+Json\+Array}} (const QJson\+Array \&array, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_chat_message_aa124e6db39056f407c5967faf8a7bd64}{id}}
+\item 
+QString \mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{from\+User\+Id}}
+\item 
+QString \mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{to\+User\+Id}}
+\item 
+QString \mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}}
+\item 
+QDate\+Time \mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}}
+\item 
+bool \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{is\+Read}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_chat_message_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}\index{ChatMessage@{ChatMessage}!ChatMessage@{ChatMessage}}
+\index{ChatMessage@{ChatMessage}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{ChatMessage()}{ChatMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba} 
+Chat\+Message\+::\+Chat\+Message (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a9f7245193bae14fc23d560a7c7527a10}\index{ChatMessage@{ChatMessage}!ChatMessage@{ChatMessage}}
+\index{ChatMessage@{ChatMessage}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{ChatMessage()}{ChatMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_chat_message_a9f7245193bae14fc23d560a7c7527a10} 
+Chat\+Message\+::\+Chat\+Message (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a9f7245193bae14fc23d560a7c7527a10_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_chat_message_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chat_message_a7cd5dcae1aea56310062306eb9e96827}\index{ChatMessage@{ChatMessage}!content@{content}}
+\index{content@{content}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{content()}{content()}}
+{\footnotesize\ttfamily \label{class_chat_message_a7cd5dcae1aea56310062306eb9e96827} 
+QString Chat\+Message\+::content (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_abce0d87412743a5637de519e1cc3adaf}\index{ChatMessage@{ChatMessage}!contentChanged@{contentChanged}}
+\index{contentChanged@{contentChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{contentChanged}{contentChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_abce0d87412743a5637de519e1cc3adaf} 
+void Chat\+Message\+::content\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_chat_message_abce0d87412743a5637de519e1cc3adaf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_abce0d87412743a5637de519e1cc3adaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a}\index{ChatMessage@{ChatMessage}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a} 
+void Chat\+Message\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a5ea9c23fa04aa5927dd684f64c89ed4a}\index{ChatMessage@{ChatMessage}!fromJsonArray@{fromJsonArray}}
+\index{fromJsonArray@{fromJsonArray}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromJsonArray()}{fromJsonArray()}}
+{\footnotesize\ttfamily \label{class_chat_message_a5ea9c23fa04aa5927dd684f64c89ed4a} 
+QList$<$ \mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} $>$ Chat\+Message\+::from\+Json\+Array (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{array}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a5ea9c23fa04aa5927dd684f64c89ed4a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a65c2245a07705ba5759c40cc7eb5b3b1}\index{ChatMessage@{ChatMessage}!fromJsonObject@{fromJsonObject}}
+\index{fromJsonObject@{fromJsonObject}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromJsonObject()}{fromJsonObject()}}
+{\footnotesize\ttfamily \label{class_chat_message_a65c2245a07705ba5759c40cc7eb5b3b1} 
+\mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} Chat\+Message\+::from\+Json\+Object (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a65c2245a07705ba5759c40cc7eb5b3b1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a7d2069744245f9b89b5c3661604934ed}\index{ChatMessage@{ChatMessage}!fromUserId@{fromUserId}}
+\index{fromUserId@{fromUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromUserId()}{fromUserId()}}
+{\footnotesize\ttfamily \label{class_chat_message_a7d2069744245f9b89b5c3661604934ed} 
+QString Chat\+Message\+::from\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d}\index{ChatMessage@{ChatMessage}!fromUserIdChanged@{fromUserIdChanged}}
+\index{fromUserIdChanged@{fromUserIdChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromUserIdChanged}{fromUserIdChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d} 
+void Chat\+Message\+::from\+User\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a60b24eb3bd119dac337423a0cb6ac94d}\index{ChatMessage@{ChatMessage}!id@{id}}
+\index{id@{id}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_chat_message_a60b24eb3bd119dac337423a0cb6ac94d} 
+QString Chat\+Message\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36}\index{ChatMessage@{ChatMessage}!idChanged@{idChanged}}
+\index{idChanged@{idChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{idChanged}{idChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36} 
+void Chat\+Message\+::id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_af15f5927c4f06726fafb03d7b9e774b1}\index{ChatMessage@{ChatMessage}!isRead@{isRead}}
+\index{isRead@{isRead}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{isRead()}{isRead()}}
+{\footnotesize\ttfamily \label{class_chat_message_af15f5927c4f06726fafb03d7b9e774b1} 
+bool Chat\+Message\+::is\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4}\index{ChatMessage@{ChatMessage}!isReadChanged@{isReadChanged}}
+\index{isReadChanged@{isReadChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{isReadChanged}{isReadChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4} 
+void Chat\+Message\+::is\+Read\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_ab7a9c338f962762e7283a299e0e034cb}\index{ChatMessage@{ChatMessage}!setContent@{setContent}}
+\index{setContent@{setContent}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setContent()}{setContent()}}
+{\footnotesize\ttfamily \label{class_chat_message_ab7a9c338f962762e7283a299e0e034cb} 
+void Chat\+Message\+::set\+Content (\begin{DoxyParamCaption}\item[{const QString \&}]{content}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ab7a9c338f962762e7283a299e0e034cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ab7a9c338f962762e7283a299e0e034cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7}\index{ChatMessage@{ChatMessage}!setFromUserId@{setFromUserId}}
+\index{setFromUserId@{setFromUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setFromUserId()}{setFromUserId()}}
+{\footnotesize\ttfamily \label{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7} 
+void Chat\+Message\+::set\+From\+User\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{from\+User\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201}\index{ChatMessage@{ChatMessage}!setId@{setId}}
+\index{setId@{setId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201} 
+void Chat\+Message\+::set\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_afe72f4cb2988ad088390d4999264f2d6}\index{ChatMessage@{ChatMessage}!setIsRead@{setIsRead}}
+\index{setIsRead@{setIsRead}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setIsRead()}{setIsRead()}}
+{\footnotesize\ttfamily \label{class_chat_message_afe72f4cb2988ad088390d4999264f2d6} 
+void Chat\+Message\+::set\+Is\+Read (\begin{DoxyParamCaption}\item[{bool}]{is\+Read}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_afe72f4cb2988ad088390d4999264f2d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_afe72f4cb2988ad088390d4999264f2d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_ad629c2ca07954b6815df18536bc31003}\index{ChatMessage@{ChatMessage}!setTimestamp@{setTimestamp}}
+\index{setTimestamp@{setTimestamp}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setTimestamp()}{setTimestamp()}}
+{\footnotesize\ttfamily \label{class_chat_message_ad629c2ca07954b6815df18536bc31003} 
+void Chat\+Message\+::set\+Timestamp (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{timestamp}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ad629c2ca07954b6815df18536bc31003_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_ad629c2ca07954b6815df18536bc31003_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045}\index{ChatMessage@{ChatMessage}!setToUserId@{setToUserId}}
+\index{setToUserId@{setToUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{setToUserId()}{setToUserId()}}
+{\footnotesize\ttfamily \label{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045} 
+void Chat\+Message\+::set\+To\+User\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{to\+User\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_aadd7dd87a2e2f2c567ea43de4ee5166e}\index{ChatMessage@{ChatMessage}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{timestamp()}{timestamp()}}
+{\footnotesize\ttfamily \label{class_chat_message_aadd7dd87a2e2f2c567ea43de4ee5166e} 
+QDate\+Time Chat\+Message\+::timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_af22ddc59329a842ea8fb55672239e05c}\index{ChatMessage@{ChatMessage}!timestampChanged@{timestampChanged}}
+\index{timestampChanged@{timestampChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{timestampChanged}{timestampChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_af22ddc59329a842ea8fb55672239e05c} 
+void Chat\+Message\+::timestamp\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_chat_message_af22ddc59329a842ea8fb55672239e05c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_af22ddc59329a842ea8fb55672239e05c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_message_a078fd1f9a8c288b4b35e4064c1cd078e}\index{ChatMessage@{ChatMessage}!toJson@{toJson}}
+\index{toJson@{toJson}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_chat_message_a078fd1f9a8c288b4b35e4064c1cd078e} 
+QJson\+Object Chat\+Message\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_a8bb429c2c2f54a09ba5999eeaa1804ba}\index{ChatMessage@{ChatMessage}!toUserId@{toUserId}}
+\index{toUserId@{toUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{toUserId()}{toUserId()}}
+{\footnotesize\ttfamily \label{class_chat_message_a8bb429c2c2f54a09ba5999eeaa1804ba} 
+QString Chat\+Message\+::to\+User\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_message_a691a72cded6af451ffa086ba798a2a22}\index{ChatMessage@{ChatMessage}!toUserIdChanged@{toUserIdChanged}}
+\index{toUserIdChanged@{toUserIdChanged}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{toUserIdChanged}{toUserIdChanged}}
+{\footnotesize\ttfamily \label{class_chat_message_a691a72cded6af451ffa086ba798a2a22} 
+void Chat\+Message\+::to\+User\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_chat_message_a691a72cded6af451ffa086ba798a2a22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_message_a691a72cded6af451ffa086ba798a2a22_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_chat_message_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}\index{ChatMessage@{ChatMessage}!content@{content}}
+\index{content@{content}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily \label{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7} 
+QString Chat\+Message\+::content\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}\index{ChatMessage@{ChatMessage}!fromUserId@{fromUserId}}
+\index{fromUserId@{fromUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{fromUserId}{fromUserId}}
+{\footnotesize\ttfamily \label{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7} 
+QString Chat\+Message\+::from\+User\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_chat_message_aa124e6db39056f407c5967faf8a7bd64}\index{ChatMessage@{ChatMessage}!id@{id}}
+\index{id@{id}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_chat_message_aa124e6db39056f407c5967faf8a7bd64} 
+QString Chat\+Message\+::id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}\index{ChatMessage@{ChatMessage}!isRead@{isRead}}
+\index{isRead@{isRead}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{isRead}{isRead}}
+{\footnotesize\ttfamily \label{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2} 
+bool Chat\+Message\+::is\+Read\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}\index{ChatMessage@{ChatMessage}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}}
+{\footnotesize\ttfamily \label{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d} 
+QDate\+Time Chat\+Message\+::timestamp\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}\index{ChatMessage@{ChatMessage}!toUserId@{toUserId}}
+\index{toUserId@{toUserId}!ChatMessage@{ChatMessage}}
+\doxysubsubsection{\texorpdfstring{toUserId}{toUserId}}
+{\footnotesize\ttfamily \label{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572} 
+QString Chat\+Message\+::to\+User\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{chatmessage_8h}{chatmessage.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{chatmessage_8cpp}{chatmessage.\+cpp}}\end{DoxyCompactItemize}

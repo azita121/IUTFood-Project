@@ -1,0 +1,11 @@
+<map id="User::toJson" name="User::toJson">
+<area shape="rect" id="Node000001" title=" " alt="" coords="415,56,511,83"/>
+<area shape="rect" id="Node000002" href="$class_admin.html#a3e0a692793bbdf1ba258186dd9ce617a" title=" " alt="" coords="229,5,334,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="399,54,331,35,333,30,401,49"/>
+<area shape="rect" id="Node000003" href="$class_customer.html#a7b25ab511b3f907d5dfafe9e3b48a595" title=" " alt="" coords="219,56,344,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="399,72,345,72,345,67,399,67"/>
+<area shape="rect" id="Node000005" href="$class_restaurant_owner.html#a162a4b274565375e0abd533b3dc88d8b" title=" " alt="" coords="197,107,367,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="401,89,333,109,331,104,399,84"/>
+<area shape="rect" id="Node000004" href="$class_customer.html#aed8d168b0a07801d11c55edd82fb7e62" title=" " alt="" coords="5,56,149,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,72,149,72,149,67,203,67"/>
+</map>

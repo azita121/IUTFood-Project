@@ -1,0 +1,7 @@
+<map id="CustomerMenu::~CustomerMenu" name="CustomerMenu::~CustomerMenu">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,221,61"/>
+<area shape="rect" id="Node000002" href="$class_customer_menu.html#a9746ed2620119a1cbca6f430561080fb" title=" " alt="" coords="269,5,461,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,33,253,29,254,34,221,38"/>
+<area shape="rect" id="Node000003" href="$class_restaurant_menu.html#a2275c9cf372a6652fbc90e1a8e930fc2" title=" " alt="" coords="271,56,458,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,58,256,62,255,67,221,63"/>
+</map>

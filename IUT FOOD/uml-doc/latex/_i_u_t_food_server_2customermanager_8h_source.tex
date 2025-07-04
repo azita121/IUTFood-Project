@@ -1,0 +1,32 @@
+\doxysection{customermanager.\+h}
+\hypertarget{_i_u_t_food_server_2customermanager_8h_source}{}\label{_i_u_t_food_server_2customermanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/customermanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/customermanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2customermanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CUSTOMERMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CUSTOMERMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_manager}{CustomerManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ CustomerManager*\ \mbox{\hyperlink{class_customer_manager_a611c727112b729e0cfda9ac380396662}{getInstance}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}{\string~CustomerManager}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_customer_manager_ac10d6323b594e99ef35a795f128e06fc}{getProfile}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00017\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_customer_manager_a07df90d3553a0c87d765726e478f9b85}{getOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Add\ more\ customer-\/specific\ methods\ as\ needed}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ CustomerManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ CustomerManager*\ instance;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CUSTOMERMANAGER\_H\ }}
+
+\end{DoxyCode}

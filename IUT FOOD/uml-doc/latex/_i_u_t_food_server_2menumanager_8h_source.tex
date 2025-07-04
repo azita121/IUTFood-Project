@@ -1,0 +1,35 @@
+\doxysection{menumanager.\+h}
+\hypertarget{_i_u_t_food_server_2menumanager_8h_source}{}\label{_i_u_t_food_server_2menumanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/menumanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/menumanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2menumanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENUMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENUMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }MenuManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ MenuManager*\ \mbox{\hyperlink{class_menu_manager_abd8019ed42a69135415324febcccda4d}{getInstance}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_menu_manager_a7ea926de3916450fd30baad4385c1490}{\string~MenuManager}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_manager_a9a0e35edb67eba13715c2e00fef7efe2}{createMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_manager_a8ffe78bbf0c2a61a11a961046ceb3201}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keyword}{const}\ QString\&\ ingredients,\ \textcolor{keyword}{const}\ QString\&\ category,\ \textcolor{keyword}{const}\ QString\&\ imageUrl\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_manager_a47687ae619121e7916940d0840a2dd67}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId,\ \textcolor{keyword}{const}\ QVariantMap\&\ updates);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_manager_a98522d59bbed70327dc368ef627e3c30}{deleteMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId);}
+\DoxyCodeLine{00020\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_menu_manager_af7c851c9cdf8b28c0858f91ca42359ad}{getMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Add\ more\ menu-\/related\ methods\ as\ needed}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{explicit}\ MenuManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ MenuManager*\ instance;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MENUMANAGER\_H\ }}
+
+\end{DoxyCode}

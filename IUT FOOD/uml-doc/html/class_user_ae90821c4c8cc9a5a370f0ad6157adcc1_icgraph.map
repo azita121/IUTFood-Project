@@ -1,0 +1,17 @@
+<map id="User::User" name="User::User">
+<area shape="rect" id="Node000001" title=" " alt="" coords="440,132,525,159"/>
+<area shape="rect" id="Node000002" href="$class_admin.html#af607ef181e12f7fc8affa3c0b0d11b3c" title=" " alt="" coords="243,5,346,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,121,432,82,412,63,391,46,369,36,346,29,347,24,371,31,393,42,416,59,436,78,467,118"/>
+<area shape="rect" id="Node000003" href="$class_admin.html#ae5c985f5c4fd8f407c1f2e5dda03a6a0" title=" " alt="" coords="243,56,346,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="447,126,391,97,346,83,347,78,393,92,449,121"/>
+<area shape="rect" id="Node000004" href="$class_customer.html#af381724ee8c2d8e6d4729d99954fd834" title=" " alt="" coords="223,107,366,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,140,366,132,367,127,425,135"/>
+<area shape="rect" id="Node000006" href="$class_user.html#a277da358c40ecdf8219b73115efb2dc2" title=" " alt="" coords="220,157,369,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="425,156,370,163,369,158,425,150"/>
+<area shape="rect" id="Node000007" href="$class_restaurant_owner.html#a6e4b26e1e2cbd040d51f2a3d232075bc" title=" " alt="" coords="197,208,392,251"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="448,169,393,198,365,210,363,205,391,194,446,165"/>
+<area shape="rect" id="Node000008" href="$class_restaurant_owner.html#ac60fc9c8c29bbdad975d720a95e166b2" title=" " alt="" coords="197,275,392,317"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="469,174,438,220,418,244,394,265,374,276,371,272,390,261,414,240,434,217,465,171"/>
+<area shape="rect" id="Node000005" href="$class_customer.html#aed8d168b0a07801d11c55edd82fb7e62" title=" " alt="" coords="5,107,149,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="207,123,149,123,149,117,207,117"/>
+</map>

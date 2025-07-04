@@ -1,0 +1,31 @@
+\doxysection{orderstatusobserver.\+h}
+\hypertarget{orderstatusobserver_8h_source}{}\label{orderstatusobserver_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/orderstatusobserver.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/orderstatusobserver.h}}
+\mbox{\hyperlink{orderstatusobserver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ORDERSTATUSOBSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ORDERSTATUSOBSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{observer_8h}{observer.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_order_status_observer_ad2e852be895e32961a1d81828b30de62}{OrderStatusObserver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observer_a535c8656871306792a63d03c0eda96c8}{Observer}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_order_status_observer_ad2e852be895e32961a1d81828b30de62}{OrderStatusObserver}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_order_status_observer_a3d506287a0c02ca0a6ca122946ac44d4}{\string~OrderStatusObserver}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_status_observer_aaad5ef90ff13d9a3d90784c0f2a7de55}{update}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ status)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_status_observer_a502c7a4f150e6b9a00c1567a73657b23}{addClientSubscription}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ QTcpSocket*\ client);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_status_observer_ad5e6206469187a7ed7293aad48dc6a2d}{removeClientSubscription}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ QTcpSocket*\ client);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_status_observer_a247a6f894c9b5d49df6d454d914678b2}{removeClientSubscriptions}}(QTcpSocket*\ client);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ QMap<QString,\ QList<QTcpSocket*>>\ orderSubscriptions;\ \textcolor{comment}{//\ orderId\ -\/>\ list\ of\ subscribed\ clients}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ORDERSTATUSOBSERVER\_H\ }}
+
+\end{DoxyCode}

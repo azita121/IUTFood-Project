@@ -1,0 +1,97 @@
+\doxysection{IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/menumanager.h File Reference}
+\hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h}{}\label{_i_u_t_food_client_2src_2network_2menumanager_8h}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/menumanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/menumanager.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{_i_u_t_food_client_2src_2network_2menumanager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_abc454b825265d7957d1c70f4938767bc}{create\+Menu}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ab610f58025a1ca8365212757de8d9425}{add\+Menu\+Item}} (const QString \&menu\+Id, const QString \&name, const QString \&description, double price, const QString \&ingredients, const QString \&category)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a8369dc44e6d9def524181a4a790e2ece}{update\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id, const QJson\+Object \&updates)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_aa9abf44b57257c3e8af45a6cbd8554d4}{delete\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_aaabca6fe08c384557026289f01a74020}{fetch\+Menu}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ab5e242360b619ce7238860471cabbb31}{menu\+Created}} (bool success)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a2231efe338fdc0305540016e57ab2005}{menu\+Item\+Added}} (bool success)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_af9ebce89be247dd84e222d3eec555c48}{menu\+Item\+Updated}} (bool success)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a0eef19bded65566840ef78a1c8ab2f19}{menu\+Item\+Deleted}} (bool success)
+\item 
+void \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ad6f78c74f93dec52c3f398c9879de047}{menu\+Received}} (const QJson\+Array \&menu)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_ab610f58025a1ca8365212757de8d9425}\index{menumanager.h@{menumanager.h}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_ab610f58025a1ca8365212757de8d9425} 
+void add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{name}{, }\item[{const QString \&}]{description}{, }\item[{double}]{price}{, }\item[{const QString \&}]{ingredients}{, }\item[{const QString \&}]{category}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_abc454b825265d7957d1c70f4938767bc}\index{menumanager.h@{menumanager.h}!createMenu@{createMenu}}
+\index{createMenu@{createMenu}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{createMenu()}{createMenu()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_abc454b825265d7957d1c70f4938767bc} 
+void create\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_aa9abf44b57257c3e8af45a6cbd8554d4}\index{menumanager.h@{menumanager.h}!deleteMenuItem@{deleteMenuItem}}
+\index{deleteMenuItem@{deleteMenuItem}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{deleteMenuItem()}{deleteMenuItem()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_aa9abf44b57257c3e8af45a6cbd8554d4} 
+void delete\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_aaabca6fe08c384557026289f01a74020}\index{menumanager.h@{menumanager.h}!fetchMenu@{fetchMenu}}
+\index{fetchMenu@{fetchMenu}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{fetchMenu()}{fetchMenu()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_aaabca6fe08c384557026289f01a74020} 
+void Menu\+Manager\+::fetch\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_ab5e242360b619ce7238860471cabbb31}\index{menumanager.h@{menumanager.h}!menuCreated@{menuCreated}}
+\index{menuCreated@{menuCreated}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{menuCreated()}{menuCreated()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_ab5e242360b619ce7238860471cabbb31} 
+void menu\+Created (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_a2231efe338fdc0305540016e57ab2005}\index{menumanager.h@{menumanager.h}!menuItemAdded@{menuItemAdded}}
+\index{menuItemAdded@{menuItemAdded}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{menuItemAdded()}{menuItemAdded()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_a2231efe338fdc0305540016e57ab2005} 
+void menu\+Item\+Added (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_a0eef19bded65566840ef78a1c8ab2f19}\index{menumanager.h@{menumanager.h}!menuItemDeleted@{menuItemDeleted}}
+\index{menuItemDeleted@{menuItemDeleted}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{menuItemDeleted()}{menuItemDeleted()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_a0eef19bded65566840ef78a1c8ab2f19} 
+void menu\+Item\+Deleted (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_af9ebce89be247dd84e222d3eec555c48}\index{menumanager.h@{menumanager.h}!menuItemUpdated@{menuItemUpdated}}
+\index{menuItemUpdated@{menuItemUpdated}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{menuItemUpdated()}{menuItemUpdated()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_af9ebce89be247dd84e222d3eec555c48} 
+void menu\+Item\+Updated (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_ad6f78c74f93dec52c3f398c9879de047}\index{menumanager.h@{menumanager.h}!menuReceived@{menuReceived}}
+\index{menuReceived@{menuReceived}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{menuReceived()}{menuReceived()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_ad6f78c74f93dec52c3f398c9879de047} 
+void menu\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{menu}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_a8369dc44e6d9def524181a4a790e2ece}\index{menumanager.h@{menumanager.h}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!menumanager.h@{menumanager.h}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{_i_u_t_food_client_2src_2network_2menumanager_8h_a8369dc44e6d9def524181a4a790e2ece} 
+void update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{, }\item[{const QJson\+Object \&}]{updates}{}\end{DoxyParamCaption})}
+

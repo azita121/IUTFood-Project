@@ -1,0 +1,47 @@
+\doxysection{restaurantmanager.\+h}
+\hypertarget{_i_u_t_food_client_2src_2network_2restaurantmanager_8h_source}{}\label{_i_u_t_food_client_2src_2network_2restaurantmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/restaurantmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/restaurantmanager.h}}
+\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurant_8h}{../models/restaurant.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menuitem_8h}{../models/menuitem.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }RestaurantManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantManager*\ \mbox{\hyperlink{class_restaurant_manager_a828a7f3a6cf9c5d65ecfb0c80a4ec65b}{getInstance}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_manager_a163965d6ac88b2881cd0b98bf2264bd4}{getRestaurants}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_manager_a0b6035ffaa1df2fbbc1f751012c2a3f1}{getRestaurantMenu}}(\textcolor{keyword}{const}\ QString\ \&restaurantId);}
+\DoxyCodeLine{00019\ \ \ \ \ QList<Restaurant*>\ \mbox{\hyperlink{class_restaurant_manager_a0f9d6fe6ea5057d86f5b41a90d80dfec}{getRestaurantList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}*\ \mbox{\hyperlink{class_restaurant_manager_a62ee487182d28557aba920b32f3b4a2f}{getRestaurant}}(\textcolor{keyword}{const}\ QString\ \&restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ QList<MenuItem*>\ \mbox{\hyperlink{class_restaurant_manager_a1d35b6848aba7d85fd3a10db7439b50e}{getMenuItems}}(\textcolor{keyword}{const}\ QString\ \&restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ signals:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_manager_a11f1d719290151c3ce5d2a900de4df4e}{restaurantsReceived}}(\textcolor{keyword}{const}\ QList<Restaurant*>\&\ restaurants);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_manager_a0499ffa8198716ff3d9efeaebd216212}{menuReceived}}(\textcolor{keyword}{const}\ QString\ \&restaurantId,\ \textcolor{keyword}{const}\ QList<MenuItem*>\&\ menu);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_manager_ae2ce3c51a97ea0867c0501fc65f0e740}{error}}(\textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ RestaurantManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ \ \ \ \ \string~RestaurantManager();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantManager*\ instance;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00034\ \ \ \ \ QList<Restaurant*>\ m\_restaurants;}
+\DoxyCodeLine{00035\ \ \ \ \ QMap<QString,\ QList<MenuItem*>>\ m\_menus;\ \textcolor{comment}{//\ restaurantId\ -\/>\ menu\ items}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRestaurantsReceived(\textcolor{keyword}{const}\ QJsonArray\ \&restaurants);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ handleMenuReceived(\textcolor{keyword}{const}\ QString\ \&restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\ \&menu);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTMANAGER\_H\ }}
+
+\end{DoxyCode}

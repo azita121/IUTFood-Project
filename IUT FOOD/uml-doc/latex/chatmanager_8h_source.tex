@@ -1,0 +1,47 @@
+\doxysection{chatmanager.\+h}
+\hypertarget{chatmanager_8h_source}{}\label{chatmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/chatmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/chatmanager.h}}
+\mbox{\hyperlink{chatmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHATMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHATMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{chatmessage_8h}{../models/chatmessage.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }ChatManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ ChatManager*\ \mbox{\hyperlink{class_chat_manager_a0dafd1d4059637b47ccf74d5bd4fb63a}{getInstance}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_a0ed92523423943808862419a69a2fa18}{sendMessage}}(\textcolor{keyword}{const}\ QString\ \&toUserId,\ \textcolor{keyword}{const}\ QString\ \&content);}
+\DoxyCodeLine{00017\ \ \ \ \ QList<ChatMessage*>\ \mbox{\hyperlink{class_chat_manager_a584ea576b1b0d0d5eaff35ccfce9b22c}{getChatHistory}}(\textcolor{keyword}{const}\ QString\ \&userId);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_a2fbfbd875ac5f60a92169ead9cffc8ee}{markMessageAsRead}}(\textcolor{keyword}{const}\ QString\ \&messageId);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_a75546eb1e8eb76be73228732153de057}{markAllMessagesAsRead}}(\textcolor{keyword}{const}\ QString\ \&userId);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_chat_manager_a65d4a21bc41bdd467ef9e123c7ec86bc}{getUnreadMessageCount}}(\textcolor{keyword}{const}\ QString\ \&userId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ signals:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_ad067c969f1f79c8a72b912e9068761f3}{messageReceived}}(\mbox{\hyperlink{class_chat_message}{ChatMessage}}*\ message);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_ae7e1707b1e0857a5379ab06c7e0866ab}{messageSent}}(\mbox{\hyperlink{class_chat_message}{ChatMessage}}*\ message);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_abdb8951853eb91c9e813afe64cef6126}{messageRead}}(\textcolor{keyword}{const}\ QString\ \&messageId);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_manager_abeaca3cdf262c44eee5353e2613e038f}{unreadCountChanged}}(\textcolor{keyword}{const}\ QString\ \&userId,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ ChatManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ \ \ \ \ \string~ChatManager();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ ChatManager*\ instance;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00034\ \ \ \ \ QMap<QString,\ QList<ChatMessage*>>\ m\_chatHistory;\ \textcolor{comment}{//\ userId\ -\/>\ messages}}
+\DoxyCodeLine{00035\ \ \ \ \ QMap<QString,\ int>\ m\_unreadCounts;\ \textcolor{comment}{//\ userId\ -\/>\ unread\ count}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ handleNewMessage(\mbox{\hyperlink{class_chat_message}{ChatMessage}}*\ message);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ updateUnreadCount(\textcolor{keyword}{const}\ QString\ \&userId);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHATMANAGER\_H\ }}
+
+\end{DoxyCode}

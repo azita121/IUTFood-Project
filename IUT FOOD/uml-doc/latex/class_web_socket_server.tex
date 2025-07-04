@@ -1,0 +1,111 @@
+\doxysection{Web\+Socket\+Server Class Reference}
+\hypertarget{class_web_socket_server}{}\label{class_web_socket_server}\index{WebSocketServer@{WebSocketServer}}
+
+
+{\ttfamily \#include $<$websocketserver.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Socket\+Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_web_socket_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Socket\+Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_web_socket_server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_web_socket_server_a1b7cef885d42bd87289df012d57768b7}{start}} (quint16 port)
+\item 
+void \mbox{\hyperlink{class_web_socket_server_acbb0a06dfba20fef0056db3ada4e0f7b}{stop}} ()
+\item 
+void \mbox{\hyperlink{class_web_socket_server_a36f3841dc8f4faba280c01cc37492ad8}{broadcast\+Order\+Update}} (const QString \&order\+Id, const QString \&status)
+\item 
+void \mbox{\hyperlink{class_web_socket_server_aef7e6b64fb4969add0a9157a61d37bc3}{send\+Chat\+Message}} (const QString \&from\+User\+Id, const QString \&to\+User\+Id, const QString \&message)
+\item 
+void \mbox{\hyperlink{class_web_socket_server_a47d72551a272fa65b1b85e9f0f23c761}{broadcast\+To\+User}} (const QString \&user\+Id, const QJson\+Object \&message)
+\item 
+void \mbox{\hyperlink{class_web_socket_server_a5b89b0c7c726da6be4a28ddd9855d1d2}{broadcast\+To\+Restaurant}} (const QString \&restaurant\+Id, const QJson\+Object \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_web_socket_server}{Web\+Socket\+Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_web_socket_server_ab0aab4f330ad165780f99c2f2338439c}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_web_socket_server_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_web_socket_server_a36f3841dc8f4faba280c01cc37492ad8}\index{WebSocketServer@{WebSocketServer}!broadcastOrderUpdate@{broadcastOrderUpdate}}
+\index{broadcastOrderUpdate@{broadcastOrderUpdate}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{broadcastOrderUpdate()}{broadcastOrderUpdate()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_a36f3841dc8f4faba280c01cc37492ad8} 
+void Web\+Socket\+Server\+::broadcast\+Order\+Update (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_web_socket_server_a5b89b0c7c726da6be4a28ddd9855d1d2}\index{WebSocketServer@{WebSocketServer}!broadcastToRestaurant@{broadcastToRestaurant}}
+\index{broadcastToRestaurant@{broadcastToRestaurant}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{broadcastToRestaurant()}{broadcastToRestaurant()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_a5b89b0c7c726da6be4a28ddd9855d1d2} 
+void Web\+Socket\+Server\+::broadcast\+To\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Object \&}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_web_socket_server_a47d72551a272fa65b1b85e9f0f23c761}\index{WebSocketServer@{WebSocketServer}!broadcastToUser@{broadcastToUser}}
+\index{broadcastToUser@{broadcastToUser}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{broadcastToUser()}{broadcastToUser()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_a47d72551a272fa65b1b85e9f0f23c761} 
+void Web\+Socket\+Server\+::broadcast\+To\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QJson\+Object \&}]{message}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_web_socket_server_a47d72551a272fa65b1b85e9f0f23c761_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_web_socket_server_ab0aab4f330ad165780f99c2f2338439c}\index{WebSocketServer@{WebSocketServer}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_ab0aab4f330ad165780f99c2f2338439c} 
+\mbox{\hyperlink{class_web_socket_server}{Web\+Socket\+Server}} \texorpdfstring{$\ast$}{*} Web\+Socket\+Server\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_web_socket_server_ab0aab4f330ad165780f99c2f2338439c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_web_socket_server_aef7e6b64fb4969add0a9157a61d37bc3}\index{WebSocketServer@{WebSocketServer}!sendChatMessage@{sendChatMessage}}
+\index{sendChatMessage@{sendChatMessage}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{sendChatMessage()}{sendChatMessage()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_aef7e6b64fb4969add0a9157a61d37bc3} 
+void Web\+Socket\+Server\+::send\+Chat\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{from\+User\+Id}{, }\item[{const QString \&}]{to\+User\+Id}{, }\item[{const QString \&}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_web_socket_server_a1b7cef885d42bd87289df012d57768b7}\index{WebSocketServer@{WebSocketServer}!start@{start}}
+\index{start@{start}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_a1b7cef885d42bd87289df012d57768b7} 
+bool Web\+Socket\+Server\+::start (\begin{DoxyParamCaption}\item[{quint16}]{port}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_web_socket_server_acbb0a06dfba20fef0056db3ada4e0f7b}\index{WebSocketServer@{WebSocketServer}!stop@{stop}}
+\index{stop@{stop}!WebSocketServer@{WebSocketServer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_web_socket_server_acbb0a06dfba20fef0056db3ada4e0f7b} 
+void Web\+Socket\+Server\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{websocketserver_8h}{websocketserver.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{websocketserver_8cpp}{websocketserver.\+cpp}}\end{DoxyCompactItemize}

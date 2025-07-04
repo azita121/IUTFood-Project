@@ -1,0 +1,9 @@
+<map id="AdminManager::broadcastReport" name="AdminManager::broadcastReport">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,218,69"/>
+<area shape="rect" id="Node000002" href="$class_admin_manager.html#ad84d2bccfe7348a172df1dd49f8ed021" title=" " alt="" coords="266,35,449,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,53,250,53,250,59,218,59"/>
+<area shape="rect" id="Node000003" href="$class_web_socket_server.html#a47d72551a272fa65b1b85e9f0f23c761" title=" " alt="" coords="502,5,694,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,42,487,38,487,43,450,47"/>
+<area shape="rect" id="Node000004" href="$class_web_socket_server.html#ab0aab4f330ad165780f99c2f2338439c" title=" " alt="" coords="497,72,699,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="450,65,482,68,481,74,449,70"/>
+</map>

@@ -1,0 +1,293 @@
+\doxysection{Auth\+Manager Class Reference}
+\hypertarget{class_auth_manager}{}\label{class_auth_manager}\index{AuthManager@{AuthManager}}
+
+
+{\ttfamily \#include $<$authmanager.\+h$>$}
+
+
+
+Inheritance diagram for Auth\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_auth_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Auth\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_auth_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_auth_manager_a7706b00fb312b43fd9a55e9362658226}{login\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4}{login\+Failed}} (const QString \&error)
+\item 
+void \mbox{\hyperlink{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19}{register\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c}{register\+Failed}} (const QString \&error)
+\item 
+void \mbox{\hyperlink{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc}{logout\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020}{current\+User\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_auth_manager_aa732c46f24f41fddd8f5710965872e21}{login\+State\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_auth_manager_ad1819697a153d833ed6ee3a9b558ff41}{login}} (const QString \&login\+Id, const QString \&password)
+\item 
+void \mbox{\hyperlink{class_auth_manager_a27545eb79d41c6fdf32fbe811efb197d}{register\+User}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&user\+Type)
+\item 
+void \mbox{\hyperlink{class_auth_manager_afb1cedb0fe6ae60b614bf1279e0a1e76}{logout}} ()
+\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_auth_manager_a83c00c44ab9b29ead765620c224f52d2}{current\+User}} () const
+\item 
+bool \mbox{\hyperlink{class_auth_manager_a45f0e76d1a14b1641f72151a2fc81652}{is\+Logged\+In}} () const
+\item 
+void \mbox{\hyperlink{class_auth_manager_a71512e43eaa0b9dba241ba98491a3f2a}{register\+Customer}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&location)
+\item 
+void \mbox{\hyperlink{class_auth_manager_aaf25ddf83c2c3b62e8d3220ab4ba88fc}{register\+Restaurant\+Owner}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&restaurant\+Name, const QString \&restaurant\+Number, const QString \&location)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_auth_manager}{Auth\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_auth_manager_a4c3a961c32b040fa1c990f11e778b97b}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_auth_manager_a22ebdba5a5250d020d743e98884986f8}{current\+User}}
+\item 
+bool \mbox{\hyperlink{class_auth_manager_a4452bb206c90c657f269d75447a6a761}{is\+Logged\+In}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_auth_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_auth_manager_a83c00c44ab9b29ead765620c224f52d2}\index{AuthManager@{AuthManager}!currentUser@{currentUser}}
+\index{currentUser@{currentUser}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{currentUser()}{currentUser()}}
+{\footnotesize\ttfamily \label{class_auth_manager_a83c00c44ab9b29ead765620c224f52d2} 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} Auth\+Manager\+::current\+User (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020}\index{AuthManager@{AuthManager}!currentUserChanged@{currentUserChanged}}
+\index{currentUserChanged@{currentUserChanged}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{currentUserChanged}{currentUserChanged}}
+{\footnotesize\ttfamily \label{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020} 
+void Auth\+Manager\+::current\+User\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_a4c3a961c32b040fa1c990f11e778b97b}\index{AuthManager@{AuthManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_auth_manager_a4c3a961c32b040fa1c990f11e778b97b} 
+\mbox{\hyperlink{class_auth_manager}{Auth\+Manager}} \texorpdfstring{$\ast$}{*} Auth\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_auth_manager_a45f0e76d1a14b1641f72151a2fc81652}\index{AuthManager@{AuthManager}!isLoggedIn@{isLoggedIn}}
+\index{isLoggedIn@{isLoggedIn}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{isLoggedIn()}{isLoggedIn()}}
+{\footnotesize\ttfamily \label{class_auth_manager_a45f0e76d1a14b1641f72151a2fc81652} 
+bool Auth\+Manager\+::is\+Logged\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_auth_manager_ad1819697a153d833ed6ee3a9b558ff41}\index{AuthManager@{AuthManager}!login@{login}}
+\index{login@{login}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{class_auth_manager_ad1819697a153d833ed6ee3a9b558ff41} 
+void Auth\+Manager\+::login (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+Id}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4}\index{AuthManager@{AuthManager}!loginFailed@{loginFailed}}
+\index{loginFailed@{loginFailed}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{loginFailed}{loginFailed}}
+{\footnotesize\ttfamily \label{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4} 
+void Auth\+Manager\+::login\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_aa732c46f24f41fddd8f5710965872e21}\index{AuthManager@{AuthManager}!loginStateChanged@{loginStateChanged}}
+\index{loginStateChanged@{loginStateChanged}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{loginStateChanged}{loginStateChanged}}
+{\footnotesize\ttfamily \label{class_auth_manager_aa732c46f24f41fddd8f5710965872e21} 
+void Auth\+Manager\+::login\+State\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_auth_manager_aa732c46f24f41fddd8f5710965872e21_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_auth_manager_aa732c46f24f41fddd8f5710965872e21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_a7706b00fb312b43fd9a55e9362658226}\index{AuthManager@{AuthManager}!loginSuccess@{loginSuccess}}
+\index{loginSuccess@{loginSuccess}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{loginSuccess}{loginSuccess}}
+{\footnotesize\ttfamily \label{class_auth_manager_a7706b00fb312b43fd9a55e9362658226} 
+void Auth\+Manager\+::login\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_auth_manager_a7706b00fb312b43fd9a55e9362658226_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_auth_manager_a7706b00fb312b43fd9a55e9362658226_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_afb1cedb0fe6ae60b614bf1279e0a1e76}\index{AuthManager@{AuthManager}!logout@{logout}}
+\index{logout@{logout}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily \label{class_auth_manager_afb1cedb0fe6ae60b614bf1279e0a1e76} 
+void Auth\+Manager\+::logout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_auth_manager_afb1cedb0fe6ae60b614bf1279e0a1e76_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc}\index{AuthManager@{AuthManager}!logoutSuccess@{logoutSuccess}}
+\index{logoutSuccess@{logoutSuccess}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{logoutSuccess}{logoutSuccess}}
+{\footnotesize\ttfamily \label{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc} 
+void Auth\+Manager\+::logout\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_a71512e43eaa0b9dba241ba98491a3f2a}\index{AuthManager@{AuthManager}!registerCustomer@{registerCustomer}}
+\index{registerCustomer@{registerCustomer}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{registerCustomer()}{registerCustomer()}}
+{\footnotesize\ttfamily \label{class_auth_manager_a71512e43eaa0b9dba241ba98491a3f2a} 
+void Auth\+Manager\+::register\+Customer (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c}\index{AuthManager@{AuthManager}!registerFailed@{registerFailed}}
+\index{registerFailed@{registerFailed}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{registerFailed}{registerFailed}}
+{\footnotesize\ttfamily \label{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c} 
+void Auth\+Manager\+::register\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_aaf25ddf83c2c3b62e8d3220ab4ba88fc}\index{AuthManager@{AuthManager}!registerRestaurantOwner@{registerRestaurantOwner}}
+\index{registerRestaurantOwner@{registerRestaurantOwner}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{registerRestaurantOwner()}{registerRestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_auth_manager_aaf25ddf83c2c3b62e8d3220ab4ba88fc} 
+void Auth\+Manager\+::register\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{restaurant\+Name}{, }\item[{const QString \&}]{restaurant\+Number}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19}\index{AuthManager@{AuthManager}!registerSuccess@{registerSuccess}}
+\index{registerSuccess@{registerSuccess}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{registerSuccess}{registerSuccess}}
+{\footnotesize\ttfamily \label{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19} 
+void Auth\+Manager\+::register\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_auth_manager_a27545eb79d41c6fdf32fbe811efb197d}\index{AuthManager@{AuthManager}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily \label{class_auth_manager_a27545eb79d41c6fdf32fbe811efb197d} 
+void Auth\+Manager\+::register\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_auth_manager_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_auth_manager_a22ebdba5a5250d020d743e98884986f8}\index{AuthManager@{AuthManager}!currentUser@{currentUser}}
+\index{currentUser@{currentUser}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{currentUser}{currentUser}}
+{\footnotesize\ttfamily \label{class_auth_manager_a22ebdba5a5250d020d743e98884986f8} 
+\mbox{\hyperlink{class_user}{User}}\texorpdfstring{$\ast$}{*} Auth\+Manager\+::current\+User\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_auth_manager_a4452bb206c90c657f269d75447a6a761}\index{AuthManager@{AuthManager}!isLoggedIn@{isLoggedIn}}
+\index{isLoggedIn@{isLoggedIn}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{isLoggedIn}{isLoggedIn}}
+{\footnotesize\ttfamily \label{class_auth_manager_a4452bb206c90c657f269d75447a6a761} 
+bool Auth\+Manager\+::is\+Logged\+In\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{authmanager_8h}{authmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{authmanager_8cpp}{authmanager.\+cpp}}\end{DoxyCompactItemize}

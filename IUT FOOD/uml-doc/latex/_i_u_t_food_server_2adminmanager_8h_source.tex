@@ -1,0 +1,68 @@
+\doxysection{adminmanager.\+h}
+\hypertarget{_i_u_t_food_server_2adminmanager_8h_source}{}\label{_i_u_t_food_server_2adminmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/adminmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/adminmanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2adminmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ADMINMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ADMINMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{authsystem_8h}{authsystem.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_admin_manager}{AdminManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ AdminManager*\ \mbox{\hyperlink{class_admin_manager_ad3fe16a671a1a64c5a24a410736a407e}{getInstance}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ Management}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_a85d2d57df2b5f6aad49f9dbeaa64e070}{approveRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_ae8ee8641494eaa7bd7e1b05d9422c44f}{rejectRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ reason);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_ac627b77919d46e8c37a2c71aa0468157}{suspendRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ reason);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_a92d12ba891a821cb76ffddcd6b01aa1e}{reactivateRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00024\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_ae105eab5ae6ee1b6169f92a64aa61ff7}{getPendingRestaurants}}();}
+\DoxyCodeLine{00025\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_ac1e52c6b1f5f4799393e204e1cf60595}{getSuspendedRestaurants}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ User\ Management}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_a81785c6627d60f86755d56637297ff84}{blockUser}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keyword}{const}\ QString\&\ reason);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_a3717ce91eecc34e50dc2a933d1f849ab}{unblockUser}}(\textcolor{keyword}{const}\ QString\&\ userId);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_admin_manager_a464a7ad83b47c983068874398f08986a}{deleteUser}}(\textcolor{keyword}{const}\ QString\&\ userId);}
+\DoxyCodeLine{00031\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_af4034922cf6a949547b3c485d5c1daa9}{getBlockedUsers}}();}
+\DoxyCodeLine{00032\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_a4b5738a86c76d100511917139d050115}{getAllUsers}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Reports\ and\ Analytics}}
+\DoxyCodeLine{00035\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_admin_manager_ad6d6f8adff6d66faf242dc0b6d37c8a3}{getSalesReport}}(\textcolor{keyword}{const}\ QDateTime\&\ startDate,\ \textcolor{keyword}{const}\ QDateTime\&\ endDate);}
+\DoxyCodeLine{00036\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_admin_manager_ac332dbeac8357e1ecd33dfbff73ba2b9}{getRestaurantPerformanceReport}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00037\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_admin_manager_a91e7735ba3d238cfd97bd91863057a50}{getSystemAnalytics}}();}
+\DoxyCodeLine{00038\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_a4d16087542ee416f73060d9fb2c48e38}{getTopSellingItems}}(\textcolor{keyword}{const}\ QDateTime\&\ startDate,\ \textcolor{keyword}{const}\ QDateTime\&\ endDate);}
+\DoxyCodeLine{00039\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_a58cf024a0a75cbd99b5de65336638c47}{getMostActiveUsers}}(\textcolor{keyword}{const}\ QDateTime\&\ startDate,\ \textcolor{keyword}{const}\ QDateTime\&\ endDate);}
+\DoxyCodeLine{00040\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_admin_manager_ad53857326382821802a110041f11c565}{getMostPopularRestaurants}}(\textcolor{keyword}{const}\ QDateTime\&\ startDate,\ \textcolor{keyword}{const}\ QDateTime\&\ endDate);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Report\ Distribution}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_a443b37832eef8b379a78e02cfea562bd}{broadcastReport}}(\textcolor{keyword}{const}\ QString\&\ reportType,\ \textcolor{keyword}{const}\ QJsonObject\&\ report);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021}{sendReportToUser}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keyword}{const}\ QString\&\ reportType,\ \textcolor{keyword}{const}\ QJsonObject\&\ report);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{explicit}\ AdminManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_admin_manager_aeb6041be0a075c2ca58141321283cf57}{\string~AdminManager}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ AdminManager*\ instance;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_auth_system}{AuthSystem}}*\ m\_authSystem;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ validateAdminAccess(\textcolor{keyword}{const}\ QString\&\ userId);}
+\DoxyCodeLine{00055\ \ \ \ \ QJsonObject\ generateSalesChart(\textcolor{keyword}{const}\ QJsonArray\&\ salesData);}
+\DoxyCodeLine{00056\ \ \ \ \ QJsonObject\ generateUserActivityChart(\textcolor{keyword}{const}\ QJsonArray\&\ userData);}
+\DoxyCodeLine{00057\ \ \ \ \ QJsonObject\ generateRestaurantPerformanceChart(\textcolor{keyword}{const}\ QJsonArray\&\ performanceData);}
+\DoxyCodeLine{00058\ \ \ \ \ QString\ generateReportId();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ logAdminAction(\textcolor{keyword}{const}\ QString\&\ adminId,\ \textcolor{keyword}{const}\ QString\&\ action,\ \textcolor{keyword}{const}\ QString\&\ details);}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADMINMANAGER\_H\ }}
+
+\end{DoxyCode}

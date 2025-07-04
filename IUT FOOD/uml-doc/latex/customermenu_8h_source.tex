@@ -1,0 +1,66 @@
+\doxysection{customermenu.\+h}
+\hypertarget{customermenu_8h_source}{}\label{customermenu_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/customermenu.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/customermenu.h}}
+\mbox{\hyperlink{customermenu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CUSTOMERMENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CUSTOMERMENU\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QScrollArea>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurantitem_8h}{restaurantitem.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QStandardItemModel>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_customer_menu}{CustomerMenu}};}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_customer_menu_a05e6636d5d21ef100e4306054491bda0}{CustomerMenu}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_customer_menu_a05e6636d5d21ef100e4306054491bda0}{CustomerMenu}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_customer_menu_aa28a689d645c7df53e2d714195fcf08e}{\string~CustomerMenu}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_menu_a815854d35e060366e0ecf52e6982295f}{showCartPage}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_menu_a9746ed2620119a1cbca6f430561080fb}{addToCartUI}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_menu_a3556367ac1842c7b09d7abba39ec0939}{updateCartSummary}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_shoppingCartButton\_clicked();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_HistoryButton\_clicked();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_homeButton\_2\_clicked();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_HistoryButton\_2\_clicked();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_shoppingCartButton\_3\_clicked();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_homeButton\_3\_clicked();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_orderButton\_clicked();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_deleteHistoryButton\_clicked();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_ui_1_1_customer_menu}{Ui::CustomerMenu}}\ *ui;}
+\DoxyCodeLine{00045\ \ \ \ \ QList<Restaurant>\ allRestaurants;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ applyFilters();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ resetFilters();}
+\DoxyCodeLine{00048\ \ \ \ \ QList<MenuItem>\ cartItems;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ QScrollArea*\ scrollArea\_cart;}
+\DoxyCodeLine{00051\ \ \ \ \ QWidget*\ cartContainer;}
+\DoxyCodeLine{00052\ \ \ \ \ QVBoxLayout*\ cartLayout;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ QScrollArea*\ scrollArea\_history;}
+\DoxyCodeLine{00055\ \ \ \ \ QWidget*\ historyContainer;}
+\DoxyCodeLine{00056\ \ \ \ \ QVBoxLayout*\ historyLayout;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CUSTOMERMENU\_H}}
+
+\end{DoxyCode}

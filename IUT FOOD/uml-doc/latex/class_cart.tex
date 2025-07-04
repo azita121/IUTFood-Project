@@ -1,0 +1,435 @@
+\doxysection{Cart Class Reference}
+\hypertarget{class_cart}{}\label{class_cart}\index{Cart@{Cart}}
+
+
+{\ttfamily \#include $<$cart.\+h$>$}
+
+
+
+Inheritance diagram for Cart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_cart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_cart__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_cart_ac4b8276f2f31cca966f814e3a0663871}{total\+Price\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd}{item\+Count\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_cart_ad761aaa4b7502bb210f39be85f015d6f}{restaurant\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_cart_a1633ea58a17fdba0b698e32db74ec794}{item\+Added}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item, int quantity)
+\item 
+void \mbox{\hyperlink{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92}{item\+Removed}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item)
+\item 
+void \mbox{\hyperlink{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e}{item\+Quantity\+Changed}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item, int quantity)
+\item 
+void \mbox{\hyperlink{class_cart_acb46ef5846aa07aba6e93911fa220796}{cart\+Cleared}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cart_a57ca02e16948cb066e699cb199133920}{Cart}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+double \mbox{\hyperlink{class_cart_a1e26d5e6930ac66981ea4406440daa28}{total\+Price}} () const
+\item 
+int \mbox{\hyperlink{class_cart_af0d4048f0fdb62e799b4e3bdd07e865f}{item\+Count}} () const
+\item 
+QString \mbox{\hyperlink{class_cart_aefc84a79cb6ecdc7ee2fc502948aa171}{restaurant\+Id}} () const
+\item 
+QMap$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}, int $>$ \mbox{\hyperlink{class_cart_a71ef208113172ea0912e60b9cbdb1583}{items}} () const
+\item 
+void \mbox{\hyperlink{class_cart_ab316aa9ab06d50a8e8e739895761f3ed}{add\+Item}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item, int quantity=1)
+\item 
+void \mbox{\hyperlink{class_cart_a12a4c623b1c03a65703285181490c655}{remove\+Item}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item)
+\item 
+void \mbox{\hyperlink{class_cart_a5e4667d259971b6d7808b2e3a705472e}{update\+Item\+Quantity}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item, int quantity)
+\item 
+void \mbox{\hyperlink{class_cart_a618b8a521ab226e929c275f128709dbe}{clear}} ()
+\item 
+bool \mbox{\hyperlink{class_cart_a2e1b8b33b46aedf08de85ba3a949fcf4}{is\+Empty}} () const
+\item 
+bool \mbox{\hyperlink{class_cart_a255d25b15e2a22a2b285dfeaff059619}{can\+Add\+Item}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}item) const
+\item 
+void \mbox{\hyperlink{class_cart_af333e415883c168ba6affe709a7a63ef}{set\+Restaurant\+Id}} (const QString \&\mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurant\+Id}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_cart_a77eeab556b6aa3f7715514490595615e}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_cart_a297170ad44e6cebb6edd17f87296eb04}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_cart_a19fea3bb9f622c06fb79050ff4d863db}{total\+Price}}
+\item 
+int \mbox{\hyperlink{class_cart_ad289e5f878fab74e005c0ae5f436b50c}{item\+Count}}
+\item 
+QString \mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurant\+Id}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_cart_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cart_a57ca02e16948cb066e699cb199133920}\index{Cart@{Cart}!Cart@{Cart}}
+\index{Cart@{Cart}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{Cart()}{Cart()}}
+{\footnotesize\ttfamily \label{class_cart_a57ca02e16948cb066e699cb199133920} 
+Cart\+::\+Cart (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_cart_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cart_ab316aa9ab06d50a8e8e739895761f3ed}\index{Cart@{Cart}!addItem@{addItem}}
+\index{addItem@{addItem}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily \label{class_cart_ab316aa9ab06d50a8e8e739895761f3ed} 
+void Cart\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{quantity}{ = {\ttfamily 1}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_ab316aa9ab06d50a8e8e739895761f3ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_cart_ab316aa9ab06d50a8e8e739895761f3ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a255d25b15e2a22a2b285dfeaff059619}\index{Cart@{Cart}!canAddItem@{canAddItem}}
+\index{canAddItem@{canAddItem}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{canAddItem()}{canAddItem()}}
+{\footnotesize\ttfamily \label{class_cart_a255d25b15e2a22a2b285dfeaff059619} 
+bool Cart\+::can\+Add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_cart_a255d25b15e2a22a2b285dfeaff059619_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a255d25b15e2a22a2b285dfeaff059619_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_acb46ef5846aa07aba6e93911fa220796}\index{Cart@{Cart}!cartCleared@{cartCleared}}
+\index{cartCleared@{cartCleared}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{cartCleared}{cartCleared}}
+{\footnotesize\ttfamily \label{class_cart_acb46ef5846aa07aba6e93911fa220796} 
+void Cart\+::cart\+Cleared (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_cart_acb46ef5846aa07aba6e93911fa220796_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_acb46ef5846aa07aba6e93911fa220796_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a618b8a521ab226e929c275f128709dbe}\index{Cart@{Cart}!clear@{clear}}
+\index{clear@{clear}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_cart_a618b8a521ab226e929c275f128709dbe} 
+void Cart\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_cart_a618b8a521ab226e929c275f128709dbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{class_cart_a618b8a521ab226e929c275f128709dbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a297170ad44e6cebb6edd17f87296eb04}\index{Cart@{Cart}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_cart_a297170ad44e6cebb6edd17f87296eb04} 
+void Cart\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a297170ad44e6cebb6edd17f87296eb04_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a2e1b8b33b46aedf08de85ba3a949fcf4}\index{Cart@{Cart}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{class_cart_a2e1b8b33b46aedf08de85ba3a949fcf4} 
+bool Cart\+::is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a2e1b8b33b46aedf08de85ba3a949fcf4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a1633ea58a17fdba0b698e32db74ec794}\index{Cart@{Cart}!itemAdded@{itemAdded}}
+\index{itemAdded@{itemAdded}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemAdded}{itemAdded}}
+{\footnotesize\ttfamily \label{class_cart_a1633ea58a17fdba0b698e32db74ec794} 
+void Cart\+::item\+Added (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_cart_a1633ea58a17fdba0b698e32db74ec794_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a1633ea58a17fdba0b698e32db74ec794_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_af0d4048f0fdb62e799b4e3bdd07e865f}\index{Cart@{Cart}!itemCount@{itemCount}}
+\index{itemCount@{itemCount}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemCount()}{itemCount()}}
+{\footnotesize\ttfamily \label{class_cart_af0d4048f0fdb62e799b4e3bdd07e865f} 
+int Cart\+::item\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd}\index{Cart@{Cart}!itemCountChanged@{itemCountChanged}}
+\index{itemCountChanged@{itemCountChanged}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemCountChanged}{itemCountChanged}}
+{\footnotesize\ttfamily \label{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd} 
+void Cart\+::item\+Count\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e}\index{Cart@{Cart}!itemQuantityChanged@{itemQuantityChanged}}
+\index{itemQuantityChanged@{itemQuantityChanged}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemQuantityChanged}{itemQuantityChanged}}
+{\footnotesize\ttfamily \label{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e} 
+void Cart\+::item\+Quantity\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92}\index{Cart@{Cart}!itemRemoved@{itemRemoved}}
+\index{itemRemoved@{itemRemoved}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemRemoved}{itemRemoved}}
+{\footnotesize\ttfamily \label{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92} 
+void Cart\+::item\+Removed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a71ef208113172ea0912e60b9cbdb1583}\index{Cart@{Cart}!items@{items}}
+\index{items@{items}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{items()}{items()}}
+{\footnotesize\ttfamily \label{class_cart_a71ef208113172ea0912e60b9cbdb1583} 
+QMap$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}, int $>$ Cart\+::items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_cart_a12a4c623b1c03a65703285181490c655}\index{Cart@{Cart}!removeItem@{removeItem}}
+\index{removeItem@{removeItem}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}}
+{\footnotesize\ttfamily \label{class_cart_a12a4c623b1c03a65703285181490c655} 
+void Cart\+::remove\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_cart_a12a4c623b1c03a65703285181490c655_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_aefc84a79cb6ecdc7ee2fc502948aa171}\index{Cart@{Cart}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{restaurantId()}{restaurantId()}}
+{\footnotesize\ttfamily \label{class_cart_aefc84a79cb6ecdc7ee2fc502948aa171} 
+QString Cart\+::restaurant\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_cart_ad761aaa4b7502bb210f39be85f015d6f}\index{Cart@{Cart}!restaurantIdChanged@{restaurantIdChanged}}
+\index{restaurantIdChanged@{restaurantIdChanged}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{restaurantIdChanged}{restaurantIdChanged}}
+{\footnotesize\ttfamily \label{class_cart_ad761aaa4b7502bb210f39be85f015d6f} 
+void Cart\+::restaurant\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_cart_ad761aaa4b7502bb210f39be85f015d6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_ad761aaa4b7502bb210f39be85f015d6f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_af333e415883c168ba6affe709a7a63ef}\index{Cart@{Cart}!setRestaurantId@{setRestaurantId}}
+\index{setRestaurantId@{setRestaurantId}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{setRestaurantId()}{setRestaurantId()}}
+{\footnotesize\ttfamily \label{class_cart_af333e415883c168ba6affe709a7a63ef} 
+void Cart\+::set\+Restaurant\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_af333e415883c168ba6affe709a7a63ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_cart_af333e415883c168ba6affe709a7a63ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a77eeab556b6aa3f7715514490595615e}\index{Cart@{Cart}!toJson@{toJson}}
+\index{toJson@{toJson}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_cart_a77eeab556b6aa3f7715514490595615e} 
+QJson\+Object Cart\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_cart_a1e26d5e6930ac66981ea4406440daa28}\index{Cart@{Cart}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{totalPrice()}{totalPrice()}}
+{\footnotesize\ttfamily \label{class_cart_a1e26d5e6930ac66981ea4406440daa28} 
+double Cart\+::total\+Price (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_cart_ac4b8276f2f31cca966f814e3a0663871}\index{Cart@{Cart}!totalPriceChanged@{totalPriceChanged}}
+\index{totalPriceChanged@{totalPriceChanged}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{totalPriceChanged}{totalPriceChanged}}
+{\footnotesize\ttfamily \label{class_cart_ac4b8276f2f31cca966f814e3a0663871} 
+void Cart\+::total\+Price\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_cart_ac4b8276f2f31cca966f814e3a0663871_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_ac4b8276f2f31cca966f814e3a0663871_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_cart_a5e4667d259971b6d7808b2e3a705472e}\index{Cart@{Cart}!updateItemQuantity@{updateItemQuantity}}
+\index{updateItemQuantity@{updateItemQuantity}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{updateItemQuantity()}{updateItemQuantity()}}
+{\footnotesize\ttfamily \label{class_cart_a5e4667d259971b6d7808b2e3a705472e} 
+void Cart\+::update\+Item\+Quantity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{quantity}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a5e4667d259971b6d7808b2e3a705472e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_cart_a5e4667d259971b6d7808b2e3a705472e_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_cart_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_cart_ad289e5f878fab74e005c0ae5f436b50c}\index{Cart@{Cart}!itemCount@{itemCount}}
+\index{itemCount@{itemCount}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{itemCount}{itemCount}}
+{\footnotesize\ttfamily \label{class_cart_ad289e5f878fab74e005c0ae5f436b50c} 
+int Cart\+::item\+Count\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}\index{Cart@{Cart}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{restaurantId}{restaurantId}}
+{\footnotesize\ttfamily \label{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257} 
+QString Cart\+::restaurant\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_cart_a19fea3bb9f622c06fb79050ff4d863db}\index{Cart@{Cart}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!Cart@{Cart}}
+\doxysubsubsection{\texorpdfstring{totalPrice}{totalPrice}}
+{\footnotesize\ttfamily \label{class_cart_a19fea3bb9f622c06fb79050ff4d863db} 
+double Cart\+::total\+Price\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{cart_8h}{cart.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{cart_8cpp}{cart.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\doxysection{order.\+h}
+\hypertarget{order_8h_source}{}\label{order_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/order.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/order.h}}
+\mbox{\hyperlink{order_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ORDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ORDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menuitem_8h}{menuitem.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ WRITE\ \mbox{\hyperlink{class_order_a39943424c6b5dca7bfcb14cb5e97d35d}{setId}}\ NOTIFY\ \mbox{\hyperlink{class_order_a991c2b90085a71bc04423671d59af15b}{idChanged}})}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customerId}}\ READ\ \mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customerId}}\ WRITE\ \mbox{\hyperlink{class_order_ab7f7f82cc66147114ed9723c8952fac0}{setCustomerId}}\ NOTIFY\ \mbox{\hyperlink{class_order_afd266c71f6eac0a2f755aea72762ca9f}{customerIdChanged}})}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurantId}}\ READ\ \mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurantId}}\ WRITE\ \mbox{\hyperlink{class_order_a2cc70fd0bcd906a0922e421d5e99a784}{setRestaurantId}}\ NOTIFY\ \mbox{\hyperlink{class_order_a73a50ff6b598f09ba9ae9a922a53b80a}{restaurantIdChanged}})}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}}\ READ\ \mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}}\ WRITE\ \mbox{\hyperlink{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b}{setStatus}}\ NOTIFY\ \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{statusChanged}})}
+\DoxyCodeLine{00019\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a7a18bd44c65809d267ab16273d878a4a}{statusDescription}}\ READ\ \mbox{\hyperlink{class_order_a7a18bd44c65809d267ab16273d878a4a}{statusDescription}}\ NOTIFY\ \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{statusChanged}})}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a2e36edbb15db0fe995e7e7be6962a9f1}{statusColor}}\ READ\ \mbox{\hyperlink{class_order_a2e36edbb15db0fe995e7e7be6962a9f1}{statusColor}}\ NOTIFY\ \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{statusChanged}})}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_order_a3d8c2a31510be9747ced0173bb69df00}{statusIcon}}\ READ\ \mbox{\hyperlink{class_order_a3d8c2a31510be9747ced0173bb69df00}{statusIcon}}\ NOTIFY\ \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{statusChanged}})}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{totalPrice}}\ READ\ \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{totalPrice}}\ WRITE\ \mbox{\hyperlink{class_order_a672147250b153975f0bad0efa1c6f1bc}{setTotalPrice}}\ NOTIFY\ \mbox{\hyperlink{class_order_afdde098cb070b3d418cb3de7ad008bd2}{totalPriceChanged}})}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_PROPERTY(QDateTime\ \mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{orderTime}}\ READ\ \mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{orderTime}}\ WRITE\ \mbox{\hyperlink{class_order_ae5c282d64d2a9dc2ba98637a39210884}{setOrderTime}}\ NOTIFY\ \mbox{\hyperlink{class_order_ad4c007d2610eb7be84e6fb40fedabce2}{orderTimeChanged}})}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_PROPERTY(QDateTime\ \mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{deliveryTime}}\ READ\ \mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{deliveryTime}}\ WRITE\ \mbox{\hyperlink{class_order_a80606918f7dfb090202529b793afe9a3}{setDeliveryTime}}\ NOTIFY\ \mbox{\hyperlink{class_order_a74667124f4d3369baafdcae64c3112b8}{deliveryTimeChanged}})}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_PROPERTY(QList<\mbox{\hyperlink{class_menu_item}{MenuItem}}*>\ \mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}}\ READ\ \mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}}\ WRITE\ \mbox{\hyperlink{class_order_abd37b46445cc684ae7ff183508c60975}{setItems}}\ NOTIFY\ \mbox{\hyperlink{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff}{itemsChanged}})}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ public:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Order\ status\ constants\ (matching\ server)}}
+\DoxyCodeLine{00029\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a715088ecb603498e32973c078d4576b4}{STATUS\_PENDING}};}
+\DoxyCodeLine{00030\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a74b881cf14ac042382c14cab3ffddec7}{STATUS\_CONFIRMED}};}
+\DoxyCodeLine{00031\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a988e08519ecaa15958cdef4657c8550f}{STATUS\_PREPARING}};}
+\DoxyCodeLine{00032\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a9f22826effc30ba94683b94ca9052048}{STATUS\_READY}};}
+\DoxyCodeLine{00033\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a90cc1e8bb3e0ce4a9c3e7f16fd21969e}{STATUS\_OUT\_FOR\_DELIVERY}};}
+\DoxyCodeLine{00034\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_af7ccb29c8568ac079c90217266e8ce8d}{STATUS\_DELIVERED}};}
+\DoxyCodeLine{00035\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_a8a5a0fad8a5d0f035e397a0c5a14f924}{STATUS\_CANCELLED}};}
+\DoxyCodeLine{00036\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_order_abcbb26b4624d74ff013a3a4f12d7c9cf}{STATUS\_REJECTED}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ explicit\ \mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00040\ \ \ \ \ \string~\mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00043\ \ \ \ \ QString\ \textcolor{keywordtype}{id}()\ const;}
+\DoxyCodeLine{00044\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customerId}}()\ const;}
+\DoxyCodeLine{00045\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurantId}}()\ const;}
+\DoxyCodeLine{00046\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}}()\ const;}
+\DoxyCodeLine{00047\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a7a18bd44c65809d267ab16273d878a4a}{statusDescription}}()\ const;}
+\DoxyCodeLine{00048\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a2e36edbb15db0fe995e7e7be6962a9f1}{statusColor}}()\ const;}
+\DoxyCodeLine{00049\ \ \ \ \ QString\ \mbox{\hyperlink{class_order_a3d8c2a31510be9747ced0173bb69df00}{statusIcon}}()\ const;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{totalPrice}}()\ const;}
+\DoxyCodeLine{00051\ \ \ \ \ QDateTime\ \mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{orderTime}}()\ const;}
+\DoxyCodeLine{00052\ \ \ \ \ QDateTime\ \mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{deliveryTime}}()\ const;}
+\DoxyCodeLine{00053\ \ \ \ \ QList<\mbox{\hyperlink{class_menu_item}{MenuItem}}*>\ \mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}}()\ const;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a39943424c6b5dca7bfcb14cb5e97d35d}{setId}}(const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_ab7f7f82cc66147114ed9723c8952fac0}{setCustomerId}}(const\ QString\ \&\mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customerId}});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a2cc70fd0bcd906a0922e421d5e99a784}{setRestaurantId}}(const\ QString\ \&\mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurantId}});}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b}{setStatus}}(const\ QString\ \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}});}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a672147250b153975f0bad0efa1c6f1bc}{setTotalPrice}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{totalPrice}});}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_ae5c282d64d2a9dc2ba98637a39210884}{setOrderTime}}(const\ QDateTime\ \&\mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{orderTime}});}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a80606918f7dfb090202529b793afe9a3}{setDeliveryTime}}(const\ QDateTime\ \&\mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{deliveryTime}});}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_abd37b46445cc684ae7ff183508c60975}{setItems}}(const\ QList<\mbox{\hyperlink{class_menu_item}{MenuItem}}*>\ \&\mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Status\ validation\ and\ utilities}}
+\DoxyCodeLine{00066\ \ \ \ \ static\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_order_a41252ee7accd2f36d7e3bade2277a1cf}{isValidStatus}}(const\ QString\ \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}});}
+\DoxyCodeLine{00067\ \ \ \ \ static\ QStringList\ \mbox{\hyperlink{class_order_aafc68a7fc563cc95a0cc42cb77639307}{getValidStatuses}}();}
+\DoxyCodeLine{00068\ \ \ \ \ static\ QString\ \mbox{\hyperlink{class_order_abee273f2bde141907357eb25429714f7}{getStatusDescription}}(const\ QString\ \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}});}
+\DoxyCodeLine{00069\ \ \ \ \ static\ QString\ \mbox{\hyperlink{class_order_a6aac72ff4b5c39908e21519674230686}{getStatusColor}}(const\ QString\ \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}});}
+\DoxyCodeLine{00070\ \ \ \ \ static\ QString\ \mbox{\hyperlink{class_order_a06b47fcecab2f5343077341f11a58337}{getStatusIcon}}(const\ QString\ \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_order_a406afc25551bc31d44fe34327e261b49}{canTransitionTo}}(const\ QString\ \&newStatus)\ const;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00074\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_order_a08838b54dc5aaac9179d8b7eb3fc05fb}{toJson}}()\ const;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_aac8bd43eeb1f1310e67d4817f7ef9786}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Static\ methods}}
+\DoxyCodeLine{00078\ \ \ \ \ static\ \mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}*\ \mbox{\hyperlink{class_order_aba35c74f7ab30a1f33bc62b2bbb79975}{fromJsonObject}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00079\ \ \ \ \ static\ QList<\mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}}*>\ \mbox{\hyperlink{class_order_a378bbcdae4cce9e56a20a9c0ac4510a5}{fromJsonArray}}(const\ QJsonArray\ \&array,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ signals:}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a991c2b90085a71bc04423671d59af15b}{idChanged}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_afd266c71f6eac0a2f755aea72762ca9f}{customerIdChanged}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a73a50ff6b598f09ba9ae9a922a53b80a}{restaurantIdChanged}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{statusChanged}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_afdde098cb070b3d418cb3de7ad008bd2}{totalPriceChanged}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_ad4c007d2610eb7be84e6fb40fedabce2}{orderTimeChanged}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a74667124f4d3369baafdcae64c3112b8}{deliveryTimeChanged}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff}{itemsChanged}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ private:}
+\DoxyCodeLine{00092\ \ \ \ \ QString\ m\_id;}
+\DoxyCodeLine{00093\ \ \ \ \ QString\ m\_customerId;}
+\DoxyCodeLine{00094\ \ \ \ \ QString\ m\_restaurantId;}
+\DoxyCodeLine{00095\ \ \ \ \ QString\ m\_status;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_totalPrice;}
+\DoxyCodeLine{00097\ \ \ \ \ QDateTime\ m\_orderTime;}
+\DoxyCodeLine{00098\ \ \ \ \ QDateTime\ m\_deliveryTime;}
+\DoxyCodeLine{00099\ \ \ \ \ QList<\mbox{\hyperlink{class_menu_item}{MenuItem}}*>\ m\_items;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Status\ descriptions\ and\ UI\ properties}}
+\DoxyCodeLine{00102\ \ \ \ \ static\ QMap<QString,\ QString>\ statusDescriptions;}
+\DoxyCodeLine{00103\ \ \ \ \ static\ QMap<QString,\ QString>\ statusColors;}
+\DoxyCodeLine{00104\ \ \ \ \ static\ QMap<QString,\ QString>\ statusIcons;}
+\DoxyCodeLine{00105\ \ \ \ \ static\ QMap<QString,\ QStringList>\ validTransitions;}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ORDER\_H\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,10 @@
+<map id="AuthSystem::getUserIdFromToken" name="AuthSystem::getUserIdFromToken">
+<area shape="rect" id="Node000001" title=" " alt="" coords="487,15,675,57"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#abc7f3456e41de21f3628de3434c7fcf8" title=" " alt="" coords="5,23,207,49"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="471,17,439,13,347,8,255,13,175,25,174,19,254,8,347,3,439,8,472,12"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html#a05c8819022ccb3407947d51e0bbdc0e4" title=" " alt="" coords="255,23,439,49"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="471,39,439,39,439,33,471,33"/>
+<area shape="rect" id="Node000004" href="$class_auth_system.html#a42442f84540841ec86cb6d0cd2a456c1" title=" " alt="" coords="258,73,436,100"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="472,62,413,75,412,70,471,57"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="264,72,172,53,173,47,265,67"/>
+</map>

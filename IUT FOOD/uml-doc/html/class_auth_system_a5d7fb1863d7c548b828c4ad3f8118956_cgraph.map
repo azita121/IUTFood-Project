@@ -1,0 +1,7 @@
+<map id="AuthSystem::getSession" name="AuthSystem::getSession">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#aacf80e6b55c579370ae5bb0749e53b9d" title=" " alt="" coords="220,5,413,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,16,204,16,204,21,172,21"/>
+<area shape="rect" id="Node000003" href="$class_security_utils.html#a0eb92f84b7409a1ea736365a8230602f" title=" " alt="" coords="461,5,654,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,16,446,16,446,21,413,21"/>
+</map>

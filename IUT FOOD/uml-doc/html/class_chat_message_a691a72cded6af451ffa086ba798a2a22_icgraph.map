@@ -1,0 +1,12 @@
+<map id="ChatMessage::toUserIdChanged" name="ChatMessage::toUserIdChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="710,31,923,57"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="859,18,845,12,816,9,791,11,777,16,773,21,780,29,776,32,768,22,773,12,790,6,817,4,846,7,861,13"/>
+<area shape="rect" id="Node000002" href="$class_chat_message.html#a8c8c4f9e954baa758aae98e11f3fa045" title=" " alt="" coords="481,31,662,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="695,47,663,47,663,41,695,41"/>
+<area shape="rect" id="Node000003" href="$class_chat_message.html#a53f2510970fdc55c20cb2be246d71f9a" title=" " alt="" coords="257,5,421,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,35,421,30,422,25,466,30"/>
+<area shape="rect" id="Node000005" href="$class_chat_manager.html#a0ed92523423943808862419a69a2fa18" title=" " alt="" coords="245,56,433,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="466,58,434,62,433,56,465,53"/>
+<area shape="rect" id="Node000004" href="$class_chat_message.html#a9f7245193bae14fc23d560a7c7527a10" title=" " alt="" coords="5,5,197,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,21,197,21,197,16,242,16"/>
+</map>

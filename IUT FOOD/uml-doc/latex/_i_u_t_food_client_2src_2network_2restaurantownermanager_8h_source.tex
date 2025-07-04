@@ -1,0 +1,76 @@
+\doxysection{restaurantownermanager.\+h}
+\hypertarget{_i_u_t_food_client_2src_2network_2restaurantownermanager_8h_source}{}\label{_i_u_t_food_client_2src_2network_2restaurantownermanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/restaurantownermanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/restaurantownermanager.h}}
+\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantownermanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTOWNERMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTOWNERMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurant_8h}{../models/restaurant.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{order_8h}{../models/order.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menuitem_8h}{../models/menuitem.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }RestaurantOwnerManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantOwnerManager*\ \mbox{\hyperlink{class_restaurant_owner_manager_a1227c0aab66fcdd4b23e14084fb9ab60}{getInstance}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}{\string~RestaurantOwnerManager}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ management}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a65c34ba8bf0d190879927506b55da426}{getRestaurantInfo}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_aa64a6113d275007a207abebe1d15a1a9}{updateRestaurantInfo}}(\textcolor{keyword}{const}\ QJsonObject\&\ info);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_ac1378a64ae10bae7f54bc339fcb2596d}{updateRestaurantStatus}}(\textcolor{keywordtype}{bool}\ isOpen);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}*\ \mbox{\hyperlink{class_restaurant_owner_manager_ab861969f97ee00de1d5d76f20f6f1d36}{getRestaurant}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Menu\ management}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a57aedaf8b7df7accabb361d03d60d98e}{getMenu}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_aec25c31fc9c55ec1722755026d42ff86}{addMenuItem}}(\textcolor{keyword}{const}\ QJsonObject\&\ item);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_aec25c31fc9c55ec1722755026d42ff86}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keyword}{const}\ QString\&\ ingredients,\ \textcolor{keyword}{const}\ QString\&\ category,\ \textcolor{keyword}{const}\ QString\&\ imageUrl\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a9e799e32f6914473b6295beca41120ff}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ itemId,\ \textcolor{keyword}{const}\ QJsonObject\&\ item);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a6ac0b7ca409f537cc4360b6e1a5fd4e3}{removeMenuItem}}(\textcolor{keyword}{const}\ QString\&\ itemId);}
+\DoxyCodeLine{00033\ \ \ \ \ QList<MenuItem*>\ \mbox{\hyperlink{class_restaurant_owner_manager_a1a3524c6e659161197ee73413f709585}{getMenuItems}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_menu_item}{MenuItem}}*\ \mbox{\hyperlink{class_restaurant_owner_manager_ad964ae949bae859872f82c170ccf34f4}{getMenuItem}}(\textcolor{keyword}{const}\ QString\&\ itemId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Order\ management}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a930cc3d1e72c0cc5d749d4ae3aac608e}{getOrders}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_afba4359ab0129c26bdff96fa3ae4cdaf}{updateOrderStatus}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00039\ \ \ \ \ QList<Order*>\ \mbox{\hyperlink{class_restaurant_owner_manager_a52cf7d6d8e1bb23930f1449d2d312a79}{getOrderList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_order}{Order}}*\ \mbox{\hyperlink{class_restaurant_owner_manager_a9fc41c571b8e1358f2e21cd0326999f2}{getOrder}}(\textcolor{keyword}{const}\ QString\&\ orderId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ New\ slots\ and\ signals}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a28333be1d3ed242432b5ca717c147f5f}{fetchProfile}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_af8d7537d7d8ff24e82e9f48d2523d0b2}{fetchRestaurants}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_aeb8e1ff46878c99e31802afd64514ee9}{restaurantInfoReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ info);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a7434c974756ba7e9fd3ffbedf67ee82f}{menuReceived}}(\textcolor{keyword}{const}\ QList<MenuItem*>\&\ menu);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a6c855db40d9d422fecb15bacc8814b2a}{ordersReceived}}(\textcolor{keyword}{const}\ QList<Order*>\&\ orders);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a637942258eee501e54dd99d2e5fafda1}{updateSuccess}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_af2594d1309a88c11852db3d898e89743}{error}}(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_afa435bf7aa257f80a2116bbf5c32af1c}{profileReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ profile);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_restaurant_owner_manager_a94c328fed13e5c47291b33e2fd621c7d}{restaurantsReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ restaurants);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{explicit}\ RestaurantOwnerManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantOwnerManager*\ instance;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}*\ m\_restaurant;}
+\DoxyCodeLine{00061\ \ \ \ \ QList<MenuItem*>\ m\_menuItems;}
+\DoxyCodeLine{00062\ \ \ \ \ QList<Order*>\ m\_orders;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRestaurantInfoReceived(\textcolor{keyword}{const}\ QJsonObject\&\ response);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ handleMenuReceived(\textcolor{keyword}{const}\ QJsonArray\&\ menu);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrdersReceived(\textcolor{keyword}{const}\ QJsonArray\&\ orders);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ handleUpdateResponse(\textcolor{keyword}{const}\ QJsonObject\&\ response);}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTOWNERMANAGER\_H\ }}
+
+\end{DoxyCode}

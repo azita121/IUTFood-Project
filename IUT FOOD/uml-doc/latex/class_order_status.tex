@@ -1,0 +1,265 @@
+\doxysection{Order\+Status Class Reference}
+\hypertarget{class_order_status}{}\label{class_order_status}\index{OrderStatus@{OrderStatus}}
+
+
+{\ttfamily \#include $<$orderstatus.\+h$>$}
+
+
+
+Inheritance diagram for Order\+Status\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_order_status__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Order\+Status\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_order_status__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_status_ac12513e6970b9c3f38c872269d6e4618}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_order_status_a1f15fc83499e90dbcde0a3bb11a0b00d}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_order_status_a05bef626fc287cc577773f8ba7117f09}{notify\+Observers}} (const QString \&order\+Id, const QString \&status)
+\item 
+QString \mbox{\hyperlink{class_order_status_a41274c5b08ccf414d5bb55aba421d309}{get\+Order\+Status}} (const QString \&order\+Id) const
+\item 
+\mbox{\hyperlink{class_order_status_a3a5079bcceec993368de9b709dc6cc8d}{Order\+Status}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_order_status_af324c6046aa4c85fcd87e85e5857ecff}{\texorpdfstring{$\sim$}{\string~}\+Order\+Status}} ()
+\item 
+void \mbox{\hyperlink{class_order_status_af1c895b2c05c169acdf8baa1d868cc45}{add\+Observer}} (\mbox{\hyperlink{class_order_status_observer}{Order\+Status\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_order_status_aedb6eaa581e2ec77deba9465fd626c7c}{remove\+Observer}} (\mbox{\hyperlink{class_order_status_observer}{Order\+Status\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_order_status_a368ae777868425a89b34dcdeafbeb617}{set\+Status}} (const QString \&status)
+\item 
+QString \mbox{\hyperlink{class_order_status_a071aeb76df4e8725ecd1a4ddafe4ddec}{get\+Status}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_order_status}{Order\+Status}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_order_status_af10a8c58d0693d0193cb40c38d148e3a}{get\+Instance}} ()
+\item 
+static bool \mbox{\hyperlink{class_order_status_a353e4718065e4645e3e372a4784cf435}{is\+Valid\+Status}} (const QString \&status)
+\item 
+static QString\+List \mbox{\hyperlink{class_order_status_a4d1e409a31e7aa6f56d480e732d4e8bc}{get\+Valid\+Statuses}} ()
+\item 
+static QString \mbox{\hyperlink{class_order_status_a6195ac3733bacc713fa3bfe6abba9d5c}{get\+Status\+Description}} (const QString \&status)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_a32afb8dbf2f82265f137521d89cc2f2b}{STATUS\+\_\+\+PENDING}} = "{}pending"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_a402ec6be09e85c945e707fc46155d18d}{STATUS\+\_\+\+CONFIRMED}} = "{}confirmed"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_a00b217c07d1dbfa3abc90627bb3b6e11}{STATUS\+\_\+\+PREPARING}} = "{}preparing"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_a707ef27263767c63c79aaee076d9f6f0}{STATUS\+\_\+\+READY}} = "{}ready"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_ac72ebf4d747343b9c0565c6c2ce4f258}{STATUS\+\_\+\+OUT\+\_\+\+FOR\+\_\+\+DELIVERY}} = "{}out\+\_\+for\+\_\+delivery"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_abe5b0fcf712b0fa246104da789e369d2}{STATUS\+\_\+\+DELIVERED}} = "{}delivered"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_a636e47319b9f1e2bd8b4c4518648ec4d}{STATUS\+\_\+\+CANCELLED}} = "{}cancelled"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_status_ae2e2ded6fbe3a4456900bcc57c8ac5d9}{STATUS\+\_\+\+REJECTED}} = "{}rejected"{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_order_status_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_order_status_a3a5079bcceec993368de9b709dc6cc8d}\index{OrderStatus@{OrderStatus}!OrderStatus@{OrderStatus}}
+\index{OrderStatus@{OrderStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{OrderStatus()}{OrderStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_a3a5079bcceec993368de9b709dc6cc8d} 
+Order\+Status\+::\+Order\+Status (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_status_a3a5079bcceec993368de9b709dc6cc8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_af324c6046aa4c85fcd87e85e5857ecff}\index{OrderStatus@{OrderStatus}!````~OrderStatus@{\texorpdfstring{$\sim$}{\string~}OrderStatus}}
+\index{````~OrderStatus@{\texorpdfstring{$\sim$}{\string~}OrderStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}OrderStatus()}{\string~OrderStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_af324c6046aa4c85fcd87e85e5857ecff} 
+Order\+Status\+::\texorpdfstring{$\sim$}{\string~}\+Order\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_order_status_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_order_status_af1c895b2c05c169acdf8baa1d868cc45}\index{OrderStatus@{OrderStatus}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily \label{class_order_status_af1c895b2c05c169acdf8baa1d868cc45} 
+void Order\+Status\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order_status_observer}{Order\+Status\+Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_ac12513e6970b9c3f38c872269d6e4618}\index{OrderStatus@{OrderStatus}!attach@{attach}}
+\index{attach@{attach}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \label{class_order_status_ac12513e6970b9c3f38c872269d6e4618} 
+void Order\+Status\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_a1f15fc83499e90dbcde0a3bb11a0b00d}\index{OrderStatus@{OrderStatus}!detach@{detach}}
+\index{detach@{detach}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily \label{class_order_status_a1f15fc83499e90dbcde0a3bb11a0b00d} 
+void Order\+Status\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_af10a8c58d0693d0193cb40c38d148e3a}\index{OrderStatus@{OrderStatus}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_order_status_af10a8c58d0693d0193cb40c38d148e3a} 
+\mbox{\hyperlink{class_order_status}{Order\+Status}} \texorpdfstring{$\ast$}{*} Order\+Status\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_status_af10a8c58d0693d0193cb40c38d148e3a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_a41274c5b08ccf414d5bb55aba421d309}\index{OrderStatus@{OrderStatus}!getOrderStatus@{getOrderStatus}}
+\index{getOrderStatus@{getOrderStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{getOrderStatus()}{getOrderStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_a41274c5b08ccf414d5bb55aba421d309} 
+QString Order\+Status\+::get\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_status_a071aeb76df4e8725ecd1a4ddafe4ddec}\index{OrderStatus@{OrderStatus}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_a071aeb76df4e8725ecd1a4ddafe4ddec} 
+QString Order\+Status\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_status_a071aeb76df4e8725ecd1a4ddafe4ddec_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_a6195ac3733bacc713fa3bfe6abba9d5c}\index{OrderStatus@{OrderStatus}!getStatusDescription@{getStatusDescription}}
+\index{getStatusDescription@{getStatusDescription}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{getStatusDescription()}{getStatusDescription()}}
+{\footnotesize\ttfamily \label{class_order_status_a6195ac3733bacc713fa3bfe6abba9d5c} 
+QString Order\+Status\+::get\+Status\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a4d1e409a31e7aa6f56d480e732d4e8bc}\index{OrderStatus@{OrderStatus}!getValidStatuses@{getValidStatuses}}
+\index{getValidStatuses@{getValidStatuses}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{getValidStatuses()}{getValidStatuses()}}
+{\footnotesize\ttfamily \label{class_order_status_a4d1e409a31e7aa6f56d480e732d4e8bc} 
+QString\+List Order\+Status\+::get\+Valid\+Statuses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a353e4718065e4645e3e372a4784cf435}\index{OrderStatus@{OrderStatus}!isValidStatus@{isValidStatus}}
+\index{isValidStatus@{isValidStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{isValidStatus()}{isValidStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_a353e4718065e4645e3e372a4784cf435} 
+bool Order\+Status\+::is\+Valid\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_status_a353e4718065e4645e3e372a4784cf435_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_a05bef626fc287cc577773f8ba7117f09}\index{OrderStatus@{OrderStatus}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily \label{class_order_status_a05bef626fc287cc577773f8ba7117f09} 
+void Order\+Status\+::notify\+Observers (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_status_a05bef626fc287cc577773f8ba7117f09_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_aedb6eaa581e2ec77deba9465fd626c7c}\index{OrderStatus@{OrderStatus}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily \label{class_order_status_aedb6eaa581e2ec77deba9465fd626c7c} 
+void Order\+Status\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order_status_observer}{Order\+Status\+Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_a368ae777868425a89b34dcdeafbeb617}\index{OrderStatus@{OrderStatus}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{setStatus()}{setStatus()}}
+{\footnotesize\ttfamily \label{class_order_status_a368ae777868425a89b34dcdeafbeb617} 
+void Order\+Status\+::set\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_order_status_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_order_status_a636e47319b9f1e2bd8b4c4518648ec4d}\index{OrderStatus@{OrderStatus}!STATUS\_CANCELLED@{STATUS\_CANCELLED}}
+\index{STATUS\_CANCELLED@{STATUS\_CANCELLED}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CANCELLED}{STATUS\_CANCELLED}}
+{\footnotesize\ttfamily \label{class_order_status_a636e47319b9f1e2bd8b4c4518648ec4d} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+CANCELLED = "{}cancelled"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a402ec6be09e85c945e707fc46155d18d}\index{OrderStatus@{OrderStatus}!STATUS\_CONFIRMED@{STATUS\_CONFIRMED}}
+\index{STATUS\_CONFIRMED@{STATUS\_CONFIRMED}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CONFIRMED}{STATUS\_CONFIRMED}}
+{\footnotesize\ttfamily \label{class_order_status_a402ec6be09e85c945e707fc46155d18d} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+CONFIRMED = "{}confirmed"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_abe5b0fcf712b0fa246104da789e369d2}\index{OrderStatus@{OrderStatus}!STATUS\_DELIVERED@{STATUS\_DELIVERED}}
+\index{STATUS\_DELIVERED@{STATUS\_DELIVERED}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_DELIVERED}{STATUS\_DELIVERED}}
+{\footnotesize\ttfamily \label{class_order_status_abe5b0fcf712b0fa246104da789e369d2} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+DELIVERED = "{}delivered"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_ac72ebf4d747343b9c0565c6c2ce4f258}\index{OrderStatus@{OrderStatus}!STATUS\_OUT\_FOR\_DELIVERY@{STATUS\_OUT\_FOR\_DELIVERY}}
+\index{STATUS\_OUT\_FOR\_DELIVERY@{STATUS\_OUT\_FOR\_DELIVERY}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_OUT\_FOR\_DELIVERY}{STATUS\_OUT\_FOR\_DELIVERY}}
+{\footnotesize\ttfamily \label{class_order_status_ac72ebf4d747343b9c0565c6c2ce4f258} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+OUT\+\_\+\+FOR\+\_\+\+DELIVERY = "{}out\+\_\+for\+\_\+delivery"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a32afb8dbf2f82265f137521d89cc2f2b}\index{OrderStatus@{OrderStatus}!STATUS\_PENDING@{STATUS\_PENDING}}
+\index{STATUS\_PENDING@{STATUS\_PENDING}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_PENDING}{STATUS\_PENDING}}
+{\footnotesize\ttfamily \label{class_order_status_a32afb8dbf2f82265f137521d89cc2f2b} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+PENDING = "{}pending"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a00b217c07d1dbfa3abc90627bb3b6e11}\index{OrderStatus@{OrderStatus}!STATUS\_PREPARING@{STATUS\_PREPARING}}
+\index{STATUS\_PREPARING@{STATUS\_PREPARING}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_PREPARING}{STATUS\_PREPARING}}
+{\footnotesize\ttfamily \label{class_order_status_a00b217c07d1dbfa3abc90627bb3b6e11} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+PREPARING = "{}preparing"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_a707ef27263767c63c79aaee076d9f6f0}\index{OrderStatus@{OrderStatus}!STATUS\_READY@{STATUS\_READY}}
+\index{STATUS\_READY@{STATUS\_READY}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_READY}{STATUS\_READY}}
+{\footnotesize\ttfamily \label{class_order_status_a707ef27263767c63c79aaee076d9f6f0} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+READY = "{}ready"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_status_ae2e2ded6fbe3a4456900bcc57c8ac5d9}\index{OrderStatus@{OrderStatus}!STATUS\_REJECTED@{STATUS\_REJECTED}}
+\index{STATUS\_REJECTED@{STATUS\_REJECTED}!OrderStatus@{OrderStatus}}
+\doxysubsubsection{\texorpdfstring{STATUS\_REJECTED}{STATUS\_REJECTED}}
+{\footnotesize\ttfamily \label{class_order_status_ae2e2ded6fbe3a4456900bcc57c8ac5d9} 
+const QString Order\+Status\+::\+STATUS\+\_\+\+REJECTED = "{}rejected"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{orderstatus_8h}{orderstatus.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{orderstatus_8cpp}{orderstatus.\+cpp}}\end{DoxyCompactItemize}

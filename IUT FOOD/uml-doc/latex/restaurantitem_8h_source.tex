@@ -1,0 +1,39 @@
+\doxysection{restaurantitem.\+h}
+\hypertarget{restaurantitem_8h_source}{}\label{restaurantitem_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/restaurantitem.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/restaurantitem.h}}
+\mbox{\hyperlink{restaurantitem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_i_2restaurant_8h}{restaurant.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fooditemwidget_8h}{fooditemwidget.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1restaurantitem}{restaurantitem}};}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrestaurantitem_a2ec58d9b271298e3d63e66b2f61e612e}{restaurantitem}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classrestaurantitem_a2ec58d9b271298e3d63e66b2f61e612e}{restaurantitem}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classrestaurantitem_ae5c96cd33cd94ac786ce5841aeee3312}{\string~restaurantitem}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantitem_ad3e1b3bdf6b7605d9f81eeb07ef97f33}{setRestaurantData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_restaurant}{Restaurant}}\&\ data);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ signals:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantitem_ae6580a3fe545cbe06838d70b255eac16}{restaurantClicked}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_restaurant}{Restaurant}}\&\ data);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_showresButton\_clicked();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_ui_1_1restaurantitem}{Ui::restaurantitem}}\ *ui;}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}\ restaurantData;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTITEM\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,78 @@
+\doxysection{user.\+h}
+\hypertarget{user_8h_source}{}\label{user_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/user.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/user.h}}
+\mbox{\hyperlink{user_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ WRITE\ \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{setId}}\ NOTIFY\ \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{idChanged}})}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}\ READ\ \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}\ WRITE\ \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{setUsername}}\ NOTIFY\ \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{usernameChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}\ READ\ \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}\ WRITE\ \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{setEmail}}\ NOTIFY\ \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{emailChanged}})}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{userType}}\ READ\ \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{userType}}\ WRITE\ \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{setUserType}}\ NOTIFY\ \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{userTypeChanged}})}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}\ READ\ \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}\ WRITE\ \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{setToken}}\ NOTIFY\ \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{tokenChanged}})}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phoneNumber}}\ READ\ \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phoneNumber}}\ WRITE\ \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{setPhoneNumber}}\ NOTIFY\ \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phoneNumberChanged}})}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}\ READ\ \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}\ WRITE\ \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{setCity}}\ NOTIFY\ \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{cityChanged}})}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}\ READ\ \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}\ WRITE\ \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{setLocation}}\ NOTIFY\ \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{locationChanged}})}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ public:}
+\DoxyCodeLine{00021\ \ \ \ \ explicit\ \mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \textcolor{keywordtype}{id}()\ const;}
+\DoxyCodeLine{00026\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}()\ const;}
+\DoxyCodeLine{00027\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}()\ const;}
+\DoxyCodeLine{00028\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{userType}}()\ const;}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}()\ const;}
+\DoxyCodeLine{00030\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phoneNumber}}()\ const;}
+\DoxyCodeLine{00031\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}()\ const;}
+\DoxyCodeLine{00032\ \ \ \ \ QString\ \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}()\ const;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{setId}}(const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{setUsername}}(const\ QString\ \&\mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{setEmail}}(const\ QString\ \&\mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}});}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{setUserType}}(const\ QString\ \&\mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{userType}});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{setToken}}(const\ QString\ \&\mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{setPhoneNumber}}(const\ QString\ \&\mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phoneNumber}});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{setCity}}(const\ QString\ \&\mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{setLocation}}(const\ QString\ \&\mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00045\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}{toJson}}()\ const;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a683f88bbea447ed676c792699fb408c0}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Static\ methods}}
+\DoxyCodeLine{00049\ \ \ \ \ static\ \mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}}*\ \mbox{\hyperlink{class_user_a277da358c40ecdf8219b73115efb2dc2}{fromJsonObject}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ signals:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{idChanged}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{usernameChanged}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{emailChanged}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{userTypeChanged}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{tokenChanged}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phoneNumberChanged}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{cityChanged}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{locationChanged}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ private:}
+\DoxyCodeLine{00062\ \ \ \ \ QString\ m\_id;}
+\DoxyCodeLine{00063\ \ \ \ \ QString\ m\_username;}
+\DoxyCodeLine{00064\ \ \ \ \ QString\ m\_email;}
+\DoxyCodeLine{00065\ \ \ \ \ QString\ m\_userType;}
+\DoxyCodeLine{00066\ \ \ \ \ QString\ m\_token;}
+\DoxyCodeLine{00067\ \ \ \ \ QString\ m\_phoneNumber;}
+\DoxyCodeLine{00068\ \ \ \ \ QString\ m\_city;}
+\DoxyCodeLine{00069\ \ \ \ \ QString\ m\_location;}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ USER\_H}}
+
+\end{DoxyCode}

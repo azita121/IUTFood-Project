@@ -1,0 +1,8 @@
+<map id="Customer::addressChanged" name="Customer::addressChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="397,29,581,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="526,16,513,10,489,8,466,10,454,15,451,20,457,27,453,30,446,21,451,11,465,5,489,3,515,5,529,12"/>
+<area shape="rect" id="Node000002" href="$class_customer.html#addd0675e408a13f6ab95ec5bd5a3a13b" title=" " alt="" coords="197,29,349,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="381,45,350,45,350,40,381,40"/>
+<area shape="rect" id="Node000003" href="$class_customer.html#aed8d168b0a07801d11c55edd82fb7e62" title=" " alt="" coords="5,29,149,56"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="181,45,149,45,149,40,181,40"/>
+</map>

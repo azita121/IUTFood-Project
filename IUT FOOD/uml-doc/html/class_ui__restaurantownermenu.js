@@ -1,0 +1,28 @@
+var class_ui__restaurantownermenu =
+[
+    [ "retranslateUi", "class_ui__restaurantownermenu.html#accf84bb8c3e3a86605a587b4b926924b", null ],
+    [ "setupUi", "class_ui__restaurantownermenu.html#aad53a0a4ce1181781994e2745ad36ace", null ],
+    [ "addFoodButton", "class_ui__restaurantownermenu.html#a759c1363e1c0a5c229c04aaa2d7c650f", null ],
+    [ "ChangeOfStatusButton", "class_ui__restaurantownermenu.html#a6a00e56c302e54f34f2e6c4ac6eb70f1", null ],
+    [ "ChangeOfStatusButton_2", "class_ui__restaurantownermenu.html#a5432ee46765721621223a2870423219f", null ],
+    [ "ChangeOfStatusButton_5", "class_ui__restaurantownermenu.html#af1d3e6273d2c182a121e131b666c0aaf", null ],
+    [ "changeOfStatusPage", "class_ui__restaurantownermenu.html#a1f78560c42287bdc3cbd77b034688349", null ],
+    [ "changeStatusHolder", "class_ui__restaurantownermenu.html#ab59599dbe545530258132b9541bd7390", null ],
+    [ "label_16", "class_ui__restaurantownermenu.html#a2d2e95b230523dc62119f96d1f506104", null ],
+    [ "label_17", "class_ui__restaurantownermenu.html#aedd556020d11989bc890742d29261ea2", null ],
+    [ "label_20", "class_ui__restaurantownermenu.html#a925c685563a043fcb142490131c2e269", null ],
+    [ "label_4", "class_ui__restaurantownermenu.html#a3aa3460f1e3fec47526a0b550cd73fce", null ],
+    [ "label_5", "class_ui__restaurantownermenu.html#a24f12e1224e58a1229ad3f6914a95e6f", null ],
+    [ "label_8", "class_ui__restaurantownermenu.html#afde9cbb5db98066a45547e3bae71432b", null ],
+    [ "menuHolder", "class_ui__restaurantownermenu.html#a750b1175146d04123a395c54d22f1aa5", null ],
+    [ "menuManagementButton", "class_ui__restaurantownermenu.html#a7914b94889c9e482bf6b925f876738f1", null ],
+    [ "menuManagementButton_2", "class_ui__restaurantownermenu.html#a2450df69c51837b910216bd8de3414f6", null ],
+    [ "menuManagementButton_5", "class_ui__restaurantownermenu.html#adeac90b34bf2b6923b072a2e7e8a2565", null ],
+    [ "menuManagementPage", "class_ui__restaurantownermenu.html#a3708ae142917e8a6fea04f1ee67e2342", null ],
+    [ "stackedWidget", "class_ui__restaurantownermenu.html#a4f1768119186aa66c962f5e48dcddae0", null ],
+    [ "viewOrdersButton", "class_ui__restaurantownermenu.html#ae4d6c9b1c8b11066baed11c6694593af", null ],
+    [ "viewOrdersButton_2", "class_ui__restaurantownermenu.html#a3874e20811eedce6f059156bbbaf1bcd", null ],
+    [ "viewOrdersButton_5", "class_ui__restaurantownermenu.html#a0e416300ba35cd84943aea14c5045806", null ],
+    [ "viewOrdersHolder", "class_ui__restaurantownermenu.html#a1e75e551d3cbd3863e1cbe2be885d0e0", null ],
+    [ "viewOrdersPage", "class_ui__restaurantownermenu.html#a870cfc9b1c6c6126e32ad723b56069d0", null ]
+];

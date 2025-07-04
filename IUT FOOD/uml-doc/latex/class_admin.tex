@@ -1,0 +1,229 @@
+\doxysection{Admin Class Reference}
+\hypertarget{class_admin}{}\label{class_admin}\index{Admin@{Admin}}
+
+
+{\ttfamily \#include $<$admin.\+h$>$}
+
+
+
+Inheritance diagram for Admin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_admin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Admin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_admin__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_admin_ae5c985f5c4fd8f407c1f2e5dda03a6a0}{Admin}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_admin_af607ef181e12f7fc8affa3c0b0d11b3c}{Admin}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_admin_a8fb5fe72fb4e05d50980c13cdf3b779c}{\texorpdfstring{$\sim$}{\string~}\+Admin}} ()
+\item 
+bool \mbox{\hyperlink{class_admin_a353cf25027bfad2e12f4dba6e9ea5b48}{can\+Manage\+Users}} () const
+\item 
+bool \mbox{\hyperlink{class_admin_a50dc78511d4d564145b0a9843fc8277d}{can\+Manage\+Restaurants}} () const
+\item 
+bool \mbox{\hyperlink{class_admin_afa046678c6b4f55276eff8ba737e59b9}{can\+View\+Statistics}} () const
+\item 
+QJson\+Object \mbox{\hyperlink{class_admin_a3e0a692793bbdf1ba258186dd9ce617a}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_admin_a90caabecee4e17b2ad0705d7d62f0d95}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_user_af9f90160504b90d8917182afb470f54a}{User}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_user_a52a054713f457dc73a92110c5cde7483}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_user_ad7d2bd0336217880b4d57a75c670c7fc}{username}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a0e27687d36ece83cf40b7c1ccc62d530}{email}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abb223364f7d797b5f054f49a3d41863b}{user\+Type}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a9f9ce917b9a77c20170ccc657d81c6cd}{token}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a5c1a695167d183203b34fa4935ce19fe}{phone\+Number}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abde9fb5af6b50d274d8579ad064acefe}{city}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a63e2a44219f7b621a5f188835585d7d3}{location}} () const
+\item 
+void \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{set\+Id}} (const QString \&\mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}})
+\item 
+void \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{set\+Username}} (const QString \&\mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}})
+\item 
+void \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{set\+Email}} (const QString \&\mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}})
+\item 
+void \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{set\+User\+Type}} (const QString \&\mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}})
+\item 
+void \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{set\+Token}} (const QString \&\mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}})
+\item 
+void \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{set\+Phone\+Number}} (const QString \&\mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}})
+\item 
+void \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{set\+City}} (const QString \&\mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}})
+\item 
+void \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{set\+Location}} (const QString \&\mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_user_a683f88bbea447ed676c792699fb408c0}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{username\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{email\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{user\+Type\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{token\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phone\+Number\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{city\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{location\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a277da358c40ecdf8219b73115efb2dc2}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}}
+\item 
+QString \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}
+\item 
+QString \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}
+\item 
+QString \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}}
+\item 
+QString \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}
+\item 
+QString \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}}
+\item 
+QString \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}
+\item 
+QString \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_admin_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_admin_ae5c985f5c4fd8f407c1f2e5dda03a6a0}\index{Admin@{Admin}!Admin@{Admin}}
+\index{Admin@{Admin}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{Admin()}{Admin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_admin_ae5c985f5c4fd8f407c1f2e5dda03a6a0} 
+Admin\+::\+Admin (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_ae5c985f5c4fd8f407c1f2e5dda03a6a0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_admin_af607ef181e12f7fc8affa3c0b0d11b3c}\index{Admin@{Admin}!Admin@{Admin}}
+\index{Admin@{Admin}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{Admin()}{Admin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_admin_af607ef181e12f7fc8affa3c0b0d11b3c} 
+Admin\+::\+Admin (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_af607ef181e12f7fc8affa3c0b0d11b3c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_admin_a8fb5fe72fb4e05d50980c13cdf3b779c}\index{Admin@{Admin}!````~Admin@{\texorpdfstring{$\sim$}{\string~}Admin}}
+\index{````~Admin@{\texorpdfstring{$\sim$}{\string~}Admin}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Admin()}{\string~Admin()}}
+{\footnotesize\ttfamily \label{class_admin_a8fb5fe72fb4e05d50980c13cdf3b779c} 
+Admin\+::\texorpdfstring{$\sim$}{\string~}\+Admin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_admin_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_admin_a50dc78511d4d564145b0a9843fc8277d}\index{Admin@{Admin}!canManageRestaurants@{canManageRestaurants}}
+\index{canManageRestaurants@{canManageRestaurants}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{canManageRestaurants()}{canManageRestaurants()}}
+{\footnotesize\ttfamily \label{class_admin_a50dc78511d4d564145b0a9843fc8277d} 
+bool Admin\+::can\+Manage\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_a353cf25027bfad2e12f4dba6e9ea5b48}\index{Admin@{Admin}!canManageUsers@{canManageUsers}}
+\index{canManageUsers@{canManageUsers}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{canManageUsers()}{canManageUsers()}}
+{\footnotesize\ttfamily \label{class_admin_a353cf25027bfad2e12f4dba6e9ea5b48} 
+bool Admin\+::can\+Manage\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_afa046678c6b4f55276eff8ba737e59b9}\index{Admin@{Admin}!canViewStatistics@{canViewStatistics}}
+\index{canViewStatistics@{canViewStatistics}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{canViewStatistics()}{canViewStatistics()}}
+{\footnotesize\ttfamily \label{class_admin_afa046678c6b4f55276eff8ba737e59b9} 
+bool Admin\+::can\+View\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_a90caabecee4e17b2ad0705d7d62f0d95}\index{Admin@{Admin}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_admin_a90caabecee4e17b2ad0705d7d62f0d95} 
+void Admin\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_a90caabecee4e17b2ad0705d7d62f0d95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_admin_a90caabecee4e17b2ad0705d7d62f0d95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_admin_a3e0a692793bbdf1ba258186dd9ce617a}\index{Admin@{Admin}!toJson@{toJson}}
+\index{toJson@{toJson}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_admin_a3e0a692793bbdf1ba258186dd9ce617a} 
+QJson\+Object Admin\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_admin_a3e0a692793bbdf1ba258186dd9ce617a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{admin_8h}{admin.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{admin_8cpp}{admin.\+cpp}}\end{DoxyCompactItemize}

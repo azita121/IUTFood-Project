@@ -1,0 +1,6 @@
+<map id="Restaurant::setRatingCount" name="Restaurant::setRatingCount">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,190,56"/>
+<area shape="rect" id="Node000002" href="$class_restaurant.html#a86772058a1fe18675f11a7b013c4d003" title=" " alt="" coords="238,29,450,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,40,222,40,222,45,190,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="303,31,295,21,300,11,317,5,344,3,374,5,389,12,387,17,372,10,344,8,318,10,304,15,300,20,307,27"/>
+</map>

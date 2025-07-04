@@ -1,0 +1,9 @@
+<map id="AuthSystem::getUserTypeFromToken" name="AuthSystem::getUserTypeFromToken">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,211,48"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#a5d7fb1863d7c548b828c4ad3f8118956" title=" " alt="" coords="259,13,425,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,24,243,24,243,29,211,29"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html#aacf80e6b55c579370ae5bb0749e53b9d" title=" " alt="" coords="473,13,666,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,24,457,24,457,29,425,29"/>
+<area shape="rect" id="Node000004" href="$class_security_utils.html#a0eb92f84b7409a1ea736365a8230602f" title=" " alt="" coords="714,13,908,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="667,24,699,24,699,29,667,29"/>
+</map>

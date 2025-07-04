@@ -1,0 +1,63 @@
+\doxysection{cart.\+h}
+\hypertarget{cart_8h_source}{}\label{cart_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/cart.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/cart.h}}
+\mbox{\hyperlink{cart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\ \#ifndef\ CART\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CART\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menuitem_8h}{menuitem.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cart_a57ca02e16948cb066e699cb199133920}{Cart}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_cart_a19fea3bb9f622c06fb79050ff4d863db}{totalPrice}}\ READ\ \mbox{\hyperlink{class_cart_a19fea3bb9f622c06fb79050ff4d863db}{totalPrice}}\ NOTIFY\ \mbox{\hyperlink{class_cart_ac4b8276f2f31cca966f814e3a0663871}{totalPriceChanged}})}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cart_ad289e5f878fab74e005c0ae5f436b50c}{itemCount}}\ READ\ \mbox{\hyperlink{class_cart_ad289e5f878fab74e005c0ae5f436b50c}{itemCount}}\ NOTIFY\ \mbox{\hyperlink{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd}{itemCountChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurantId}}\ READ\ \mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurantId}}\ WRITE\ \mbox{\hyperlink{class_cart_af333e415883c168ba6affe709a7a63ef}{setRestaurantId}}\ NOTIFY\ \mbox{\hyperlink{class_cart_ad761aaa4b7502bb210f39be85f015d6f}{restaurantIdChanged}})}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ public:}
+\DoxyCodeLine{00016\ \ \ \ \ explicit\ \mbox{\hyperlink{class_cart_a57ca02e16948cb066e699cb199133920}{Cart}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_cart_a19fea3bb9f622c06fb79050ff4d863db}{totalPrice}}()\ const;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cart_ad289e5f878fab74e005c0ae5f436b50c}{itemCount}}()\ const;}
+\DoxyCodeLine{00021\ \ \ \ \ QString\ \mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurantId}}()\ const;}
+\DoxyCodeLine{00022\ \ \ \ \ QMap<\mbox{\hyperlink{class_menu_item}{MenuItem}}*,\ \textcolor{keywordtype}{int}>\ \mbox{\hyperlink{class_cart_a71ef208113172ea0912e60b9cbdb1583}{items}}()\ const;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Cart\ operations}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_ab316aa9ab06d50a8e8e739895761f3ed}{addItem}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item,\ \textcolor{keywordtype}{int}\ quantity\ =\ 1);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a12a4c623b1c03a65703285181490c655}{removeItem}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a5e4667d259971b6d7808b2e3a705472e}{updateItemQuantity}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item,\ \textcolor{keywordtype}{int}\ quantity);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a618b8a521ab226e929c275f128709dbe}{clear}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cart_a2e1b8b33b46aedf08de85ba3a949fcf4}{isEmpty}}()\ const;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cart_a255d25b15e2a22a2b285dfeaff059619}{canAddItem}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item)\ const;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_af333e415883c168ba6affe709a7a63ef}{setRestaurantId}}(const\ QString\ \&\mbox{\hyperlink{class_cart_a95737ea36a9bc8a53828ad8d7aa3d257}{restaurantId}});}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00036\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_cart_a77eeab556b6aa3f7715514490595615e}{toJson}}()\ const;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a297170ad44e6cebb6edd17f87296eb04}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ signals:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_ac4b8276f2f31cca966f814e3a0663871}{totalPriceChanged}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a3c5b111c12fafdde5c3d9ff9ad7a84cd}{itemCountChanged}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_ad761aaa4b7502bb210f39be85f015d6f}{restaurantIdChanged}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a1633ea58a17fdba0b698e32db74ec794}{itemAdded}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item,\ \textcolor{keywordtype}{int}\ quantity);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a00c69f6c1ba8fe018849c03a27ad2a92}{itemRemoved}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_a0fcc1cda3a3e66eb0caa05bd9505369e}{itemQuantityChanged}}(\mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item,\ \textcolor{keywordtype}{int}\ quantity);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cart_acb46ef5846aa07aba6e93911fa220796}{cartCleared}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ private:}
+\DoxyCodeLine{00049\ \ \ \ \ QMap<\mbox{\hyperlink{class_menu_item}{MenuItem}}*,\ \textcolor{keywordtype}{int}>\ m\_items;}
+\DoxyCodeLine{00050\ \ \ \ \ QString\ m\_restaurantId;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_totalPrice;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_itemCount;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ updateTotals();}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CART\_H}}
+
+\end{DoxyCode}

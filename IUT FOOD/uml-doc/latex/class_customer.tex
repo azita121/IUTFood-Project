@@ -1,0 +1,380 @@
+\doxysection{Customer Class Reference}
+\hypertarget{class_customer}{}\label{class_customer}\index{Customer@{Customer}}
+
+
+{\ttfamily \#include $<$customer.\+h$>$}
+
+
+
+Inheritance diagram for Customer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_customer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Customer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_customer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_customer_afd5c72c04ecbb1e3e2a25d9e9b9caf71}{address\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_customer_afaabeacceb98f6fc181215aec87bc56e}{phone\+Number\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{username\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{email\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{user\+Type\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{token\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phone\+Number\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{city\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{location\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_af381724ee8c2d8e6d4729d99954fd834}{Customer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_customer_aed8d168b0a07801d11c55edd82fb7e62}{Customer}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_customer_ab93fb14683b0393b9c900109f77c2629}{\texorpdfstring{$\sim$}{\string~}\+Customer}} ()
+\item 
+QString \mbox{\hyperlink{class_customer_af84fb6a2fc87ec70bc500324a44745de}{address}} () const
+\item 
+QString \mbox{\hyperlink{class_customer_a6f8fe0782be11da4fd4c4ba454ac2814}{phone\+Number}} () const
+\item 
+void \mbox{\hyperlink{class_customer_addd0675e408a13f6ab95ec5bd5a3a13b}{set\+Address}} (const QString \&\mbox{\hyperlink{class_customer_afb24c6a104cf6d2b66c876377b6cf574}{address}})
+\item 
+void \mbox{\hyperlink{class_customer_a5cfde47381f7a8690a2f9bd9b13650cb}{set\+Phone\+Number}} (const QString \&\mbox{\hyperlink{class_customer_a4fff6871894f6b5a2abbc6e441dd702a}{phone\+Number}})
+\item 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_a73389c9d7580163cb0cad2b3310e12d7}{order\+History}} () const
+\item 
+void \mbox{\hyperlink{class_customer_aa6e2119e404d6862ee034eb9f75b3c9f}{add\+Order}} (\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*}order)
+\item 
+QJson\+Object \mbox{\hyperlink{class_customer_a7b25ab511b3f907d5dfafe9e3b48a595}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_customer_ad01cfb3eeeaf67489ff7c30ef559df83}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_user_af9f90160504b90d8917182afb470f54a}{User}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_user_a52a054713f457dc73a92110c5cde7483}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_user_ad7d2bd0336217880b4d57a75c670c7fc}{username}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a0e27687d36ece83cf40b7c1ccc62d530}{email}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abb223364f7d797b5f054f49a3d41863b}{user\+Type}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a9f9ce917b9a77c20170ccc657d81c6cd}{token}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a5c1a695167d183203b34fa4935ce19fe}{phone\+Number}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abde9fb5af6b50d274d8579ad064acefe}{city}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a63e2a44219f7b621a5f188835585d7d3}{location}} () const
+\item 
+void \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{set\+Id}} (const QString \&\mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}})
+\item 
+void \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{set\+Username}} (const QString \&\mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}})
+\item 
+void \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{set\+Email}} (const QString \&\mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}})
+\item 
+void \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{set\+User\+Type}} (const QString \&\mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}})
+\item 
+void \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{set\+Token}} (const QString \&\mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}})
+\item 
+void \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{set\+Phone\+Number}} (const QString \&\mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}})
+\item 
+void \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{set\+City}} (const QString \&\mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}})
+\item 
+void \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{set\+Location}} (const QString \&\mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_user_a683f88bbea447ed676c792699fb408c0}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_customer_afb24c6a104cf6d2b66c876377b6cf574}{address}}
+\item 
+QString \mbox{\hyperlink{class_customer_a4fff6871894f6b5a2abbc6e441dd702a}{phone\+Number}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}}
+\item 
+QString \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}
+\item 
+QString \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}
+\item 
+QString \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}}
+\item 
+QString \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}
+\item 
+QString \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}}
+\item 
+QString \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}
+\item 
+QString \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a277da358c40ecdf8219b73115efb2dc2}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_customer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_customer_af381724ee8c2d8e6d4729d99954fd834}\index{Customer@{Customer}!Customer@{Customer}}
+\index{Customer@{Customer}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{Customer()}{Customer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_customer_af381724ee8c2d8e6d4729d99954fd834} 
+Customer\+::\+Customer (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_af381724ee8c2d8e6d4729d99954fd834_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_customer_af381724ee8c2d8e6d4729d99954fd834_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_aed8d168b0a07801d11c55edd82fb7e62}\index{Customer@{Customer}!Customer@{Customer}}
+\index{Customer@{Customer}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{Customer()}{Customer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_customer_aed8d168b0a07801d11c55edd82fb7e62} 
+Customer\+::\+Customer (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_aed8d168b0a07801d11c55edd82fb7e62_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_ab93fb14683b0393b9c900109f77c2629}\index{Customer@{Customer}!````~Customer@{\texorpdfstring{$\sim$}{\string~}Customer}}
+\index{````~Customer@{\texorpdfstring{$\sim$}{\string~}Customer}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Customer()}{\string~Customer()}}
+{\footnotesize\ttfamily \label{class_customer_ab93fb14683b0393b9c900109f77c2629} 
+Customer\+::\texorpdfstring{$\sim$}{\string~}\+Customer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_customer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_aa6e2119e404d6862ee034eb9f75b3c9f}\index{Customer@{Customer}!addOrder@{addOrder}}
+\index{addOrder@{addOrder}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{addOrder()}{addOrder()}}
+{\footnotesize\ttfamily \label{class_customer_aa6e2119e404d6862ee034eb9f75b3c9f} 
+void Customer\+::add\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_customer_aa6e2119e404d6862ee034eb9f75b3c9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_af84fb6a2fc87ec70bc500324a44745de}\index{Customer@{Customer}!address@{address}}
+\index{address@{address}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{address()}{address()}}
+{\footnotesize\ttfamily \label{class_customer_af84fb6a2fc87ec70bc500324a44745de} 
+QString Customer\+::address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_afd5c72c04ecbb1e3e2a25d9e9b9caf71}\index{Customer@{Customer}!addressChanged@{addressChanged}}
+\index{addressChanged@{addressChanged}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{addressChanged}{addressChanged}}
+{\footnotesize\ttfamily \label{class_customer_afd5c72c04ecbb1e3e2a25d9e9b9caf71} 
+void Customer\+::address\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_customer_afd5c72c04ecbb1e3e2a25d9e9b9caf71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_afd5c72c04ecbb1e3e2a25d9e9b9caf71_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_ad01cfb3eeeaf67489ff7c30ef559df83}\index{Customer@{Customer}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_customer_ad01cfb3eeeaf67489ff7c30ef559df83} 
+void Customer\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_ad01cfb3eeeaf67489ff7c30ef559df83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_customer_ad01cfb3eeeaf67489ff7c30ef559df83_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_a73389c9d7580163cb0cad2b3310e12d7}\index{Customer@{Customer}!orderHistory@{orderHistory}}
+\index{orderHistory@{orderHistory}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{orderHistory()}{orderHistory()}}
+{\footnotesize\ttfamily \label{class_customer_a73389c9d7580163cb0cad2b3310e12d7} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Customer\+::order\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_customer_a73389c9d7580163cb0cad2b3310e12d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_a6f8fe0782be11da4fd4c4ba454ac2814}\index{Customer@{Customer}!phoneNumber@{phoneNumber}}
+\index{phoneNumber@{phoneNumber}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{phoneNumber()}{phoneNumber()}}
+{\footnotesize\ttfamily \label{class_customer_a6f8fe0782be11da4fd4c4ba454ac2814} 
+QString Customer\+::phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_customer_afaabeacceb98f6fc181215aec87bc56e}\index{Customer@{Customer}!phoneNumberChanged@{phoneNumberChanged}}
+\index{phoneNumberChanged@{phoneNumberChanged}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{phoneNumberChanged}{phoneNumberChanged}}
+{\footnotesize\ttfamily \label{class_customer_afaabeacceb98f6fc181215aec87bc56e} 
+void Customer\+::phone\+Number\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_customer_afaabeacceb98f6fc181215aec87bc56e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_afaabeacceb98f6fc181215aec87bc56e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_addd0675e408a13f6ab95ec5bd5a3a13b}\index{Customer@{Customer}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily \label{class_customer_addd0675e408a13f6ab95ec5bd5a3a13b} 
+void Customer\+::set\+Address (\begin{DoxyParamCaption}\item[{const QString \&}]{address}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_addd0675e408a13f6ab95ec5bd5a3a13b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_customer_addd0675e408a13f6ab95ec5bd5a3a13b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_a5cfde47381f7a8690a2f9bd9b13650cb}\index{Customer@{Customer}!setPhoneNumber@{setPhoneNumber}}
+\index{setPhoneNumber@{setPhoneNumber}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setPhoneNumber()}{setPhoneNumber()}}
+{\footnotesize\ttfamily \label{class_customer_a5cfde47381f7a8690a2f9bd9b13650cb} 
+void Customer\+::set\+Phone\+Number (\begin{DoxyParamCaption}\item[{const QString \&}]{phone\+Number}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_a5cfde47381f7a8690a2f9bd9b13650cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_customer_a5cfde47381f7a8690a2f9bd9b13650cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_customer_a7b25ab511b3f907d5dfafe9e3b48a595}\index{Customer@{Customer}!toJson@{toJson}}
+\index{toJson@{toJson}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_customer_a7b25ab511b3f907d5dfafe9e3b48a595} 
+QJson\+Object Customer\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_customer_a7b25ab511b3f907d5dfafe9e3b48a595_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_customer_a7b25ab511b3f907d5dfafe9e3b48a595_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_customer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_customer_afb24c6a104cf6d2b66c876377b6cf574}\index{Customer@{Customer}!address@{address}}
+\index{address@{address}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily \label{class_customer_afb24c6a104cf6d2b66c876377b6cf574} 
+QString Customer\+::address\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_customer_a4fff6871894f6b5a2abbc6e441dd702a}\index{Customer@{Customer}!phoneNumber@{phoneNumber}}
+\index{phoneNumber@{phoneNumber}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{phoneNumber}{phoneNumber}}
+{\footnotesize\ttfamily \label{class_customer_a4fff6871894f6b5a2abbc6e441dd702a} 
+QString Customer\+::phone\+Number\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{customer_8h}{customer.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{customer_8cpp}{customer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,359 @@
+\doxysection{Restaurant\+Owner Class Reference}
+\hypertarget{class_restaurant_owner}{}\label{class_restaurant_owner}\index{RestaurantOwner@{RestaurantOwner}}
+
+
+{\ttfamily \#include $<$restaurantowner.\+h$>$}
+
+
+
+Inheritance diagram for Restaurant\+Owner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_restaurant_owner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Restaurant\+Owner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_restaurant_owner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_ac899739c85bb65873a6a0b95666b7791}{restaurant\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_a674191d0e6cb29fa3f0060ddf6b338bc}{is\+Approved\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{username\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{email\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{user\+Type\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{token\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phone\+Number\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{city\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{location\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_restaurant_owner_ac60fc9c8c29bbdad975d720a95e166b2}{Restaurant\+Owner}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_restaurant_owner_a6e4b26e1e2cbd040d51f2a3d232075bc}{Restaurant\+Owner}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_restaurant_owner_ac01702a388af1470de1c9d2545c414c6}{\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner}} ()
+\item 
+QString \mbox{\hyperlink{class_restaurant_owner_a6d8b3336e92d53631213f87702a89b99}{restaurant\+Id}} () const
+\item 
+bool \mbox{\hyperlink{class_restaurant_owner_ac0f109151b4195948d301d37827acb92}{is\+Approved}} () const
+\item 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_ab87c8d88a2756a2d1f1e332d905d6f1b}{restaurant}} () const
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_aa5a4f729fefc78eb9b0e61cf655a4c09}{set\+Restaurant\+Id}} (const QString \&\mbox{\hyperlink{class_restaurant_owner_aca33dacdd5b91db081c761fd77983167}{restaurant\+Id}})
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_a62d200cb5ac0a9998fbea0a3ef26db5b}{set\+Is\+Approved}} (bool \mbox{\hyperlink{class_restaurant_owner_ab1019e7e5b4feb08c38f88cf0e683869}{is\+Approved}})
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_aeb1652877cb411fd1814b5b3ffc17116}{set\+Restaurant}} (\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_restaurant_owner_ab87c8d88a2756a2d1f1e332d905d6f1b}{restaurant}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_restaurant_owner_a162a4b274565375e0abd533b3dc88d8b}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_a4062c93a298d80897b0083d10f9500d5}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_user_af9f90160504b90d8917182afb470f54a}{User}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_user_a52a054713f457dc73a92110c5cde7483}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_user_ad7d2bd0336217880b4d57a75c670c7fc}{username}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a0e27687d36ece83cf40b7c1ccc62d530}{email}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abb223364f7d797b5f054f49a3d41863b}{user\+Type}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a9f9ce917b9a77c20170ccc657d81c6cd}{token}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a5c1a695167d183203b34fa4935ce19fe}{phone\+Number}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abde9fb5af6b50d274d8579ad064acefe}{city}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a63e2a44219f7b621a5f188835585d7d3}{location}} () const
+\item 
+void \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{set\+Id}} (const QString \&\mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}})
+\item 
+void \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{set\+Username}} (const QString \&\mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}})
+\item 
+void \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{set\+Email}} (const QString \&\mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}})
+\item 
+void \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{set\+User\+Type}} (const QString \&\mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}})
+\item 
+void \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{set\+Token}} (const QString \&\mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}})
+\item 
+void \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{set\+Phone\+Number}} (const QString \&\mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}})
+\item 
+void \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{set\+City}} (const QString \&\mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}})
+\item 
+void \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{set\+Location}} (const QString \&\mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_user_a683f88bbea447ed676c792699fb408c0}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_restaurant_owner_aca33dacdd5b91db081c761fd77983167}{restaurant\+Id}}
+\item 
+bool \mbox{\hyperlink{class_restaurant_owner_ab1019e7e5b4feb08c38f88cf0e683869}{is\+Approved}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}}
+\item 
+QString \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}
+\item 
+QString \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}
+\item 
+QString \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}}
+\item 
+QString \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}
+\item 
+QString \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}}
+\item 
+QString \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}
+\item 
+QString \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_user}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a277da358c40ecdf8219b73115efb2dc2}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_restaurant_owner_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_restaurant_owner_ac60fc9c8c29bbdad975d720a95e166b2}\index{RestaurantOwner@{RestaurantOwner}!RestaurantOwner@{RestaurantOwner}}
+\index{RestaurantOwner@{RestaurantOwner}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{RestaurantOwner()}{RestaurantOwner()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ac60fc9c8c29bbdad975d720a95e166b2} 
+Restaurant\+Owner\+::\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_ac60fc9c8c29bbdad975d720a95e166b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_a6e4b26e1e2cbd040d51f2a3d232075bc}\index{RestaurantOwner@{RestaurantOwner}!RestaurantOwner@{RestaurantOwner}}
+\index{RestaurantOwner@{RestaurantOwner}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{RestaurantOwner()}{RestaurantOwner()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a6e4b26e1e2cbd040d51f2a3d232075bc} 
+Restaurant\+Owner\+::\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_a6e4b26e1e2cbd040d51f2a3d232075bc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_ac01702a388af1470de1c9d2545c414c6}\index{RestaurantOwner@{RestaurantOwner}!````~RestaurantOwner@{\texorpdfstring{$\sim$}{\string~}RestaurantOwner}}
+\index{````~RestaurantOwner@{\texorpdfstring{$\sim$}{\string~}RestaurantOwner}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RestaurantOwner()}{\string~RestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ac01702a388af1470de1c9d2545c414c6} 
+Restaurant\+Owner\+::\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_restaurant_owner_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_restaurant_owner_a4062c93a298d80897b0083d10f9500d5}\index{RestaurantOwner@{RestaurantOwner}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a4062c93a298d80897b0083d10f9500d5} 
+void Restaurant\+Owner\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_a4062c93a298d80897b0083d10f9500d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_a4062c93a298d80897b0083d10f9500d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_ac0f109151b4195948d301d37827acb92}\index{RestaurantOwner@{RestaurantOwner}!isApproved@{isApproved}}
+\index{isApproved@{isApproved}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{isApproved()}{isApproved()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ac0f109151b4195948d301d37827acb92} 
+bool Restaurant\+Owner\+::is\+Approved (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_a674191d0e6cb29fa3f0060ddf6b338bc}\index{RestaurantOwner@{RestaurantOwner}!isApprovedChanged@{isApprovedChanged}}
+\index{isApprovedChanged@{isApprovedChanged}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{isApprovedChanged}{isApprovedChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a674191d0e6cb29fa3f0060ddf6b338bc} 
+void Restaurant\+Owner\+::is\+Approved\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_restaurant_owner_a674191d0e6cb29fa3f0060ddf6b338bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_a674191d0e6cb29fa3f0060ddf6b338bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_ab87c8d88a2756a2d1f1e332d905d6f1b}\index{RestaurantOwner@{RestaurantOwner}!restaurant@{restaurant}}
+\index{restaurant@{restaurant}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{restaurant()}{restaurant()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ab87c8d88a2756a2d1f1e332d905d6f1b} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+::restaurant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_ab87c8d88a2756a2d1f1e332d905d6f1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_a6d8b3336e92d53631213f87702a89b99}\index{RestaurantOwner@{RestaurantOwner}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{restaurantId()}{restaurantId()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a6d8b3336e92d53631213f87702a89b99} 
+QString Restaurant\+Owner\+::restaurant\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_ac899739c85bb65873a6a0b95666b7791}\index{RestaurantOwner@{RestaurantOwner}!restaurantIdChanged@{restaurantIdChanged}}
+\index{restaurantIdChanged@{restaurantIdChanged}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{restaurantIdChanged}{restaurantIdChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ac899739c85bb65873a6a0b95666b7791} 
+void Restaurant\+Owner\+::restaurant\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_restaurant_owner_ac899739c85bb65873a6a0b95666b7791_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_ac899739c85bb65873a6a0b95666b7791_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_a62d200cb5ac0a9998fbea0a3ef26db5b}\index{RestaurantOwner@{RestaurantOwner}!setIsApproved@{setIsApproved}}
+\index{setIsApproved@{setIsApproved}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{setIsApproved()}{setIsApproved()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a62d200cb5ac0a9998fbea0a3ef26db5b} 
+void Restaurant\+Owner\+::set\+Is\+Approved (\begin{DoxyParamCaption}\item[{bool}]{is\+Approved}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_a62d200cb5ac0a9998fbea0a3ef26db5b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_aeb1652877cb411fd1814b5b3ffc17116}\index{RestaurantOwner@{RestaurantOwner}!setRestaurant@{setRestaurant}}
+\index{setRestaurant@{setRestaurant}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{setRestaurant()}{setRestaurant()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_aeb1652877cb411fd1814b5b3ffc17116} 
+void Restaurant\+Owner\+::set\+Restaurant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*}}]{restaurant}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_aeb1652877cb411fd1814b5b3ffc17116_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_aa5a4f729fefc78eb9b0e61cf655a4c09}\index{RestaurantOwner@{RestaurantOwner}!setRestaurantId@{setRestaurantId}}
+\index{setRestaurantId@{setRestaurantId}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{setRestaurantId()}{setRestaurantId()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_aa5a4f729fefc78eb9b0e61cf655a4c09} 
+void Restaurant\+Owner\+::set\+Restaurant\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_aa5a4f729fefc78eb9b0e61cf655a4c09_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_aa5a4f729fefc78eb9b0e61cf655a4c09_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_a162a4b274565375e0abd533b3dc88d8b}\index{RestaurantOwner@{RestaurantOwner}!toJson@{toJson}}
+\index{toJson@{toJson}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_a162a4b274565375e0abd533b3dc88d8b} 
+QJson\+Object Restaurant\+Owner\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_restaurant_owner_a162a4b274565375e0abd533b3dc88d8b_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_restaurant_owner_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_restaurant_owner_ab1019e7e5b4feb08c38f88cf0e683869}\index{RestaurantOwner@{RestaurantOwner}!isApproved@{isApproved}}
+\index{isApproved@{isApproved}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{isApproved}{isApproved}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_ab1019e7e5b4feb08c38f88cf0e683869} 
+bool Restaurant\+Owner\+::is\+Approved\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_owner_aca33dacdd5b91db081c761fd77983167}\index{RestaurantOwner@{RestaurantOwner}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!RestaurantOwner@{RestaurantOwner}}
+\doxysubsubsection{\texorpdfstring{restaurantId}{restaurantId}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_aca33dacdd5b91db081c761fd77983167} 
+QString Restaurant\+Owner\+::restaurant\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{restaurantowner_8h}{restaurantowner.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{restaurantowner_8cpp}{restaurantowner.\+cpp}}\end{DoxyCompactItemize}

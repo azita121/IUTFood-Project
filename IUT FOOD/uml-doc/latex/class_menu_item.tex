@@ -1,0 +1,612 @@
+\doxysection{Menu\+Item Class Reference}
+\hypertarget{class_menu_item}{}\label{class_menu_item}\index{MenuItem@{MenuItem}}
+
+
+{\ttfamily \#include $<$menuitem.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_menu_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_menu_item__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_a995c330ecf2d5e93159e03a967be7a55}{name\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_abe20e155b355274a0eac06f785df9b29}{description\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c}{price\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a}{category\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_ac70e9fee1c0567a86fc11686def0637d}{image\+Url\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7}{available\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa}{ingredients\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}{Menu\+Item}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_menu_item_ab6ef1edf0a88bdbec71b8fb278a6b9d0}{Menu\+Item}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_menu_item_a6f922e8d632ae0a960892fd8fa321c4a}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_menu_item_a6b596da7431b9d86e04a6b0cad4b7627}{name}} () const
+\item 
+QString \mbox{\hyperlink{class_menu_item_a44d8c64a13b1613f2cc7351fc818f1de}{description}} () const
+\item 
+double \mbox{\hyperlink{class_menu_item_a4620a6c3880ccca1de8fcc67d5467949}{price}} () const
+\item 
+QString \mbox{\hyperlink{class_menu_item_a658813ea86cd29d91191f103f829bb75}{category}} () const
+\item 
+QString \mbox{\hyperlink{class_menu_item_ab3e5f2537105135f574bfdd5ec6eed66}{image\+Url}} () const
+\item 
+bool \mbox{\hyperlink{class_menu_item_ac083315c22a2edb3b2cc5e8836af3560}{available}} () const
+\item 
+QString \mbox{\hyperlink{class_menu_item_aa204f42da668bae951c67dba203a4a81}{ingredients}} () const
+\item 
+void \mbox{\hyperlink{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa}{set\+Id}} (const QString \&\mbox{\hyperlink{class_menu_item_a52d2ad5d469fa3c4c9adb60a9f955067}{id}})
+\item 
+void \mbox{\hyperlink{class_menu_item_afeab17ca6776040c161e7745a44ee365}{set\+Name}} (const QString \&\mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}})
+\item 
+void \mbox{\hyperlink{class_menu_item_af97642bda08149846dcbe9cb23772a92}{set\+Description}} (const QString \&\mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}})
+\item 
+void \mbox{\hyperlink{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}{set\+Price}} (double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}})
+\item 
+void \mbox{\hyperlink{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9}{set\+Category}} (const QString \&\mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}})
+\item 
+void \mbox{\hyperlink{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b}{set\+Image\+Url}} (const QString \&url)
+\item 
+void \mbox{\hyperlink{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1}{set\+Available}} (bool \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}})
+\item 
+void \mbox{\hyperlink{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f}{set\+Ingredients}} (const QString \&\mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_menu_item_a97142fd93b3fd112418b939b626a6a28}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_item_a6bbc78f8449383caed57e67cc1933608}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_menu_item_a52d2ad5d469fa3c4c9adb60a9f955067}{id}}
+\item 
+QString \mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}}
+\item 
+QString \mbox{\hyperlink{class_menu_item_aeed75191249129063d4427ebf27454a1}{description}}
+\item 
+double \mbox{\hyperlink{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}{price}}
+\item 
+QString \mbox{\hyperlink{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}{category}}
+\item 
+QString \mbox{\hyperlink{class_menu_item_a125b3426feacb4a50146d1f2eb740b85}{image\+Url}}
+\item 
+bool \mbox{\hyperlink{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}{available}}
+\item 
+QString \mbox{\hyperlink{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}{ingredients}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_menu_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66}\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66} 
+Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a975a177d30bf90016e9f6cdacaf58c66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_ab6ef1edf0a88bdbec71b8fb278a6b9d0}\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\index{MenuItem@{MenuItem}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{MenuItem()}{MenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_menu_item_ab6ef1edf0a88bdbec71b8fb278a6b9d0} 
+Menu\+Item\+::\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ab6ef1edf0a88bdbec71b8fb278a6b9d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_menu_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_item_ac083315c22a2edb3b2cc5e8836af3560}\index{MenuItem@{MenuItem}!available@{available}}
+\index{available@{available}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily \label{class_menu_item_ac083315c22a2edb3b2cc5e8836af3560} 
+bool Menu\+Item\+::available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7}\index{MenuItem@{MenuItem}!availableChanged@{availableChanged}}
+\index{availableChanged@{availableChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{availableChanged}{availableChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7} 
+void Menu\+Item\+::available\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ae7b4873595d12387bc1877ccb1254bd7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a658813ea86cd29d91191f103f829bb75}\index{MenuItem@{MenuItem}!category@{category}}
+\index{category@{category}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{category()}{category()}}
+{\footnotesize\ttfamily \label{class_menu_item_a658813ea86cd29d91191f103f829bb75} 
+QString Menu\+Item\+::category (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a}\index{MenuItem@{MenuItem}!categoryChanged@{categoryChanged}}
+\index{categoryChanged@{categoryChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{categoryChanged}{categoryChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a} 
+void Menu\+Item\+::category\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a640e366ee1680724d3c08bb5c6594d3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a44d8c64a13b1613f2cc7351fc818f1de}\index{MenuItem@{MenuItem}!description@{description}}
+\index{description@{description}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_menu_item_a44d8c64a13b1613f2cc7351fc818f1de} 
+QString Menu\+Item\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_abe20e155b355274a0eac06f785df9b29}\index{MenuItem@{MenuItem}!descriptionChanged@{descriptionChanged}}
+\index{descriptionChanged@{descriptionChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{descriptionChanged}{descriptionChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_abe20e155b355274a0eac06f785df9b29} 
+void Menu\+Item\+::description\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_menu_item_abe20e155b355274a0eac06f785df9b29_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_abe20e155b355274a0eac06f785df9b29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5}\index{MenuItem@{MenuItem}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5} 
+void Menu\+Item\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_menu_item_ab3ebb9d675c9f3cbfd131d9faa46b5b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a6bbc78f8449383caed57e67cc1933608}\index{MenuItem@{MenuItem}!fromJsonObject@{fromJsonObject}}
+\index{fromJsonObject@{fromJsonObject}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{fromJsonObject()}{fromJsonObject()}}
+{\footnotesize\ttfamily \label{class_menu_item_a6bbc78f8449383caed57e67cc1933608} 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} Menu\+Item\+::from\+Json\+Object (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a6bbc78f8449383caed57e67cc1933608_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a6f922e8d632ae0a960892fd8fa321c4a}\index{MenuItem@{MenuItem}!id@{id}}
+\index{id@{id}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_menu_item_a6f922e8d632ae0a960892fd8fa321c4a} 
+QString Menu\+Item\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909}\index{MenuItem@{MenuItem}!idChanged@{idChanged}}
+\index{idChanged@{idChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{idChanged}{idChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909} 
+void Menu\+Item\+::id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_aeec513ebc73bee79b9bf3e82cc9fe909_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_ab3e5f2537105135f574bfdd5ec6eed66}\index{MenuItem@{MenuItem}!imageUrl@{imageUrl}}
+\index{imageUrl@{imageUrl}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{imageUrl()}{imageUrl()}}
+{\footnotesize\ttfamily \label{class_menu_item_ab3e5f2537105135f574bfdd5ec6eed66} 
+QString Menu\+Item\+::image\+Url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_ac70e9fee1c0567a86fc11686def0637d}\index{MenuItem@{MenuItem}!imageUrlChanged@{imageUrlChanged}}
+\index{imageUrlChanged@{imageUrlChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{imageUrlChanged}{imageUrlChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_ac70e9fee1c0567a86fc11686def0637d} 
+void Menu\+Item\+::image\+Url\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_menu_item_ac70e9fee1c0567a86fc11686def0637d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ac70e9fee1c0567a86fc11686def0637d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_aa204f42da668bae951c67dba203a4a81}\index{MenuItem@{MenuItem}!ingredients@{ingredients}}
+\index{ingredients@{ingredients}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{ingredients()}{ingredients()}}
+{\footnotesize\ttfamily \label{class_menu_item_aa204f42da668bae951c67dba203a4a81} 
+QString Menu\+Item\+::ingredients (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa}\index{MenuItem@{MenuItem}!ingredientsChanged@{ingredientsChanged}}
+\index{ingredientsChanged@{ingredientsChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{ingredientsChanged}{ingredientsChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa} 
+void Menu\+Item\+::ingredients\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a70fe7a8f6154733a3cfbfbc624629bfa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a6b596da7431b9d86e04a6b0cad4b7627}\index{MenuItem@{MenuItem}!name@{name}}
+\index{name@{name}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_menu_item_a6b596da7431b9d86e04a6b0cad4b7627} 
+QString Menu\+Item\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_a995c330ecf2d5e93159e03a967be7a55}\index{MenuItem@{MenuItem}!nameChanged@{nameChanged}}
+\index{nameChanged@{nameChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{nameChanged}{nameChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_a995c330ecf2d5e93159e03a967be7a55} 
+void Menu\+Item\+::name\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_menu_item_a995c330ecf2d5e93159e03a967be7a55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a995c330ecf2d5e93159e03a967be7a55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a4620a6c3880ccca1de8fcc67d5467949}\index{MenuItem@{MenuItem}!price@{price}}
+\index{price@{price}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{price()}{price()}}
+{\footnotesize\ttfamily \label{class_menu_item_a4620a6c3880ccca1de8fcc67d5467949} 
+double Menu\+Item\+::price (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c}\index{MenuItem@{MenuItem}!priceChanged@{priceChanged}}
+\index{priceChanged@{priceChanged}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{priceChanged}{priceChanged}}
+{\footnotesize\ttfamily \label{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c} 
+void Menu\+Item\+::price\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a71edaa29a96f21756ee6c0413d0b977c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1}\index{MenuItem@{MenuItem}!setAvailable@{setAvailable}}
+\index{setAvailable@{setAvailable}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setAvailable()}{setAvailable()}}
+{\footnotesize\ttfamily \label{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1} 
+void Menu\+Item\+::set\+Available (\begin{DoxyParamCaption}\item[{bool}]{available}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a6751e2cc24d5890fd261f289bd95dbb1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9}\index{MenuItem@{MenuItem}!setCategory@{setCategory}}
+\index{setCategory@{setCategory}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setCategory()}{setCategory()}}
+{\footnotesize\ttfamily \label{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9} 
+void Menu\+Item\+::set\+Category (\begin{DoxyParamCaption}\item[{const QString \&}]{category}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_abf6e7d5c94f15fc3f87986f4e06aadb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_af97642bda08149846dcbe9cb23772a92}\index{MenuItem@{MenuItem}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily \label{class_menu_item_af97642bda08149846dcbe9cb23772a92} 
+void Menu\+Item\+::set\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{description}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_af97642bda08149846dcbe9cb23772a92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_af97642bda08149846dcbe9cb23772a92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa}\index{MenuItem@{MenuItem}!setId@{setId}}
+\index{setId@{setId}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa} 
+void Menu\+Item\+::set\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a05c731880fe0ed8d0be0b7bfbe3bcaaa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b}\index{MenuItem@{MenuItem}!setImageUrl@{setImageUrl}}
+\index{setImageUrl@{setImageUrl}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setImageUrl()}{setImageUrl()}}
+{\footnotesize\ttfamily \label{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b} 
+void Menu\+Item\+::set\+Image\+Url (\begin{DoxyParamCaption}\item[{const QString \&}]{url}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ac7baadc065c62efd1cddcebfb516f47b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f}\index{MenuItem@{MenuItem}!setIngredients@{setIngredients}}
+\index{setIngredients@{setIngredients}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setIngredients()}{setIngredients()}}
+{\footnotesize\ttfamily \label{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f} 
+void Menu\+Item\+::set\+Ingredients (\begin{DoxyParamCaption}\item[{const QString \&}]{ingredients}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_a2400a5e3b92e649a3506e92836c4c69f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_afeab17ca6776040c161e7745a44ee365}\index{MenuItem@{MenuItem}!setName@{setName}}
+\index{setName@{setName}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_menu_item_afeab17ca6776040c161e7745a44ee365} 
+void Menu\+Item\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_afeab17ca6776040c161e7745a44ee365_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_afeab17ca6776040c161e7745a44ee365_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919}\index{MenuItem@{MenuItem}!setPrice@{setPrice}}
+\index{setPrice@{setPrice}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{setPrice()}{setPrice()}}
+{\footnotesize\ttfamily \label{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919} 
+void Menu\+Item\+::set\+Price (\begin{DoxyParamCaption}\item[{double}]{price}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_item_ae2ebb751e94c46e5bbe32dc2f8003919_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_item_a97142fd93b3fd112418b939b626a6a28}\index{MenuItem@{MenuItem}!toJson@{toJson}}
+\index{toJson@{toJson}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_menu_item_a97142fd93b3fd112418b939b626a6a28} 
+QJson\+Object Menu\+Item\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_menu_item_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb}\index{MenuItem@{MenuItem}!available@{available}}
+\index{available@{available}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily \label{class_menu_item_ab4aff89a5bb4e45993c0f00a59f094cb} 
+bool Menu\+Item\+::available\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936}\index{MenuItem@{MenuItem}!category@{category}}
+\index{category@{category}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily \label{class_menu_item_ade2b88fc288e7afbe7e06a7b50d0b936} 
+QString Menu\+Item\+::category\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_aeed75191249129063d4427ebf27454a1}\index{MenuItem@{MenuItem}!description@{description}}
+\index{description@{description}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_menu_item_aeed75191249129063d4427ebf27454a1} 
+QString Menu\+Item\+::description\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_a52d2ad5d469fa3c4c9adb60a9f955067}\index{MenuItem@{MenuItem}!id@{id}}
+\index{id@{id}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_menu_item_a52d2ad5d469fa3c4c9adb60a9f955067} 
+QString Menu\+Item\+::id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_a125b3426feacb4a50146d1f2eb740b85}\index{MenuItem@{MenuItem}!imageUrl@{imageUrl}}
+\index{imageUrl@{imageUrl}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{imageUrl}{imageUrl}}
+{\footnotesize\ttfamily \label{class_menu_item_a125b3426feacb4a50146d1f2eb740b85} 
+QString Menu\+Item\+::image\+Url\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3}\index{MenuItem@{MenuItem}!ingredients@{ingredients}}
+\index{ingredients@{ingredients}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{ingredients}{ingredients}}
+{\footnotesize\ttfamily \label{class_menu_item_ab768b74a7c121cf3e658cc2c151f56c3} 
+QString Menu\+Item\+::ingredients\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_aa576d5761c3449d179e7a118aebba526}\index{MenuItem@{MenuItem}!name@{name}}
+\index{name@{name}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_menu_item_aa576d5761c3449d179e7a118aebba526} 
+QString Menu\+Item\+::name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732}\index{MenuItem@{MenuItem}!price@{price}}
+\index{price@{price}!MenuItem@{MenuItem}}
+\doxysubsubsection{\texorpdfstring{price}{price}}
+{\footnotesize\ttfamily \label{class_menu_item_a05ed0defbede1c8398b3f3a610c1c732} 
+double Menu\+Item\+::price\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{menuitem_8h}{menuitem.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{menuitem_8cpp}{menuitem.\+cpp}}\end{DoxyCompactItemize}

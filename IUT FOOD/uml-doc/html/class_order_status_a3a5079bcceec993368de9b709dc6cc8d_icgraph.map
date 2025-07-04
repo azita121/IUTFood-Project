@@ -1,0 +1,7 @@
+<map id="OrderStatus::OrderStatus" name="OrderStatus::OrderStatus">
+<area shape="rect" id="Node000001" title=" " alt="" coords="221,31,390,57"/>
+<area shape="rect" id="Node000002" href="$class_order_status.html#af10a8c58d0693d0193cb40c38d148e3a" title=" " alt="" coords="5,5,173,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,35,173,31,174,26,205,30"/>
+<area shape="rect" id="Node000003" href="$class_order_status.html#a071aeb76df4e8725ecd1a4ddafe4ddec" title=" " alt="" coords="11,56,167,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,58,168,63,167,58,205,53"/>
+</map>

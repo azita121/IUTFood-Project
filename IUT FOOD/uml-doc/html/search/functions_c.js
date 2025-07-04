@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['observer_0',['Observer',['../class_observer.html#a535c8656871306792a63d03c0eda96c8',1,'Observer']]],
+  ['order_1',['Order',['../class_order.html#ac162527d3f5deb0747c22bcb59829dc7',1,'Order::Order(QObject *parent=nullptr)'],['../class_order.html#aed3f48b286fcb784a14c80d066349fc8',1,'Order::Order(const QJsonObject &amp;json, QObject *parent=nullptr)']]],
+  ['ordercancelled_2',['orderCancelled',['../class_customer_manager.html#a289b5ab48adb77eb96481e3f39f1ff0b',1,'CustomerManager']]],
+  ['ordercommand_3',['OrderCommand',['../class_order_command.html#a7f3ff249033353aeb6c4cd05e46439f3',1,'OrderCommand']]],
+  ['ordercommentadded_4',['orderCommentAdded',['../class_network_manager.html#a3353ff4fa28173b560e98ac7f74b8bbc',1,'NetworkManager']]],
+  ['ordercommentsreceived_5',['orderCommentsReceived',['../class_network_manager.html#a761d6de99398dbb5ae1854d268b74f7d',1,'NetworkManager']]],
+  ['ordercreated_6',['orderCreated',['../class_network_manager.html#af6451ee4250904c173f27242cf0716a1',1,'NetworkManager::orderCreated()'],['../class_order_manager.html#a2f82c37088bd3c3c2f92143951f174bb',1,'OrderManager::orderCreated()']]],
+  ['orderhistory_7',['orderHistory',['../class_customer.html#a73389c9d7580163cb0cad2b3310e12d7',1,'Customer']]],
+  ['orderhistoryreceived_8',['orderHistoryReceived',['../class_network_manager.html#ae0916c78368043387eff0342ea13e82e',1,'NetworkManager']]],
+  ['orderhistoryupdated_9',['orderHistoryUpdated',['../class_order_manager.html#aa118f04b70e72f8bc6a41ea6f4956746',1,'OrderManager']]],
+  ['orderplaced_10',['orderPlaced',['../class_customer_manager.html#a66d93239c3d05ebb4afc5dd85b9ad66b',1,'CustomerManager::orderPlaced()'],['../class_network_manager.html#a8780b86a89ae3e4e64ea5fc1a42f9e69',1,'NetworkManager::orderPlaced()'],['../class_order_manager.html#a605eb3a3246eafda4fde77ed41acd445',1,'OrderManager::orderPlaced()']]],
+  ['ordersreceived_11',['ordersReceived',['../class_admin_manager.html#a61317ff04400225f8b427d00978bd679',1,'AdminManager::ordersReceived()'],['../class_customer_manager.html#a16d91458265390e01adc149cecb6637c',1,'CustomerManager::ordersReceived()'],['../class_restaurant_owner_manager.html#a6c855db40d9d422fecb15bacc8814b2a',1,'RestaurantOwnerManager::ordersReceived()']]],
+  ['orderstatus_12',['OrderStatus',['../class_order_status.html#a3a5079bcceec993368de9b709dc6cc8d',1,'OrderStatus']]],
+  ['orderstatuschanged_13',['orderStatusChanged',['../class_observer.html#a7cc34c5357d829afe88c55b45674e3bb',1,'Observer']]],
+  ['orderstatusobserver_14',['OrderStatusObserver',['../class_order_status_observer.html#ad2e852be895e32961a1d81828b30de62',1,'OrderStatusObserver']]],
+  ['orderstatusupdated_15',['orderStatusUpdated',['../class_network_manager.html#a08f5f28d943bdada58299afe5751cfcb',1,'NetworkManager::orderStatusUpdated()'],['../class_order_manager.html#ac33545cf147d871d0b2e8109eceec1b9',1,'OrderManager::orderStatusUpdated()']]],
+  ['ordertime_16',['orderTime',['../class_order.html#a575f8b77323016621ae8ac8c575cb3aa',1,'Order']]],
+  ['ordertimechanged_17',['orderTimeChanged',['../class_order.html#ad4c007d2610eb7be84e6fb40fedabce2',1,'Order']]],
+  ['owneremailexists_18',['ownerEmailExists',['../class_database_manager.html#a50261478b907df297396dc46b4ab55e4',1,'DatabaseManager']]],
+  ['ownerphoneexists_19',['ownerPhoneExists',['../class_database_manager.html#a42590247c42be2b5ee13e96b4dd10f47',1,'DatabaseManager']]],
+  ['ownerprofilereceived_20',['ownerProfileReceived',['../class_network_manager.html#ac3a8bc16e8e9b8aeda1d1550fb6e0796',1,'NetworkManager']]],
+  ['ownerrestaurantsreceived_21',['ownerRestaurantsReceived',['../class_network_manager.html#acd2d26d545a3074262ff2c2d309a079e',1,'NetworkManager']]]
+];

@@ -1,0 +1,469 @@
+\doxysection{Restaurant\+Manager Class Reference}
+\hypertarget{class_restaurant_manager}{}\label{class_restaurant_manager}\index{RestaurantManager@{RestaurantManager}}
+
+
+{\ttfamily \#include $<$restaurantmanager.\+h$>$}
+
+
+
+Inheritance diagram for Restaurant\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{class_restaurant_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Restaurant\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{class_restaurant_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_restaurant_manager_a11f1d719290151c3ce5d2a900de4df4e}{restaurants\+Received}} (const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&restaurants)
+\item 
+void \mbox{\hyperlink{class_restaurant_manager_a0499ffa8198716ff3d9efeaebd216212}{menu\+Received}} (const QString \&restaurant\+Id, const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&menu)
+\item 
+void \mbox{\hyperlink{class_restaurant_manager_ae2ce3c51a97ea0867c0501fc65f0e740}{error}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_restaurant_manager_a163965d6ac88b2881cd0b98bf2264bd4}{get\+Restaurants}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_manager_a0b6035ffaa1df2fbbc1f751012c2a3f1}{get\+Restaurant\+Menu}} (const QString \&restaurant\+Id)
+\item 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_restaurant_manager_a0f9d6fe6ea5057d86f5b41a90d80dfec}{get\+Restaurant\+List}} () const
+\item 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_manager_a62ee487182d28557aba920b32f3b4a2f}{get\+Restaurant}} (const QString \&restaurant\+Id) const
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_restaurant_manager_a1d35b6848aba7d85fd3a10db7439b50e}{get\+Menu\+Items}} (const QString \&restaurant\+Id) const
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_af7b0717f5c6ff8a9b88420985244b975}{add\+Menu\+Item}} (const QString \&restaurant\+Id, const QJson\+Object \&item)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a677ef350ed7b2052766395bde7e92ff7}{update\+Menu\+Item}} (const QString \&restaurant\+Id, const QString \&item\+Id, const QJson\+Object \&updates)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a1ac68f0f49ce90118449d615386bd991}{delete\+Menu\+Item}} (const QString \&restaurant\+Id, const QString \&item\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a344738f5599c2a3bf3b31bebefcb7260}{get\+Menu\+Items}} (const QString \&restaurant\+Id)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a9b14dc338d716edc4ddafe6e7be1819b}{update\+Menu\+Category}} (const QString \&restaurant\+Id, const QString \&category\+Id, const QJson\+Object \&updates)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_aca06cccc9cebc371da3c6fd63ffa5fbf}{reorder\+Menu\+Items}} (const QString \&restaurant\+Id, const QJson\+Array \&item\+Order)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a44d35897db51201c6887222842d00f91}{add\+Rating}} (const QString \&restaurant\+Id, const QString \&user\+Id, int rating, const QString \&comment)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a9a5df37f7ffa58716c443088c1012038}{update\+Rating}} (const QString \&rating\+Id, int new\+Rating, const QString \&new\+Comment)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a2a4246452f5de396eb9ce6cfdc53cb44}{delete\+Rating}} (const QString \&rating\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a7828ef9282506926f27762f93504832d}{get\+Restaurant\+Ratings}} (const QString \&restaurant\+Id, int limit=10)
+\item 
+QJson\+Object \mbox{\hyperlink{class_restaurant_manager_a1508182a6fd3fe808ad2930a297c7766}{get\+Restaurant\+Rating\+Stats}} (const QString \&restaurant\+Id)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a489799f8e72d13f3b5ab57dce7ae0861}{report\+Rating}} (const QString \&rating\+Id, const QString \&reason)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a948b2bf9ba3fe2685423b5e77e256afe}{search\+Restaurants}} (const QString \&query, const QJson\+Object \&filters)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a82e960ad76a8741ec3607a4e26e16ae6}{get\+Restaurants\+By\+Category}} (const QString \&category)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a6990f4cba58958a6b1a114d984cf90e1}{get\+Top\+Rated\+Restaurants}} (int limit=10)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a316f89346b1f3358da40bad6ed8efacf}{get\+Popular\+Restaurants}} (int limit=10)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ac809a045910c9294c54e2f69156fe7ba}{get\+Nearby\+Restaurants}} (double latitude, double longitude, double radius)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a1c1d277691b9c47a46ac88976a075d74}{search\+Restaurants\+By\+Location}} (const QString \&location, double radius)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a9b2122d59f276f3157159cd99ae12ad2}{search\+Restaurants\+By\+Type}} (const QString \&type)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ab6a7fa9e551c4e9ccf0e6c94790da1cf}{search\+Restaurants\+By\+Price\+Range}} (double min\+Price, double max\+Price)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ade09068342d0d725f64fabc3a8c9c8e6}{search\+Restaurants\+By\+Cuisine}} (const QString \&cuisine)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ac4827d46155227a48bbc895840deb491}{search\+Restaurants\+By\+Operating\+Hours}} (const QString \&day, const QString \&time)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a99ae4bbf649217080992fef92580f462}{search\+Restaurants\+By\+Features}} (const QString\+List \&features)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a9a65e1c7e9be684ef41f692603835b79}{advanced\+Restaurant\+Search}} (const QJson\+Object \&criteria)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ae1e0137d6fd6d1dcf746426391a7c29a}{search\+Menu\+Items}} (const QString \&query, const QJson\+Object \&filters)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a8d7eea7879880c777c7f225c91cf653b}{get\+Menu\+Items\+By\+Category}} (const QString \&restaurant\+Id, const QString \&category)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a3efb537b26b883c1aa8fb96ea54047a3}{get\+Menu\+Items\+By\+Price\+Range}} (const QString \&restaurant\+Id, double min\+Price, double max\+Price)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a85bb1bfc9562411622f957041ee665db}{get\+Menu\+Items\+By\+Dietary\+Restrictions}} (const QString \&restaurant\+Id, const QString\+List \&restrictions)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a1f84bd0601dbb4d4082e4a871eab24ce}{get\+Menu\+Items\+By\+Ingredients}} (const QString \&restaurant\+Id, const QString\+List \&ingredients)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_a75cbca4e82dfd0f60507031b8a5c6aca}{get\+Menu\+Items\+By\+Availability}} (const QString \&restaurant\+Id, bool available)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_manager_ae3ac21e05603dc7a0896b3e7007cada9}{advanced\+Menu\+Item\+Search}} (const QString \&restaurant\+Id, const QJson\+Object \&criteria)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_af847612fedb53d0f278087dccb315cf6}{update\+Restaurant\+Profile}} (const QString \&restaurant\+Id, const QJson\+Object \&updates)
+\item 
+QJson\+Object \mbox{\hyperlink{class_restaurant_manager_a781df967236f163737c065395746e721}{get\+Restaurant\+Profile}} (const QString \&restaurant\+Id)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_a153506733ba6ec0fbe47bbd934aa102c}{update\+Restaurant\+Hours}} (const QString \&restaurant\+Id, const QJson\+Object \&hours)
+\item 
+bool \mbox{\hyperlink{class_restaurant_manager_ad31e8334fa5481586f13b74a290d9dc1}{update\+Restaurant\+Location}} (const QString \&restaurant\+Id, double latitude, double longitude)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_restaurant_manager}{Restaurant\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_manager_a828a7f3a6cf9c5d65ecfb0c80a4ec65b}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_restaurant_manager}{Restaurant\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_manager_a0453d073f2bb66873164dd1363c659f9}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_restaurant_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_restaurant_manager_af7b0717f5c6ff8a9b88420985244b975}\index{RestaurantManager@{RestaurantManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_af7b0717f5c6ff8a9b88420985244b975} 
+bool Restaurant\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Object \&}]{item}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a44d35897db51201c6887222842d00f91}\index{RestaurantManager@{RestaurantManager}!addRating@{addRating}}
+\index{addRating@{addRating}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{addRating()}{addRating()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a44d35897db51201c6887222842d00f91} 
+bool Restaurant\+Manager\+::add\+Rating (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{user\+Id}{, }\item[{int}]{rating}{, }\item[{const QString \&}]{comment}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_ae3ac21e05603dc7a0896b3e7007cada9}\index{RestaurantManager@{RestaurantManager}!advancedMenuItemSearch@{advancedMenuItemSearch}}
+\index{advancedMenuItemSearch@{advancedMenuItemSearch}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{advancedMenuItemSearch()}{advancedMenuItemSearch()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ae3ac21e05603dc7a0896b3e7007cada9} 
+QJson\+Array Restaurant\+Manager\+::advanced\+Menu\+Item\+Search (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Object \&}]{criteria}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a9a65e1c7e9be684ef41f692603835b79}\index{RestaurantManager@{RestaurantManager}!advancedRestaurantSearch@{advancedRestaurantSearch}}
+\index{advancedRestaurantSearch@{advancedRestaurantSearch}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{advancedRestaurantSearch()}{advancedRestaurantSearch()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a9a65e1c7e9be684ef41f692603835b79} 
+QJson\+Array Restaurant\+Manager\+::advanced\+Restaurant\+Search (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{criteria}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a1ac68f0f49ce90118449d615386bd991}\index{RestaurantManager@{RestaurantManager}!deleteMenuItem@{deleteMenuItem}}
+\index{deleteMenuItem@{deleteMenuItem}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{deleteMenuItem()}{deleteMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a1ac68f0f49ce90118449d615386bd991} 
+bool Restaurant\+Manager\+::delete\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a2a4246452f5de396eb9ce6cfdc53cb44}\index{RestaurantManager@{RestaurantManager}!deleteRating@{deleteRating}}
+\index{deleteRating@{deleteRating}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{deleteRating()}{deleteRating()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a2a4246452f5de396eb9ce6cfdc53cb44} 
+bool Restaurant\+Manager\+::delete\+Rating (\begin{DoxyParamCaption}\item[{const QString \&}]{rating\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_ae2ce3c51a97ea0867c0501fc65f0e740}\index{RestaurantManager@{RestaurantManager}!error@{error}}
+\index{error@{error}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ae2ce3c51a97ea0867c0501fc65f0e740} 
+void Restaurant\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_manager_a828a7f3a6cf9c5d65ecfb0c80a4ec65b}\index{RestaurantManager@{RestaurantManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a828a7f3a6cf9c5d65ecfb0c80a4ec65b} 
+\mbox{\hyperlink{class_restaurant_manager}{Restaurant\+Manager}} \texorpdfstring{$\ast$}{*} Restaurant\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_restaurant_manager_a0453d073f2bb66873164dd1363c659f9}\index{RestaurantManager@{RestaurantManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a0453d073f2bb66873164dd1363c659f9} 
+\mbox{\hyperlink{class_restaurant_manager}{Restaurant\+Manager}} \texorpdfstring{$\ast$}{*} Restaurant\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_restaurant_manager_a344738f5599c2a3bf3b31bebefcb7260}\index{RestaurantManager@{RestaurantManager}!getMenuItems@{getMenuItems}}
+\index{getMenuItems@{getMenuItems}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItems()}{getMenuItems()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a344738f5599c2a3bf3b31bebefcb7260} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a1d35b6848aba7d85fd3a10db7439b50e}\index{RestaurantManager@{RestaurantManager}!getMenuItems@{getMenuItems}}
+\index{getMenuItems@{getMenuItems}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItems()}{getMenuItems()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a1d35b6848aba7d85fd3a10db7439b50e} 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Restaurant\+Manager\+::get\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_manager_a75cbca4e82dfd0f60507031b8a5c6aca}\index{RestaurantManager@{RestaurantManager}!getMenuItemsByAvailability@{getMenuItemsByAvailability}}
+\index{getMenuItemsByAvailability@{getMenuItemsByAvailability}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItemsByAvailability()}{getMenuItemsByAvailability()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a75cbca4e82dfd0f60507031b8a5c6aca} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items\+By\+Availability (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{bool}]{available}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a8d7eea7879880c777c7f225c91cf653b}\index{RestaurantManager@{RestaurantManager}!getMenuItemsByCategory@{getMenuItemsByCategory}}
+\index{getMenuItemsByCategory@{getMenuItemsByCategory}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItemsByCategory()}{getMenuItemsByCategory()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a8d7eea7879880c777c7f225c91cf653b} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items\+By\+Category (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{category}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a85bb1bfc9562411622f957041ee665db}\index{RestaurantManager@{RestaurantManager}!getMenuItemsByDietaryRestrictions@{getMenuItemsByDietaryRestrictions}}
+\index{getMenuItemsByDietaryRestrictions@{getMenuItemsByDietaryRestrictions}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItemsByDietaryRestrictions()}{getMenuItemsByDietaryRestrictions()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a85bb1bfc9562411622f957041ee665db} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items\+By\+Dietary\+Restrictions (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString\+List \&}]{restrictions}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a1f84bd0601dbb4d4082e4a871eab24ce}\index{RestaurantManager@{RestaurantManager}!getMenuItemsByIngredients@{getMenuItemsByIngredients}}
+\index{getMenuItemsByIngredients@{getMenuItemsByIngredients}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItemsByIngredients()}{getMenuItemsByIngredients()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a1f84bd0601dbb4d4082e4a871eab24ce} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items\+By\+Ingredients (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString\+List \&}]{ingredients}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a3efb537b26b883c1aa8fb96ea54047a3}\index{RestaurantManager@{RestaurantManager}!getMenuItemsByPriceRange@{getMenuItemsByPriceRange}}
+\index{getMenuItemsByPriceRange@{getMenuItemsByPriceRange}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItemsByPriceRange()}{getMenuItemsByPriceRange()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a3efb537b26b883c1aa8fb96ea54047a3} 
+QJson\+Array Restaurant\+Manager\+::get\+Menu\+Items\+By\+Price\+Range (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{double}]{min\+Price}{, }\item[{double}]{max\+Price}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_ac809a045910c9294c54e2f69156fe7ba}\index{RestaurantManager@{RestaurantManager}!getNearbyRestaurants@{getNearbyRestaurants}}
+\index{getNearbyRestaurants@{getNearbyRestaurants}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getNearbyRestaurants()}{getNearbyRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ac809a045910c9294c54e2f69156fe7ba} 
+QJson\+Array Restaurant\+Manager\+::get\+Nearby\+Restaurants (\begin{DoxyParamCaption}\item[{double}]{latitude}{, }\item[{double}]{longitude}{, }\item[{double}]{radius}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a316f89346b1f3358da40bad6ed8efacf}\index{RestaurantManager@{RestaurantManager}!getPopularRestaurants@{getPopularRestaurants}}
+\index{getPopularRestaurants@{getPopularRestaurants}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getPopularRestaurants()}{getPopularRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a316f89346b1f3358da40bad6ed8efacf} 
+QJson\+Array Restaurant\+Manager\+::get\+Popular\+Restaurants (\begin{DoxyParamCaption}\item[{int}]{limit}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a62ee487182d28557aba920b32f3b4a2f}\index{RestaurantManager@{RestaurantManager}!getRestaurant@{getRestaurant}}
+\index{getRestaurant@{getRestaurant}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurant()}{getRestaurant()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a62ee487182d28557aba920b32f3b4a2f} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Restaurant\+Manager\+::get\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_manager_a0f9d6fe6ea5057d86f5b41a90d80dfec}\index{RestaurantManager@{RestaurantManager}!getRestaurantList@{getRestaurantList}}
+\index{getRestaurantList@{getRestaurantList}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantList()}{getRestaurantList()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a0f9d6fe6ea5057d86f5b41a90d80dfec} 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ Restaurant\+Manager\+::get\+Restaurant\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_manager_a0b6035ffaa1df2fbbc1f751012c2a3f1}\index{RestaurantManager@{RestaurantManager}!getRestaurantMenu@{getRestaurantMenu}}
+\index{getRestaurantMenu@{getRestaurantMenu}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantMenu()}{getRestaurantMenu()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a0b6035ffaa1df2fbbc1f751012c2a3f1} 
+void Restaurant\+Manager\+::get\+Restaurant\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a781df967236f163737c065395746e721}\index{RestaurantManager@{RestaurantManager}!getRestaurantProfile@{getRestaurantProfile}}
+\index{getRestaurantProfile@{getRestaurantProfile}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantProfile()}{getRestaurantProfile()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a781df967236f163737c065395746e721} 
+QJson\+Object Restaurant\+Manager\+::get\+Restaurant\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a7828ef9282506926f27762f93504832d}\index{RestaurantManager@{RestaurantManager}!getRestaurantRatings@{getRestaurantRatings}}
+\index{getRestaurantRatings@{getRestaurantRatings}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantRatings()}{getRestaurantRatings()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a7828ef9282506926f27762f93504832d} 
+QJson\+Array Restaurant\+Manager\+::get\+Restaurant\+Ratings (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{int}]{limit}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a7828ef9282506926f27762f93504832d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a1508182a6fd3fe808ad2930a297c7766}\index{RestaurantManager@{RestaurantManager}!getRestaurantRatingStats@{getRestaurantRatingStats}}
+\index{getRestaurantRatingStats@{getRestaurantRatingStats}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantRatingStats()}{getRestaurantRatingStats()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a1508182a6fd3fe808ad2930a297c7766} 
+QJson\+Object Restaurant\+Manager\+::get\+Restaurant\+Rating\+Stats (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a1508182a6fd3fe808ad2930a297c7766_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a163965d6ac88b2881cd0b98bf2264bd4}\index{RestaurantManager@{RestaurantManager}!getRestaurants@{getRestaurants}}
+\index{getRestaurants@{getRestaurants}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurants()}{getRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a163965d6ac88b2881cd0b98bf2264bd4} 
+void Restaurant\+Manager\+::get\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a82e960ad76a8741ec3607a4e26e16ae6}\index{RestaurantManager@{RestaurantManager}!getRestaurantsByCategory@{getRestaurantsByCategory}}
+\index{getRestaurantsByCategory@{getRestaurantsByCategory}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantsByCategory()}{getRestaurantsByCategory()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a82e960ad76a8741ec3607a4e26e16ae6} 
+QJson\+Array Restaurant\+Manager\+::get\+Restaurants\+By\+Category (\begin{DoxyParamCaption}\item[{const QString \&}]{category}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a6990f4cba58958a6b1a114d984cf90e1}\index{RestaurantManager@{RestaurantManager}!getTopRatedRestaurants@{getTopRatedRestaurants}}
+\index{getTopRatedRestaurants@{getTopRatedRestaurants}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{getTopRatedRestaurants()}{getTopRatedRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a6990f4cba58958a6b1a114d984cf90e1} 
+QJson\+Array Restaurant\+Manager\+::get\+Top\+Rated\+Restaurants (\begin{DoxyParamCaption}\item[{int}]{limit}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a0499ffa8198716ff3d9efeaebd216212}\index{RestaurantManager@{RestaurantManager}!menuReceived@{menuReceived}}
+\index{menuReceived@{menuReceived}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{menuReceived}{menuReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a0499ffa8198716ff3d9efeaebd216212} 
+void Restaurant\+Manager\+::menu\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{menu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_manager_aca06cccc9cebc371da3c6fd63ffa5fbf}\index{RestaurantManager@{RestaurantManager}!reorderMenuItems@{reorderMenuItems}}
+\index{reorderMenuItems@{reorderMenuItems}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{reorderMenuItems()}{reorderMenuItems()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_aca06cccc9cebc371da3c6fd63ffa5fbf} 
+bool Restaurant\+Manager\+::reorder\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{item\+Order}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a489799f8e72d13f3b5ab57dce7ae0861}\index{RestaurantManager@{RestaurantManager}!reportRating@{reportRating}}
+\index{reportRating@{reportRating}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{reportRating()}{reportRating()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a489799f8e72d13f3b5ab57dce7ae0861} 
+bool Restaurant\+Manager\+::report\+Rating (\begin{DoxyParamCaption}\item[{const QString \&}]{rating\+Id}{, }\item[{const QString \&}]{reason}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a11f1d719290151c3ce5d2a900de4df4e}\index{RestaurantManager@{RestaurantManager}!restaurantsReceived@{restaurantsReceived}}
+\index{restaurantsReceived@{restaurantsReceived}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{restaurantsReceived}{restaurantsReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a11f1d719290151c3ce5d2a900de4df4e} 
+void Restaurant\+Manager\+::restaurants\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_manager_ae1e0137d6fd6d1dcf746426391a7c29a}\index{RestaurantManager@{RestaurantManager}!searchMenuItems@{searchMenuItems}}
+\index{searchMenuItems@{searchMenuItems}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchMenuItems()}{searchMenuItems()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ae1e0137d6fd6d1dcf746426391a7c29a} 
+QJson\+Array Restaurant\+Manager\+::search\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{query}{, }\item[{const QJson\+Object \&}]{filters}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a948b2bf9ba3fe2685423b5e77e256afe}\index{RestaurantManager@{RestaurantManager}!searchRestaurants@{searchRestaurants}}
+\index{searchRestaurants@{searchRestaurants}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurants()}{searchRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a948b2bf9ba3fe2685423b5e77e256afe} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants (\begin{DoxyParamCaption}\item[{const QString \&}]{query}{, }\item[{const QJson\+Object \&}]{filters}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a948b2bf9ba3fe2685423b5e77e256afe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_ade09068342d0d725f64fabc3a8c9c8e6}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByCuisine@{searchRestaurantsByCuisine}}
+\index{searchRestaurantsByCuisine@{searchRestaurantsByCuisine}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByCuisine()}{searchRestaurantsByCuisine()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ade09068342d0d725f64fabc3a8c9c8e6} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Cuisine (\begin{DoxyParamCaption}\item[{const QString \&}]{cuisine}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_ade09068342d0d725f64fabc3a8c9c8e6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a99ae4bbf649217080992fef92580f462}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByFeatures@{searchRestaurantsByFeatures}}
+\index{searchRestaurantsByFeatures@{searchRestaurantsByFeatures}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByFeatures()}{searchRestaurantsByFeatures()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a99ae4bbf649217080992fef92580f462} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Features (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{features}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a99ae4bbf649217080992fef92580f462_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a1c1d277691b9c47a46ac88976a075d74}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByLocation@{searchRestaurantsByLocation}}
+\index{searchRestaurantsByLocation@{searchRestaurantsByLocation}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByLocation()}{searchRestaurantsByLocation()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a1c1d277691b9c47a46ac88976a075d74} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Location (\begin{DoxyParamCaption}\item[{const QString \&}]{location}{, }\item[{double}]{radius}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a1c1d277691b9c47a46ac88976a075d74_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_ac4827d46155227a48bbc895840deb491}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByOperatingHours@{searchRestaurantsByOperatingHours}}
+\index{searchRestaurantsByOperatingHours@{searchRestaurantsByOperatingHours}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByOperatingHours()}{searchRestaurantsByOperatingHours()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ac4827d46155227a48bbc895840deb491} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Operating\+Hours (\begin{DoxyParamCaption}\item[{const QString \&}]{day}{, }\item[{const QString \&}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_ac4827d46155227a48bbc895840deb491_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_ab6a7fa9e551c4e9ccf0e6c94790da1cf}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByPriceRange@{searchRestaurantsByPriceRange}}
+\index{searchRestaurantsByPriceRange@{searchRestaurantsByPriceRange}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByPriceRange()}{searchRestaurantsByPriceRange()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ab6a7fa9e551c4e9ccf0e6c94790da1cf} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Price\+Range (\begin{DoxyParamCaption}\item[{double}]{min\+Price}{, }\item[{double}]{max\+Price}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_ab6a7fa9e551c4e9ccf0e6c94790da1cf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a9b2122d59f276f3157159cd99ae12ad2}\index{RestaurantManager@{RestaurantManager}!searchRestaurantsByType@{searchRestaurantsByType}}
+\index{searchRestaurantsByType@{searchRestaurantsByType}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{searchRestaurantsByType()}{searchRestaurantsByType()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a9b2122d59f276f3157159cd99ae12ad2} 
+QJson\+Array Restaurant\+Manager\+::search\+Restaurants\+By\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{type}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_manager_a9b2122d59f276f3157159cd99ae12ad2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_manager_a9b14dc338d716edc4ddafe6e7be1819b}\index{RestaurantManager@{RestaurantManager}!updateMenuCategory@{updateMenuCategory}}
+\index{updateMenuCategory@{updateMenuCategory}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuCategory()}{updateMenuCategory()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a9b14dc338d716edc4ddafe6e7be1819b} 
+bool Restaurant\+Manager\+::update\+Menu\+Category (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{category\+Id}{, }\item[{const QJson\+Object \&}]{updates}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a677ef350ed7b2052766395bde7e92ff7}\index{RestaurantManager@{RestaurantManager}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a677ef350ed7b2052766395bde7e92ff7} 
+bool Restaurant\+Manager\+::update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{item\+Id}{, }\item[{const QJson\+Object \&}]{updates}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a9a5df37f7ffa58716c443088c1012038}\index{RestaurantManager@{RestaurantManager}!updateRating@{updateRating}}
+\index{updateRating@{updateRating}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateRating()}{updateRating()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a9a5df37f7ffa58716c443088c1012038} 
+bool Restaurant\+Manager\+::update\+Rating (\begin{DoxyParamCaption}\item[{const QString \&}]{rating\+Id}{, }\item[{int}]{new\+Rating}{, }\item[{const QString \&}]{new\+Comment}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_a153506733ba6ec0fbe47bbd934aa102c}\index{RestaurantManager@{RestaurantManager}!updateRestaurantHours@{updateRestaurantHours}}
+\index{updateRestaurantHours@{updateRestaurantHours}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantHours()}{updateRestaurantHours()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_a153506733ba6ec0fbe47bbd934aa102c} 
+bool Restaurant\+Manager\+::update\+Restaurant\+Hours (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Object \&}]{hours}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_ad31e8334fa5481586f13b74a290d9dc1}\index{RestaurantManager@{RestaurantManager}!updateRestaurantLocation@{updateRestaurantLocation}}
+\index{updateRestaurantLocation@{updateRestaurantLocation}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantLocation()}{updateRestaurantLocation()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_ad31e8334fa5481586f13b74a290d9dc1} 
+bool Restaurant\+Manager\+::update\+Restaurant\+Location (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{double}]{latitude}{, }\item[{double}]{longitude}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_manager_af847612fedb53d0f278087dccb315cf6}\index{RestaurantManager@{RestaurantManager}!updateRestaurantProfile@{updateRestaurantProfile}}
+\index{updateRestaurantProfile@{updateRestaurantProfile}!RestaurantManager@{RestaurantManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantProfile()}{updateRestaurantProfile()}}
+{\footnotesize\ttfamily \label{class_restaurant_manager_af847612fedb53d0f278087dccb315cf6} 
+bool Restaurant\+Manager\+::update\+Restaurant\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Object \&}]{updates}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantmanager_8h}{restaurantmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2restaurantmanager_8h}{restaurantmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantmanager_8cpp}{restaurantmanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2restaurantmanager_8cpp}{restaurantmanager.\+cpp}}\end{DoxyCompactItemize}

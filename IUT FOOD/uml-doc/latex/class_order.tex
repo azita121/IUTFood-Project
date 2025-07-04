@@ -1,0 +1,873 @@
+\doxysection{Order Class Reference}
+\hypertarget{class_order}{}\label{class_order}\index{Order@{Order}}
+
+
+{\ttfamily \#include $<$order.\+h$>$}
+
+
+
+Inheritance diagram for Order\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_order__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Order\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_order__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_a991c2b90085a71bc04423671d59af15b}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_afd266c71f6eac0a2f755aea72762ca9f}{customer\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_a73a50ff6b598f09ba9ae9a922a53b80a}{restaurant\+Id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_a2fcf18afcd1f9621768a5bd856adf970}{status\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_afdde098cb070b3d418cb3de7ad008bd2}{total\+Price\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_ad4c007d2610eb7be84e6fb40fedabce2}{order\+Time\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_a74667124f4d3369baafdcae64c3112b8}{delivery\+Time\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff}{items\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_ac162527d3f5deb0747c22bcb59829dc7}{Order}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_order_aed3f48b286fcb784a14c80d066349fc8}{Order}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_order_a8fb25876ccbd534465f5f96ef9bb2212}{\texorpdfstring{$\sim$}{\string~}\+Order}} ()
+\item 
+QString \mbox{\hyperlink{class_order_a9358257d5a2f3dd4306b7cf950a64603}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_order_ae16b3cedc7067fa070b7bd60a1b5a92b}{customer\+Id}} () const
+\item 
+QString \mbox{\hyperlink{class_order_a9a4c84653b6cfb9dbdb6ec613923ca19}{restaurant\+Id}} () const
+\item 
+QString \mbox{\hyperlink{class_order_a6e98482916a20ca04d3c336c1c6c00c1}{status}} () const
+\item 
+QString \mbox{\hyperlink{class_order_a7cf35f0230f424d064d9ade7453453eb}{status\+Description}} () const
+\item 
+QString \mbox{\hyperlink{class_order_aa95592d70d725fbd3aafb414ef6579ef}{status\+Color}} () const
+\item 
+QString \mbox{\hyperlink{class_order_a1b6c4ed64c34e40519c103ad4a4eb9d8}{status\+Icon}} () const
+\item 
+double \mbox{\hyperlink{class_order_a535f0b1612c94855e0d10c8b2b5ad81d}{total\+Price}} () const
+\item 
+QDate\+Time \mbox{\hyperlink{class_order_a575f8b77323016621ae8ac8c575cb3aa}{order\+Time}} () const
+\item 
+QDate\+Time \mbox{\hyperlink{class_order_a53d876a339c1d5a37606e503dbab3ddb}{delivery\+Time}} () const
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_order_aa7eb33835d55f57431347df8f3beb077}{items}} () const
+\item 
+void \mbox{\hyperlink{class_order_a39943424c6b5dca7bfcb14cb5e97d35d}{set\+Id}} (const QString \&\mbox{\hyperlink{class_order_afc0fc291d313b2e395134c9649b5e17d}{id}})
+\item 
+void \mbox{\hyperlink{class_order_ab7f7f82cc66147114ed9723c8952fac0}{set\+Customer\+Id}} (const QString \&\mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customer\+Id}})
+\item 
+void \mbox{\hyperlink{class_order_a2cc70fd0bcd906a0922e421d5e99a784}{set\+Restaurant\+Id}} (const QString \&\mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurant\+Id}})
+\item 
+void \mbox{\hyperlink{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b}{set\+Status}} (const QString \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}})
+\item 
+void \mbox{\hyperlink{class_order_a672147250b153975f0bad0efa1c6f1bc}{set\+Total\+Price}} (double \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{total\+Price}})
+\item 
+void \mbox{\hyperlink{class_order_ae5c282d64d2a9dc2ba98637a39210884}{set\+Order\+Time}} (const QDate\+Time \&\mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{order\+Time}})
+\item 
+void \mbox{\hyperlink{class_order_a80606918f7dfb090202529b793afe9a3}{set\+Delivery\+Time}} (const QDate\+Time \&\mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{delivery\+Time}})
+\item 
+void \mbox{\hyperlink{class_order_abd37b46445cc684ae7ff183508c60975}{set\+Items}} (const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}})
+\item 
+bool \mbox{\hyperlink{class_order_a406afc25551bc31d44fe34327e261b49}{can\+Transition\+To}} (const QString \&new\+Status) const
+\item 
+QJson\+Object \mbox{\hyperlink{class_order_a08838b54dc5aaac9179d8b7eb3fc05fb}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_order_aac8bd43eeb1f1310e67d4817f7ef9786}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_order_a41252ee7accd2f36d7e3bade2277a1cf}{is\+Valid\+Status}} (const QString \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}})
+\item 
+static QString\+List \mbox{\hyperlink{class_order_aafc68a7fc563cc95a0cc42cb77639307}{get\+Valid\+Statuses}} ()
+\item 
+static QString \mbox{\hyperlink{class_order_abee273f2bde141907357eb25429714f7}{get\+Status\+Description}} (const QString \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}})
+\item 
+static QString \mbox{\hyperlink{class_order_a6aac72ff4b5c39908e21519674230686}{get\+Status\+Color}} (const QString \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}})
+\item 
+static QString \mbox{\hyperlink{class_order_a06b47fcecab2f5343077341f11a58337}{get\+Status\+Icon}} (const QString \&\mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}})
+\item 
+static \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_order_aba35c74f7ab30a1f33bc62b2bbb79975}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+static QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_order_a378bbcdae4cce9e56a20a9c0ac4510a5}{from\+Json\+Array}} (const QJson\+Array \&array, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_order_a715088ecb603498e32973c078d4576b4}{STATUS\+\_\+\+PENDING}} = "{}pending"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_a74b881cf14ac042382c14cab3ffddec7}{STATUS\+\_\+\+CONFIRMED}} = "{}confirmed"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_a988e08519ecaa15958cdef4657c8550f}{STATUS\+\_\+\+PREPARING}} = "{}preparing"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_a9f22826effc30ba94683b94ca9052048}{STATUS\+\_\+\+READY}} = "{}ready"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_a90cc1e8bb3e0ce4a9c3e7f16fd21969e}{STATUS\+\_\+\+OUT\+\_\+\+FOR\+\_\+\+DELIVERY}} = "{}out\+\_\+for\+\_\+delivery"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_af7ccb29c8568ac079c90217266e8ce8d}{STATUS\+\_\+\+DELIVERED}} = "{}delivered"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_a8a5a0fad8a5d0f035e397a0c5a14f924}{STATUS\+\_\+\+CANCELLED}} = "{}cancelled"{}
+\item 
+static const QString \mbox{\hyperlink{class_order_abcbb26b4624d74ff013a3a4f12d7c9cf}{STATUS\+\_\+\+REJECTED}} = "{}rejected"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_order_afc0fc291d313b2e395134c9649b5e17d}{id}}
+\item 
+QString \mbox{\hyperlink{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}{customer\+Id}}
+\item 
+QString \mbox{\hyperlink{class_order_a9e207970e23efb8f256a6972c2a9ece5}{restaurant\+Id}}
+\item 
+QString \mbox{\hyperlink{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}{status}}
+\item 
+QString \mbox{\hyperlink{class_order_a7a18bd44c65809d267ab16273d878a4a}{status\+Description}}
+\item 
+QString \mbox{\hyperlink{class_order_a2e36edbb15db0fe995e7e7be6962a9f1}{status\+Color}}
+\item 
+QString \mbox{\hyperlink{class_order_a3d8c2a31510be9747ced0173bb69df00}{status\+Icon}}
+\item 
+double \mbox{\hyperlink{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}{total\+Price}}
+\item 
+QDate\+Time \mbox{\hyperlink{class_order_addc899683baa3d0ccb1ffddee2834a05}{order\+Time}}
+\item 
+QDate\+Time \mbox{\hyperlink{class_order_a734b772584e85422dee7240d28295d8a}{delivery\+Time}}
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_order_a809be7478fc48b3e471fd00615e0c50f}{items}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_order_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_order_ac162527d3f5deb0747c22bcb59829dc7}\index{Order@{Order}!Order@{Order}}
+\index{Order@{Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_order_ac162527d3f5deb0747c22bcb59829dc7} 
+Order\+::\+Order (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_order_ac162527d3f5deb0747c22bcb59829dc7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aed3f48b286fcb784a14c80d066349fc8}\index{Order@{Order}!Order@{Order}}
+\index{Order@{Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_order_aed3f48b286fcb784a14c80d066349fc8} 
+Order\+::\+Order (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_aed3f48b286fcb784a14c80d066349fc8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a8fb25876ccbd534465f5f96ef9bb2212}\index{Order@{Order}!````~Order@{\texorpdfstring{$\sim$}{\string~}Order}}
+\index{````~Order@{\texorpdfstring{$\sim$}{\string~}Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Order()}{\string~Order()}}
+{\footnotesize\ttfamily \label{class_order_a8fb25876ccbd534465f5f96ef9bb2212} 
+Order\+::\texorpdfstring{$\sim$}{\string~}\+Order (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_order_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_order_a406afc25551bc31d44fe34327e261b49}\index{Order@{Order}!canTransitionTo@{canTransitionTo}}
+\index{canTransitionTo@{canTransitionTo}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{canTransitionTo()}{canTransitionTo()}}
+{\footnotesize\ttfamily \label{class_order_a406afc25551bc31d44fe34327e261b49} 
+bool Order\+::can\+Transition\+To (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Status}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_order_a406afc25551bc31d44fe34327e261b49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a406afc25551bc31d44fe34327e261b49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_ae16b3cedc7067fa070b7bd60a1b5a92b}\index{Order@{Order}!customerId@{customerId}}
+\index{customerId@{customerId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{customerId()}{customerId()}}
+{\footnotesize\ttfamily \label{class_order_ae16b3cedc7067fa070b7bd60a1b5a92b} 
+QString Order\+::customer\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_afd266c71f6eac0a2f755aea72762ca9f}\index{Order@{Order}!customerIdChanged@{customerIdChanged}}
+\index{customerIdChanged@{customerIdChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{customerIdChanged}{customerIdChanged}}
+{\footnotesize\ttfamily \label{class_order_afd266c71f6eac0a2f755aea72762ca9f} 
+void Order\+::customer\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_order_afd266c71f6eac0a2f755aea72762ca9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_afd266c71f6eac0a2f755aea72762ca9f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a53d876a339c1d5a37606e503dbab3ddb}\index{Order@{Order}!deliveryTime@{deliveryTime}}
+\index{deliveryTime@{deliveryTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{deliveryTime()}{deliveryTime()}}
+{\footnotesize\ttfamily \label{class_order_a53d876a339c1d5a37606e503dbab3ddb} 
+QDate\+Time Order\+::delivery\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a74667124f4d3369baafdcae64c3112b8}\index{Order@{Order}!deliveryTimeChanged@{deliveryTimeChanged}}
+\index{deliveryTimeChanged@{deliveryTimeChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{deliveryTimeChanged}{deliveryTimeChanged}}
+{\footnotesize\ttfamily \label{class_order_a74667124f4d3369baafdcae64c3112b8} 
+void Order\+::delivery\+Time\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_order_a74667124f4d3369baafdcae64c3112b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a74667124f4d3369baafdcae64c3112b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aac8bd43eeb1f1310e67d4817f7ef9786}\index{Order@{Order}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_order_aac8bd43eeb1f1310e67d4817f7ef9786} 
+void Order\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_aac8bd43eeb1f1310e67d4817f7ef9786_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_order_aac8bd43eeb1f1310e67d4817f7ef9786_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a378bbcdae4cce9e56a20a9c0ac4510a5}\index{Order@{Order}!fromJsonArray@{fromJsonArray}}
+\index{fromJsonArray@{fromJsonArray}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{fromJsonArray()}{fromJsonArray()}}
+{\footnotesize\ttfamily \label{class_order_a378bbcdae4cce9e56a20a9c0ac4510a5} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Order\+::from\+Json\+Array (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{array}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_order_a378bbcdae4cce9e56a20a9c0ac4510a5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aba35c74f7ab30a1f33bc62b2bbb79975}\index{Order@{Order}!fromJsonObject@{fromJsonObject}}
+\index{fromJsonObject@{fromJsonObject}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{fromJsonObject()}{fromJsonObject()}}
+{\footnotesize\ttfamily \label{class_order_aba35c74f7ab30a1f33bc62b2bbb79975} 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} Order\+::from\+Json\+Object (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_order_aba35c74f7ab30a1f33bc62b2bbb79975_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a6aac72ff4b5c39908e21519674230686}\index{Order@{Order}!getStatusColor@{getStatusColor}}
+\index{getStatusColor@{getStatusColor}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getStatusColor()}{getStatusColor()}}
+{\footnotesize\ttfamily \label{class_order_a6aac72ff4b5c39908e21519674230686} 
+QString Order\+::get\+Status\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_order_a6aac72ff4b5c39908e21519674230686_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_abee273f2bde141907357eb25429714f7}\index{Order@{Order}!getStatusDescription@{getStatusDescription}}
+\index{getStatusDescription@{getStatusDescription}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getStatusDescription()}{getStatusDescription()}}
+{\footnotesize\ttfamily \label{class_order_abee273f2bde141907357eb25429714f7} 
+QString Order\+::get\+Status\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_abee273f2bde141907357eb25429714f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a06b47fcecab2f5343077341f11a58337}\index{Order@{Order}!getStatusIcon@{getStatusIcon}}
+\index{getStatusIcon@{getStatusIcon}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getStatusIcon()}{getStatusIcon()}}
+{\footnotesize\ttfamily \label{class_order_a06b47fcecab2f5343077341f11a58337} 
+QString Order\+::get\+Status\+Icon (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_order_a06b47fcecab2f5343077341f11a58337_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aafc68a7fc563cc95a0cc42cb77639307}\index{Order@{Order}!getValidStatuses@{getValidStatuses}}
+\index{getValidStatuses@{getValidStatuses}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getValidStatuses()}{getValidStatuses()}}
+{\footnotesize\ttfamily \label{class_order_aafc68a7fc563cc95a0cc42cb77639307} 
+QString\+List Order\+::get\+Valid\+Statuses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_aafc68a7fc563cc95a0cc42cb77639307_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a9358257d5a2f3dd4306b7cf950a64603}\index{Order@{Order}!id@{id}}
+\index{id@{id}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_order_a9358257d5a2f3dd4306b7cf950a64603} 
+QString Order\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a991c2b90085a71bc04423671d59af15b}\index{Order@{Order}!idChanged@{idChanged}}
+\index{idChanged@{idChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{idChanged}{idChanged}}
+{\footnotesize\ttfamily \label{class_order_a991c2b90085a71bc04423671d59af15b} 
+void Order\+::id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_order_a991c2b90085a71bc04423671d59af15b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a991c2b90085a71bc04423671d59af15b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a41252ee7accd2f36d7e3bade2277a1cf}\index{Order@{Order}!isValidStatus@{isValidStatus}}
+\index{isValidStatus@{isValidStatus}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{isValidStatus()}{isValidStatus()}}
+{\footnotesize\ttfamily \label{class_order_a41252ee7accd2f36d7e3bade2277a1cf} 
+bool Order\+::is\+Valid\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a41252ee7accd2f36d7e3bade2277a1cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aa7eb33835d55f57431347df8f3beb077}\index{Order@{Order}!items@{items}}
+\index{items@{items}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{items()}{items()}}
+{\footnotesize\ttfamily \label{class_order_aa7eb33835d55f57431347df8f3beb077} 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Order\+::items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff}\index{Order@{Order}!itemsChanged@{itemsChanged}}
+\index{itemsChanged@{itemsChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{itemsChanged}{itemsChanged}}
+{\footnotesize\ttfamily \label{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff} 
+void Order\+::items\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a0009ec7c52e2a39573d9c344ce0ab1ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a575f8b77323016621ae8ac8c575cb3aa}\index{Order@{Order}!orderTime@{orderTime}}
+\index{orderTime@{orderTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{orderTime()}{orderTime()}}
+{\footnotesize\ttfamily \label{class_order_a575f8b77323016621ae8ac8c575cb3aa} 
+QDate\+Time Order\+::order\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_ad4c007d2610eb7be84e6fb40fedabce2}\index{Order@{Order}!orderTimeChanged@{orderTimeChanged}}
+\index{orderTimeChanged@{orderTimeChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{orderTimeChanged}{orderTimeChanged}}
+{\footnotesize\ttfamily \label{class_order_ad4c007d2610eb7be84e6fb40fedabce2} 
+void Order\+::order\+Time\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{class_order_ad4c007d2610eb7be84e6fb40fedabce2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ad4c007d2610eb7be84e6fb40fedabce2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a9a4c84653b6cfb9dbdb6ec613923ca19}\index{Order@{Order}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{restaurantId()}{restaurantId()}}
+{\footnotesize\ttfamily \label{class_order_a9a4c84653b6cfb9dbdb6ec613923ca19} 
+QString Order\+::restaurant\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a73a50ff6b598f09ba9ae9a922a53b80a}\index{Order@{Order}!restaurantIdChanged@{restaurantIdChanged}}
+\index{restaurantIdChanged@{restaurantIdChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{restaurantIdChanged}{restaurantIdChanged}}
+{\footnotesize\ttfamily \label{class_order_a73a50ff6b598f09ba9ae9a922a53b80a} 
+void Order\+::restaurant\+Id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_order_a73a50ff6b598f09ba9ae9a922a53b80a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a73a50ff6b598f09ba9ae9a922a53b80a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_ab7f7f82cc66147114ed9723c8952fac0}\index{Order@{Order}!setCustomerId@{setCustomerId}}
+\index{setCustomerId@{setCustomerId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setCustomerId()}{setCustomerId()}}
+{\footnotesize\ttfamily \label{class_order_ab7f7f82cc66147114ed9723c8952fac0} 
+void Order\+::set\+Customer\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ab7f7f82cc66147114ed9723c8952fac0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ab7f7f82cc66147114ed9723c8952fac0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a80606918f7dfb090202529b793afe9a3}\index{Order@{Order}!setDeliveryTime@{setDeliveryTime}}
+\index{setDeliveryTime@{setDeliveryTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setDeliveryTime()}{setDeliveryTime()}}
+{\footnotesize\ttfamily \label{class_order_a80606918f7dfb090202529b793afe9a3} 
+void Order\+::set\+Delivery\+Time (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{delivery\+Time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a80606918f7dfb090202529b793afe9a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a80606918f7dfb090202529b793afe9a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a39943424c6b5dca7bfcb14cb5e97d35d}\index{Order@{Order}!setId@{setId}}
+\index{setId@{setId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_order_a39943424c6b5dca7bfcb14cb5e97d35d} 
+void Order\+::set\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_order_a39943424c6b5dca7bfcb14cb5e97d35d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a39943424c6b5dca7bfcb14cb5e97d35d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_abd37b46445cc684ae7ff183508c60975}\index{Order@{Order}!setItems@{setItems}}
+\index{setItems@{setItems}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setItems()}{setItems()}}
+{\footnotesize\ttfamily \label{class_order_abd37b46445cc684ae7ff183508c60975} 
+void Order\+::set\+Items (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{items}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_order_abd37b46445cc684ae7ff183508c60975_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_abd37b46445cc684ae7ff183508c60975_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_ae5c282d64d2a9dc2ba98637a39210884}\index{Order@{Order}!setOrderTime@{setOrderTime}}
+\index{setOrderTime@{setOrderTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setOrderTime()}{setOrderTime()}}
+{\footnotesize\ttfamily \label{class_order_ae5c282d64d2a9dc2ba98637a39210884} 
+void Order\+::set\+Order\+Time (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{order\+Time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ae5c282d64d2a9dc2ba98637a39210884_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ae5c282d64d2a9dc2ba98637a39210884_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a2cc70fd0bcd906a0922e421d5e99a784}\index{Order@{Order}!setRestaurantId@{setRestaurantId}}
+\index{setRestaurantId@{setRestaurantId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setRestaurantId()}{setRestaurantId()}}
+{\footnotesize\ttfamily \label{class_order_a2cc70fd0bcd906a0922e421d5e99a784} 
+void Order\+::set\+Restaurant\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a2cc70fd0bcd906a0922e421d5e99a784_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a2cc70fd0bcd906a0922e421d5e99a784_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b}\index{Order@{Order}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setStatus()}{setStatus()}}
+{\footnotesize\ttfamily \label{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b} 
+void Order\+::set\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_ae7f4be90e1c8f7975e3e4ac890b95e5b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a672147250b153975f0bad0efa1c6f1bc}\index{Order@{Order}!setTotalPrice@{setTotalPrice}}
+\index{setTotalPrice@{setTotalPrice}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setTotalPrice()}{setTotalPrice()}}
+{\footnotesize\ttfamily \label{class_order_a672147250b153975f0bad0efa1c6f1bc} 
+void Order\+::set\+Total\+Price (\begin{DoxyParamCaption}\item[{double}]{total\+Price}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_order_a672147250b153975f0bad0efa1c6f1bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a672147250b153975f0bad0efa1c6f1bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a6e98482916a20ca04d3c336c1c6c00c1}\index{Order@{Order}!status@{status}}
+\index{status@{status}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily \label{class_order_a6e98482916a20ca04d3c336c1c6c00c1} 
+QString Order\+::status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a2fcf18afcd1f9621768a5bd856adf970}\index{Order@{Order}!statusChanged@{statusChanged}}
+\index{statusChanged@{statusChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusChanged}{statusChanged}}
+{\footnotesize\ttfamily \label{class_order_a2fcf18afcd1f9621768a5bd856adf970} 
+void Order\+::status\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_order_a2fcf18afcd1f9621768a5bd856adf970_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a2fcf18afcd1f9621768a5bd856adf970_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_aa95592d70d725fbd3aafb414ef6579ef}\index{Order@{Order}!statusColor@{statusColor}}
+\index{statusColor@{statusColor}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusColor()}{statusColor()}}
+{\footnotesize\ttfamily \label{class_order_aa95592d70d725fbd3aafb414ef6579ef} 
+QString Order\+::status\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_order_aa95592d70d725fbd3aafb414ef6579ef_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a7cf35f0230f424d064d9ade7453453eb}\index{Order@{Order}!statusDescription@{statusDescription}}
+\index{statusDescription@{statusDescription}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusDescription()}{statusDescription()}}
+{\footnotesize\ttfamily \label{class_order_a7cf35f0230f424d064d9ade7453453eb} 
+QString Order\+::status\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_a7cf35f0230f424d064d9ade7453453eb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a1b6c4ed64c34e40519c103ad4a4eb9d8}\index{Order@{Order}!statusIcon@{statusIcon}}
+\index{statusIcon@{statusIcon}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusIcon()}{statusIcon()}}
+{\footnotesize\ttfamily \label{class_order_a1b6c4ed64c34e40519c103ad4a4eb9d8} 
+QString Order\+::status\+Icon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_order_a1b6c4ed64c34e40519c103ad4a4eb9d8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_a08838b54dc5aaac9179d8b7eb3fc05fb}\index{Order@{Order}!toJson@{toJson}}
+\index{toJson@{toJson}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_order_a08838b54dc5aaac9179d8b7eb3fc05fb} 
+QJson\+Object Order\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_a535f0b1612c94855e0d10c8b2b5ad81d}\index{Order@{Order}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{totalPrice()}{totalPrice()}}
+{\footnotesize\ttfamily \label{class_order_a535f0b1612c94855e0d10c8b2b5ad81d} 
+double Order\+::total\+Price (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_order_afdde098cb070b3d418cb3de7ad008bd2}\index{Order@{Order}!totalPriceChanged@{totalPriceChanged}}
+\index{totalPriceChanged@{totalPriceChanged}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{totalPriceChanged}{totalPriceChanged}}
+{\footnotesize\ttfamily \label{class_order_afdde098cb070b3d418cb3de7ad008bd2} 
+void Order\+::total\+Price\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_order_afdde098cb070b3d418cb3de7ad008bd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_afdde098cb070b3d418cb3de7ad008bd2_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_order_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_order_a8a5a0fad8a5d0f035e397a0c5a14f924}\index{Order@{Order}!STATUS\_CANCELLED@{STATUS\_CANCELLED}}
+\index{STATUS\_CANCELLED@{STATUS\_CANCELLED}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CANCELLED}{STATUS\_CANCELLED}}
+{\footnotesize\ttfamily \label{class_order_a8a5a0fad8a5d0f035e397a0c5a14f924} 
+const QString Order\+::\+STATUS\+\_\+\+CANCELLED = "{}cancelled"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_a74b881cf14ac042382c14cab3ffddec7}\index{Order@{Order}!STATUS\_CONFIRMED@{STATUS\_CONFIRMED}}
+\index{STATUS\_CONFIRMED@{STATUS\_CONFIRMED}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_CONFIRMED}{STATUS\_CONFIRMED}}
+{\footnotesize\ttfamily \label{class_order_a74b881cf14ac042382c14cab3ffddec7} 
+const QString Order\+::\+STATUS\+\_\+\+CONFIRMED = "{}confirmed"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_af7ccb29c8568ac079c90217266e8ce8d}\index{Order@{Order}!STATUS\_DELIVERED@{STATUS\_DELIVERED}}
+\index{STATUS\_DELIVERED@{STATUS\_DELIVERED}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_DELIVERED}{STATUS\_DELIVERED}}
+{\footnotesize\ttfamily \label{class_order_af7ccb29c8568ac079c90217266e8ce8d} 
+const QString Order\+::\+STATUS\+\_\+\+DELIVERED = "{}delivered"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_a90cc1e8bb3e0ce4a9c3e7f16fd21969e}\index{Order@{Order}!STATUS\_OUT\_FOR\_DELIVERY@{STATUS\_OUT\_FOR\_DELIVERY}}
+\index{STATUS\_OUT\_FOR\_DELIVERY@{STATUS\_OUT\_FOR\_DELIVERY}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_OUT\_FOR\_DELIVERY}{STATUS\_OUT\_FOR\_DELIVERY}}
+{\footnotesize\ttfamily \label{class_order_a90cc1e8bb3e0ce4a9c3e7f16fd21969e} 
+const QString Order\+::\+STATUS\+\_\+\+OUT\+\_\+\+FOR\+\_\+\+DELIVERY = "{}out\+\_\+for\+\_\+delivery"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_a715088ecb603498e32973c078d4576b4}\index{Order@{Order}!STATUS\_PENDING@{STATUS\_PENDING}}
+\index{STATUS\_PENDING@{STATUS\_PENDING}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_PENDING}{STATUS\_PENDING}}
+{\footnotesize\ttfamily \label{class_order_a715088ecb603498e32973c078d4576b4} 
+const QString Order\+::\+STATUS\+\_\+\+PENDING = "{}pending"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_a988e08519ecaa15958cdef4657c8550f}\index{Order@{Order}!STATUS\_PREPARING@{STATUS\_PREPARING}}
+\index{STATUS\_PREPARING@{STATUS\_PREPARING}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_PREPARING}{STATUS\_PREPARING}}
+{\footnotesize\ttfamily \label{class_order_a988e08519ecaa15958cdef4657c8550f} 
+const QString Order\+::\+STATUS\+\_\+\+PREPARING = "{}preparing"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_a9f22826effc30ba94683b94ca9052048}\index{Order@{Order}!STATUS\_READY@{STATUS\_READY}}
+\index{STATUS\_READY@{STATUS\_READY}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_READY}{STATUS\_READY}}
+{\footnotesize\ttfamily \label{class_order_a9f22826effc30ba94683b94ca9052048} 
+const QString Order\+::\+STATUS\+\_\+\+READY = "{}ready"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_abcbb26b4624d74ff013a3a4f12d7c9cf}\index{Order@{Order}!STATUS\_REJECTED@{STATUS\_REJECTED}}
+\index{STATUS\_REJECTED@{STATUS\_REJECTED}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{STATUS\_REJECTED}{STATUS\_REJECTED}}
+{\footnotesize\ttfamily \label{class_order_abcbb26b4624d74ff013a3a4f12d7c9cf} 
+const QString Order\+::\+STATUS\+\_\+\+REJECTED = "{}rejected"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_order_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6}\index{Order@{Order}!customerId@{customerId}}
+\index{customerId@{customerId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{customerId}{customerId}}
+{\footnotesize\ttfamily \label{class_order_a0d9f4d7993b1bc48c90f28a1c9fb52d6} 
+QString Order\+::customer\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_a734b772584e85422dee7240d28295d8a}\index{Order@{Order}!deliveryTime@{deliveryTime}}
+\index{deliveryTime@{deliveryTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{deliveryTime}{deliveryTime}}
+{\footnotesize\ttfamily \label{class_order_a734b772584e85422dee7240d28295d8a} 
+QDate\+Time Order\+::delivery\+Time\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_afc0fc291d313b2e395134c9649b5e17d}\index{Order@{Order}!id@{id}}
+\index{id@{id}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_order_afc0fc291d313b2e395134c9649b5e17d} 
+QString Order\+::id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_a809be7478fc48b3e471fd00615e0c50f}\index{Order@{Order}!items@{items}}
+\index{items@{items}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily \label{class_order_a809be7478fc48b3e471fd00615e0c50f} 
+QList$<$\mbox{\hyperlink{class_menu_item}{Menu\+Item}}\texorpdfstring{$\ast$}{*}$>$ Order\+::items\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_addc899683baa3d0ccb1ffddee2834a05}\index{Order@{Order}!orderTime@{orderTime}}
+\index{orderTime@{orderTime}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{orderTime}{orderTime}}
+{\footnotesize\ttfamily \label{class_order_addc899683baa3d0ccb1ffddee2834a05} 
+QDate\+Time Order\+::order\+Time\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_a9e207970e23efb8f256a6972c2a9ece5}\index{Order@{Order}!restaurantId@{restaurantId}}
+\index{restaurantId@{restaurantId}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{restaurantId}{restaurantId}}
+{\footnotesize\ttfamily \label{class_order_a9e207970e23efb8f256a6972c2a9ece5} 
+QString Order\+::restaurant\+Id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_a7b77bd3f8e00b454cc704d4162f3acb0}\index{Order@{Order}!status@{status}}
+\index{status@{status}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily \label{class_order_a7b77bd3f8e00b454cc704d4162f3acb0} 
+QString Order\+::status\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_order_a2e36edbb15db0fe995e7e7be6962a9f1}\index{Order@{Order}!statusColor@{statusColor}}
+\index{statusColor@{statusColor}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusColor}{statusColor}}
+{\footnotesize\ttfamily \label{class_order_a2e36edbb15db0fe995e7e7be6962a9f1} 
+QString Order\+::status\+Color\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_order_a7a18bd44c65809d267ab16273d878a4a}\index{Order@{Order}!statusDescription@{statusDescription}}
+\index{statusDescription@{statusDescription}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusDescription}{statusDescription}}
+{\footnotesize\ttfamily \label{class_order_a7a18bd44c65809d267ab16273d878a4a} 
+QString Order\+::status\+Description\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_order_a3d8c2a31510be9747ced0173bb69df00}\index{Order@{Order}!statusIcon@{statusIcon}}
+\index{statusIcon@{statusIcon}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{statusIcon}{statusIcon}}
+{\footnotesize\ttfamily \label{class_order_a3d8c2a31510be9747ced0173bb69df00} 
+QString Order\+::status\+Icon\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc}\index{Order@{Order}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{totalPrice}{totalPrice}}
+{\footnotesize\ttfamily \label{class_order_afa854ec4a022a5731ba4ca4f1af1a6dc} 
+double Order\+::total\+Price\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{order_8h}{order.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{order_8cpp}{order.\+cpp}}\end{DoxyCompactItemize}

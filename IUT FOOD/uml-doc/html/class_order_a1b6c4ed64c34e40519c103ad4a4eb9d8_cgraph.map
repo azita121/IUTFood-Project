@@ -1,0 +1,5 @@
+<map id="Order::statusIcon" name="Order::statusIcon">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="Node000002" href="$class_order.html#a06b47fcecab2f5343077341f11a58337" title=" " alt="" coords="176,5,318,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,16,160,16,160,21,128,21"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="DatabaseManager::createRestaurant" name="DatabaseManager::createRestaurant">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,241,61"/>
+<area shape="rect" id="Node000002" href="$class_database_manager.html#abf1daa555b813fbe82c7a8e052cbbac4" title=" " alt="" coords="289,27,470,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,45,273,45,273,51,241,51"/>
+<area shape="rect" id="Node000003" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="518,5,698,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="470,34,502,30,503,35,470,39"/>
+<area shape="rect" id="Node000004" href="$class_database_manager.html#a3ec32076c78711bd7514b665a3c71ec2" title=" " alt="" coords="519,56,697,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="470,57,504,61,503,67,470,62"/>
+</map>

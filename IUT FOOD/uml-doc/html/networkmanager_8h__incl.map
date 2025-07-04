@@ -1,0 +1,21 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/networkmanager.h" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/networkmanager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="230,5,412,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="73,187,142,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,49,165,59,101,73,47,91,27,102,14,114,9,123,8,131,18,148,37,164,62,178,59,182,34,168,14,151,3,132,4,121,10,110,24,98,44,86,99,68,164,54,229,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="24,112,117,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,67,121,109,119,104,239,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="141,112,239,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,67,223,105,220,101,277,62"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="488,187,586,213"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="413,44,476,54,538,69,591,87,611,98,624,110,630,121,631,131,622,150,603,167,581,181,578,177,600,163,617,147,625,130,625,122,620,114,608,102,589,92,537,74,475,60,412,49"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="403,112,522,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="368,62,431,101,428,106,365,67"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="546,112,610,139"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="405,62,532,105,531,111,404,67"/>
+<area shape="rect" id="Node000008" href="$user_8h.html" title=" " alt="" coords="263,112,379,139"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="324,64,324,96,318,96,318,64"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="285,142,158,185,156,179,283,137"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="359,137,486,179,484,184,358,142"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="288,187,354,213"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="324,139,324,171,318,171,318,139"/>
+</map>

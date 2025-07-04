@@ -1,0 +1,18 @@
+<map id="AuthSystem::updateProfile" name="AuthSystem::updateProfile">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,183,99"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#ac165bb2d47886b1e765faeb4b0b3b2ce" title=" " alt="" coords="232,5,420,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,69,224,50,225,55,150,74"/>
+<area shape="rect" id="Node000004" href="$class_auth_system.html#aacf80e6b55c579370ae5bb0749e53b9d" title=" " alt="" coords="699,45,893,72"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="183,79,683,60,684,66,183,85"/>
+<area shape="rect" id="Node000006" href="$class_security_utils.html#ad5691c29a484cfb28720fbfe5b6b38bf" title=" " alt="" coords="231,123,421,149"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="159,97,247,116,246,121,158,102"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html#a5d7fb1863d7c548b828c4ad3f8118956" title=" " alt="" coords="477,17,643,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,26,462,26,461,32,420,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="644,38,684,43,683,48,643,43"/>
+<area shape="rect" id="Node000005" href="$class_security_utils.html#a0eb92f84b7409a1ea736365a8230602f" title=" " alt="" coords="941,45,1134,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="893,56,925,56,925,61,893,61"/>
+<area shape="rect" id="Node000007" href="$class_security_utils.html#af8c7de102de7d3a7dff7990f67d579e2" title=" " alt="" coords="472,123,649,149"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="421,133,456,133,456,139,421,139"/>
+<area shape="rect" id="Node000008" href="$class_security_utils.html#a1549b43a673848ef7bab3f5a8ac32ee6" title=" " alt="" coords="469,173,651,200"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="392,147,481,167,480,172,391,153"/>
+</map>

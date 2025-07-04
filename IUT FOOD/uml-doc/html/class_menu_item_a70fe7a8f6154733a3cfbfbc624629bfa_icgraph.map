@@ -1,0 +1,10 @@
+<map id="MenuItem::ingredientsChanged" name="MenuItem::ingredientsChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="605,29,808,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="747,17,733,10,706,8,682,10,668,15,665,20,671,27,667,31,660,21,665,11,681,5,707,3,735,5,749,12"/>
+<area shape="rect" id="Node000002" href="$class_menu_item.html#a2400a5e3b92e649a3506e92836c4c69f" title=" " alt="" coords="388,29,557,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="590,45,558,45,558,40,590,40"/>
+<area shape="rect" id="Node000003" href="$class_menu_item.html#ab3ebb9d675c9f3cbfd131d9faa46b5b5" title=" " alt="" coords="199,29,340,56"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="372,45,340,45,340,40,372,40"/>
+<area shape="rect" id="Node000004" href="$class_menu_item.html#ab6ef1edf0a88bdbec71b8fb278a6b9d0" title=" " alt="" coords="5,29,151,56"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="183,45,151,45,151,40,183,40"/>
+</map>

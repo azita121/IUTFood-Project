@@ -1,0 +1,6 @@
+<map id="Cart::setRestaurantId" name="Cart::setRestaurantId">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,153,56"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#ad761aaa4b7502bb210f39be85f015d6f" title=" " alt="" coords="201,29,376,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,40,185,40,185,45,153,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="253,30,246,21,251,11,265,5,288,3,313,5,327,12,324,16,312,10,288,8,266,10,255,15,252,20,257,27"/>
+</map>
