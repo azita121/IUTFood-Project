@@ -1,0 +1,75 @@
+\doxysection{logger.\+h}
+\hypertarget{logger_8h_source}{}\label{logger_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/logger.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/logger.h}}
+\mbox{\hyperlink{logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOGGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOGGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QDir>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }Logger\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a551b723eafd6a31d444fcb2f5920fbd3}{INFO}},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a059e9861e0400dfbe05c98a841f3f96b}{WARNING}},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a99cd1c61610c76a57cb8d10d6df6b870}{CRITICAL}}}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_logger}{Logger}}*\ \mbox{\hyperlink{class_logger_afec28ae6d7bdf8f6a0734cb20756de10}{getInstance}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Logging\ methods}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_abb44146978306797963a5b719006bd25}{debug}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component\ =\ \textcolor{stringliteral}{"{}General"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_acf07f1a7415f93b9b8b3212286f32fa0}{info}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component\ =\ \textcolor{stringliteral}{"{}General"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_ac44e10012668c1ce138906b4d0ccc130}{warning}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component\ =\ \textcolor{stringliteral}{"{}General"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_aadd543556d2730d34e1c9f5450449f3e}{error}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component\ =\ \textcolor{stringliteral}{"{}General"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a1d39a94dfa6ff95e598459502a720af4}{critical}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component\ =\ \textcolor{stringliteral}{"{}General"{}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Configuration}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a00fdcdbeb39a2d5d4fb27cc36c35c101}{setLogLevel}}(\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ level);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a6deec98f5697369c00e9ffc125ff1377}{setLogFile}}(\textcolor{keyword}{const}\ QString\&\ filePath);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_ae438b0ed0e04f3063228e20ea08757b3}{enableConsoleOutput}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_ae63cbffeabf015e1e0b141ca793c662d}{setMaxLogSize}}(\textcolor{keywordtype}{int}\ sizeInMB);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a372ee7a1fcf5230f170d0b7de57d70a1}{setMaxLogFiles}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ Utility\ methods}}
+\DoxyCodeLine{00042\ \ \ \ \ QString\ \mbox{\hyperlink{class_logger_ad2287f088a0d09b5adadca70b52d6949}{getLogLevelString}}(\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ level)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a09bc40f4d676a83e8504ddc240ed0c79}{rotateLogs}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ signals:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a06cb86dc033f7d2ecc7b5fd3f5290d75}{logMessage}}(\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logger_a41b2be96d6bb875be18573e4276579c5}{errorOccurred}}(\textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_logger_aadd543556d2730d34e1c9f5450449f3e}{error}},\ \textcolor{keyword}{const}\ QString\&\ component);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{explicit}\ Logger(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00051\ \ \ \ \ \string~Logger();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ Logger*\ instance;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ log(\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ writeToFile(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ checkLogRotation();}
+\DoxyCodeLine{00057\ \ \ \ \ QString\ formatLogMessage(\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ component);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{LogLevel}}\ currentLogLevel;}
+\DoxyCodeLine{00060\ \ \ \ \ QString\ logFilePath;}
+\DoxyCodeLine{00061\ \ \ \ \ QFile\ logFile;}
+\DoxyCodeLine{00062\ \ \ \ \ QTextStream\ logStream;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ consoleOutput;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ maxLogSize;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ maxLogFiles;}
+\DoxyCodeLine{00066\ \ \ \ \ QMutex\ mutex;}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGGER\_H\ }}
+
+\end{DoxyCode}

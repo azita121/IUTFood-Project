@@ -1,0 +1,17 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodServer/orderstatusobserver.h" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodServer/orderstatusobserver.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="297,5,580,48"/>
+<area shape="rect" id="Node000002" href="$orderstatus_8h.html" title=" " alt="" coords="167,96,400,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="391,58,321,98,318,93,388,54"/>
+<area shape="rect" id="Node000005" href="$server_8h.html" title=" " alt="" coords="332,187,536,229"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="440,63,437,186,432,186,435,63"/>
+<area shape="rect" id="Node000007" href="$orderstatusobserver_8cpp.html" title=" " alt="" coords="476,96,774,139"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="497,53,583,93,580,98,494,57"/>
+<area shape="rect" id="Node000003" href="$orderstatus_8cpp.html" title=" " alt="" coords="5,187,253,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,149,166,188,164,184,233,144"/>
+<area shape="rect" id="Node000004" href="$server_8cpp.html" title=" " alt="" coords="181,277,400,320"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="288,154,292,277,287,277,282,154"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="333,145,401,184,398,188,331,149"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="389,240,325,279,322,275,386,236"/>
+<area shape="rect" id="Node000006" href="$_i_u_t_food_server_2main_8cpp.html" title=" " alt="" coords="424,277,634,320"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="469,238,509,275,505,279,466,242"/>
+</map>

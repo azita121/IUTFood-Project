@@ -1,0 +1,6 @@
+<map id="AuthManager::currentUserChanged" name="AuthManager::currentUserChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="195,29,369,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="315,16,303,10,282,8,263,10,251,15,246,21,248,28,242,29,241,19,248,10,261,5,282,3,304,5,317,11"/>
+<area shape="rect" id="Node000002" href="$class_auth_manager.html#afb1cedb0fe6ae60b614bf1279e0a1e76" title=" " alt="" coords="5,37,147,64"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="179,53,147,53,147,48,179,48"/>
+</map>

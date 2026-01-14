@@ -1,0 +1,6 @@
+<map id="NetworkManager::getInstance" name="NetworkManager::getInstance">
+<area shape="rect" id="Node000001" title=" " alt="" coords="233,29,429,56"/>
+<area shape="rect" id="Node000002" href="$classlog_in_window.html#a83d161061fccc5e40192902eb969523e" title=" " alt="" coords="5,29,185,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,45,185,45,185,40,217,40"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="136,17,122,10,95,8,70,10,57,15,54,20,60,27,55,31,48,21,53,11,69,5,95,3,124,5,138,12"/>
+</map>

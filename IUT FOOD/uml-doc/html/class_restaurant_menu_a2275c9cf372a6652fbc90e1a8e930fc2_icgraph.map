@@ -1,0 +1,5 @@
+<map id="RestaurantMenu::foodAddedToCart" name="RestaurantMenu::foodAddedToCart">
+<area shape="rect" id="Node000001" title=" " alt="" coords="269,5,456,48"/>
+<area shape="rect" id="Node000002" href="$class_customer_menu.html#aa28a689d645c7df53e2d714195fcf08e" title=" " alt="" coords="5,13,221,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,29,221,29,221,24,253,24"/>
+</map>

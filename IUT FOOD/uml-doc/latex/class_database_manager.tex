@@ -1,0 +1,793 @@
+\doxysection{Database\+Manager Class Reference}
+\hypertarget{class_database_manager}{}\label{class_database_manager}\index{DatabaseManager@{DatabaseManager}}
+
+
+{\ttfamily \#include $<$databasemanager.\+h$>$}
+
+
+
+Inheritance diagram for Database\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_database_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Database\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_database_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_database_manager_a41da8a8142a36d816efdf65130268980}{add\+Chat\+Message}} (const QString \&order\+Id, const QString \&from\+User\+Id, const QString \&to\+User\+Id, const QString \&content)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a81fa36594d48a11bb4f69df2fe44618d}{get\+Chat\+History}} (const QString \&order\+Id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a34df597fdb123a0ccff9761624601886}{add\+User\+Chat\+Message}} (const QString \&from\+User\+Id, const QString \&to\+User\+Id, const QString \&content)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_ae5fce5a10a88a474345020d90b39b3ad}{get\+User\+Chat\+History}} (const QString \&userA, const QString \&userB)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a1fea04488c5cf3fb9f10cd7ecfce610a}{customer\+Email\+Exists}} (const QString \&email)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a2b42859cabc16e5d694b1ed49a01bb9e}{customer\+Phone\+Exists}} (const QString \&phone)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a50261478b907df297396dc46b4ab55e4}{owner\+Email\+Exists}} (const QString \&email)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a42590247c42be2b5ee13e96b4dd10f47}{owner\+Phone\+Exists}} (const QString \&phone)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a882401a6678934fe7a2b747ae815aca4}{connect}} (const QString \&host, const QString \&database, const QString \&username, const QString \&password)
+\item 
+void \mbox{\hyperlink{class_database_manager_a5da4f201fd5f9fe8f02ea9d64da9a803}{disconnect}} ()
+\item 
+bool \mbox{\hyperlink{class_database_manager_aa4191649a436b20af9d2151e141ee148}{is\+Connected}} () const
+\item 
+bool \mbox{\hyperlink{class_database_manager_a4e4696121abcb7043f5ea1122167f31a}{create\+Customer}} (const QString \&first\+\_\+name, const QString \&last\+\_\+name, const QString \&username, const QString \&email, const QString \&password\+\_\+hash, const QString \&phone, const QString \&address, const QString \&city, const QString \&location)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a7165c8f2ecc4ebe40c45d10d5a093e17}{update\+Customer}} (const QString \&customer\+\_\+id, const QVariant\+Map \&updates)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a85f0b780496914e1c219183cdaef2434}{delete\+Customer}} (const QString \&customer\+\_\+id)
+\item 
+QString \mbox{\hyperlink{class_database_manager_a6961ab312112c6428ce37b3f2e550e74}{get\+Customer\+Id}} (const QString \&email)
+\item 
+QString \mbox{\hyperlink{class_database_manager_afd41dbae0f0ea2e1ee60f57f105c89db}{get\+Customer\+Password\+Hash}} (const QString \&customer\+\_\+id)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_database_manager_a1d5dae7bec003574cfffcacbe54838b4}{get\+Customer\+Profile}} (const QString \&customer\+\_\+id)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_database_manager_a7eb4309d543b137d031e37b3b24e91fb}{get\+Customer\+By\+Login\+Id}} (const QString \&login\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_aa94111739116b29b16cc1ca2f1043a1e}{create\+Restaurant\+Owner}} (const QString \&first\+\_\+name, const QString \&last\+\_\+name, const QString \&username, const QString \&email, const QString \&password\+\_\+hash, const QString \&phone, const QString \&restaurant\+\_\+id, const QString \&city, const QString \&location)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ae7b15ddbec447a48f0cd89579fa17f66}{update\+Restaurant\+Owner}} (const QString \&owner\+\_\+id, const QVariant\+Map \&updates)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a6f24a9d43d9760336f8ae903e616b3bf}{delete\+Restaurant\+Owner}} (const QString \&owner\+\_\+id)
+\item 
+QString \mbox{\hyperlink{class_database_manager_a327227d2e7f94faa494bd71719e0b0a8}{get\+Restaurant\+Owner\+Id}} (const QString \&email)
+\item 
+QString \mbox{\hyperlink{class_database_manager_a41d159f8e711fcd570e44737236bf8d5}{get\+Restaurant\+Owner\+Password\+Hash}} (const QString \&owner\+\_\+id)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_database_manager_a1390916727d241f8500b86ec588bbccb}{get\+Restaurant\+Owner\+Profile}} (const QString \&owner\+\_\+id)
+\item 
+QString \mbox{\hyperlink{class_database_manager_ab1702c35255f4d342bb2f822a4c0ae42}{get\+Restaurant\+Id\+By\+Owner}} (const QString \&owner\+\_\+id)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_database_manager_acc9f372de30c8667cde2b17f19d72dc0}{get\+Restaurant\+Owner\+By\+Login\+Id}} (const QString \&login\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ac74a37b648267fb255b6c3be884bd8df}{create\+Restaurant}} (const QString \&name, const QString \&address, const QString \&type, const QString \&image\+\_\+url="{}"{})
+\item 
+bool \mbox{\hyperlink{class_database_manager_a63cb9409a73ea6e57d795a0b3290f82b}{update\+Restaurant}} (const QString \&restaurant\+\_\+id, const QVariant\+Map \&updates)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a62f8422259f6c326d89d9ffd741db36a}{delete\+Restaurant}} (const QString \&restaurant\+\_\+id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_ae923e904280dfc75371033ec4f01634a}{get\+Restaurants\+By\+Owner}} (const QString \&owner\+\_\+id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a662fc88903b21dae08750ce3ca97a903}{get\+All\+Restaurants}} ()
+\item 
+bool \mbox{\hyperlink{class_database_manager_a172ce3eef8e45c6e2ba9e1ae6d2b8547}{create\+Menu}} (const QString \&restaurant\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a14eeb626f6c25b4a7df235297f98e71c}{add\+Menu\+Item}} (const QString \&menu\+\_\+id, const QString \&name, const QString \&description, double price, const QString \&ingredients, const QString \&category, const QString \&image\+\_\+url="{}"{})
+\item 
+bool \mbox{\hyperlink{class_database_manager_abc95400e60ff1d1fe636dbf6eb83589e}{update\+Menu\+Item}} (const QString \&menu\+\_\+id, const QString \&item\+\_\+id, const QVariant\+Map \&updates)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a3c33f9f9065dfebaaa5324a03987664c}{delete\+Menu\+Item}} (const QString \&menu\+\_\+id, const QString \&item\+\_\+id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a219d6f47428044a1217fc9cc8d9f2aa9}{get\+Menu\+Items}} (const QString \&restaurant\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ac8047a4cea9488ae8becc3df01c7653b}{create\+Order}} (const QString \&customer\+\_\+id, const QString \&restaurant\+\_\+id, const QVariant\+List \&items)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ae7e8e48624fa2436b34a0bd1f35e9444}{update\+Order\+Status}} (const QString \&order\+\_\+id, const QString \&status)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ace35ff161b6bed227686606b83a6e8e7}{delete\+Order}} (const QString \&order\+\_\+id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a29d237103a5ff1f035188b47cfc41289}{get\+Customer\+Order\+History}} (const QString \&customer\+\_\+id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a29d4fcb3a5e4270db2746ccb5b297e90}{get\+Order\+History}} (const QString \&user\+\_\+id, const QString \&user\+\_\+type)
+\item 
+bool \mbox{\hyperlink{class_database_manager_a6ba7320a0d6285567329b1d291363dca}{add\+Order\+Comment}} (const QString \&order\+\_\+id, const QString \&customer\+\_\+id, const QString \&comment)
+\item 
+QJson\+Array \mbox{\hyperlink{class_database_manager_a32b1ccdfd086221e237568430ed6b2fa}{get\+Order\+Comments}} (const QString \&order\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4}{execute\+Query}} (const QString \&query, const QVariant\+Map \&params)
+\item 
+QSql\+Query \mbox{\hyperlink{class_database_manager_a3ec32076c78711bd7514b665a3c71ec2}{prepare\+Query}} (const QString \&query, const QVariant\+Map \&params)
+\item 
+void \mbox{\hyperlink{class_database_manager_a94489d5d7b4c8f5d3f62777030a77cfd}{log\+Error}} (const QString \&operation, const QSql\+Error \&error)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_database_manager_aa2b684cc0d8633add492a59309403a4c}{get\+User\+By\+Id}} (const QString \&user\+\_\+id)
+\item 
+bool \mbox{\hyperlink{class_database_manager_ae5b710336cd7ac882bfd30d2b4935b8b}{begin\+Transaction}} ()
+\item 
+bool \mbox{\hyperlink{class_database_manager_ad1997bb34b2faa3b6c99d22fea3fb4f6}{commit\+Transaction}} ()
+\item 
+bool \mbox{\hyperlink{class_database_manager_abce3065039dcb47f5874ffc14cdeaf6a}{rollback\+Transaction}} ()
+\item 
+bool \mbox{\hyperlink{class_database_manager_a58367b27036f6fc0ad04c4722d42d384}{initialize\+Schema}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_database_manager}{Database\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_database_manager_adc77584b498f23cb33c9fc2d0422a73f}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_database_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_database_manager_a41da8a8142a36d816efdf65130268980}\index{DatabaseManager@{DatabaseManager}!addChatMessage@{addChatMessage}}
+\index{addChatMessage@{addChatMessage}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{addChatMessage()}{addChatMessage()}}
+{\footnotesize\ttfamily \label{class_database_manager_a41da8a8142a36d816efdf65130268980} 
+bool Database\+Manager\+::add\+Chat\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{from\+User\+Id}{, }\item[{const QString \&}]{to\+User\+Id}{, }\item[{const QString \&}]{content}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a41da8a8142a36d816efdf65130268980_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a14eeb626f6c25b4a7df235297f98e71c}\index{DatabaseManager@{DatabaseManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}}
+{\footnotesize\ttfamily \label{class_database_manager_a14eeb626f6c25b4a7df235297f98e71c} 
+bool Database\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+\_\+id}{, }\item[{const QString \&}]{name}{, }\item[{const QString \&}]{description}{, }\item[{double}]{price}{, }\item[{const QString \&}]{ingredients}{, }\item[{const QString \&}]{category}{, }\item[{const QString \&}]{image\+\_\+url}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a14eeb626f6c25b4a7df235297f98e71c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a6ba7320a0d6285567329b1d291363dca}\index{DatabaseManager@{DatabaseManager}!addOrderComment@{addOrderComment}}
+\index{addOrderComment@{addOrderComment}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{addOrderComment()}{addOrderComment()}}
+{\footnotesize\ttfamily \label{class_database_manager_a6ba7320a0d6285567329b1d291363dca} 
+bool Database\+Manager\+::add\+Order\+Comment (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+\_\+id}{, }\item[{const QString \&}]{customer\+\_\+id}{, }\item[{const QString \&}]{comment}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a6ba7320a0d6285567329b1d291363dca_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a34df597fdb123a0ccff9761624601886}\index{DatabaseManager@{DatabaseManager}!addUserChatMessage@{addUserChatMessage}}
+\index{addUserChatMessage@{addUserChatMessage}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{addUserChatMessage()}{addUserChatMessage()}}
+{\footnotesize\ttfamily \label{class_database_manager_a34df597fdb123a0ccff9761624601886} 
+bool Database\+Manager\+::add\+User\+Chat\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{from\+User\+Id}{, }\item[{const QString \&}]{to\+User\+Id}{, }\item[{const QString \&}]{content}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a34df597fdb123a0ccff9761624601886_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ae5b710336cd7ac882bfd30d2b4935b8b}\index{DatabaseManager@{DatabaseManager}!beginTransaction@{beginTransaction}}
+\index{beginTransaction@{beginTransaction}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{beginTransaction()}{beginTransaction()}}
+{\footnotesize\ttfamily \label{class_database_manager_ae5b710336cd7ac882bfd30d2b4935b8b} 
+bool Database\+Manager\+::begin\+Transaction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ae5b710336cd7ac882bfd30d2b4935b8b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ad1997bb34b2faa3b6c99d22fea3fb4f6}\index{DatabaseManager@{DatabaseManager}!commitTransaction@{commitTransaction}}
+\index{commitTransaction@{commitTransaction}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{commitTransaction()}{commitTransaction()}}
+{\footnotesize\ttfamily \label{class_database_manager_ad1997bb34b2faa3b6c99d22fea3fb4f6} 
+bool Database\+Manager\+::commit\+Transaction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ad1997bb34b2faa3b6c99d22fea3fb4f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a882401a6678934fe7a2b747ae815aca4}\index{DatabaseManager@{DatabaseManager}!connect@{connect}}
+\index{connect@{connect}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{class_database_manager_a882401a6678934fe7a2b747ae815aca4} 
+bool Database\+Manager\+::connect (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{const QString \&}]{database}{, }\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a882401a6678934fe7a2b747ae815aca4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_database_manager_a882401a6678934fe7a2b747ae815aca4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a4e4696121abcb7043f5ea1122167f31a}\index{DatabaseManager@{DatabaseManager}!createCustomer@{createCustomer}}
+\index{createCustomer@{createCustomer}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createCustomer()}{createCustomer()}}
+{\footnotesize\ttfamily \label{class_database_manager_a4e4696121abcb7043f5ea1122167f31a} 
+bool Database\+Manager\+::create\+Customer (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+\_\+name}{, }\item[{const QString \&}]{last\+\_\+name}{, }\item[{const QString \&}]{username}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{password\+\_\+hash}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{address}{, }\item[{const QString \&}]{city}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a4e4696121abcb7043f5ea1122167f31a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a172ce3eef8e45c6e2ba9e1ae6d2b8547}\index{DatabaseManager@{DatabaseManager}!createMenu@{createMenu}}
+\index{createMenu@{createMenu}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createMenu()}{createMenu()}}
+{\footnotesize\ttfamily \label{class_database_manager_a172ce3eef8e45c6e2ba9e1ae6d2b8547} 
+bool Database\+Manager\+::create\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a172ce3eef8e45c6e2ba9e1ae6d2b8547_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ac8047a4cea9488ae8becc3df01c7653b}\index{DatabaseManager@{DatabaseManager}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createOrder()}{createOrder()}}
+{\footnotesize\ttfamily \label{class_database_manager_ac8047a4cea9488ae8becc3df01c7653b} 
+bool Database\+Manager\+::create\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{, }\item[{const QString \&}]{restaurant\+\_\+id}{, }\item[{const QVariant\+List \&}]{items}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ac8047a4cea9488ae8becc3df01c7653b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ac74a37b648267fb255b6c3be884bd8df}\index{DatabaseManager@{DatabaseManager}!createRestaurant@{createRestaurant}}
+\index{createRestaurant@{createRestaurant}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createRestaurant()}{createRestaurant()}}
+{\footnotesize\ttfamily \label{class_database_manager_ac74a37b648267fb255b6c3be884bd8df} 
+bool Database\+Manager\+::create\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const QString \&}]{address}{, }\item[{const QString \&}]{type}{, }\item[{const QString \&}]{image\+\_\+url}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ac74a37b648267fb255b6c3be884bd8df_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_aa94111739116b29b16cc1ca2f1043a1e}\index{DatabaseManager@{DatabaseManager}!createRestaurantOwner@{createRestaurantOwner}}
+\index{createRestaurantOwner@{createRestaurantOwner}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createRestaurantOwner()}{createRestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_database_manager_aa94111739116b29b16cc1ca2f1043a1e} 
+bool Database\+Manager\+::create\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+\_\+name}{, }\item[{const QString \&}]{last\+\_\+name}{, }\item[{const QString \&}]{username}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{password\+\_\+hash}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{restaurant\+\_\+id}{, }\item[{const QString \&}]{city}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_aa94111739116b29b16cc1ca2f1043a1e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a1fea04488c5cf3fb9f10cd7ecfce610a}\index{DatabaseManager@{DatabaseManager}!customerEmailExists@{customerEmailExists}}
+\index{customerEmailExists@{customerEmailExists}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{customerEmailExists()}{customerEmailExists()}}
+{\footnotesize\ttfamily \label{class_database_manager_a1fea04488c5cf3fb9f10cd7ecfce610a} 
+bool Database\+Manager\+::customer\+Email\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_database_manager_a2b42859cabc16e5d694b1ed49a01bb9e}\index{DatabaseManager@{DatabaseManager}!customerPhoneExists@{customerPhoneExists}}
+\index{customerPhoneExists@{customerPhoneExists}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{customerPhoneExists()}{customerPhoneExists()}}
+{\footnotesize\ttfamily \label{class_database_manager_a2b42859cabc16e5d694b1ed49a01bb9e} 
+bool Database\+Manager\+::customer\+Phone\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{phone}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_database_manager_a85f0b780496914e1c219183cdaef2434}\index{DatabaseManager@{DatabaseManager}!deleteCustomer@{deleteCustomer}}
+\index{deleteCustomer@{deleteCustomer}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{deleteCustomer()}{deleteCustomer()}}
+{\footnotesize\ttfamily \label{class_database_manager_a85f0b780496914e1c219183cdaef2434} 
+bool Database\+Manager\+::delete\+Customer (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a85f0b780496914e1c219183cdaef2434_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a3c33f9f9065dfebaaa5324a03987664c}\index{DatabaseManager@{DatabaseManager}!deleteMenuItem@{deleteMenuItem}}
+\index{deleteMenuItem@{deleteMenuItem}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{deleteMenuItem()}{deleteMenuItem()}}
+{\footnotesize\ttfamily \label{class_database_manager_a3c33f9f9065dfebaaa5324a03987664c} 
+bool Database\+Manager\+::delete\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+\_\+id}{, }\item[{const QString \&}]{item\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a3c33f9f9065dfebaaa5324a03987664c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ace35ff161b6bed227686606b83a6e8e7}\index{DatabaseManager@{DatabaseManager}!deleteOrder@{deleteOrder}}
+\index{deleteOrder@{deleteOrder}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{deleteOrder()}{deleteOrder()}}
+{\footnotesize\ttfamily \label{class_database_manager_ace35ff161b6bed227686606b83a6e8e7} 
+bool Database\+Manager\+::delete\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ace35ff161b6bed227686606b83a6e8e7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a62f8422259f6c326d89d9ffd741db36a}\index{DatabaseManager@{DatabaseManager}!deleteRestaurant@{deleteRestaurant}}
+\index{deleteRestaurant@{deleteRestaurant}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{deleteRestaurant()}{deleteRestaurant()}}
+{\footnotesize\ttfamily \label{class_database_manager_a62f8422259f6c326d89d9ffd741db36a} 
+bool Database\+Manager\+::delete\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a62f8422259f6c326d89d9ffd741db36a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a6f24a9d43d9760336f8ae903e616b3bf}\index{DatabaseManager@{DatabaseManager}!deleteRestaurantOwner@{deleteRestaurantOwner}}
+\index{deleteRestaurantOwner@{deleteRestaurantOwner}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{deleteRestaurantOwner()}{deleteRestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_database_manager_a6f24a9d43d9760336f8ae903e616b3bf} 
+bool Database\+Manager\+::delete\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a6f24a9d43d9760336f8ae903e616b3bf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a5da4f201fd5f9fe8f02ea9d64da9a803}\index{DatabaseManager@{DatabaseManager}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily \label{class_database_manager_a5da4f201fd5f9fe8f02ea9d64da9a803} 
+void Database\+Manager\+::disconnect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a5da4f201fd5f9fe8f02ea9d64da9a803_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4}\index{DatabaseManager@{DatabaseManager}!executeQuery@{executeQuery}}
+\index{executeQuery@{executeQuery}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{executeQuery()}{executeQuery()}}
+{\footnotesize\ttfamily \label{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4} 
+bool Database\+Manager\+::execute\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{query}{, }\item[{const QVariant\+Map \&}]{params}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a662fc88903b21dae08750ce3ca97a903}\index{DatabaseManager@{DatabaseManager}!getAllRestaurants@{getAllRestaurants}}
+\index{getAllRestaurants@{getAllRestaurants}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getAllRestaurants()}{getAllRestaurants()}}
+{\footnotesize\ttfamily \label{class_database_manager_a662fc88903b21dae08750ce3ca97a903} 
+QJson\+Array Database\+Manager\+::get\+All\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a662fc88903b21dae08750ce3ca97a903_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a81fa36594d48a11bb4f69df2fe44618d}\index{DatabaseManager@{DatabaseManager}!getChatHistory@{getChatHistory}}
+\index{getChatHistory@{getChatHistory}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getChatHistory()}{getChatHistory()}}
+{\footnotesize\ttfamily \label{class_database_manager_a81fa36594d48a11bb4f69df2fe44618d} 
+QJson\+Array Database\+Manager\+::get\+Chat\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a81fa36594d48a11bb4f69df2fe44618d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a7eb4309d543b137d031e37b3b24e91fb}\index{DatabaseManager@{DatabaseManager}!getCustomerByLoginId@{getCustomerByLoginId}}
+\index{getCustomerByLoginId@{getCustomerByLoginId}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerByLoginId()}{getCustomerByLoginId()}}
+{\footnotesize\ttfamily \label{class_database_manager_a7eb4309d543b137d031e37b3b24e91fb} 
+QVariant\+Map Database\+Manager\+::get\+Customer\+By\+Login\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a7eb4309d543b137d031e37b3b24e91fb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a6961ab312112c6428ce37b3f2e550e74}\index{DatabaseManager@{DatabaseManager}!getCustomerId@{getCustomerId}}
+\index{getCustomerId@{getCustomerId}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerId()}{getCustomerId()}}
+{\footnotesize\ttfamily \label{class_database_manager_a6961ab312112c6428ce37b3f2e550e74} 
+QString Database\+Manager\+::get\+Customer\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a6961ab312112c6428ce37b3f2e550e74_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a29d237103a5ff1f035188b47cfc41289}\index{DatabaseManager@{DatabaseManager}!getCustomerOrderHistory@{getCustomerOrderHistory}}
+\index{getCustomerOrderHistory@{getCustomerOrderHistory}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerOrderHistory()}{getCustomerOrderHistory()}}
+{\footnotesize\ttfamily \label{class_database_manager_a29d237103a5ff1f035188b47cfc41289} 
+QJson\+Array Database\+Manager\+::get\+Customer\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a29d237103a5ff1f035188b47cfc41289_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_afd41dbae0f0ea2e1ee60f57f105c89db}\index{DatabaseManager@{DatabaseManager}!getCustomerPasswordHash@{getCustomerPasswordHash}}
+\index{getCustomerPasswordHash@{getCustomerPasswordHash}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerPasswordHash()}{getCustomerPasswordHash()}}
+{\footnotesize\ttfamily \label{class_database_manager_afd41dbae0f0ea2e1ee60f57f105c89db} 
+QString Database\+Manager\+::get\+Customer\+Password\+Hash (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_afd41dbae0f0ea2e1ee60f57f105c89db_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a1d5dae7bec003574cfffcacbe54838b4}\index{DatabaseManager@{DatabaseManager}!getCustomerProfile@{getCustomerProfile}}
+\index{getCustomerProfile@{getCustomerProfile}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerProfile()}{getCustomerProfile()}}
+{\footnotesize\ttfamily \label{class_database_manager_a1d5dae7bec003574cfffcacbe54838b4} 
+QVariant\+Map Database\+Manager\+::get\+Customer\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a1d5dae7bec003574cfffcacbe54838b4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_adc77584b498f23cb33c9fc2d0422a73f}\index{DatabaseManager@{DatabaseManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_database_manager_adc77584b498f23cb33c9fc2d0422a73f} 
+\mbox{\hyperlink{class_database_manager}{Database\+Manager}} \texorpdfstring{$\ast$}{*} Database\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_database_manager_adc77584b498f23cb33c9fc2d0422a73f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a219d6f47428044a1217fc9cc8d9f2aa9}\index{DatabaseManager@{DatabaseManager}!getMenuItems@{getMenuItems}}
+\index{getMenuItems@{getMenuItems}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItems()}{getMenuItems()}}
+{\footnotesize\ttfamily \label{class_database_manager_a219d6f47428044a1217fc9cc8d9f2aa9} 
+QJson\+Array Database\+Manager\+::get\+Menu\+Items (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a219d6f47428044a1217fc9cc8d9f2aa9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a32b1ccdfd086221e237568430ed6b2fa}\index{DatabaseManager@{DatabaseManager}!getOrderComments@{getOrderComments}}
+\index{getOrderComments@{getOrderComments}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getOrderComments()}{getOrderComments()}}
+{\footnotesize\ttfamily \label{class_database_manager_a32b1ccdfd086221e237568430ed6b2fa} 
+QJson\+Array Database\+Manager\+::get\+Order\+Comments (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a32b1ccdfd086221e237568430ed6b2fa_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a29d4fcb3a5e4270db2746ccb5b297e90}\index{DatabaseManager@{DatabaseManager}!getOrderHistory@{getOrderHistory}}
+\index{getOrderHistory@{getOrderHistory}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getOrderHistory()}{getOrderHistory()}}
+{\footnotesize\ttfamily \label{class_database_manager_a29d4fcb3a5e4270db2746ccb5b297e90} 
+QJson\+Array Database\+Manager\+::get\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+\_\+id}{, }\item[{const QString \&}]{user\+\_\+type}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a29d4fcb3a5e4270db2746ccb5b297e90_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ab1702c35255f4d342bb2f822a4c0ae42}\index{DatabaseManager@{DatabaseManager}!getRestaurantIdByOwner@{getRestaurantIdByOwner}}
+\index{getRestaurantIdByOwner@{getRestaurantIdByOwner}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantIdByOwner()}{getRestaurantIdByOwner()}}
+{\footnotesize\ttfamily \label{class_database_manager_ab1702c35255f4d342bb2f822a4c0ae42} 
+QString Database\+Manager\+::get\+Restaurant\+Id\+By\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ab1702c35255f4d342bb2f822a4c0ae42_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_acc9f372de30c8667cde2b17f19d72dc0}\index{DatabaseManager@{DatabaseManager}!getRestaurantOwnerByLoginId@{getRestaurantOwnerByLoginId}}
+\index{getRestaurantOwnerByLoginId@{getRestaurantOwnerByLoginId}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantOwnerByLoginId()}{getRestaurantOwnerByLoginId()}}
+{\footnotesize\ttfamily \label{class_database_manager_acc9f372de30c8667cde2b17f19d72dc0} 
+QVariant\+Map Database\+Manager\+::get\+Restaurant\+Owner\+By\+Login\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_acc9f372de30c8667cde2b17f19d72dc0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a327227d2e7f94faa494bd71719e0b0a8}\index{DatabaseManager@{DatabaseManager}!getRestaurantOwnerId@{getRestaurantOwnerId}}
+\index{getRestaurantOwnerId@{getRestaurantOwnerId}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantOwnerId()}{getRestaurantOwnerId()}}
+{\footnotesize\ttfamily \label{class_database_manager_a327227d2e7f94faa494bd71719e0b0a8} 
+QString Database\+Manager\+::get\+Restaurant\+Owner\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a327227d2e7f94faa494bd71719e0b0a8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a41d159f8e711fcd570e44737236bf8d5}\index{DatabaseManager@{DatabaseManager}!getRestaurantOwnerPasswordHash@{getRestaurantOwnerPasswordHash}}
+\index{getRestaurantOwnerPasswordHash@{getRestaurantOwnerPasswordHash}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantOwnerPasswordHash()}{getRestaurantOwnerPasswordHash()}}
+{\footnotesize\ttfamily \label{class_database_manager_a41d159f8e711fcd570e44737236bf8d5} 
+QString Database\+Manager\+::get\+Restaurant\+Owner\+Password\+Hash (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a41d159f8e711fcd570e44737236bf8d5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a1390916727d241f8500b86ec588bbccb}\index{DatabaseManager@{DatabaseManager}!getRestaurantOwnerProfile@{getRestaurantOwnerProfile}}
+\index{getRestaurantOwnerProfile@{getRestaurantOwnerProfile}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantOwnerProfile()}{getRestaurantOwnerProfile()}}
+{\footnotesize\ttfamily \label{class_database_manager_a1390916727d241f8500b86ec588bbccb} 
+QVariant\+Map Database\+Manager\+::get\+Restaurant\+Owner\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a1390916727d241f8500b86ec588bbccb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ae923e904280dfc75371033ec4f01634a}\index{DatabaseManager@{DatabaseManager}!getRestaurantsByOwner@{getRestaurantsByOwner}}
+\index{getRestaurantsByOwner@{getRestaurantsByOwner}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantsByOwner()}{getRestaurantsByOwner()}}
+{\footnotesize\ttfamily \label{class_database_manager_ae923e904280dfc75371033ec4f01634a} 
+QJson\+Array Database\+Manager\+::get\+Restaurants\+By\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ae923e904280dfc75371033ec4f01634a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_aa2b684cc0d8633add492a59309403a4c}\index{DatabaseManager@{DatabaseManager}!getUserById@{getUserById}}
+\index{getUserById@{getUserById}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getUserById()}{getUserById()}}
+{\footnotesize\ttfamily \label{class_database_manager_aa2b684cc0d8633add492a59309403a4c} 
+QVariant\+Map Database\+Manager\+::get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+\_\+id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_database_manager_ae5fce5a10a88a474345020d90b39b3ad}\index{DatabaseManager@{DatabaseManager}!getUserChatHistory@{getUserChatHistory}}
+\index{getUserChatHistory@{getUserChatHistory}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getUserChatHistory()}{getUserChatHistory()}}
+{\footnotesize\ttfamily \label{class_database_manager_ae5fce5a10a88a474345020d90b39b3ad} 
+QJson\+Array Database\+Manager\+::get\+User\+Chat\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{userA}{, }\item[{const QString \&}]{userB}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ae5fce5a10a88a474345020d90b39b3ad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a58367b27036f6fc0ad04c4722d42d384}\index{DatabaseManager@{DatabaseManager}!initializeSchema@{initializeSchema}}
+\index{initializeSchema@{initializeSchema}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{initializeSchema()}{initializeSchema()}}
+{\footnotesize\ttfamily \label{class_database_manager_a58367b27036f6fc0ad04c4722d42d384} 
+bool Database\+Manager\+::initialize\+Schema (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_database_manager_a58367b27036f6fc0ad04c4722d42d384_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_aa4191649a436b20af9d2151e141ee148}\index{DatabaseManager@{DatabaseManager}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily \label{class_database_manager_aa4191649a436b20af9d2151e141ee148} 
+bool Database\+Manager\+::is\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_database_manager_a94489d5d7b4c8f5d3f62777030a77cfd}\index{DatabaseManager@{DatabaseManager}!logError@{logError}}
+\index{logError@{logError}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily \label{class_database_manager_a94489d5d7b4c8f5d3f62777030a77cfd} 
+void Database\+Manager\+::log\+Error (\begin{DoxyParamCaption}\item[{const QString \&}]{operation}{, }\item[{const QSql\+Error \&}]{error}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a94489d5d7b4c8f5d3f62777030a77cfd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a50261478b907df297396dc46b4ab55e4}\index{DatabaseManager@{DatabaseManager}!ownerEmailExists@{ownerEmailExists}}
+\index{ownerEmailExists@{ownerEmailExists}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{ownerEmailExists()}{ownerEmailExists()}}
+{\footnotesize\ttfamily \label{class_database_manager_a50261478b907df297396dc46b4ab55e4} 
+bool Database\+Manager\+::owner\+Email\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_database_manager_a42590247c42be2b5ee13e96b4dd10f47}\index{DatabaseManager@{DatabaseManager}!ownerPhoneExists@{ownerPhoneExists}}
+\index{ownerPhoneExists@{ownerPhoneExists}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{ownerPhoneExists()}{ownerPhoneExists()}}
+{\footnotesize\ttfamily \label{class_database_manager_a42590247c42be2b5ee13e96b4dd10f47} 
+bool Database\+Manager\+::owner\+Phone\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{phone}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_database_manager_a3ec32076c78711bd7514b665a3c71ec2}\index{DatabaseManager@{DatabaseManager}!prepareQuery@{prepareQuery}}
+\index{prepareQuery@{prepareQuery}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{prepareQuery()}{prepareQuery()}}
+{\footnotesize\ttfamily \label{class_database_manager_a3ec32076c78711bd7514b665a3c71ec2} 
+QSql\+Query Database\+Manager\+::prepare\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{query}{, }\item[{const QVariant\+Map \&}]{params}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_database_manager_a3ec32076c78711bd7514b665a3c71ec2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_abce3065039dcb47f5874ffc14cdeaf6a}\index{DatabaseManager@{DatabaseManager}!rollbackTransaction@{rollbackTransaction}}
+\index{rollbackTransaction@{rollbackTransaction}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{rollbackTransaction()}{rollbackTransaction()}}
+{\footnotesize\ttfamily \label{class_database_manager_abce3065039dcb47f5874ffc14cdeaf6a} 
+bool Database\+Manager\+::rollback\+Transaction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_abce3065039dcb47f5874ffc14cdeaf6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a7165c8f2ecc4ebe40c45d10d5a093e17}\index{DatabaseManager@{DatabaseManager}!updateCustomer@{updateCustomer}}
+\index{updateCustomer@{updateCustomer}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{updateCustomer()}{updateCustomer()}}
+{\footnotesize\ttfamily \label{class_database_manager_a7165c8f2ecc4ebe40c45d10d5a093e17} 
+bool Database\+Manager\+::update\+Customer (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+\_\+id}{, }\item[{const QVariant\+Map \&}]{updates}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a7165c8f2ecc4ebe40c45d10d5a093e17_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_abc95400e60ff1d1fe636dbf6eb83589e}\index{DatabaseManager@{DatabaseManager}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{class_database_manager_abc95400e60ff1d1fe636dbf6eb83589e} 
+bool Database\+Manager\+::update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+\_\+id}{, }\item[{const QString \&}]{item\+\_\+id}{, }\item[{const QVariant\+Map \&}]{updates}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_abc95400e60ff1d1fe636dbf6eb83589e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ae7e8e48624fa2436b34a0bd1f35e9444}\index{DatabaseManager@{DatabaseManager}!updateOrderStatus@{updateOrderStatus}}
+\index{updateOrderStatus@{updateOrderStatus}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{updateOrderStatus()}{updateOrderStatus()}}
+{\footnotesize\ttfamily \label{class_database_manager_ae7e8e48624fa2436b34a0bd1f35e9444} 
+bool Database\+Manager\+::update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+\_\+id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ae7e8e48624fa2436b34a0bd1f35e9444_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_a63cb9409a73ea6e57d795a0b3290f82b}\index{DatabaseManager@{DatabaseManager}!updateRestaurant@{updateRestaurant}}
+\index{updateRestaurant@{updateRestaurant}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurant()}{updateRestaurant()}}
+{\footnotesize\ttfamily \label{class_database_manager_a63cb9409a73ea6e57d795a0b3290f82b} 
+bool Database\+Manager\+::update\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+\_\+id}{, }\item[{const QVariant\+Map \&}]{updates}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_a63cb9409a73ea6e57d795a0b3290f82b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_database_manager_ae7b15ddbec447a48f0cd89579fa17f66}\index{DatabaseManager@{DatabaseManager}!updateRestaurantOwner@{updateRestaurantOwner}}
+\index{updateRestaurantOwner@{updateRestaurantOwner}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantOwner()}{updateRestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_database_manager_ae7b15ddbec447a48f0cd89579fa17f66} 
+bool Database\+Manager\+::update\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+\_\+id}{, }\item[{const QVariant\+Map \&}]{updates}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_database_manager_ae7b15ddbec447a48f0cd89579fa17f66_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{databasemanager_8h}{databasemanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{databasemanager_8cpp}{databasemanager.\+cpp}}\end{DoxyCompactItemize}

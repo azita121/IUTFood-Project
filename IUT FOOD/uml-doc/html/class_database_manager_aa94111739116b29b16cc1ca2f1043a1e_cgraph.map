@@ -1,0 +1,20 @@
+<map id="DatabaseManager::createRestaurantOwner" name="DatabaseManager::createRestaurantOwner">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,241,149"/>
+<area shape="rect" id="Node000002" href="$class_logger.html#abb44146978306797963a5b719006bd25" title=" " alt="" coords="328,5,431,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,104,219,72,288,42,312,33,314,38,290,46,222,77,163,108"/>
+<area shape="rect" id="Node000003" href="$class_logger.html#aadd543556d2730d34e1c9f5450449f3e" title=" " alt="" coords="332,56,426,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,103,316,81,318,86,220,109"/>
+<area shape="rect" id="Node000005" href="$class_database_manager.html#abf1daa555b813fbe82c7a8e052cbbac4" title=" " alt="" coords="289,107,470,149"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="241,125,273,125,273,131,241,131"/>
+<area shape="rect" id="Node000008" href="$class_logger.html#afec28ae6d7bdf8f6a0734cb20756de10" title=" " alt="" coords="311,173,448,200"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="220,147,303,167,302,172,219,153"/>
+<area shape="rect" id="Node000009" href="$class_logger.html#acf07f1a7415f93b9b8b3212286f32fa0" title=" " alt="" coords="335,224,424,251"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="163,148,222,179,290,210,321,220,319,225,288,214,219,184,161,152"/>
+<area shape="rect" id="Node000004" href="$class_logger.html#a41b2be96d6bb875be18573e4276579c5" title=" " alt="" coords="534,56,682,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="427,74,519,75,519,81,427,79"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="534,64,442,64,442,59,534,58"/>
+<area shape="rect" id="Node000006" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="518,111,698,137"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="470,124,502,123,502,129,470,129"/>
+<area shape="rect" id="Node000007" href="$class_database_manager.html#a3ec32076c78711bd7514b665a3c71ec2" title=" " alt="" coords="519,161,697,204"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="471,147,504,155,503,160,469,152"/>
+</map>

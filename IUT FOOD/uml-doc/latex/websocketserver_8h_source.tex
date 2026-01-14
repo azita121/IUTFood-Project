@@ -1,0 +1,54 @@
+\doxysection{websocketserver.\+h}
+\hypertarget{websocketserver_8h_source}{}\label{websocketserver_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/websocketserver.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/websocketserver.h}}
+\mbox{\hyperlink{websocketserver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WEBSOCKETSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WEBSOCKETSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QWebSocketServer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QWebSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{authsystem_8h}{authsystem.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }WebSocketServer\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ WebSocketServer*\ \mbox{\hyperlink{class_web_socket_server_ab0aab4f330ad165780f99c2f2338439c}{getInstance}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_web_socket_server_a1b7cef885d42bd87289df012d57768b7}{start}}(quint16\ port);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_socket_server_acbb0a06dfba20fef0056db3ada4e0f7b}{stop}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_socket_server_a36f3841dc8f4faba280c01cc37492ad8}{broadcastOrderUpdate}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_socket_server_aef7e6b64fb4969add0a9157a61d37bc3}{sendChatMessage}}(\textcolor{keyword}{const}\ QString\&\ fromUserId,\ \textcolor{keyword}{const}\ QString\&\ toUserId,\ \textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_socket_server_a47d72551a272fa65b1b85e9f0f23c761}{broadcastToUser}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keyword}{const}\ QJsonObject\&\ message);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_socket_server_a5b89b0c7c726da6be4a28ddd9855d1d2}{broadcastToRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonObject\&\ message);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ WebSocketServer(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00029\ \ \ \ \ \string~WebSocketServer();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ WebSocketServer*\ instance;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ QWebSocketServer*\ m\_server;}
+\DoxyCodeLine{00033\ \ \ \ \ QMap<QString,\ QWebSocket*>\ m\_clients;\ \textcolor{comment}{//\ userId\ -\/>\ WebSocket}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_auth_system}{AuthSystem}}*\ m\_authSystem;}
+\DoxyCodeLine{00035\ \ \ \ \ QMap<QString,\ QString>\ m\_userSessions;}
+\DoxyCodeLine{00036\ \ \ \ \ QMap<QString,\ QString>\ m\_restaurantSessions;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ handleNewConnection();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ handleTextMessage(\textcolor{keyword}{const}\ QString\&\ message,\ QWebSocket*\ client);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ handleDisconnection();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ authenticateClient(QWebSocket*\ client,\ \textcolor{keyword}{const}\ QString\&\ token);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ handleChatMessage(\textcolor{keyword}{const}\ QJsonObject\&\ message);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrderUpdate(\textcolor{keyword}{const}\ QJsonObject\&\ message);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ sendError(QWebSocket*\ client,\ \textcolor{keyword}{const}\ QString\&\ error);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ broadcastToAll(\textcolor{keyword}{const}\ QJsonObject\&\ message);}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WEBSOCKETSERVER\_H\ }}
+
+\end{DoxyCode}

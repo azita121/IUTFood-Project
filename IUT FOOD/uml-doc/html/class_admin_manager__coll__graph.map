@@ -1,0 +1,6 @@
+<map id="AdminManager" name="AdminManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,178,448"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="62,5,121,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,90,86,123,81,123,82,89"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="102,89,103,123,98,123,97,90"/>
+</map>

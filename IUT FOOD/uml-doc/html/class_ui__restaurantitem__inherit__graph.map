@@ -1,0 +1,5 @@
+<map id="Ui_restaurantitem" name="Ui_restaurantitem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,170,245"/>
+<area shape="rect" id="Node000002" href="$class_ui_1_1restaurantitem.html" title=" " alt="" coords="30,293,145,363"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,260,90,294,85,294,85,260"/>
+</map>

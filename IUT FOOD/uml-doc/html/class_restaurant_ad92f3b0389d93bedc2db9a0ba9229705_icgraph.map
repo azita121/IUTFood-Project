@@ -1,0 +1,10 @@
+<map id="Restaurant::longitudeChanged" name="Restaurant::longitudeChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="621,29,819,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="760,17,746,10,720,8,696,10,683,15,680,20,686,27,681,30,674,21,679,11,695,5,720,3,748,5,762,12"/>
+<area shape="rect" id="Node000002" href="$class_restaurant.html#a37aa09d75c58051000e62c4083fdccc8" title=" " alt="" coords="406,29,573,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="606,45,574,45,574,40,606,40"/>
+<area shape="rect" id="Node000003" href="$class_restaurant.html#a7f1e5fd35b512b848be99729995aeb5f" title=" " alt="" coords="211,29,358,56"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="391,45,358,45,358,40,391,40"/>
+<area shape="rect" id="Node000004" href="$class_restaurant.html#a5e8197fbd089adaf1980a906b861e911" title=" " alt="" coords="5,29,163,56"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="195,45,163,45,163,40,195,40"/>
+</map>

@@ -1,0 +1,36 @@
+\doxysection{invoker.\+h}
+\hypertarget{invoker_8h_source}{}\label{invoker_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/invoker.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/invoker.h}}
+\mbox{\hyperlink{invoker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INVOKER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INVOKER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8h}{command.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_invoker_ae805eae6e2e728bc6a086b902b7ff61e}{Invoker}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_invoker_ae805eae6e2e728bc6a086b902b7ff61e}{Invoker}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_invoker_a60ff29f342fd47ad1d362a689bcbfd63}{\string~Invoker}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_invoker_a9f675a7f8c3c7ff20b992d924f14d5cd}{addCommand}}(\mbox{\hyperlink{class_command}{Command}}*\ command);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_invoker_ab18ed95c8456fbd32c24ab2613c88fd9}{executeCommands}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_invoker_ab8eba6df03dea50b478ffe22389e31f0}{clearCommands}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_invoker_a991aace511cb35cb6a5002821c5be190}{setCommandPriority}}(\mbox{\hyperlink{class_command}{Command}}*\ command,\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_invoker_a718c98bfbb81ab0f14ca068bb35ad8c0}{getCommandPriority}}(\mbox{\hyperlink{class_command}{Command}}*\ command)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ QList<Command*>\ commands;}
+\DoxyCodeLine{00025\ \ \ \ \ QMap<Command*,\ int>\ commandPriorities;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ sortCommandsByPriority();}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INVOKER\_H\ }}
+
+\end{DoxyCode}

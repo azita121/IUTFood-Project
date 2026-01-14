@@ -1,0 +1,7 @@
+<map id="Cart::canAddItem" name="Cart::canAddItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="311,5,435,32"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#ab316aa9ab06d50a8e8e739895761f3ed" title=" " alt="" coords="162,5,263,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,21,263,21,263,16,295,16"/>
+<area shape="rect" id="Node000003" href="$class_cart.html#a297170ad44e6cebb6edd17f87296eb04" title=" " alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

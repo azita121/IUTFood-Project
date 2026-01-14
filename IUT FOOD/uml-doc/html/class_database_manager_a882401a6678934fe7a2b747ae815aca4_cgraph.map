@@ -1,0 +1,9 @@
+<map id="DatabaseManager::connect" name="DatabaseManager::connect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,187,83"/>
+<area shape="rect" id="Node000002" href="$class_logger.html#afec28ae6d7bdf8f6a0734cb20756de10" title=" " alt="" coords="257,5,393,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,53,246,33,247,39,160,58"/>
+<area shape="rect" id="Node000003" href="$class_logger.html#acf07f1a7415f93b9b8b3212286f32fa0" title=" " alt="" coords="280,56,370,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,67,265,67,265,72,187,72"/>
+<area shape="rect" id="Node000004" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="235,107,415,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,81,247,100,246,105,159,86"/>
+</map>

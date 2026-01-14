@@ -1,0 +1,6 @@
+<map id="restaurantownermenu::renderMenuItems" name="restaurantownermenu::renderMenuItems">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,152,72"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="36,29,34,19,41,10,56,5,79,3,103,5,117,11,115,16,101,10,78,8,57,10,44,15,39,21,41,28"/>
+<area shape="rect" id="Node000002" href="$class_food_item_widget.html#a10ac346762853fa57c9b73d3a52a5cb2" title=" " alt="" coords="200,37,406,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,48,184,48,184,53,152,53"/>
+</map>

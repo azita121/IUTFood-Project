@@ -1,0 +1,9 @@
+<map id="DatabaseManager::addOrderComment" name="DatabaseManager::addOrderComment">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,194,69"/>
+<area shape="rect" id="Node000002" href="$class_database_manager.html#abf1daa555b813fbe82c7a8e052cbbac4" title=" " alt="" coords="242,27,423,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,45,226,45,226,51,194,51"/>
+<area shape="rect" id="Node000003" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="471,5,651,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,34,455,30,456,35,423,39"/>
+<area shape="rect" id="Node000004" href="$class_database_manager.html#a3ec32076c78711bd7514b665a3c71ec2" title=" " alt="" coords="472,56,650,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="423,57,457,61,456,67,423,62"/>
+</map>

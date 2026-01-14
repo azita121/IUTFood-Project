@@ -1,0 +1,392 @@
+\doxysection{Admin\+Manager Class Reference}
+\hypertarget{class_admin_manager}{}\label{class_admin_manager}\index{AdminManager@{AdminManager}}
+
+
+{\ttfamily \#include $<$adminmanager.\+h$>$}
+
+
+
+Inheritance diagram for Admin\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_admin_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Admin\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_admin_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_admin_manager_a111cadafd59cbb9956deb52318d6cc41}{users\+Received}} (const QList$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ \&users)
+\item 
+void \mbox{\hyperlink{class_admin_manager_af4e6370c3b21d7911d8d70db0238e90e}{restaurants\+Received}} (const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&restaurants)
+\item 
+void \mbox{\hyperlink{class_admin_manager_a61317ff04400225f8b427d00978bd679}{orders\+Received}} (const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&orders)
+\item 
+void \mbox{\hyperlink{class_admin_manager_afaeada38ef90152750f3afeee9f4aade}{statistics\+Received}} (const QJson\+Object \&stats)
+\item 
+void \mbox{\hyperlink{class_admin_manager_a108b897dd22ffc685b74dc0f146e6092}{error}} (const QString \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_admin_manager_aeb6041be0a075c2ca58141321283cf57}{\texorpdfstring{$\sim$}{\string~}\+Admin\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_admin_manager_ad11170ccecdabc77b8e850e4be71a690}{get\+Users}} ()
+\item 
+void \mbox{\hyperlink{class_admin_manager_a3eea80df03adace4aed6d5186c718b1f}{update\+User\+Status}} (const QString \&user\+Id, bool is\+Active)
+\item 
+QList$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_admin_manager_abd31a2478f8803d6b279d6f38d872a13}{get\+User\+List}} () const
+\item 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_admin_manager_ad651aa6dd91fa81120ee1c3a76aa11d5}{get\+User}} (const QString \&user\+Id) const
+\item 
+void \mbox{\hyperlink{class_admin_manager_a5a0ad82fc8209506eaf2f08bfa1cf44f}{get\+Restaurants}} ()
+\item 
+void \mbox{\hyperlink{class_admin_manager_a5c51e79d3024462bbce4864a0723d2af}{update\+Restaurant\+Status}} (const QString \&restaurant\+Id, bool is\+Approved)
+\item 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_admin_manager_a0677e212806986e450b3c7ff65540605}{get\+Restaurant\+List}} () const
+\item 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_admin_manager_a64213beb78b9553c4bc5773e30509b9d}{get\+Restaurant}} (const QString \&restaurant\+Id) const
+\item 
+void \mbox{\hyperlink{class_admin_manager_aaddfb93a14b758179391dd7a17579f55}{get\+Orders}} ()
+\item 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_admin_manager_ae2882e9d5ce94d00e91cbc6685705b7c}{get\+Order\+List}} () const
+\item 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_admin_manager_a08a0d9df045598d0c408f10ffa495491}{get\+Order}} (const QString \&order\+Id) const
+\item 
+void \mbox{\hyperlink{class_admin_manager_a6e7b98b438395f5831b5e1e4a70c281a}{get\+Statistics}} ()
+\item 
+QJson\+Object \mbox{\hyperlink{class_admin_manager_a76e86be1f935bd10a87eca25017e3f91}{get\+Current\+Statistics}} () const
+\item 
+bool \mbox{\hyperlink{class_admin_manager_a85d2d57df2b5f6aad49f9dbeaa64e070}{approve\+Restaurant}} (const QString \&restaurant\+Id)
+\item 
+bool \mbox{\hyperlink{class_admin_manager_ae8ee8641494eaa7bd7e1b05d9422c44f}{reject\+Restaurant}} (const QString \&restaurant\+Id, const QString \&reason)
+\item 
+bool \mbox{\hyperlink{class_admin_manager_ac627b77919d46e8c37a2c71aa0468157}{suspend\+Restaurant}} (const QString \&restaurant\+Id, const QString \&reason)
+\item 
+bool \mbox{\hyperlink{class_admin_manager_a92d12ba891a821cb76ffddcd6b01aa1e}{reactivate\+Restaurant}} (const QString \&restaurant\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_ae105eab5ae6ee1b6169f92a64aa61ff7}{get\+Pending\+Restaurants}} ()
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_ac1e52c6b1f5f4799393e204e1cf60595}{get\+Suspended\+Restaurants}} ()
+\item 
+bool \mbox{\hyperlink{class_admin_manager_a81785c6627d60f86755d56637297ff84}{block\+User}} (const QString \&user\+Id, const QString \&reason)
+\item 
+bool \mbox{\hyperlink{class_admin_manager_a3717ce91eecc34e50dc2a933d1f849ab}{unblock\+User}} (const QString \&user\+Id)
+\item 
+bool \mbox{\hyperlink{class_admin_manager_a464a7ad83b47c983068874398f08986a}{delete\+User}} (const QString \&user\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_af4034922cf6a949547b3c485d5c1daa9}{get\+Blocked\+Users}} ()
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_a4b5738a86c76d100511917139d050115}{get\+All\+Users}} ()
+\item 
+QJson\+Object \mbox{\hyperlink{class_admin_manager_ad6d6f8adff6d66faf242dc0b6d37c8a3}{get\+Sales\+Report}} (const QDate\+Time \&start\+Date, const QDate\+Time \&end\+Date)
+\item 
+QJson\+Object \mbox{\hyperlink{class_admin_manager_ac332dbeac8357e1ecd33dfbff73ba2b9}{get\+Restaurant\+Performance\+Report}} (const QString \&restaurant\+Id)
+\item 
+QJson\+Object \mbox{\hyperlink{class_admin_manager_a91e7735ba3d238cfd97bd91863057a50}{get\+System\+Analytics}} ()
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_a4d16087542ee416f73060d9fb2c48e38}{get\+Top\+Selling\+Items}} (const QDate\+Time \&start\+Date, const QDate\+Time \&end\+Date)
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_a58cf024a0a75cbd99b5de65336638c47}{get\+Most\+Active\+Users}} (const QDate\+Time \&start\+Date, const QDate\+Time \&end\+Date)
+\item 
+QJson\+Array \mbox{\hyperlink{class_admin_manager_ad53857326382821802a110041f11c565}{get\+Most\+Popular\+Restaurants}} (const QDate\+Time \&start\+Date, const QDate\+Time \&end\+Date)
+\item 
+void \mbox{\hyperlink{class_admin_manager_a443b37832eef8b379a78e02cfea562bd}{broadcast\+Report}} (const QString \&report\+Type, const QJson\+Object \&report)
+\item 
+void \mbox{\hyperlink{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021}{send\+Report\+To\+User}} (const QString \&user\+Id, const QString \&report\+Type, const QJson\+Object \&report)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_admin_manager}{Admin\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_admin_manager_af002eeaa3faee94aeec2e2e53f8829f4}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_admin_manager}{Admin\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_admin_manager_ad3fe16a671a1a64c5a24a410736a407e}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_admin_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_admin_manager_aeb6041be0a075c2ca58141321283cf57}\index{AdminManager@{AdminManager}!````~AdminManager@{\texorpdfstring{$\sim$}{\string~}AdminManager}}
+\index{````~AdminManager@{\texorpdfstring{$\sim$}{\string~}AdminManager}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AdminManager()}{\string~AdminManager()}}
+{\footnotesize\ttfamily \label{class_admin_manager_aeb6041be0a075c2ca58141321283cf57} 
+Admin\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Admin\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_admin_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_admin_manager_a85d2d57df2b5f6aad49f9dbeaa64e070}\index{AdminManager@{AdminManager}!approveRestaurant@{approveRestaurant}}
+\index{approveRestaurant@{approveRestaurant}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{approveRestaurant()}{approveRestaurant()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a85d2d57df2b5f6aad49f9dbeaa64e070} 
+bool Admin\+Manager\+::approve\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a81785c6627d60f86755d56637297ff84}\index{AdminManager@{AdminManager}!blockUser@{blockUser}}
+\index{blockUser@{blockUser}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{blockUser()}{blockUser()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a81785c6627d60f86755d56637297ff84} 
+bool Admin\+Manager\+::block\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QString \&}]{reason}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a443b37832eef8b379a78e02cfea562bd}\index{AdminManager@{AdminManager}!broadcastReport@{broadcastReport}}
+\index{broadcastReport@{broadcastReport}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{broadcastReport()}{broadcastReport()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a443b37832eef8b379a78e02cfea562bd} 
+void Admin\+Manager\+::broadcast\+Report (\begin{DoxyParamCaption}\item[{const QString \&}]{report\+Type}{, }\item[{const QJson\+Object \&}]{report}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_manager_a443b37832eef8b379a78e02cfea562bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_admin_manager_a464a7ad83b47c983068874398f08986a}\index{AdminManager@{AdminManager}!deleteUser@{deleteUser}}
+\index{deleteUser@{deleteUser}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a464a7ad83b47c983068874398f08986a} 
+bool Admin\+Manager\+::delete\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a108b897dd22ffc685b74dc0f146e6092}\index{AdminManager@{AdminManager}!error@{error}}
+\index{error@{error}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_admin_manager_a108b897dd22ffc685b74dc0f146e6092} 
+void Admin\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_admin_manager_a4b5738a86c76d100511917139d050115}\index{AdminManager@{AdminManager}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a4b5738a86c76d100511917139d050115} 
+QJson\+Array Admin\+Manager\+::get\+All\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_af4034922cf6a949547b3c485d5c1daa9}\index{AdminManager@{AdminManager}!getBlockedUsers@{getBlockedUsers}}
+\index{getBlockedUsers@{getBlockedUsers}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getBlockedUsers()}{getBlockedUsers()}}
+{\footnotesize\ttfamily \label{class_admin_manager_af4034922cf6a949547b3c485d5c1daa9} 
+QJson\+Array Admin\+Manager\+::get\+Blocked\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a76e86be1f935bd10a87eca25017e3f91}\index{AdminManager@{AdminManager}!getCurrentStatistics@{getCurrentStatistics}}
+\index{getCurrentStatistics@{getCurrentStatistics}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getCurrentStatistics()}{getCurrentStatistics()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a76e86be1f935bd10a87eca25017e3f91} 
+QJson\+Object Admin\+Manager\+::get\+Current\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_af002eeaa3faee94aeec2e2e53f8829f4}\index{AdminManager@{AdminManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_admin_manager_af002eeaa3faee94aeec2e2e53f8829f4} 
+\mbox{\hyperlink{class_admin_manager}{Admin\+Manager}} \texorpdfstring{$\ast$}{*} Admin\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_admin_manager_ad3fe16a671a1a64c5a24a410736a407e}\index{AdminManager@{AdminManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad3fe16a671a1a64c5a24a410736a407e} 
+\mbox{\hyperlink{class_admin_manager}{Admin\+Manager}} \texorpdfstring{$\ast$}{*} Admin\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_admin_manager_a58cf024a0a75cbd99b5de65336638c47}\index{AdminManager@{AdminManager}!getMostActiveUsers@{getMostActiveUsers}}
+\index{getMostActiveUsers@{getMostActiveUsers}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getMostActiveUsers()}{getMostActiveUsers()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a58cf024a0a75cbd99b5de65336638c47} 
+QJson\+Array Admin\+Manager\+::get\+Most\+Active\+Users (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{start\+Date}{, }\item[{const QDate\+Time \&}]{end\+Date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ad53857326382821802a110041f11c565}\index{AdminManager@{AdminManager}!getMostPopularRestaurants@{getMostPopularRestaurants}}
+\index{getMostPopularRestaurants@{getMostPopularRestaurants}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getMostPopularRestaurants()}{getMostPopularRestaurants()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad53857326382821802a110041f11c565} 
+QJson\+Array Admin\+Manager\+::get\+Most\+Popular\+Restaurants (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{start\+Date}{, }\item[{const QDate\+Time \&}]{end\+Date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a08a0d9df045598d0c408f10ffa495491}\index{AdminManager@{AdminManager}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a08a0d9df045598d0c408f10ffa495491} 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} Admin\+Manager\+::get\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_ae2882e9d5ce94d00e91cbc6685705b7c}\index{AdminManager@{AdminManager}!getOrderList@{getOrderList}}
+\index{getOrderList@{getOrderList}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getOrderList()}{getOrderList()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ae2882e9d5ce94d00e91cbc6685705b7c} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Admin\+Manager\+::get\+Order\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_aaddfb93a14b758179391dd7a17579f55}\index{AdminManager@{AdminManager}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getOrders()}{getOrders()}}
+{\footnotesize\ttfamily \label{class_admin_manager_aaddfb93a14b758179391dd7a17579f55} 
+void Admin\+Manager\+::get\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ae105eab5ae6ee1b6169f92a64aa61ff7}\index{AdminManager@{AdminManager}!getPendingRestaurants@{getPendingRestaurants}}
+\index{getPendingRestaurants@{getPendingRestaurants}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getPendingRestaurants()}{getPendingRestaurants()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ae105eab5ae6ee1b6169f92a64aa61ff7} 
+QJson\+Array Admin\+Manager\+::get\+Pending\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a64213beb78b9553c4bc5773e30509b9d}\index{AdminManager@{AdminManager}!getRestaurant@{getRestaurant}}
+\index{getRestaurant@{getRestaurant}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurant()}{getRestaurant()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a64213beb78b9553c4bc5773e30509b9d} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Admin\+Manager\+::get\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_a0677e212806986e450b3c7ff65540605}\index{AdminManager@{AdminManager}!getRestaurantList@{getRestaurantList}}
+\index{getRestaurantList@{getRestaurantList}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantList()}{getRestaurantList()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a0677e212806986e450b3c7ff65540605} 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ Admin\+Manager\+::get\+Restaurant\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_ac332dbeac8357e1ecd33dfbff73ba2b9}\index{AdminManager@{AdminManager}!getRestaurantPerformanceReport@{getRestaurantPerformanceReport}}
+\index{getRestaurantPerformanceReport@{getRestaurantPerformanceReport}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantPerformanceReport()}{getRestaurantPerformanceReport()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ac332dbeac8357e1ecd33dfbff73ba2b9} 
+QJson\+Object Admin\+Manager\+::get\+Restaurant\+Performance\+Report (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a5a0ad82fc8209506eaf2f08bfa1cf44f}\index{AdminManager@{AdminManager}!getRestaurants@{getRestaurants}}
+\index{getRestaurants@{getRestaurants}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurants()}{getRestaurants()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a5a0ad82fc8209506eaf2f08bfa1cf44f} 
+void Admin\+Manager\+::get\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ad6d6f8adff6d66faf242dc0b6d37c8a3}\index{AdminManager@{AdminManager}!getSalesReport@{getSalesReport}}
+\index{getSalesReport@{getSalesReport}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getSalesReport()}{getSalesReport()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad6d6f8adff6d66faf242dc0b6d37c8a3} 
+QJson\+Object Admin\+Manager\+::get\+Sales\+Report (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{start\+Date}{, }\item[{const QDate\+Time \&}]{end\+Date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a6e7b98b438395f5831b5e1e4a70c281a}\index{AdminManager@{AdminManager}!getStatistics@{getStatistics}}
+\index{getStatistics@{getStatistics}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getStatistics()}{getStatistics()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a6e7b98b438395f5831b5e1e4a70c281a} 
+void Admin\+Manager\+::get\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ac1e52c6b1f5f4799393e204e1cf60595}\index{AdminManager@{AdminManager}!getSuspendedRestaurants@{getSuspendedRestaurants}}
+\index{getSuspendedRestaurants@{getSuspendedRestaurants}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getSuspendedRestaurants()}{getSuspendedRestaurants()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ac1e52c6b1f5f4799393e204e1cf60595} 
+QJson\+Array Admin\+Manager\+::get\+Suspended\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a91e7735ba3d238cfd97bd91863057a50}\index{AdminManager@{AdminManager}!getSystemAnalytics@{getSystemAnalytics}}
+\index{getSystemAnalytics@{getSystemAnalytics}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getSystemAnalytics()}{getSystemAnalytics()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a91e7735ba3d238cfd97bd91863057a50} 
+QJson\+Object Admin\+Manager\+::get\+System\+Analytics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a4d16087542ee416f73060d9fb2c48e38}\index{AdminManager@{AdminManager}!getTopSellingItems@{getTopSellingItems}}
+\index{getTopSellingItems@{getTopSellingItems}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getTopSellingItems()}{getTopSellingItems()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a4d16087542ee416f73060d9fb2c48e38} 
+QJson\+Array Admin\+Manager\+::get\+Top\+Selling\+Items (\begin{DoxyParamCaption}\item[{const QDate\+Time \&}]{start\+Date}{, }\item[{const QDate\+Time \&}]{end\+Date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ad651aa6dd91fa81120ee1c3a76aa11d5}\index{AdminManager@{AdminManager}!getUser@{getUser}}
+\index{getUser@{getUser}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad651aa6dd91fa81120ee1c3a76aa11d5} 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} Admin\+Manager\+::get\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_abd31a2478f8803d6b279d6f38d872a13}\index{AdminManager@{AdminManager}!getUserList@{getUserList}}
+\index{getUserList@{getUserList}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getUserList()}{getUserList()}}
+{\footnotesize\ttfamily \label{class_admin_manager_abd31a2478f8803d6b279d6f38d872a13} 
+QList$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ Admin\+Manager\+::get\+User\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_admin_manager_ad11170ccecdabc77b8e850e4be71a690}\index{AdminManager@{AdminManager}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad11170ccecdabc77b8e850e4be71a690} 
+void Admin\+Manager\+::get\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a61317ff04400225f8b427d00978bd679}\index{AdminManager@{AdminManager}!ordersReceived@{ordersReceived}}
+\index{ordersReceived@{ordersReceived}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{ordersReceived}{ordersReceived}}
+{\footnotesize\ttfamily \label{class_admin_manager_a61317ff04400225f8b427d00978bd679} 
+void Admin\+Manager\+::orders\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&}]{orders}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_admin_manager_a92d12ba891a821cb76ffddcd6b01aa1e}\index{AdminManager@{AdminManager}!reactivateRestaurant@{reactivateRestaurant}}
+\index{reactivateRestaurant@{reactivateRestaurant}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{reactivateRestaurant()}{reactivateRestaurant()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a92d12ba891a821cb76ffddcd6b01aa1e} 
+bool Admin\+Manager\+::reactivate\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_ae8ee8641494eaa7bd7e1b05d9422c44f}\index{AdminManager@{AdminManager}!rejectRestaurant@{rejectRestaurant}}
+\index{rejectRestaurant@{rejectRestaurant}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{rejectRestaurant()}{rejectRestaurant()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ae8ee8641494eaa7bd7e1b05d9422c44f} 
+bool Admin\+Manager\+::reject\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{reason}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_af4e6370c3b21d7911d8d70db0238e90e}\index{AdminManager@{AdminManager}!restaurantsReceived@{restaurantsReceived}}
+\index{restaurantsReceived@{restaurantsReceived}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{restaurantsReceived}{restaurantsReceived}}
+{\footnotesize\ttfamily \label{class_admin_manager_af4e6370c3b21d7911d8d70db0238e90e} 
+void Admin\+Manager\+::restaurants\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021}\index{AdminManager@{AdminManager}!sendReportToUser@{sendReportToUser}}
+\index{sendReportToUser@{sendReportToUser}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{sendReportToUser()}{sendReportToUser()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021} 
+void Admin\+Manager\+::send\+Report\+To\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QString \&}]{report\+Type}{, }\item[{const QJson\+Object \&}]{report}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_admin_manager_ad84d2bccfe7348a172df1dd49f8ed021_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_admin_manager_afaeada38ef90152750f3afeee9f4aade}\index{AdminManager@{AdminManager}!statisticsReceived@{statisticsReceived}}
+\index{statisticsReceived@{statisticsReceived}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{statisticsReceived}{statisticsReceived}}
+{\footnotesize\ttfamily \label{class_admin_manager_afaeada38ef90152750f3afeee9f4aade} 
+void Admin\+Manager\+::statistics\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{stats}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_admin_manager_ac627b77919d46e8c37a2c71aa0468157}\index{AdminManager@{AdminManager}!suspendRestaurant@{suspendRestaurant}}
+\index{suspendRestaurant@{suspendRestaurant}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{suspendRestaurant()}{suspendRestaurant()}}
+{\footnotesize\ttfamily \label{class_admin_manager_ac627b77919d46e8c37a2c71aa0468157} 
+bool Admin\+Manager\+::suspend\+Restaurant (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QString \&}]{reason}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a3717ce91eecc34e50dc2a933d1f849ab}\index{AdminManager@{AdminManager}!unblockUser@{unblockUser}}
+\index{unblockUser@{unblockUser}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{unblockUser()}{unblockUser()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a3717ce91eecc34e50dc2a933d1f849ab} 
+bool Admin\+Manager\+::unblock\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a5c51e79d3024462bbce4864a0723d2af}\index{AdminManager@{AdminManager}!updateRestaurantStatus@{updateRestaurantStatus}}
+\index{updateRestaurantStatus@{updateRestaurantStatus}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantStatus()}{updateRestaurantStatus()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a5c51e79d3024462bbce4864a0723d2af} 
+void Admin\+Manager\+::update\+Restaurant\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{bool}]{is\+Approved}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a3eea80df03adace4aed6d5186c718b1f}\index{AdminManager@{AdminManager}!updateUserStatus@{updateUserStatus}}
+\index{updateUserStatus@{updateUserStatus}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{updateUserStatus()}{updateUserStatus()}}
+{\footnotesize\ttfamily \label{class_admin_manager_a3eea80df03adace4aed6d5186c718b1f} 
+void Admin\+Manager\+::update\+User\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{bool}]{is\+Active}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_admin_manager_a111cadafd59cbb9956deb52318d6cc41}\index{AdminManager@{AdminManager}!usersReceived@{usersReceived}}
+\index{usersReceived@{usersReceived}!AdminManager@{AdminManager}}
+\doxysubsubsection{\texorpdfstring{usersReceived}{usersReceived}}
+{\footnotesize\ttfamily \label{class_admin_manager_a111cadafd59cbb9956deb52318d6cc41} 
+void Admin\+Manager\+::users\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} $>$ \&}]{users}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2adminmanager_8h}{adminmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2adminmanager_8h}{adminmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2adminmanager_8cpp}{adminmanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2adminmanager_8cpp}{adminmanager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\doxysection{Menu\+Manager Class Reference}
+\hypertarget{class_menu_manager}{}\label{class_menu_manager}\index{MenuManager@{MenuManager}}
+
+
+{\ttfamily \#include $<$menumanager.\+h$>$}
+
+
+
+Inheritance diagram for Menu\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_menu_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_menu_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_manager_a7ea926de3916450fd30baad4385c1490}{\texorpdfstring{$\sim$}{\string~}\+Menu\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{class_menu_manager_a9a0e35edb67eba13715c2e00fef7efe2}{create\+Menu}} (const QString \&restaurant\+Id)
+\item 
+bool \mbox{\hyperlink{class_menu_manager_a8ffe78bbf0c2a61a11a961046ceb3201}{add\+Menu\+Item}} (const QString \&menu\+Id, const QString \&name, const QString \&description, double price, const QString \&ingredients, const QString \&category, const QString \&image\+Url="{}"{})
+\item 
+bool \mbox{\hyperlink{class_menu_manager_a47687ae619121e7916940d0840a2dd67}{update\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id, const QVariant\+Map \&updates)
+\item 
+bool \mbox{\hyperlink{class_menu_manager_a98522d59bbed70327dc368ef627e3c30}{delete\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_menu_manager_af7c851c9cdf8b28c0858f91ca42359ad}{get\+Menu}} (const QString \&restaurant\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_menu_manager}{Menu\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_menu_manager_abd8019ed42a69135415324febcccda4d}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_menu_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_menu_manager_a7ea926de3916450fd30baad4385c1490}\index{MenuManager@{MenuManager}!````~MenuManager@{\texorpdfstring{$\sim$}{\string~}MenuManager}}
+\index{````~MenuManager@{\texorpdfstring{$\sim$}{\string~}MenuManager}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MenuManager()}{\string~MenuManager()}}
+{\footnotesize\ttfamily \label{class_menu_manager_a7ea926de3916450fd30baad4385c1490} 
+Menu\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Menu\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_menu_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_manager_a8ffe78bbf0c2a61a11a961046ceb3201}\index{MenuManager@{MenuManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}}
+{\footnotesize\ttfamily \label{class_menu_manager_a8ffe78bbf0c2a61a11a961046ceb3201} 
+bool Menu\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{name}{, }\item[{const QString \&}]{description}{, }\item[{double}]{price}{, }\item[{const QString \&}]{ingredients}{, }\item[{const QString \&}]{category}{, }\item[{const QString \&}]{image\+Url}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_menu_manager_a9a0e35edb67eba13715c2e00fef7efe2}\index{MenuManager@{MenuManager}!createMenu@{createMenu}}
+\index{createMenu@{createMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{createMenu()}{createMenu()}}
+{\footnotesize\ttfamily \label{class_menu_manager_a9a0e35edb67eba13715c2e00fef7efe2} 
+bool Menu\+Manager\+::create\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_menu_manager_a98522d59bbed70327dc368ef627e3c30}\index{MenuManager@{MenuManager}!deleteMenuItem@{deleteMenuItem}}
+\index{deleteMenuItem@{deleteMenuItem}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{deleteMenuItem()}{deleteMenuItem()}}
+{\footnotesize\ttfamily \label{class_menu_manager_a98522d59bbed70327dc368ef627e3c30} 
+bool Menu\+Manager\+::delete\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_menu_manager_abd8019ed42a69135415324febcccda4d}\index{MenuManager@{MenuManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_menu_manager_abd8019ed42a69135415324febcccda4d} 
+\mbox{\hyperlink{class_menu_manager}{Menu\+Manager}} \texorpdfstring{$\ast$}{*} Menu\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_menu_manager_af7c851c9cdf8b28c0858f91ca42359ad}\index{MenuManager@{MenuManager}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{getMenu()}{getMenu()}}
+{\footnotesize\ttfamily \label{class_menu_manager_af7c851c9cdf8b28c0858f91ca42359ad} 
+QJson\+Array Menu\+Manager\+::get\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_menu_manager_a47687ae619121e7916940d0840a2dd67}\index{MenuManager@{MenuManager}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{class_menu_manager_a47687ae619121e7916940d0840a2dd67} 
+bool Menu\+Manager\+::update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{, }\item[{const QVariant\+Map \&}]{updates}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2menumanager_8h}{menumanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8cpp}{menumanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2menumanager_8cpp}{menumanager.\+cpp}}\end{DoxyCompactItemize}

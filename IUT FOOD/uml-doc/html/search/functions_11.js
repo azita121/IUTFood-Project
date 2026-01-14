@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['unblockuser_0',['unblockUser',['../class_admin_manager.html#a3717ce91eecc34e50dc2a933d1f849ab',1,'AdminManager']]],
+  ['unreadcountchanged_1',['unreadCountChanged',['../class_chat_manager.html#abeaca3cdf262c44eee5353e2613e038f',1,'ChatManager']]],
+  ['update_2',['update',['../class_observer.html#aa1cf45e1abcfd8f217be3ce48e87102d',1,'Observer::update()'],['../class_order_status_observer.html#aaad5ef90ff13d9a3d90784c0f2a7de55',1,'OrderStatusObserver::update()']]],
+  ['updatecustomer_3',['updateCustomer',['../class_database_manager.html#a7165c8f2ecc4ebe40c45d10d5a093e17',1,'DatabaseManager']]],
+  ['updateitemquantity_4',['updateItemQuantity',['../class_cart.html#a5e4667d259971b6d7808b2e3a705472e',1,'Cart']]],
+  ['updatemenucategory_5',['updateMenuCategory',['../class_restaurant_manager.html#a9b14dc338d716edc4ddafe6e7be1819b',1,'RestaurantManager']]],
+  ['updatemenuitem_6',['updateMenuItem',['../class_network_manager.html#a47e11b734f04037350162c8896ae69d0',1,'NetworkManager::updateMenuItem()'],['../class_restaurant_owner_manager.html#a9e799e32f6914473b6295beca41120ff',1,'RestaurantOwnerManager::updateMenuItem()'],['../class_database_manager.html#abc95400e60ff1d1fe636dbf6eb83589e',1,'DatabaseManager::updateMenuItem()'],['../class_menu_manager.html#a47687ae619121e7916940d0840a2dd67',1,'MenuManager::updateMenuItem()'],['../class_restaurant_manager.html#a677ef350ed7b2052766395bde7e92ff7',1,'RestaurantManager::updateMenuItem()'],['../_i_u_t_food_client_2src_2network_2menumanager_8h.html#a8369dc44e6d9def524181a4a790e2ece',1,'updateMenuItem():&#160;menumanager.h']]],
+  ['updateorderstatus_7',['updateOrderStatus',['../class_network_manager.html#a263fe0ef882eec779299a4ed3f60dcf9',1,'NetworkManager::updateOrderStatus()'],['../class_order_manager.html#ad50e027af09d223a47b0c0c5e6149c90',1,'OrderManager::updateOrderStatus()'],['../class_restaurant_owner_manager.html#afba4359ab0129c26bdff96fa3ae4cdaf',1,'RestaurantOwnerManager::updateOrderStatus()'],['../class_database_manager.html#ae7e8e48624fa2436b34a0bd1f35e9444',1,'DatabaseManager::updateOrderStatus()'],['../class_order_manager.html#ad50e027af09d223a47b0c0c5e6149c90',1,'OrderManager::updateOrderStatus()']]],
+  ['updateprofile_8',['updateProfile',['../class_auth_system.html#a42442f84540841ec86cb6d0cd2a456c1',1,'AuthSystem']]],
+  ['updaterating_9',['updateRating',['../class_restaurant_manager.html#a9a5df37f7ffa58716c443088c1012038',1,'RestaurantManager']]],
+  ['updaterestaurant_10',['updateRestaurant',['../class_database_manager.html#a63cb9409a73ea6e57d795a0b3290f82b',1,'DatabaseManager']]],
+  ['updaterestauranthours_11',['updateRestaurantHours',['../class_restaurant_manager.html#a153506733ba6ec0fbe47bbd934aa102c',1,'RestaurantManager']]],
+  ['updaterestaurantinfo_12',['updateRestaurantInfo',['../class_restaurant_owner_manager.html#aa64a6113d275007a207abebe1d15a1a9',1,'RestaurantOwnerManager']]],
+  ['updaterestaurantlocation_13',['updateRestaurantLocation',['../class_restaurant_manager.html#ad31e8334fa5481586f13b74a290d9dc1',1,'RestaurantManager']]],
+  ['updaterestaurantowner_14',['updateRestaurantOwner',['../class_database_manager.html#ae7b15ddbec447a48f0cd89579fa17f66',1,'DatabaseManager']]],
+  ['updaterestaurantprofile_15',['updateRestaurantProfile',['../class_restaurant_manager.html#af847612fedb53d0f278087dccb315cf6',1,'RestaurantManager']]],
+  ['updaterestaurantstatus_16',['updateRestaurantStatus',['../class_admin_manager.html#a5c51e79d3024462bbce4864a0723d2af',1,'AdminManager::updateRestaurantStatus()'],['../class_restaurant_owner_manager.html#ac1378a64ae10bae7f54bc339fcb2596d',1,'RestaurantOwnerManager::updateRestaurantStatus(bool isOpen)']]],
+  ['updatesuccess_17',['updateSuccess',['../class_restaurant_owner_manager.html#a637942258eee501e54dd99d2e5fafda1',1,'RestaurantOwnerManager']]],
+  ['updateuserstatus_18',['updateUserStatus',['../class_admin_manager.html#a3eea80df03adace4aed6d5186c718b1f',1,'AdminManager']]],
+  ['user_19',['User',['../class_user.html#ae90821c4c8cc9a5a370f0ad6157adcc1',1,'User::User(QObject *parent=nullptr)'],['../class_user.html#af9f90160504b90d8917182afb470f54a',1,'User::User(const QJsonObject &amp;json, QObject *parent=nullptr)']]],
+  ['username_20',['username',['../class_user.html#ad7d2bd0336217880b4d57a75c670c7fc',1,'User']]],
+  ['usernamechanged_21',['usernameChanged',['../class_user.html#ad708451f8a6c7c723c9c2ef31fcfac8f',1,'User']]],
+  ['usersreceived_22',['usersReceived',['../class_admin_manager.html#a111cadafd59cbb9956deb52318d6cc41',1,'AdminManager']]],
+  ['usertype_23',['userType',['../class_user.html#abb223364f7d797b5f054f49a3d41863b',1,'User']]],
+  ['usertypechanged_24',['userTypeChanged',['../class_user.html#a8df73111f27ccb88fbca65780eb4f267',1,'User']]]
+];

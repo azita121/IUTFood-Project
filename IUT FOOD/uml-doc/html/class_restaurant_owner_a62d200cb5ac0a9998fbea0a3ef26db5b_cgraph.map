@@ -1,0 +1,6 @@
+<map id="RestaurantOwner::setIsApproved" name="RestaurantOwner::setIsApproved">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,221,64"/>
+<area shape="rect" id="Node000002" href="$class_restaurant_owner.html#a674191d0e6cb29fa3f0060ddf6b338bc" title=" " alt="" coords="269,29,465,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,48,253,48,253,53,221,53"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="319,29,317,19,325,10,342,5,367,3,394,5,410,11,408,16,393,10,367,8,343,10,328,15,322,21,324,28"/>
+</map>

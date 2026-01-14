@@ -1,0 +1,308 @@
+\doxysection{Order\+Manager Class Reference}
+\hypertarget{class_order_manager}{}\label{class_order_manager}\index{OrderManager@{OrderManager}}
+
+
+{\ttfamily \#include $<$ordermanager.\+h$>$}
+
+
+
+Inheritance diagram for Order\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_order_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Order\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_order_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_manager_aef289ac56d2ceb59f2f62b8b224ce2a4}{create\+Order}} (const QString \&customer\+Id, const QString \&restaurant\+Id, const QJson\+Array \&items)
+\item 
+void \mbox{\hyperlink{class_order_manager_ac5f2172b7d12d4e0f76d049d22b1ee8b}{fetch\+Order\+History}} (const QString \&user\+Id, const QString \&user\+Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_manager_a605eb3a3246eafda4fde77ed41acd445}{order\+Placed}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_order_manager_ac33545cf147d871d0b2e8109eceec1b9}{order\+Status\+Updated}} (const QString \&order\+Id, const QString \&status)
+\item 
+void \mbox{\hyperlink{class_order_manager_aa118f04b70e72f8bc6a41ea6f4956746}{order\+History\+Updated}} (const QString \&user\+Id)
+\item 
+void \mbox{\hyperlink{class_order_manager_adf063aa3eb3890512feec6e874c7b536}{error}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{class_order_manager_a2f82c37088bd3c3c2f92143951f174bb}{order\+Created}} (bool success)
+\item 
+void \mbox{\hyperlink{class_order_manager_ac73c606b365dcec64448668b7f950607}{status\+Update\+Failed}} (const QString \&order\+Id, const QString \&reason)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_manager_abd7cef9bc8f8c06d8d961a489faa6a1b}{place\+Order}} (const QString \&restaurant\+Id, const QJson\+Array \&items)
+\item 
+void \mbox{\hyperlink{class_order_manager_a58b19d2a225148c288e8818881847c3d}{get\+Order\+Status}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90}{update\+Order\+Status}} (const QString \&order\+Id, const QString \&status)
+\item 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_order_manager_ad426b3382f5c609a38c6f14ed5302dcc}{get\+Order\+History}} (const QString \&user\+Id)
+\item 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_order_manager_a5b070086703e2a32a7211acaf62b73e0}{get\+Order}} (const QString \&order\+Id)
+\item 
+bool \mbox{\hyperlink{class_order_manager_a1d9dd456baf471d70c37a7ca43ea573f}{is\+Valid\+Status}} (const QString \&status) const
+\item 
+QString\+List \mbox{\hyperlink{class_order_manager_a3d131887d1315302fda7301e4e13257f}{get\+Valid\+Statuses}} () const
+\item 
+QString \mbox{\hyperlink{class_order_manager_ae877b0b33e8773582e693bf9f7046855}{get\+Status\+Description}} (const QString \&status) const
+\item 
+bool \mbox{\hyperlink{class_order_manager_aa89ff825e854b109ea95ed96371c21a2}{can\+Update\+Order\+Status}} (const QString \&order\+Id, const QString \&new\+Status) const
+\item 
+\mbox{\hyperlink{class_order_manager_a279292d3abda9718bbf909d7c85ad055}{\texorpdfstring{$\sim$}{\string~}\+Order\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{class_order_manager_a81f228f12f23015853ebb4448a96de31}{create\+Order}} (const QString \&customer\+Id, const QString \&restaurant\+Id, const QVariant\+List \&items)
+\item 
+bool \mbox{\hyperlink{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90}{update\+Order\+Status}} (const QString \&order\+Id, const QString \&status)
+\item 
+QJson\+Array \mbox{\hyperlink{class_order_manager_a46849a20d7a066582335ead5b6c88f62}{get\+Order\+History}} (const QString \&user\+Id, const QString \&user\+Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_order_manager}{Order\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_order_manager_ab1428cd9dc662e9002a6c7de2acb4d5c}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_order_manager}{Order\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_order_manager_a24f65ad13e2cbc140ebf02b9c1af96a8}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_order_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_order_manager_a279292d3abda9718bbf909d7c85ad055}\index{OrderManager@{OrderManager}!````~OrderManager@{\texorpdfstring{$\sim$}{\string~}OrderManager}}
+\index{````~OrderManager@{\texorpdfstring{$\sim$}{\string~}OrderManager}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}OrderManager()}{\string~OrderManager()}}
+{\footnotesize\ttfamily \label{class_order_manager_a279292d3abda9718bbf909d7c85ad055} 
+Order\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Order\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_order_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_order_manager_aa89ff825e854b109ea95ed96371c21a2}\index{OrderManager@{OrderManager}!canUpdateOrderStatus@{canUpdateOrderStatus}}
+\index{canUpdateOrderStatus@{canUpdateOrderStatus}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{canUpdateOrderStatus()}{canUpdateOrderStatus()}}
+{\footnotesize\ttfamily \label{class_order_manager_aa89ff825e854b109ea95ed96371c21a2} 
+bool Order\+Manager\+::can\+Update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{new\+Status}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_aa89ff825e854b109ea95ed96371c21a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_aa89ff825e854b109ea95ed96371c21a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_aef289ac56d2ceb59f2f62b8b224ce2a4}\index{OrderManager@{OrderManager}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{createOrder}{createOrder}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_aef289ac56d2ceb59f2f62b8b224ce2a4} 
+void Order\+Manager\+::create\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{, }\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{class_order_manager_a81f228f12f23015853ebb4448a96de31}\index{OrderManager@{OrderManager}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{createOrder()}{createOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_a81f228f12f23015853ebb4448a96de31} 
+bool Order\+Manager\+::create\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{, }\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QVariant\+List \&}]{items}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_adf063aa3eb3890512feec6e874c7b536}\index{OrderManager@{OrderManager}!error@{error}}
+\index{error@{error}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_order_manager_adf063aa3eb3890512feec6e874c7b536} 
+void Order\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_adf063aa3eb3890512feec6e874c7b536_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_ac5f2172b7d12d4e0f76d049d22b1ee8b}\index{OrderManager@{OrderManager}!fetchOrderHistory@{fetchOrderHistory}}
+\index{fetchOrderHistory@{fetchOrderHistory}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{fetchOrderHistory}{fetchOrderHistory}}
+{\footnotesize\ttfamily \label{class_order_manager_ac5f2172b7d12d4e0f76d049d22b1ee8b} 
+void Order\+Manager\+::fetch\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\Hypertarget{class_order_manager_ab1428cd9dc662e9002a6c7de2acb4d5c}\index{OrderManager@{OrderManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_ab1428cd9dc662e9002a6c7de2acb4d5c} 
+\mbox{\hyperlink{class_order_manager}{Order\+Manager}} \texorpdfstring{$\ast$}{*} Order\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_manager_a24f65ad13e2cbc140ebf02b9c1af96a8}\index{OrderManager@{OrderManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_a24f65ad13e2cbc140ebf02b9c1af96a8} 
+\mbox{\hyperlink{class_order_manager}{Order\+Manager}} \texorpdfstring{$\ast$}{*} Order\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_order_manager_a5b070086703e2a32a7211acaf62b73e0}\index{OrderManager@{OrderManager}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \label{class_order_manager_a5b070086703e2a32a7211acaf62b73e0} 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} Order\+Manager\+::get\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_ad426b3382f5c609a38c6f14ed5302dcc}\index{OrderManager@{OrderManager}!getOrderHistory@{getOrderHistory}}
+\index{getOrderHistory@{getOrderHistory}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getOrderHistory()}{getOrderHistory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_ad426b3382f5c609a38c6f14ed5302dcc} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Order\+Manager\+::get\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_a46849a20d7a066582335ead5b6c88f62}\index{OrderManager@{OrderManager}!getOrderHistory@{getOrderHistory}}
+\index{getOrderHistory@{getOrderHistory}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getOrderHistory()}{getOrderHistory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_a46849a20d7a066582335ead5b6c88f62} 
+QJson\+Array Order\+Manager\+::get\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_a58b19d2a225148c288e8818881847c3d}\index{OrderManager@{OrderManager}!getOrderStatus@{getOrderStatus}}
+\index{getOrderStatus@{getOrderStatus}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getOrderStatus()}{getOrderStatus()}}
+{\footnotesize\ttfamily \label{class_order_manager_a58b19d2a225148c288e8818881847c3d} 
+void Order\+Manager\+::get\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_ae877b0b33e8773582e693bf9f7046855}\index{OrderManager@{OrderManager}!getStatusDescription@{getStatusDescription}}
+\index{getStatusDescription@{getStatusDescription}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getStatusDescription()}{getStatusDescription()}}
+{\footnotesize\ttfamily \label{class_order_manager_ae877b0b33e8773582e693bf9f7046855} 
+QString Order\+Manager\+::get\+Status\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_ae877b0b33e8773582e693bf9f7046855_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_a3d131887d1315302fda7301e4e13257f}\index{OrderManager@{OrderManager}!getValidStatuses@{getValidStatuses}}
+\index{getValidStatuses@{getValidStatuses}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{getValidStatuses()}{getValidStatuses()}}
+{\footnotesize\ttfamily \label{class_order_manager_a3d131887d1315302fda7301e4e13257f} 
+QString\+List Order\+Manager\+::get\+Valid\+Statuses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_a3d131887d1315302fda7301e4e13257f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_a3d131887d1315302fda7301e4e13257f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_a1d9dd456baf471d70c37a7ca43ea573f}\index{OrderManager@{OrderManager}!isValidStatus@{isValidStatus}}
+\index{isValidStatus@{isValidStatus}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{isValidStatus()}{isValidStatus()}}
+{\footnotesize\ttfamily \label{class_order_manager_a1d9dd456baf471d70c37a7ca43ea573f} 
+bool Order\+Manager\+::is\+Valid\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{status}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_a1d9dd456baf471d70c37a7ca43ea573f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_a1d9dd456baf471d70c37a7ca43ea573f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_a2f82c37088bd3c3c2f92143951f174bb}\index{OrderManager@{OrderManager}!orderCreated@{orderCreated}}
+\index{orderCreated@{orderCreated}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{orderCreated}{orderCreated}}
+{\footnotesize\ttfamily \label{class_order_manager_a2f82c37088bd3c3c2f92143951f174bb} 
+void Order\+Manager\+::order\+Created (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_order_manager_aa118f04b70e72f8bc6a41ea6f4956746}\index{OrderManager@{OrderManager}!orderHistoryUpdated@{orderHistoryUpdated}}
+\index{orderHistoryUpdated@{orderHistoryUpdated}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{orderHistoryUpdated}{orderHistoryUpdated}}
+{\footnotesize\ttfamily \label{class_order_manager_aa118f04b70e72f8bc6a41ea6f4956746} 
+void Order\+Manager\+::order\+History\+Updated (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_order_manager_a605eb3a3246eafda4fde77ed41acd445}\index{OrderManager@{OrderManager}!orderPlaced@{orderPlaced}}
+\index{orderPlaced@{orderPlaced}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{orderPlaced}{orderPlaced}}
+{\footnotesize\ttfamily \label{class_order_manager_a605eb3a3246eafda4fde77ed41acd445} 
+void Order\+Manager\+::order\+Placed (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_order_manager_ac33545cf147d871d0b2e8109eceec1b9}\index{OrderManager@{OrderManager}!orderStatusUpdated@{orderStatusUpdated}}
+\index{orderStatusUpdated@{orderStatusUpdated}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{orderStatusUpdated}{orderStatusUpdated}}
+{\footnotesize\ttfamily \label{class_order_manager_ac33545cf147d871d0b2e8109eceec1b9} 
+void Order\+Manager\+::order\+Status\+Updated (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_order_manager_abd7cef9bc8f8c06d8d961a489faa6a1b}\index{OrderManager@{OrderManager}!placeOrder@{placeOrder}}
+\index{placeOrder@{placeOrder}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{placeOrder()}{placeOrder()}}
+{\footnotesize\ttfamily \label{class_order_manager_abd7cef9bc8f8c06d8d961a489faa6a1b} 
+void Order\+Manager\+::place\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{items}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_manager_ac73c606b365dcec64448668b7f950607}\index{OrderManager@{OrderManager}!statusUpdateFailed@{statusUpdateFailed}}
+\index{statusUpdateFailed@{statusUpdateFailed}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{statusUpdateFailed}{statusUpdateFailed}}
+{\footnotesize\ttfamily \label{class_order_manager_ac73c606b365dcec64448668b7f950607} 
+void Order\+Manager\+::status\+Update\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{reason}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_ac73c606b365dcec64448668b7f950607_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90}\index{OrderManager@{OrderManager}!updateOrderStatus@{updateOrderStatus}}
+\index{updateOrderStatus@{updateOrderStatus}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{updateOrderStatus()}{updateOrderStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90} 
+bool Order\+Manager\+::update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90}\index{OrderManager@{OrderManager}!updateOrderStatus@{updateOrderStatus}}
+\index{updateOrderStatus@{updateOrderStatus}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{updateOrderStatus()}{updateOrderStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90} 
+bool Order\+Manager\+::update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2ordermanager_8h}{ordermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2ordermanager_8h}{ordermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2ordermanager_8cpp}{ordermanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2ordermanager_8cpp}{ordermanager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,532 @@
+\doxysection{Network\+Manager Class Reference}
+\hypertarget{class_network_manager}{}\label{class_network_manager}\index{NetworkManager@{NetworkManager}}
+
+
+{\ttfamily \#include $<$networkmanager.\+h$>$}
+
+
+
+Inheritance diagram for Network\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_network_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_network_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_manager_aa2d7233230f2d609c31d9fd064c2f461}{connected}} ()
+\item 
+void \mbox{\hyperlink{class_network_manager_a3c9d18963e77a155faf338b86927e2e5}{disconnected}} ()
+\item 
+void \mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{class_network_manager_abe3dba98361c732c88486fc9b053a425}{login\+Success}} (const QJson\+Object \&user\+Data)
+\item 
+void \mbox{\hyperlink{class_network_manager_af44f458f2acf10dc4af3027cc61fe022}{login\+Failed}} (const QString \&\mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}})
+\item 
+void \mbox{\hyperlink{class_network_manager_a2a25053e60508845daa2700eccbd3398}{register\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_network_manager_a6acd783a65e800ba9d1d3a75d6047efe}{register\+Failed}} (const QString \&\mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}})
+\item 
+void \mbox{\hyperlink{class_network_manager_aaa96988e00ddcf67996b14cf9c024089}{restaurants\+Received}} (const QJson\+Array \&restaurants)
+\item 
+void \mbox{\hyperlink{class_network_manager_ae6318deca701dcf4908d5aa69f90601a}{menu\+Received}} (const QString \&restaurant\+Id, const QJson\+Array \&menu)
+\item 
+void \mbox{\hyperlink{class_network_manager_a08f5f28d943bdada58299afe5751cfcb}{order\+Status\+Updated}} (const QString \&order\+Id, const QString \&status)
+\item 
+void \mbox{\hyperlink{class_network_manager_a918c29ba1c98a763400115bff16b87d6}{chat\+Message\+Received}} (const QString \&from\+User\+Id, const QString \&message)
+\item 
+void \mbox{\hyperlink{class_network_manager_a8780b86a89ae3e4e64ea5fc1a42f9e69}{order\+Placed}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a65912795cf7c248776dea5be492d6bf1}{customer\+Profile\+Received}} (const QJson\+Object \&profile)
+\item 
+void \mbox{\hyperlink{class_network_manager_a4e2efa4b2269846660a069ee8a35abe0}{customer\+Order\+History\+Received}} (const QJson\+Array \&order\+History)
+\item 
+void \mbox{\hyperlink{class_network_manager_ac3a8bc16e8e9b8aeda1d1550fb6e0796}{owner\+Profile\+Received}} (const QJson\+Object \&profile)
+\item 
+void \mbox{\hyperlink{class_network_manager_acd2d26d545a3074262ff2c2d309a079e}{owner\+Restaurants\+Received}} (const QJson\+Array \&restaurants)
+\item 
+void \mbox{\hyperlink{class_network_manager_af6451ee4250904c173f27242cf0716a1}{order\+Created}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_ae0916c78368043387eff0342ea13e82e}{order\+History\+Received}} (const QJson\+Array \&order\+History)
+\item 
+void \mbox{\hyperlink{class_network_manager_a78fc185eccf2e65f695331bf58359dcd}{menu\+Created}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_a75046da9b7435df49a69cc80b0511a22}{menu\+Item\+Added}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_a1e5c76c569fec25af938198dede2ef9c}{menu\+Item\+Updated}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_a4ba3fa7d5d240f3a4e73dbcea9759969}{menu\+Item\+Deleted}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_a3aea6b40a7c92f996e68d5eab6a1c0c4}{menu\+Data\+Received}} (const QJson\+Array \&menu)
+\item 
+void \mbox{\hyperlink{class_network_manager_a3353ff4fa28173b560e98ac7f74b8bbc}{order\+Comment\+Added}} (bool success)
+\item 
+void \mbox{\hyperlink{class_network_manager_a761d6de99398dbb5ae1854d268b74f7d}{order\+Comments\+Received}} (const QJson\+Array \&comments)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_network_manager_a88333a093853a7c55f561c91e7a5cc27}{connect\+To\+Server}} (const QString \&host="{}localhost"{}, quint16 tcp\+Port=8080, quint16 ws\+Port=8081)
+\item 
+void \mbox{\hyperlink{class_network_manager_a751f87add468a5ddc70c4087ab80533f}{disconnect}} ()
+\item 
+bool \mbox{\hyperlink{class_network_manager_a97d1fb741f609c2442efdfd92e944ed2}{is\+Connected}} () const
+\item 
+void \mbox{\hyperlink{class_network_manager_abfe73945c7c0b9204e2151aad155fc5b}{login}} (const QString \&login\+Id, const QString \&password)
+\item 
+void \mbox{\hyperlink{class_network_manager_abe61c588adb46a2966ee3f6987445b2a}{register\+User}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&user\+Type)
+\item 
+void \mbox{\hyperlink{class_network_manager_a2e9f2e60df7673bec45af42c104d4f72}{logout}} ()
+\item 
+void \mbox{\hyperlink{class_network_manager_af904e9c810e309987980507b2ba59d1c}{get\+Restaurants}} ()
+\item 
+void \mbox{\hyperlink{class_network_manager_abaa8039691ca10ddd00df994abea590b}{get\+Restaurant\+Menu}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a4a0124cbe4f454a5233fdbdbf800caea}{get\+Restaurant\+Orders}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a39d6fadb664f04f3fdf660914f2a53c5}{place\+Order}} (const QString \&restaurant\+Id, const QJson\+Array \&items)
+\item 
+void \mbox{\hyperlink{class_network_manager_a143f6d54a2c4ae1c87c6dedc297a3d43}{get\+Order\+Status}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a263fe0ef882eec779299a4ed3f60dcf9}{update\+Order\+Status}} (const QString \&order\+Id, const QString \&status)
+\item 
+void \mbox{\hyperlink{class_network_manager_a237c08e98ba69e90df942fac48892f8b}{send\+Chat\+Message}} (const QString \&to\+User\+Id, const QString \&message)
+\item 
+void \mbox{\hyperlink{class_network_manager_a89a58bf64d991ab61bf04279b1f1f12a}{get\+Customer\+Profile}} (const QString \&customer\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a60c360b159f455df61a48f81e31ffb08}{get\+Customer\+Order\+History}} (const QString \&customer\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a3395b3e1b6e72097f17c01c090a8c5a9}{get\+Owner\+Profile}} (const QString \&owner\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a9981b5f6da3fd5f168dce9ff5b24a7de}{get\+Owner\+Restaurants}} (const QString \&owner\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_afa4717568c1d5c140ad9657465a9aac8}{create\+Order}} (const QString \&customer\+Id, const QString \&restaurant\+Id, const QJson\+Array \&items)
+\item 
+void \mbox{\hyperlink{class_network_manager_ae1c0dd5b4775198b5ccd3b0a61d1990c}{get\+Order\+History}} (const QString \&user\+Id, const QString \&user\+Type)
+\item 
+void \mbox{\hyperlink{class_network_manager_a6774d3927a619772f8f30ec512c25034}{create\+Menu}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_ab9eb5c530fb139d8edd2b726e364c0b9}{add\+Menu\+Item}} (const QString \&menu\+Id, const QString \&name, const QString \&description, double price, const QString \&ingredients, const QString \&category, const QString \&image\+Url="{}"{})
+\item 
+void \mbox{\hyperlink{class_network_manager_a47e11b734f04037350162c8896ae69d0}{update\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id, const QJson\+Object \&updates)
+\item 
+void \mbox{\hyperlink{class_network_manager_a10132227e3573fd0cf8c1728337a0d17}{delete\+Menu\+Item}} (const QString \&menu\+Id, const QString \&item\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_adf7620d370ef5437c6cf8ff647ea0375}{get\+Menu}} (const QString \&restaurant\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a7d8396ab1460d1d254eac09fd76fde7b}{add\+Order\+Comment}} (const QString \&order\+Id, const QString \&customer\+Id, const QString \&comment)
+\item 
+void \mbox{\hyperlink{class_network_manager_a1c0fdffcd04d4709f6bf4095aa6e0d50}{get\+Order\+Comments}} (const QString \&order\+Id)
+\item 
+void \mbox{\hyperlink{class_network_manager_a35bdb8857ad421f9bd68d1a778b19261}{register\+Customer}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&location)
+\item 
+void \mbox{\hyperlink{class_network_manager_abc61e7ce6edb95dbacb0fd06e7cef434}{register\+Restaurant\+Owner}} (const QString \&first\+Name, const QString \&last\+Name, const QString \&email, const QString \&phone, const QString \&password, const QString \&restaurant\+Name, const QString \&restaurant\+Number, const QString \&location)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_network_manager}{Network\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_network_manager_a160c056e7177dbe9686310e4896326d6}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_network_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_manager_ab9eb5c530fb139d8edd2b726e364c0b9}\index{NetworkManager@{NetworkManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}}
+{\footnotesize\ttfamily \label{class_network_manager_ab9eb5c530fb139d8edd2b726e364c0b9} 
+void Network\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{name}{, }\item[{const QString \&}]{description}{, }\item[{double}]{price}{, }\item[{const QString \&}]{ingredients}{, }\item[{const QString \&}]{category}{, }\item[{const QString \&}]{image\+Url}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a7d8396ab1460d1d254eac09fd76fde7b}\index{NetworkManager@{NetworkManager}!addOrderComment@{addOrderComment}}
+\index{addOrderComment@{addOrderComment}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{addOrderComment()}{addOrderComment()}}
+{\footnotesize\ttfamily \label{class_network_manager_a7d8396ab1460d1d254eac09fd76fde7b} 
+void Network\+Manager\+::add\+Order\+Comment (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{customer\+Id}{, }\item[{const QString \&}]{comment}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a918c29ba1c98a763400115bff16b87d6}\index{NetworkManager@{NetworkManager}!chatMessageReceived@{chatMessageReceived}}
+\index{chatMessageReceived@{chatMessageReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{chatMessageReceived}{chatMessageReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_a918c29ba1c98a763400115bff16b87d6} 
+void Network\+Manager\+::chat\+Message\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{from\+User\+Id}{, }\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_aa2d7233230f2d609c31d9fd064c2f461}\index{NetworkManager@{NetworkManager}!connected@{connected}}
+\index{connected@{connected}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily \label{class_network_manager_aa2d7233230f2d609c31d9fd064c2f461} 
+void Network\+Manager\+::connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_aa2d7233230f2d609c31d9fd064c2f461_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a88333a093853a7c55f561c91e7a5cc27}\index{NetworkManager@{NetworkManager}!connectToServer@{connectToServer}}
+\index{connectToServer@{connectToServer}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{connectToServer()}{connectToServer()}}
+{\footnotesize\ttfamily \label{class_network_manager_a88333a093853a7c55f561c91e7a5cc27} 
+bool Network\+Manager\+::connect\+To\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{ = {\ttfamily "{}localhost"{}}, }\item[{quint16}]{tcp\+Port}{ = {\ttfamily 8080}, }\item[{quint16}]{ws\+Port}{ = {\ttfamily 8081}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a88333a093853a7c55f561c91e7a5cc27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a6774d3927a619772f8f30ec512c25034}\index{NetworkManager@{NetworkManager}!createMenu@{createMenu}}
+\index{createMenu@{createMenu}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{createMenu()}{createMenu()}}
+{\footnotesize\ttfamily \label{class_network_manager_a6774d3927a619772f8f30ec512c25034} 
+void Network\+Manager\+::create\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_afa4717568c1d5c140ad9657465a9aac8}\index{NetworkManager@{NetworkManager}!createOrder@{createOrder}}
+\index{createOrder@{createOrder}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{createOrder()}{createOrder()}}
+{\footnotesize\ttfamily \label{class_network_manager_afa4717568c1d5c140ad9657465a9aac8} 
+void Network\+Manager\+::create\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{, }\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{items}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a4e2efa4b2269846660a069ee8a35abe0}\index{NetworkManager@{NetworkManager}!customerOrderHistoryReceived@{customerOrderHistoryReceived}}
+\index{customerOrderHistoryReceived@{customerOrderHistoryReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{customerOrderHistoryReceived}{customerOrderHistoryReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_a4e2efa4b2269846660a069ee8a35abe0} 
+void Network\+Manager\+::customer\+Order\+History\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{order\+History}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a65912795cf7c248776dea5be492d6bf1}\index{NetworkManager@{NetworkManager}!customerProfileReceived@{customerProfileReceived}}
+\index{customerProfileReceived@{customerProfileReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{customerProfileReceived}{customerProfileReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_a65912795cf7c248776dea5be492d6bf1} 
+void Network\+Manager\+::customer\+Profile\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a10132227e3573fd0cf8c1728337a0d17}\index{NetworkManager@{NetworkManager}!deleteMenuItem@{deleteMenuItem}}
+\index{deleteMenuItem@{deleteMenuItem}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{deleteMenuItem()}{deleteMenuItem()}}
+{\footnotesize\ttfamily \label{class_network_manager_a10132227e3573fd0cf8c1728337a0d17} 
+void Network\+Manager\+::delete\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a751f87add468a5ddc70c4087ab80533f}\index{NetworkManager@{NetworkManager}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily \label{class_network_manager_a751f87add468a5ddc70c4087ab80533f} 
+void Network\+Manager\+::disconnect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a751f87add468a5ddc70c4087ab80533f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a3c9d18963e77a155faf338b86927e2e5}\index{NetworkManager@{NetworkManager}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily \label{class_network_manager_a3c9d18963e77a155faf338b86927e2e5} 
+void Network\+Manager\+::disconnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a3c9d18963e77a155faf338b86927e2e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a23efaed140541fda0cb822258b0454d6}\index{NetworkManager@{NetworkManager}!error@{error}}
+\index{error@{error}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_network_manager_a23efaed140541fda0cb822258b0454d6} 
+void Network\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a23efaed140541fda0cb822258b0454d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a60c360b159f455df61a48f81e31ffb08}\index{NetworkManager@{NetworkManager}!getCustomerOrderHistory@{getCustomerOrderHistory}}
+\index{getCustomerOrderHistory@{getCustomerOrderHistory}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerOrderHistory()}{getCustomerOrderHistory()}}
+{\footnotesize\ttfamily \label{class_network_manager_a60c360b159f455df61a48f81e31ffb08} 
+void Network\+Manager\+::get\+Customer\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a89a58bf64d991ab61bf04279b1f1f12a}\index{NetworkManager@{NetworkManager}!getCustomerProfile@{getCustomerProfile}}
+\index{getCustomerProfile@{getCustomerProfile}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getCustomerProfile()}{getCustomerProfile()}}
+{\footnotesize\ttfamily \label{class_network_manager_a89a58bf64d991ab61bf04279b1f1f12a} 
+void Network\+Manager\+::get\+Customer\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{customer\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a160c056e7177dbe9686310e4896326d6}\index{NetworkManager@{NetworkManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_network_manager_a160c056e7177dbe9686310e4896326d6} 
+\mbox{\hyperlink{class_network_manager}{Network\+Manager}} \texorpdfstring{$\ast$}{*} Network\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_network_manager_adf7620d370ef5437c6cf8ff647ea0375}\index{NetworkManager@{NetworkManager}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getMenu()}{getMenu()}}
+{\footnotesize\ttfamily \label{class_network_manager_adf7620d370ef5437c6cf8ff647ea0375} 
+void Network\+Manager\+::get\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a1c0fdffcd04d4709f6bf4095aa6e0d50}\index{NetworkManager@{NetworkManager}!getOrderComments@{getOrderComments}}
+\index{getOrderComments@{getOrderComments}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getOrderComments()}{getOrderComments()}}
+{\footnotesize\ttfamily \label{class_network_manager_a1c0fdffcd04d4709f6bf4095aa6e0d50} 
+void Network\+Manager\+::get\+Order\+Comments (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_ae1c0dd5b4775198b5ccd3b0a61d1990c}\index{NetworkManager@{NetworkManager}!getOrderHistory@{getOrderHistory}}
+\index{getOrderHistory@{getOrderHistory}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getOrderHistory()}{getOrderHistory()}}
+{\footnotesize\ttfamily \label{class_network_manager_ae1c0dd5b4775198b5ccd3b0a61d1990c} 
+void Network\+Manager\+::get\+Order\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a143f6d54a2c4ae1c87c6dedc297a3d43}\index{NetworkManager@{NetworkManager}!getOrderStatus@{getOrderStatus}}
+\index{getOrderStatus@{getOrderStatus}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getOrderStatus()}{getOrderStatus()}}
+{\footnotesize\ttfamily \label{class_network_manager_a143f6d54a2c4ae1c87c6dedc297a3d43} 
+void Network\+Manager\+::get\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a3395b3e1b6e72097f17c01c090a8c5a9}\index{NetworkManager@{NetworkManager}!getOwnerProfile@{getOwnerProfile}}
+\index{getOwnerProfile@{getOwnerProfile}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getOwnerProfile()}{getOwnerProfile()}}
+{\footnotesize\ttfamily \label{class_network_manager_a3395b3e1b6e72097f17c01c090a8c5a9} 
+void Network\+Manager\+::get\+Owner\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a9981b5f6da3fd5f168dce9ff5b24a7de}\index{NetworkManager@{NetworkManager}!getOwnerRestaurants@{getOwnerRestaurants}}
+\index{getOwnerRestaurants@{getOwnerRestaurants}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getOwnerRestaurants()}{getOwnerRestaurants()}}
+{\footnotesize\ttfamily \label{class_network_manager_a9981b5f6da3fd5f168dce9ff5b24a7de} 
+void Network\+Manager\+::get\+Owner\+Restaurants (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_abaa8039691ca10ddd00df994abea590b}\index{NetworkManager@{NetworkManager}!getRestaurantMenu@{getRestaurantMenu}}
+\index{getRestaurantMenu@{getRestaurantMenu}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantMenu()}{getRestaurantMenu()}}
+{\footnotesize\ttfamily \label{class_network_manager_abaa8039691ca10ddd00df994abea590b} 
+void Network\+Manager\+::get\+Restaurant\+Menu (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a4a0124cbe4f454a5233fdbdbf800caea}\index{NetworkManager@{NetworkManager}!getRestaurantOrders@{getRestaurantOrders}}
+\index{getRestaurantOrders@{getRestaurantOrders}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantOrders()}{getRestaurantOrders()}}
+{\footnotesize\ttfamily \label{class_network_manager_a4a0124cbe4f454a5233fdbdbf800caea} 
+void Network\+Manager\+::get\+Restaurant\+Orders (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_af904e9c810e309987980507b2ba59d1c}\index{NetworkManager@{NetworkManager}!getRestaurants@{getRestaurants}}
+\index{getRestaurants@{getRestaurants}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurants()}{getRestaurants()}}
+{\footnotesize\ttfamily \label{class_network_manager_af904e9c810e309987980507b2ba59d1c} 
+void Network\+Manager\+::get\+Restaurants (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a97d1fb741f609c2442efdfd92e944ed2}\index{NetworkManager@{NetworkManager}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily \label{class_network_manager_a97d1fb741f609c2442efdfd92e944ed2} 
+bool Network\+Manager\+::is\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_network_manager_abfe73945c7c0b9204e2151aad155fc5b}\index{NetworkManager@{NetworkManager}!login@{login}}
+\index{login@{login}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily \label{class_network_manager_abfe73945c7c0b9204e2151aad155fc5b} 
+void Network\+Manager\+::login (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+Id}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_af44f458f2acf10dc4af3027cc61fe022}\index{NetworkManager@{NetworkManager}!loginFailed@{loginFailed}}
+\index{loginFailed@{loginFailed}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{loginFailed}{loginFailed}}
+{\footnotesize\ttfamily \label{class_network_manager_af44f458f2acf10dc4af3027cc61fe022} 
+void Network\+Manager\+::login\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_af44f458f2acf10dc4af3027cc61fe022_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_abe3dba98361c732c88486fc9b053a425}\index{NetworkManager@{NetworkManager}!loginSuccess@{loginSuccess}}
+\index{loginSuccess@{loginSuccess}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{loginSuccess}{loginSuccess}}
+{\footnotesize\ttfamily \label{class_network_manager_abe3dba98361c732c88486fc9b053a425} 
+void Network\+Manager\+::login\+Success (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{user\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a2e9f2e60df7673bec45af42c104d4f72}\index{NetworkManager@{NetworkManager}!logout@{logout}}
+\index{logout@{logout}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily \label{class_network_manager_a2e9f2e60df7673bec45af42c104d4f72} 
+void Network\+Manager\+::logout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a2e9f2e60df7673bec45af42c104d4f72_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_a78fc185eccf2e65f695331bf58359dcd}\index{NetworkManager@{NetworkManager}!menuCreated@{menuCreated}}
+\index{menuCreated@{menuCreated}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuCreated}{menuCreated}}
+{\footnotesize\ttfamily \label{class_network_manager_a78fc185eccf2e65f695331bf58359dcd} 
+void Network\+Manager\+::menu\+Created (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a3aea6b40a7c92f996e68d5eab6a1c0c4}\index{NetworkManager@{NetworkManager}!menuDataReceived@{menuDataReceived}}
+\index{menuDataReceived@{menuDataReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuDataReceived}{menuDataReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_a3aea6b40a7c92f996e68d5eab6a1c0c4} 
+void Network\+Manager\+::menu\+Data\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{menu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a75046da9b7435df49a69cc80b0511a22}\index{NetworkManager@{NetworkManager}!menuItemAdded@{menuItemAdded}}
+\index{menuItemAdded@{menuItemAdded}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuItemAdded}{menuItemAdded}}
+{\footnotesize\ttfamily \label{class_network_manager_a75046da9b7435df49a69cc80b0511a22} 
+void Network\+Manager\+::menu\+Item\+Added (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a4ba3fa7d5d240f3a4e73dbcea9759969}\index{NetworkManager@{NetworkManager}!menuItemDeleted@{menuItemDeleted}}
+\index{menuItemDeleted@{menuItemDeleted}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuItemDeleted}{menuItemDeleted}}
+{\footnotesize\ttfamily \label{class_network_manager_a4ba3fa7d5d240f3a4e73dbcea9759969} 
+void Network\+Manager\+::menu\+Item\+Deleted (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a1e5c76c569fec25af938198dede2ef9c}\index{NetworkManager@{NetworkManager}!menuItemUpdated@{menuItemUpdated}}
+\index{menuItemUpdated@{menuItemUpdated}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuItemUpdated}{menuItemUpdated}}
+{\footnotesize\ttfamily \label{class_network_manager_a1e5c76c569fec25af938198dede2ef9c} 
+void Network\+Manager\+::menu\+Item\+Updated (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_ae6318deca701dcf4908d5aa69f90601a}\index{NetworkManager@{NetworkManager}!menuReceived@{menuReceived}}
+\index{menuReceived@{menuReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{menuReceived}{menuReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_ae6318deca701dcf4908d5aa69f90601a} 
+void Network\+Manager\+::menu\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{menu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a3353ff4fa28173b560e98ac7f74b8bbc}\index{NetworkManager@{NetworkManager}!orderCommentAdded@{orderCommentAdded}}
+\index{orderCommentAdded@{orderCommentAdded}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderCommentAdded}{orderCommentAdded}}
+{\footnotesize\ttfamily \label{class_network_manager_a3353ff4fa28173b560e98ac7f74b8bbc} 
+void Network\+Manager\+::order\+Comment\+Added (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a761d6de99398dbb5ae1854d268b74f7d}\index{NetworkManager@{NetworkManager}!orderCommentsReceived@{orderCommentsReceived}}
+\index{orderCommentsReceived@{orderCommentsReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderCommentsReceived}{orderCommentsReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_a761d6de99398dbb5ae1854d268b74f7d} 
+void Network\+Manager\+::order\+Comments\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{comments}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_af6451ee4250904c173f27242cf0716a1}\index{NetworkManager@{NetworkManager}!orderCreated@{orderCreated}}
+\index{orderCreated@{orderCreated}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderCreated}{orderCreated}}
+{\footnotesize\ttfamily \label{class_network_manager_af6451ee4250904c173f27242cf0716a1} 
+void Network\+Manager\+::order\+Created (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_ae0916c78368043387eff0342ea13e82e}\index{NetworkManager@{NetworkManager}!orderHistoryReceived@{orderHistoryReceived}}
+\index{orderHistoryReceived@{orderHistoryReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderHistoryReceived}{orderHistoryReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_ae0916c78368043387eff0342ea13e82e} 
+void Network\+Manager\+::order\+History\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{order\+History}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a8780b86a89ae3e4e64ea5fc1a42f9e69}\index{NetworkManager@{NetworkManager}!orderPlaced@{orderPlaced}}
+\index{orderPlaced@{orderPlaced}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderPlaced}{orderPlaced}}
+{\footnotesize\ttfamily \label{class_network_manager_a8780b86a89ae3e4e64ea5fc1a42f9e69} 
+void Network\+Manager\+::order\+Placed (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a08f5f28d943bdada58299afe5751cfcb}\index{NetworkManager@{NetworkManager}!orderStatusUpdated@{orderStatusUpdated}}
+\index{orderStatusUpdated@{orderStatusUpdated}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{orderStatusUpdated}{orderStatusUpdated}}
+{\footnotesize\ttfamily \label{class_network_manager_a08f5f28d943bdada58299afe5751cfcb} 
+void Network\+Manager\+::order\+Status\+Updated (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_ac3a8bc16e8e9b8aeda1d1550fb6e0796}\index{NetworkManager@{NetworkManager}!ownerProfileReceived@{ownerProfileReceived}}
+\index{ownerProfileReceived@{ownerProfileReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{ownerProfileReceived}{ownerProfileReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_ac3a8bc16e8e9b8aeda1d1550fb6e0796} 
+void Network\+Manager\+::owner\+Profile\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_acd2d26d545a3074262ff2c2d309a079e}\index{NetworkManager@{NetworkManager}!ownerRestaurantsReceived@{ownerRestaurantsReceived}}
+\index{ownerRestaurantsReceived@{ownerRestaurantsReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{ownerRestaurantsReceived}{ownerRestaurantsReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_acd2d26d545a3074262ff2c2d309a079e} 
+void Network\+Manager\+::owner\+Restaurants\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a39d6fadb664f04f3fdf660914f2a53c5}\index{NetworkManager@{NetworkManager}!placeOrder@{placeOrder}}
+\index{placeOrder@{placeOrder}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{placeOrder()}{placeOrder()}}
+{\footnotesize\ttfamily \label{class_network_manager_a39d6fadb664f04f3fdf660914f2a53c5} 
+void Network\+Manager\+::place\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{restaurant\+Id}{, }\item[{const QJson\+Array \&}]{items}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a35bdb8857ad421f9bd68d1a778b19261}\index{NetworkManager@{NetworkManager}!registerCustomer@{registerCustomer}}
+\index{registerCustomer@{registerCustomer}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{registerCustomer()}{registerCustomer()}}
+{\footnotesize\ttfamily \label{class_network_manager_a35bdb8857ad421f9bd68d1a778b19261} 
+void Network\+Manager\+::register\+Customer (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a6acd783a65e800ba9d1d3a75d6047efe}\index{NetworkManager@{NetworkManager}!registerFailed@{registerFailed}}
+\index{registerFailed@{registerFailed}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{registerFailed}{registerFailed}}
+{\footnotesize\ttfamily \label{class_network_manager_a6acd783a65e800ba9d1d3a75d6047efe} 
+void Network\+Manager\+::register\+Failed (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_manager_a6acd783a65e800ba9d1d3a75d6047efe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_network_manager_abc61e7ce6edb95dbacb0fd06e7cef434}\index{NetworkManager@{NetworkManager}!registerRestaurantOwner@{registerRestaurantOwner}}
+\index{registerRestaurantOwner@{registerRestaurantOwner}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{registerRestaurantOwner()}{registerRestaurantOwner()}}
+{\footnotesize\ttfamily \label{class_network_manager_abc61e7ce6edb95dbacb0fd06e7cef434} 
+void Network\+Manager\+::register\+Restaurant\+Owner (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{restaurant\+Name}{, }\item[{const QString \&}]{restaurant\+Number}{, }\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a2a25053e60508845daa2700eccbd3398}\index{NetworkManager@{NetworkManager}!registerSuccess@{registerSuccess}}
+\index{registerSuccess@{registerSuccess}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{registerSuccess}{registerSuccess}}
+{\footnotesize\ttfamily \label{class_network_manager_a2a25053e60508845daa2700eccbd3398} 
+void Network\+Manager\+::register\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_abe61c588adb46a2966ee3f6987445b2a}\index{NetworkManager@{NetworkManager}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily \label{class_network_manager_abe61c588adb46a2966ee3f6987445b2a} 
+void Network\+Manager\+::register\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{first\+Name}{, }\item[{const QString \&}]{last\+Name}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{phone}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_aaa96988e00ddcf67996b14cf9c024089}\index{NetworkManager@{NetworkManager}!restaurantsReceived@{restaurantsReceived}}
+\index{restaurantsReceived@{restaurantsReceived}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{restaurantsReceived}{restaurantsReceived}}
+{\footnotesize\ttfamily \label{class_network_manager_aaa96988e00ddcf67996b14cf9c024089} 
+void Network\+Manager\+::restaurants\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_network_manager_a237c08e98ba69e90df942fac48892f8b}\index{NetworkManager@{NetworkManager}!sendChatMessage@{sendChatMessage}}
+\index{sendChatMessage@{sendChatMessage}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{sendChatMessage()}{sendChatMessage()}}
+{\footnotesize\ttfamily \label{class_network_manager_a237c08e98ba69e90df942fac48892f8b} 
+void Network\+Manager\+::send\+Chat\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{to\+User\+Id}{, }\item[{const QString \&}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a47e11b734f04037350162c8896ae69d0}\index{NetworkManager@{NetworkManager}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{class_network_manager_a47e11b734f04037350162c8896ae69d0} 
+void Network\+Manager\+::update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{menu\+Id}{, }\item[{const QString \&}]{item\+Id}{, }\item[{const QJson\+Object \&}]{updates}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_network_manager_a263fe0ef882eec779299a4ed3f60dcf9}\index{NetworkManager@{NetworkManager}!updateOrderStatus@{updateOrderStatus}}
+\index{updateOrderStatus@{updateOrderStatus}!NetworkManager@{NetworkManager}}
+\doxysubsubsection{\texorpdfstring{updateOrderStatus()}{updateOrderStatus()}}
+{\footnotesize\ttfamily \label{class_network_manager_a263fe0ef882eec779299a4ed3f60dcf9} 
+void Network\+Manager\+::update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{networkmanager_8h}{networkmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{networkmanager_8cpp}{networkmanager.\+cpp}}\end{DoxyCompactItemize}

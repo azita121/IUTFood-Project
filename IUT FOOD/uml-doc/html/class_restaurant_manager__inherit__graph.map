@@ -1,0 +1,6 @@
+<map id="RestaurantManager" name="RestaurantManager">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,161,448"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="54,5,113,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,90,77,123,72,123,73,89"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="93,89,95,123,89,123,88,90"/>
+</map>

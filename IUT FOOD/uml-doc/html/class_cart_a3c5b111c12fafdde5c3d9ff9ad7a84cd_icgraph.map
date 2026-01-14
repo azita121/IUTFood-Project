@@ -1,0 +1,16 @@
+<map id="Cart::itemCountChanged" name="Cart::itemCountChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="527,81,694,108"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="647,68,635,62,610,60,588,62,576,67,573,72,578,79,574,82,568,73,572,63,587,57,611,55,636,57,650,64"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#ab316aa9ab06d50a8e8e739895761f3ed" title=" " alt="" coords="162,56,263,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="512,91,263,75,264,70,512,86"/>
+<area shape="rect" id="Node000004" href="$class_cart.html#a618b8a521ab226e929c275f128709dbe" title=" " alt="" coords="171,5,254,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="542,80,479,65,356,43,253,27,254,22,357,38,480,60,543,75"/>
+<area shape="rect" id="Node000005" href="$class_cart.html#a12a4c623b1c03a65703285181490c655" title=" " alt="" coords="334,107,457,133"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="512,109,458,115,457,110,512,104"/>
+<area shape="rect" id="Node000006" href="$class_cart.html#a5e4667d259971b6d7808b2e3a705472e" title=" " alt="" coords="311,157,479,184"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="563,117,480,148,445,159,444,154,478,143,561,112"/>
+<area shape="rect" id="Node000003" href="$class_cart.html#a297170ad44e6cebb6edd17f87296eb04" title=" " alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,61,114,56,114,50,147,56"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="156,31,115,38,114,32,155,25"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="323,154,310,148,262,116,226,85,229,81,265,112,312,143,325,149"/>
+</map>

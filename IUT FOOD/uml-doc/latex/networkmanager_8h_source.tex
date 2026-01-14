@@ -1,0 +1,112 @@
+\doxysection{networkmanager.\+h}
+\hypertarget{networkmanager_8h_source}{}\label{networkmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/networkmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/networkmanager.h}}
+\mbox{\hyperlink{networkmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NETWORKMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NETWORKMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QWebSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{../models/user.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }NetworkManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ NetworkManager*\ \mbox{\hyperlink{class_network_manager_a160c056e7177dbe9686310e4896326d6}{getInstance}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_network_manager_a88333a093853a7c55f561c91e7a5cc27}{connectToServer}}(\textcolor{keyword}{const}\ QString\ \&host\ =\ \textcolor{stringliteral}{"{}localhost"{}},\ quint16\ tcpPort\ =\ 8080,\ quint16\ wsPort\ =\ 8081);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a751f87add468a5ddc70c4087ab80533f}{disconnect}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_network_manager_a97d1fb741f609c2442efdfd92e944ed2}{isConnected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Authentication}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_abfe73945c7c0b9204e2151aad155fc5b}{login}}(\textcolor{keyword}{const}\ QString\ \&loginId,\ \textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_abe61c588adb46a2966ee3f6987445b2a}{registerUser}}(\textcolor{keyword}{const}\ QString\ \&firstName,\ \textcolor{keyword}{const}\ QString\ \&lastName,\ \textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&phone,\ \textcolor{keyword}{const}\ QString\ \&password,\ \textcolor{keyword}{const}\ QString\ \&userType);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a2e9f2e60df7673bec45af42c104d4f72}{logout}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ operations}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_af904e9c810e309987980507b2ba59d1c}{getRestaurants}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_abaa8039691ca10ddd00df994abea590b}{getRestaurantMenu}}(\textcolor{keyword}{const}\ QString\ \&restaurantId);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a4a0124cbe4f454a5233fdbdbf800caea}{getRestaurantOrders}}(\textcolor{keyword}{const}\ QString\ \&restaurantId);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Order\ operations}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a39d6fadb664f04f3fdf660914f2a53c5}{placeOrder}}(\textcolor{keyword}{const}\ QString\ \&restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\ \&items);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a143f6d54a2c4ae1c87c6dedc297a3d43}{getOrderStatus}}(\textcolor{keyword}{const}\ QString\ \&orderId);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a263fe0ef882eec779299a4ed3f60dcf9}{updateOrderStatus}}(\textcolor{keyword}{const}\ QString\ \&orderId,\ \textcolor{keyword}{const}\ QString\ \&status);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Chat\ operations}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a237c08e98ba69e90df942fac48892f8b}{sendChatMessage}}(\textcolor{keyword}{const}\ QString\ \&toUserId,\ \textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ New\ server\ endpoints}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a89a58bf64d991ab61bf04279b1f1f12a}{getCustomerProfile}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a60c360b159f455df61a48f81e31ffb08}{getCustomerOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a3395b3e1b6e72097f17c01c090a8c5a9}{getOwnerProfile}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a9981b5f6da3fd5f168dce9ff5b24a7de}{getOwnerRestaurants}}(\textcolor{keyword}{const}\ QString\&\ ownerId);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_afa4717568c1d5c140ad9657465a9aac8}{createOrder}}(\textcolor{keyword}{const}\ QString\&\ customerId,\ \textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\&\ items);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_ae1c0dd5b4775198b5ccd3b0a61d1990c}{getOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keyword}{const}\ QString\&\ userType);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a6774d3927a619772f8f30ec512c25034}{createMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_ab9eb5c530fb139d8edd2b726e364c0b9}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keyword}{const}\ QString\&\ ingredients,\ \textcolor{keyword}{const}\ QString\&\ category,\ \textcolor{keyword}{const}\ QString\&\ imageUrl\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a47e11b734f04037350162c8896ae69d0}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId,\ \textcolor{keyword}{const}\ QJsonObject\&\ updates);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a10132227e3573fd0cf8c1728337a0d17}{deleteMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_adf7620d370ef5437c6cf8ff647ea0375}{getMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Order\ feedback\ (comments)}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a7d8396ab1460d1d254eac09fd76fde7b}{addOrderComment}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ customerId,\ \textcolor{keyword}{const}\ QString\&\ comment);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a1c0fdffcd04d4709f6bf4095aa6e0d50}{getOrderComments}}(\textcolor{keyword}{const}\ QString\&\ orderId);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a35bdb8857ad421f9bd68d1a778b19261}{registerCustomer}}(\textcolor{keyword}{const}\ QString\ \&firstName,\ \textcolor{keyword}{const}\ QString\ \&lastName,\ \textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&phone,\ \textcolor{keyword}{const}\ QString\ \&password,\ \textcolor{keyword}{const}\ QString\ \&location);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_abc61e7ce6edb95dbacb0fd06e7cef434}{registerRestaurantOwner}}(\textcolor{keyword}{const}\ QString\ \&firstName,\ \textcolor{keyword}{const}\ QString\ \&lastName,\ \textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&phone,\ \textcolor{keyword}{const}\ QString\ \&password,\ \textcolor{keyword}{const}\ QString\ \&restaurantName,\ \textcolor{keyword}{const}\ QString\ \&restaurantNumber,\ \textcolor{keyword}{const}\ QString\ \&location);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ signals:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_aa2d7233230f2d609c31d9fd064c2f461}{connected}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a3c9d18963e77a155faf338b86927e2e5}{disconnected}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}}(\textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_abe3dba98361c732c88486fc9b053a425}{loginSuccess}}(\textcolor{keyword}{const}\ QJsonObject\ \&userData);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_af44f458f2acf10dc4af3027cc61fe022}{loginFailed}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}});}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a2a25053e60508845daa2700eccbd3398}{registerSuccess}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a6acd783a65e800ba9d1d3a75d6047efe}{registerFailed}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_network_manager_a23efaed140541fda0cb822258b0454d6}{error}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_aaa96988e00ddcf67996b14cf9c024089}{restaurantsReceived}}(\textcolor{keyword}{const}\ QJsonArray\ \&restaurants);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_ae6318deca701dcf4908d5aa69f90601a}{menuReceived}}(\textcolor{keyword}{const}\ QString\ \&restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\ \&menu);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a08f5f28d943bdada58299afe5751cfcb}{orderStatusUpdated}}(\textcolor{keyword}{const}\ QString\ \&orderId,\ \textcolor{keyword}{const}\ QString\ \&status);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a918c29ba1c98a763400115bff16b87d6}{chatMessageReceived}}(\textcolor{keyword}{const}\ QString\ \&fromUserId,\ \textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a8780b86a89ae3e4e64ea5fc1a42f9e69}{orderPlaced}}(\textcolor{keyword}{const}\ QString\ \&orderId);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a65912795cf7c248776dea5be492d6bf1}{customerProfileReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ profile);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a4e2efa4b2269846660a069ee8a35abe0}{customerOrderHistoryReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ orderHistory);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_ac3a8bc16e8e9b8aeda1d1550fb6e0796}{ownerProfileReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ profile);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_acd2d26d545a3074262ff2c2d309a079e}{ownerRestaurantsReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ restaurants);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_af6451ee4250904c173f27242cf0716a1}{orderCreated}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_ae0916c78368043387eff0342ea13e82e}{orderHistoryReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ orderHistory);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a78fc185eccf2e65f695331bf58359dcd}{menuCreated}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a75046da9b7435df49a69cc80b0511a22}{menuItemAdded}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a1e5c76c569fec25af938198dede2ef9c}{menuItemUpdated}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a4ba3fa7d5d240f3a4e73dbcea9759969}{menuItemDeleted}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a3aea6b40a7c92f996e68d5eab6a1c0c4}{menuDataReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ menu);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a3353ff4fa28173b560e98ac7f74b8bbc}{orderCommentAdded}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_manager_a761d6de99398dbb5ae1854d268b74f7d}{orderCommentsReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ comments);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{explicit}\ NetworkManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00089\ \ \ \ \ \string~NetworkManager();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ NetworkManager*\ instance;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ QTcpSocket*\ m\_tcpSocket;}
+\DoxyCodeLine{00093\ \ \ \ \ QWebSocket*\ m\_webSocket;}
+\DoxyCodeLine{00094\ \ \ \ \ QString\ m\_token;}
+\DoxyCodeLine{00095\ \ \ \ \ QTimer*\ m\_reconnectTimer;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isConnected;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ handleTcpResponse(\textcolor{keyword}{const}\ QJsonObject\ \&response);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ handleWebSocketMessage(\textcolor{keyword}{const}\ QString\ \&message);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ sendTcpRequest(\textcolor{keyword}{const}\ QJsonObject\ \&request);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ authenticateWebSocket();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ setupConnections();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ reconnect();}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NETWORKMANAGER\_H\ }}
+
+\end{DoxyCode}

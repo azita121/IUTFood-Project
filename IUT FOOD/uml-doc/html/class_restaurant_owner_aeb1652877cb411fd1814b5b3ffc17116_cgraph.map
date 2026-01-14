@@ -1,0 +1,10 @@
+<map id="RestaurantOwner::setRestaurant" name="RestaurantOwner::setRestaurant">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,219,57"/>
+<area shape="rect" id="Node000002" href="$class_restaurant_owner.html#ab87c8d88a2756a2d1f1e332d905d6f1b" title=" " alt="" coords="284,5,474,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,31,269,26,269,32,220,36"/>
+<area shape="rect" id="Node000003" href="$class_restaurant_owner.html#aa5a4f729fefc78eb9b0e61cf655a4c09" title=" " alt="" coords="267,56,491,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,52,252,55,251,60,219,57"/>
+<area shape="rect" id="Node000004" href="$class_restaurant_owner.html#ac899739c85bb65873a6a0b95666b7791" title=" " alt="" coords="539,48,728,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="492,67,523,67,523,72,492,72"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="586,48,584,38,592,29,608,23,634,21,661,24,677,30,675,35,660,29,634,27,610,29,595,33,589,39,591,47"/>
+</map>

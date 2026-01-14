@@ -1,0 +1,265 @@
+\doxysection{Logger Class Reference}
+\hypertarget{class_logger}{}\label{class_logger}\index{Logger@{Logger}}
+
+
+{\ttfamily \#include $<$logger.\+h$>$}
+
+
+
+Inheritance diagram for Logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_logger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_logger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36adc30ec20708ef7b0f641ef78b7880a15}{DEBUG}}
+, \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a551b723eafd6a31d444fcb2f5920fbd3}{INFO}}
+, \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a059e9861e0400dfbe05c98a841f3f96b}{WARNING}}
+, \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36abb1ca97ec761fc37101737ba0aa2e7c5}{ERROR}}
+, \newline
+\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36a99cd1c61610c76a57cb8d10d6df6b870}{CRITICAL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_logger_a06cb86dc033f7d2ecc7b5fd3f5290d75}{log\+Message}} (\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}} level, const QString \&message, const QString \&component)
+\item 
+void \mbox{\hyperlink{class_logger_a41b2be96d6bb875be18573e4276579c5}{error\+Occurred}} (const QString \&\mbox{\hyperlink{class_logger_aadd543556d2730d34e1c9f5450449f3e}{error}}, const QString \&component)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_logger_abb44146978306797963a5b719006bd25}{debug}} (const QString \&message, const QString \&component="{}General"{})
+\item 
+void \mbox{\hyperlink{class_logger_acf07f1a7415f93b9b8b3212286f32fa0}{info}} (const QString \&message, const QString \&component="{}General"{})
+\item 
+void \mbox{\hyperlink{class_logger_ac44e10012668c1ce138906b4d0ccc130}{warning}} (const QString \&message, const QString \&component="{}General"{})
+\item 
+void \mbox{\hyperlink{class_logger_aadd543556d2730d34e1c9f5450449f3e}{error}} (const QString \&message, const QString \&component="{}General"{})
+\item 
+void \mbox{\hyperlink{class_logger_a1d39a94dfa6ff95e598459502a720af4}{critical}} (const QString \&message, const QString \&component="{}General"{})
+\item 
+void \mbox{\hyperlink{class_logger_a00fdcdbeb39a2d5d4fb27cc36c35c101}{set\+Log\+Level}} (\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}} level)
+\item 
+void \mbox{\hyperlink{class_logger_a6deec98f5697369c00e9ffc125ff1377}{set\+Log\+File}} (const QString \&file\+Path)
+\item 
+void \mbox{\hyperlink{class_logger_ae438b0ed0e04f3063228e20ea08757b3}{enable\+Console\+Output}} (bool enable)
+\item 
+void \mbox{\hyperlink{class_logger_ae63cbffeabf015e1e0b141ca793c662d}{set\+Max\+Log\+Size}} (int size\+In\+MB)
+\item 
+void \mbox{\hyperlink{class_logger_a372ee7a1fcf5230f170d0b7de57d70a1}{set\+Max\+Log\+Files}} (int count)
+\item 
+QString \mbox{\hyperlink{class_logger_ad2287f088a0d09b5adadca70b52d6949}{get\+Log\+Level\+String}} (\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}} level) const
+\item 
+void \mbox{\hyperlink{class_logger_a09bc40f4d676a83e8504ddc240ed0c79}{rotate\+Logs}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_logger}{Logger}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_logger_afec28ae6d7bdf8f6a0734cb20756de10}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{class_logger_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36}\index{Logger@{Logger}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{class_logger_ac744681e23720966b5f430ec2060da36} 
+enum class \mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Logger\+::\+Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!Logger@{Logger}}\index{Logger@{Logger}!DEBUG@{DEBUG}}}\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36adc30ec20708ef7b0f641ef78b7880a15}\label{class_logger_ac744681e23720966b5f430ec2060da36adc30ec20708ef7b0f641ef78b7880a15} 
+DEBUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!Logger@{Logger}}\index{Logger@{Logger}!INFO@{INFO}}}\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36a551b723eafd6a31d444fcb2f5920fbd3}\label{class_logger_ac744681e23720966b5f430ec2060da36a551b723eafd6a31d444fcb2f5920fbd3} 
+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARNING@{WARNING}!Logger@{Logger}}\index{Logger@{Logger}!WARNING@{WARNING}}}\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36a059e9861e0400dfbe05c98a841f3f96b}\label{class_logger_ac744681e23720966b5f430ec2060da36a059e9861e0400dfbe05c98a841f3f96b} 
+WARNING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!Logger@{Logger}}\index{Logger@{Logger}!ERROR@{ERROR}}}\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36abb1ca97ec761fc37101737ba0aa2e7c5}\label{class_logger_ac744681e23720966b5f430ec2060da36abb1ca97ec761fc37101737ba0aa2e7c5} 
+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CRITICAL@{CRITICAL}!Logger@{Logger}}\index{Logger@{Logger}!CRITICAL@{CRITICAL}}}\Hypertarget{class_logger_ac744681e23720966b5f430ec2060da36a99cd1c61610c76a57cb8d10d6df6b870}\label{class_logger_ac744681e23720966b5f430ec2060da36a99cd1c61610c76a57cb8d10d6df6b870} 
+CRITICAL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{class_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_logger_a1d39a94dfa6ff95e598459502a720af4}\index{Logger@{Logger}!critical@{critical}}
+\index{critical@{critical}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{critical()}{critical()}}
+{\footnotesize\ttfamily \label{class_logger_a1d39a94dfa6ff95e598459502a720af4} 
+void Logger\+::critical (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{ = {\ttfamily "{}General"{}}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_a1d39a94dfa6ff95e598459502a720af4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_abb44146978306797963a5b719006bd25}\index{Logger@{Logger}!debug@{debug}}
+\index{debug@{debug}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily \label{class_logger_abb44146978306797963a5b719006bd25} 
+void Logger\+::debug (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{ = {\ttfamily "{}General"{}}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_abb44146978306797963a5b719006bd25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_ae438b0ed0e04f3063228e20ea08757b3}\index{Logger@{Logger}!enableConsoleOutput@{enableConsoleOutput}}
+\index{enableConsoleOutput@{enableConsoleOutput}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{enableConsoleOutput()}{enableConsoleOutput()}}
+{\footnotesize\ttfamily \label{class_logger_ae438b0ed0e04f3063228e20ea08757b3} 
+void Logger\+::enable\+Console\+Output (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_aadd543556d2730d34e1c9f5450449f3e}\index{Logger@{Logger}!error@{error}}
+\index{error@{error}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{class_logger_aadd543556d2730d34e1c9f5450449f3e} 
+void Logger\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{ = {\ttfamily "{}General"{}}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_logger_aadd543556d2730d34e1c9f5450449f3e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_aadd543556d2730d34e1c9f5450449f3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_a41b2be96d6bb875be18573e4276579c5}\index{Logger@{Logger}!errorOccurred@{errorOccurred}}
+\index{errorOccurred@{errorOccurred}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{errorOccurred}{errorOccurred}}
+{\footnotesize\ttfamily \label{class_logger_a41b2be96d6bb875be18573e4276579c5} 
+void Logger\+::error\+Occurred (\begin{DoxyParamCaption}\item[{const QString \&}]{error}{, }\item[{const QString \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_logger_a41b2be96d6bb875be18573e4276579c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_a41b2be96d6bb875be18573e4276579c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_afec28ae6d7bdf8f6a0734cb20756de10}\index{Logger@{Logger}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_logger_afec28ae6d7bdf8f6a0734cb20756de10} 
+\mbox{\hyperlink{class_logger}{Logger}} \texorpdfstring{$\ast$}{*} Logger\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_afec28ae6d7bdf8f6a0734cb20756de10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_ad2287f088a0d09b5adadca70b52d6949}\index{Logger@{Logger}!getLogLevelString@{getLogLevelString}}
+\index{getLogLevelString@{getLogLevelString}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getLogLevelString()}{getLogLevelString()}}
+{\footnotesize\ttfamily \label{class_logger_ad2287f088a0d09b5adadca70b52d6949} 
+QString Logger\+::get\+Log\+Level\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}}}]{level}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_logger_acf07f1a7415f93b9b8b3212286f32fa0}\index{Logger@{Logger}!info@{info}}
+\index{info@{info}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily \label{class_logger_acf07f1a7415f93b9b8b3212286f32fa0} 
+void Logger\+::info (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{ = {\ttfamily "{}General"{}}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_logger_acf07f1a7415f93b9b8b3212286f32fa0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_logger_a06cb86dc033f7d2ecc7b5fd3f5290d75}\index{Logger@{Logger}!logMessage@{logMessage}}
+\index{logMessage@{logMessage}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{logMessage}{logMessage}}
+{\footnotesize\ttfamily \label{class_logger_a06cb86dc033f7d2ecc7b5fd3f5290d75} 
+void Logger\+::log\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}}}]{level}{, }\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_logger_a09bc40f4d676a83e8504ddc240ed0c79}\index{Logger@{Logger}!rotateLogs@{rotateLogs}}
+\index{rotateLogs@{rotateLogs}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{rotateLogs()}{rotateLogs()}}
+{\footnotesize\ttfamily \label{class_logger_a09bc40f4d676a83e8504ddc240ed0c79} 
+void Logger\+::rotate\+Logs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_a6deec98f5697369c00e9ffc125ff1377}\index{Logger@{Logger}!setLogFile@{setLogFile}}
+\index{setLogFile@{setLogFile}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setLogFile()}{setLogFile()}}
+{\footnotesize\ttfamily \label{class_logger_a6deec98f5697369c00e9ffc125ff1377} 
+void Logger\+::set\+Log\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_a00fdcdbeb39a2d5d4fb27cc36c35c101}\index{Logger@{Logger}!setLogLevel@{setLogLevel}}
+\index{setLogLevel@{setLogLevel}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setLogLevel()}{setLogLevel()}}
+{\footnotesize\ttfamily \label{class_logger_a00fdcdbeb39a2d5d4fb27cc36c35c101} 
+void Logger\+::set\+Log\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_logger_ac744681e23720966b5f430ec2060da36}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_a372ee7a1fcf5230f170d0b7de57d70a1}\index{Logger@{Logger}!setMaxLogFiles@{setMaxLogFiles}}
+\index{setMaxLogFiles@{setMaxLogFiles}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setMaxLogFiles()}{setMaxLogFiles()}}
+{\footnotesize\ttfamily \label{class_logger_a372ee7a1fcf5230f170d0b7de57d70a1} 
+void Logger\+::set\+Max\+Log\+Files (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_ae63cbffeabf015e1e0b141ca793c662d}\index{Logger@{Logger}!setMaxLogSize@{setMaxLogSize}}
+\index{setMaxLogSize@{setMaxLogSize}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setMaxLogSize()}{setMaxLogSize()}}
+{\footnotesize\ttfamily \label{class_logger_ae63cbffeabf015e1e0b141ca793c662d} 
+void Logger\+::set\+Max\+Log\+Size (\begin{DoxyParamCaption}\item[{int}]{size\+In\+MB}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_logger_ac44e10012668c1ce138906b4d0ccc130}\index{Logger@{Logger}!warning@{warning}}
+\index{warning@{warning}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{warning()}{warning()}}
+{\footnotesize\ttfamily \label{class_logger_ac44e10012668c1ce138906b4d0ccc130} 
+void Logger\+::warning (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{, }\item[{const QString \&}]{component}{ = {\ttfamily "{}General"{}}}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{logger_8h}{logger.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{logger_8cpp}{logger.\+cpp}}\end{DoxyCompactItemize}

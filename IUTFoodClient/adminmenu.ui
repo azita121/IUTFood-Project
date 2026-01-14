@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminmenu</class>
+ <widget class="QWidget" name="adminmenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>560</width>
+     <height>510</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="menuManagementPage">
+    <widget class="QFrame" name="menuHolder">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>90</y>
+       <width>590</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>560</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(220, 213, 200, 1);
+border-top-right-radius: 50px;
+border-top-left-radius: 50px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>10</y>
+       <width>420</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bauhaus 93</family>
+       <pointsize>20</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>Verification of restaurants</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VerificationOfRestaurantButton">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#VerificationOfRestaurantButton {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                              
+    border-bottom-left-radius: 50px;
+
+}
+
+QPushButton#VerificationOfRestaurantButton:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#VerificationOfRestaurantButton:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Verification of restaurants</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UserManagementButton">
+     <property name="geometry">
+      <rect>
+       <x>186</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#UserManagementButton {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#UserManagementButton:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#UserManagementButton:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>User management</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChangeOrderStatusButton">
+     <property name="geometry">
+      <rect>
+       <x>372</x>
+       <y>440</y>
+       <width>188</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#ChangeOrderStatusButton {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-right-radius: 50px;              
+    padding: 6px 20px;
+}
+
+QPushButton#ChangeOrderStatusButton:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#ChangeOrderStatusButton:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Change order status</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="viewOrdersPage">
+    <widget class="QFrame" name="menuHolder_2">
+     <property name="geometry">
+      <rect>
+       <x>-20</x>
+       <y>90</y>
+       <width>590</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>560</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(220, 213, 200, 1);
+border-top-right-radius: 50px;
+border-top-left-radius: 50px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VerificationOfRestaurantButton_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#VerificationOfRestaurantButton_2 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                              
+    border-bottom-left-radius: 50px;
+}
+
+QPushButton#VerificationOfRestaurantButton_2:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#VerificationOfRestaurantButton_2:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Verification of restaurants</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UserManagementButton_2">
+     <property name="geometry">
+      <rect>
+       <x>186</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#UserManagementButton_2 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#UserManagementButton_2:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#UserManagementButton_2:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>User management</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChangeOrderStatusButton_2">
+     <property name="geometry">
+      <rect>
+       <x>372</x>
+       <y>440</y>
+       <width>188</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#ChangeOrderStatusButton_2 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-right-radius: 50px;              
+    padding: 6px 20px;
+}
+
+QPushButton#ChangeOrderStatusButton_2:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#ChangeOrderStatusButton_2:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Change order status</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>10</y>
+       <width>290</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bauhaus 93</family>
+       <pointsize>20</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>User management</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="changeOfStatusPage">
+    <widget class="QFrame" name="menuHolder_3">
+     <property name="geometry">
+      <rect>
+       <x>-20</x>
+       <y>90</y>
+       <width>590</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>560</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(220, 213, 200, 1);
+border-top-right-radius: 50px;
+border-top-left-radius: 50px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>10</y>
+       <width>330</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Bauhaus 93</family>
+       <pointsize>20</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgba(13, 55, 30, 1);</string>
+     </property>
+     <property name="text">
+      <string>Change order status</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="VerificationOfRestaurantButton_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#VerificationOfRestaurantButton_3 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                              
+    border-bottom-left-radius: 50px;
+}
+
+QPushButton#VerificationOfRestaurantButton_3:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#VerificationOfRestaurantButton_3:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Verification of restaurants</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UserManagementButton_3">
+     <property name="geometry">
+      <rect>
+       <x>186</x>
+       <y>440</y>
+       <width>186</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#UserManagementButton_3 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-left-radius: 0px;              
+    padding: 6px 20px;
+}
+
+QPushButton#UserManagementButton_3:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#UserManagementButton_3:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>User management</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChangeOrderStatusButton_3">
+     <property name="geometry">
+      <rect>
+       <x>372</x>
+       <y>440</y>
+       <width>188</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#ChangeOrderStatusButton_3 {
+    background-color: rgba(40, 60, 45, 255);   
+    color: #F0F8F2;                
+    border-bottom-right-radius: 50px;              
+    padding: 6px 20px;
+}
+
+QPushButton#ChangeOrderStatusButton_3:hover {
+    background-color: rgba(55, 80, 60, 255);   
+}
+
+QPushButton#ChangeOrderStatusButton_3:pressed {
+    background-color: rgba(30, 40, 30, 255);    
+    padding-left: 8px;
+    padding-top: 8px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Change order status</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

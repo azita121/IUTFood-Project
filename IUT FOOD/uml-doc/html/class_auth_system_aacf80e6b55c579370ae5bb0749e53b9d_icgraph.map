@@ -1,0 +1,21 @@
+<map id="AuthSystem::validateSession" name="AuthSystem::validateSession">
+<area shape="rect" id="Node000001" title=" " alt="" coords="977,145,1170,172"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#abc7f3456e41de21f3628de3434c7fcf8" title=" " alt="" coords="5,109,207,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1031,140,982,118,928,99,741,47,664,28,592,15,519,9,442,11,356,23,255,45,218,58,183,75,127,111,124,106,180,71,216,53,254,40,355,17,442,6,520,3,593,9,665,22,743,42,929,94,984,114,1033,135"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html#a05c8819022ccb3407947d51e0bbdc0e4" title=" " alt="" coords="255,54,439,81"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="978,144,928,136,810,113,692,94,560,82,439,74,440,69,560,76,693,89,811,108,929,130,979,139"/>
+<area shape="rect" id="Node000004" href="$class_auth_system.html#a5d7fb1863d7c548b828c4ad3f8118956" title=" " alt="" coords="751,145,918,172"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="961,161,918,161,918,156,961,156"/>
+<area shape="rect" id="Node000006" href="$class_auth_system.html#a42442f84540841ec86cb6d0cd2a456c1" title=" " alt="" coords="258,160,436,186"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="1013,179,913,204,782,228,709,235,635,239,560,237,486,228,426,210,375,189,377,184,428,205,488,222,560,231,635,233,709,230,781,222,912,199,1012,174"/>
+<area shape="rect" id="Node000008" href="$class_auth_system.html#a65a154eae413f18cad366d8c19660916" title=" " alt="" coords="740,288,929,314"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="1048,184,996,228,930,271,887,290,885,285,927,267,993,224,1045,180"/>
+<area shape="rect" id="Node000005" href="$class_auth_system.html#ac165bb2d47886b1e765faeb4b0b3b2ce" title=" " alt="" coords="496,104,684,146"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="736,148,684,140,685,135,736,142"/>
+<area shape="rect" id="Node000007" href="$class_auth_system.html#a2bf0435d5d812b4b5c94a681dc26097f" title=" " alt="" coords="487,170,692,213"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="736,174,693,180,692,175,735,169"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="480,127,207,126,207,120,480,122"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="481,102,406,84,407,79,482,97"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="481,149,418,162,417,156,480,144"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="264,158,172,139,173,134,265,153"/>
+</map>

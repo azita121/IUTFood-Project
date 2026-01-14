@@ -1,0 +1,747 @@
+\doxysection{Restaurant Class Reference}
+\hypertarget{class_restaurant}{}\label{class_restaurant}\index{Restaurant@{Restaurant}}
+
+
+{\ttfamily \#include $<$restaurant.\+h$>$}
+
+
+
+Inheritance diagram for Restaurant\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_restaurant__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Restaurant\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_restaurant__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952}{name\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_acecc405bacc6046314250d3727c0d73e}{description\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_aec235948cd053dfe6d14fd4d185228fd}{address\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd}{latitude\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705}{longitude\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_a3f2edd70cd0a133291e712685b9e198c}{rating\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_a86772058a1fe18675f11a7b013c4d003}{rating\+Count\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a}{type\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_aa522f6f21c719a646319a2c6ea112451}{image\+Url\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}{Restaurant}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_restaurant_a5e8197fbd089adaf1980a906b861e911}{Restaurant}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_restaurant_ad42d025b825ea36465ec8694522c4868}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_restaurant_a70fdd4bed10d94b6f73a5222d2f37e99}{name}} () const
+\item 
+QString \mbox{\hyperlink{class_restaurant_a317c14f6195c5aa06a73d79b020b4058}{description}} () const
+\item 
+QString \mbox{\hyperlink{class_restaurant_a69ac3998bdc4eff5011e26ee0a8be972}{address}} () const
+\item 
+double \mbox{\hyperlink{class_restaurant_abe8940aba054180e632a81a77d278693}{latitude}} () const
+\item 
+double \mbox{\hyperlink{class_restaurant_ac2da4beb065ce75fe28013df2f486289}{longitude}} () const
+\item 
+double \mbox{\hyperlink{class_restaurant_a0ccf5e542f3624512af1ff22d9e788c7}{rating}} () const
+\item 
+int \mbox{\hyperlink{class_restaurant_a32f30922fa036f552558ead162e1c0f1}{rating\+Count}} () const
+\item 
+QString \mbox{\hyperlink{class_restaurant_a9b02fd8dee17ee55d7689e394651dbbd}{type}} () const
+\item 
+QString \mbox{\hyperlink{class_restaurant_a009ecafd1042f307545bb61414824e11}{image\+Url}} () const
+\item 
+void \mbox{\hyperlink{class_restaurant_a4438105fa1f907895b096e41f08d8512}{set\+Id}} (const QString \&\mbox{\hyperlink{class_restaurant_a548f6446fdcf249eeb565159bef54701}{id}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f}{set\+Name}} (const QString \&\mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a}{set\+Description}} (const QString \&\mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}})
+\item 
+void \mbox{\hyperlink{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af}{set\+Address}} (const QString \&\mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a332af9d7754894746c8515daaf5280d6}{set\+Latitude}} (double \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a37aa09d75c58051000e62c4083fdccc8}{set\+Longitude}} (double \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa}{set\+Rating}} (double \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805}{set\+Rating\+Count}} (int count)
+\item 
+void \mbox{\hyperlink{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a}{set\+Type}} (const QString \&\mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}})
+\item 
+void \mbox{\hyperlink{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6}{set\+Image\+Url}} (const QString \&\mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{image\+Url}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_restaurant_a993df1a224a592804cac67ec429c2027}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_af2d7de3e18ceff06909c0aad37b35030}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+static QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_restaurant_a61dc77eb2d402e5b185e57872756aaca}{from\+Json\+Array}} (const QJson\+Array \&array, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_restaurant_a548f6446fdcf249eeb565159bef54701}{id}}
+\item 
+QString \mbox{\hyperlink{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}{name}}
+\item 
+QString \mbox{\hyperlink{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}{description}}
+\item 
+QString \mbox{\hyperlink{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}{address}}
+\item 
+double \mbox{\hyperlink{class_restaurant_abd98d2849335eeacfb248710eaffec8f}{latitude}}
+\item 
+double \mbox{\hyperlink{class_restaurant_afd7da13f880a15e7c5724cf44072de24}{longitude}}
+\item 
+double \mbox{\hyperlink{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}{rating}}
+\item 
+int \mbox{\hyperlink{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f}{rating\+Count}}
+\item 
+QString \mbox{\hyperlink{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}{type}}
+\item 
+QString \mbox{\hyperlink{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}{image\+Url}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_restaurant_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_restaurant_a7e64d797495ee75e139ef1614392f1c5}\index{Restaurant@{Restaurant}!Restaurant@{Restaurant}}
+\index{Restaurant@{Restaurant}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{Restaurant()}{Restaurant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_a7e64d797495ee75e139ef1614392f1c5} 
+Restaurant\+::\+Restaurant (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a7e64d797495ee75e139ef1614392f1c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a5e8197fbd089adaf1980a906b861e911}\index{Restaurant@{Restaurant}!Restaurant@{Restaurant}}
+\index{Restaurant@{Restaurant}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{Restaurant()}{Restaurant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_a5e8197fbd089adaf1980a906b861e911} 
+Restaurant\+::\+Restaurant (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a5e8197fbd089adaf1980a906b861e911_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_restaurant_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_restaurant_a69ac3998bdc4eff5011e26ee0a8be972}\index{Restaurant@{Restaurant}!address@{address}}
+\index{address@{address}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{address()}{address()}}
+{\footnotesize\ttfamily \label{class_restaurant_a69ac3998bdc4eff5011e26ee0a8be972} 
+QString Restaurant\+::address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_aec235948cd053dfe6d14fd4d185228fd}\index{Restaurant@{Restaurant}!addressChanged@{addressChanged}}
+\index{addressChanged@{addressChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{addressChanged}{addressChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_aec235948cd053dfe6d14fd4d185228fd} 
+void Restaurant\+::address\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_restaurant_aec235948cd053dfe6d14fd4d185228fd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aec235948cd053dfe6d14fd4d185228fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a317c14f6195c5aa06a73d79b020b4058}\index{Restaurant@{Restaurant}!description@{description}}
+\index{description@{description}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{class_restaurant_a317c14f6195c5aa06a73d79b020b4058} 
+QString Restaurant\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_acecc405bacc6046314250d3727c0d73e}\index{Restaurant@{Restaurant}!descriptionChanged@{descriptionChanged}}
+\index{descriptionChanged@{descriptionChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{descriptionChanged}{descriptionChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_acecc405bacc6046314250d3727c0d73e} 
+void Restaurant\+::description\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_restaurant_acecc405bacc6046314250d3727c0d73e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_acecc405bacc6046314250d3727c0d73e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f}\index{Restaurant@{Restaurant}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f} 
+void Restaurant\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_restaurant_a7f1e5fd35b512b848be99729995aeb5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a61dc77eb2d402e5b185e57872756aaca}\index{Restaurant@{Restaurant}!fromJsonArray@{fromJsonArray}}
+\index{fromJsonArray@{fromJsonArray}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{fromJsonArray()}{fromJsonArray()}}
+{\footnotesize\ttfamily \label{class_restaurant_a61dc77eb2d402e5b185e57872756aaca} 
+QList$<$ \mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} $>$ Restaurant\+::from\+Json\+Array (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{array}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a61dc77eb2d402e5b185e57872756aaca_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_af2d7de3e18ceff06909c0aad37b35030}\index{Restaurant@{Restaurant}!fromJsonObject@{fromJsonObject}}
+\index{fromJsonObject@{fromJsonObject}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{fromJsonObject()}{fromJsonObject()}}
+{\footnotesize\ttfamily \label{class_restaurant_af2d7de3e18ceff06909c0aad37b35030} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Restaurant\+::from\+Json\+Object (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_af2d7de3e18ceff06909c0aad37b35030_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_ad42d025b825ea36465ec8694522c4868}\index{Restaurant@{Restaurant}!id@{id}}
+\index{id@{id}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_restaurant_ad42d025b825ea36465ec8694522c4868} 
+QString Restaurant\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553}\index{Restaurant@{Restaurant}!idChanged@{idChanged}}
+\index{idChanged@{idChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{idChanged}{idChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553} 
+void Restaurant\+::id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a3f3916a4b6391f0ef23949abcd9ce553_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a009ecafd1042f307545bb61414824e11}\index{Restaurant@{Restaurant}!imageUrl@{imageUrl}}
+\index{imageUrl@{imageUrl}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{imageUrl()}{imageUrl()}}
+{\footnotesize\ttfamily \label{class_restaurant_a009ecafd1042f307545bb61414824e11} 
+QString Restaurant\+::image\+Url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_aa522f6f21c719a646319a2c6ea112451}\index{Restaurant@{Restaurant}!imageUrlChanged@{imageUrlChanged}}
+\index{imageUrlChanged@{imageUrlChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{imageUrlChanged}{imageUrlChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_aa522f6f21c719a646319a2c6ea112451} 
+void Restaurant\+::image\+Url\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_restaurant_aa522f6f21c719a646319a2c6ea112451_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aa522f6f21c719a646319a2c6ea112451_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_abe8940aba054180e632a81a77d278693}\index{Restaurant@{Restaurant}!latitude@{latitude}}
+\index{latitude@{latitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{latitude()}{latitude()}}
+{\footnotesize\ttfamily \label{class_restaurant_abe8940aba054180e632a81a77d278693} 
+double Restaurant\+::latitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd}\index{Restaurant@{Restaurant}!latitudeChanged@{latitudeChanged}}
+\index{latitudeChanged@{latitudeChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{latitudeChanged}{latitudeChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd} 
+void Restaurant\+::latitude\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_ae18b7928e1b273d33953119e7e6cefdd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_ac2da4beb065ce75fe28013df2f486289}\index{Restaurant@{Restaurant}!longitude@{longitude}}
+\index{longitude@{longitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{longitude()}{longitude()}}
+{\footnotesize\ttfamily \label{class_restaurant_ac2da4beb065ce75fe28013df2f486289} 
+double Restaurant\+::longitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705}\index{Restaurant@{Restaurant}!longitudeChanged@{longitudeChanged}}
+\index{longitudeChanged@{longitudeChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{longitudeChanged}{longitudeChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705} 
+void Restaurant\+::longitude\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_ad92f3b0389d93bedc2db9a0ba9229705_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a70fdd4bed10d94b6f73a5222d2f37e99}\index{Restaurant@{Restaurant}!name@{name}}
+\index{name@{name}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_restaurant_a70fdd4bed10d94b6f73a5222d2f37e99} 
+QString Restaurant\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952}\index{Restaurant@{Restaurant}!nameChanged@{nameChanged}}
+\index{nameChanged@{nameChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{nameChanged}{nameChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952} 
+void Restaurant\+::name\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aad8f83e1d9a3282bb4c883a58a185952_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a0ccf5e542f3624512af1ff22d9e788c7}\index{Restaurant@{Restaurant}!rating@{rating}}
+\index{rating@{rating}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{rating()}{rating()}}
+{\footnotesize\ttfamily \label{class_restaurant_a0ccf5e542f3624512af1ff22d9e788c7} 
+double Restaurant\+::rating (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_a3f2edd70cd0a133291e712685b9e198c}\index{Restaurant@{Restaurant}!ratingChanged@{ratingChanged}}
+\index{ratingChanged@{ratingChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{ratingChanged}{ratingChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_a3f2edd70cd0a133291e712685b9e198c} 
+void Restaurant\+::rating\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_restaurant_a3f2edd70cd0a133291e712685b9e198c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a3f2edd70cd0a133291e712685b9e198c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a32f30922fa036f552558ead162e1c0f1}\index{Restaurant@{Restaurant}!ratingCount@{ratingCount}}
+\index{ratingCount@{ratingCount}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{ratingCount()}{ratingCount()}}
+{\footnotesize\ttfamily \label{class_restaurant_a32f30922fa036f552558ead162e1c0f1} 
+int Restaurant\+::rating\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_a86772058a1fe18675f11a7b013c4d003}\index{Restaurant@{Restaurant}!ratingCountChanged@{ratingCountChanged}}
+\index{ratingCountChanged@{ratingCountChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{ratingCountChanged}{ratingCountChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_a86772058a1fe18675f11a7b013c4d003} 
+void Restaurant\+::rating\+Count\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_restaurant_a86772058a1fe18675f11a7b013c4d003_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a86772058a1fe18675f11a7b013c4d003_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af}\index{Restaurant@{Restaurant}!setAddress@{setAddress}}
+\index{setAddress@{setAddress}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setAddress()}{setAddress()}}
+{\footnotesize\ttfamily \label{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af} 
+void Restaurant\+::set\+Address (\begin{DoxyParamCaption}\item[{const QString \&}]{address}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aba9ea9b4a1625524a12c9e23fd77f8af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a}\index{Restaurant@{Restaurant}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily \label{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a} 
+void Restaurant\+::set\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{description}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a346116e4efa8b918235d4dc7f4d4c00a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a4438105fa1f907895b096e41f08d8512}\index{Restaurant@{Restaurant}!setId@{setId}}
+\index{setId@{setId}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_restaurant_a4438105fa1f907895b096e41f08d8512} 
+void Restaurant\+::set\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_restaurant_a4438105fa1f907895b096e41f08d8512_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a4438105fa1f907895b096e41f08d8512_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6}\index{Restaurant@{Restaurant}!setImageUrl@{setImageUrl}}
+\index{setImageUrl@{setImageUrl}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setImageUrl()}{setImageUrl()}}
+{\footnotesize\ttfamily \label{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6} 
+void Restaurant\+::set\+Image\+Url (\begin{DoxyParamCaption}\item[{const QString \&}]{image\+Url}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a602638a3fc26be8737f4ca5f309a3fa6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a332af9d7754894746c8515daaf5280d6}\index{Restaurant@{Restaurant}!setLatitude@{setLatitude}}
+\index{setLatitude@{setLatitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setLatitude()}{setLatitude()}}
+{\footnotesize\ttfamily \label{class_restaurant_a332af9d7754894746c8515daaf5280d6} 
+void Restaurant\+::set\+Latitude (\begin{DoxyParamCaption}\item[{double}]{latitude}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a332af9d7754894746c8515daaf5280d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a332af9d7754894746c8515daaf5280d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a37aa09d75c58051000e62c4083fdccc8}\index{Restaurant@{Restaurant}!setLongitude@{setLongitude}}
+\index{setLongitude@{setLongitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setLongitude()}{setLongitude()}}
+{\footnotesize\ttfamily \label{class_restaurant_a37aa09d75c58051000e62c4083fdccc8} 
+void Restaurant\+::set\+Longitude (\begin{DoxyParamCaption}\item[{double}]{longitude}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a37aa09d75c58051000e62c4083fdccc8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a37aa09d75c58051000e62c4083fdccc8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f}\index{Restaurant@{Restaurant}!setName@{setName}}
+\index{setName@{setName}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f} 
+void Restaurant\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a38d9651a9a223c4307e515c4adae9c6f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa}\index{Restaurant@{Restaurant}!setRating@{setRating}}
+\index{setRating@{setRating}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setRating()}{setRating()}}
+{\footnotesize\ttfamily \label{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa} 
+void Restaurant\+::set\+Rating (\begin{DoxyParamCaption}\item[{double}]{rating}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a18acc8da7726ad051e3a5a1c81be23aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805}\index{Restaurant@{Restaurant}!setRatingCount@{setRatingCount}}
+\index{setRatingCount@{setRatingCount}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setRatingCount()}{setRatingCount()}}
+{\footnotesize\ttfamily \label{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805} 
+void Restaurant\+::set\+Rating\+Count (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a4695f14b85d1f5d1139f865ca7c12805_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a}\index{Restaurant@{Restaurant}!setType@{setType}}
+\index{setType@{setType}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily \label{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a} 
+void Restaurant\+::set\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{type}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_aacffc0ae6a44e95ce6d814bf35396c7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_a993df1a224a592804cac67ec429c2027}\index{Restaurant@{Restaurant}!toJson@{toJson}}
+\index{toJson@{toJson}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_restaurant_a993df1a224a592804cac67ec429c2027} 
+QJson\+Object Restaurant\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_a9b02fd8dee17ee55d7689e394651dbbd}\index{Restaurant@{Restaurant}!type@{type}}
+\index{type@{type}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \label{class_restaurant_a9b02fd8dee17ee55d7689e394651dbbd} 
+QString Restaurant\+::type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a}\index{Restaurant@{Restaurant}!typeChanged@{typeChanged}}
+\index{typeChanged@{typeChanged}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{typeChanged}{typeChanged}}
+{\footnotesize\ttfamily \label{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a} 
+void Restaurant\+::type\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_a15535ac68bf2f581da4d3d036dc5aa4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_restaurant_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6}\index{Restaurant@{Restaurant}!address@{address}}
+\index{address@{address}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily \label{class_restaurant_ae824be2a97215ff34b2f8ea7a05de1b6} 
+QString Restaurant\+::address\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_a667661cb2e6443decf71aedd39fb0d91}\index{Restaurant@{Restaurant}!description@{description}}
+\index{description@{description}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_restaurant_a667661cb2e6443decf71aedd39fb0d91} 
+QString Restaurant\+::description\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_a548f6446fdcf249eeb565159bef54701}\index{Restaurant@{Restaurant}!id@{id}}
+\index{id@{id}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_restaurant_a548f6446fdcf249eeb565159bef54701} 
+QString Restaurant\+::id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_a00d8faf9ee20267310efdbd9a3151343}\index{Restaurant@{Restaurant}!imageUrl@{imageUrl}}
+\index{imageUrl@{imageUrl}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{imageUrl}{imageUrl}}
+{\footnotesize\ttfamily \label{class_restaurant_a00d8faf9ee20267310efdbd9a3151343} 
+QString Restaurant\+::image\+Url\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_abd98d2849335eeacfb248710eaffec8f}\index{Restaurant@{Restaurant}!latitude@{latitude}}
+\index{latitude@{latitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{latitude}{latitude}}
+{\footnotesize\ttfamily \label{class_restaurant_abd98d2849335eeacfb248710eaffec8f} 
+double Restaurant\+::latitude\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_afd7da13f880a15e7c5724cf44072de24}\index{Restaurant@{Restaurant}!longitude@{longitude}}
+\index{longitude@{longitude}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{longitude}{longitude}}
+{\footnotesize\ttfamily \label{class_restaurant_afd7da13f880a15e7c5724cf44072de24} 
+double Restaurant\+::longitude\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_a929f5571110acfa9660c2b0956aeeca2}\index{Restaurant@{Restaurant}!name@{name}}
+\index{name@{name}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_restaurant_a929f5571110acfa9660c2b0956aeeca2} 
+QString Restaurant\+::name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1}\index{Restaurant@{Restaurant}!rating@{rating}}
+\index{rating@{rating}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{rating}{rating}}
+{\footnotesize\ttfamily \label{class_restaurant_acb1e36f44f412abcb3fe223abf384bf1} 
+double Restaurant\+::rating\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f}\index{Restaurant@{Restaurant}!ratingCount@{ratingCount}}
+\index{ratingCount@{ratingCount}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{ratingCount}{ratingCount}}
+{\footnotesize\ttfamily \label{class_restaurant_ac1b7c85f8582ca9ed49d4e106045bf7f} 
+int Restaurant\+::rating\+Count\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b}\index{Restaurant@{Restaurant}!type@{type}}
+\index{type@{type}!Restaurant@{Restaurant}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{class_restaurant_a6b5a66db037cc47c0440ae9bcb8a6e1b} 
+QString Restaurant\+::type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{restaurant_8h}{restaurant.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{restaurant_8cpp}{restaurant.\+cpp}}\end{DoxyCompactItemize}

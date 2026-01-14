@@ -1,0 +1,31 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/build/Desktop_Qt_6_8_2_MinGW_64_bit&#45;Debug/debug/moc_networkmanager.cpp" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/build/Desktop_Qt_6_8_2_MinGW_64_bit&#45;Debug/debug/moc_networkmanager.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="513,5,793,80"/>
+<area shape="rect" id="Node000002" href="$networkmanager_8h.html" title=" " alt="" coords="255,128,387,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="537,83,402,125,401,120,535,78"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="411,136,551,163"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="594,83,516,130,513,125,591,78"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="575,136,731,163"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="656,80,656,121,650,121,650,80"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="755,136,823,163"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="703,79,762,124,759,128,699,83"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="848,136,1008,163"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="751,78,881,128,879,133,749,83"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="73,293,142,320"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,158,187,166,114,179,52,197,29,208,14,220,9,229,8,237,18,255,38,271,63,284,60,289,35,275,14,258,3,239,4,228,10,217,26,203,50,192,113,174,186,161,254,153"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="24,219,117,245"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="257,174,125,216,123,211,256,169"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="141,219,240,245"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="289,174,225,213,222,208,286,169"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="488,293,586,320"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="388,165,400,168,435,173,467,174,524,171,550,172,576,179,600,193,625,217,630,227,631,238,622,257,603,274,580,288,577,284,600,270,617,254,626,237,625,229,620,220,597,197,574,184,550,178,524,176,467,180,435,179,399,173,387,170"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="403,219,522,245"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="359,169,429,208,426,213,356,174"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="546,219,611,245"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="388,169,532,213,530,219,387,174"/>
+<area shape="rect" id="Node000009" href="$user_8h.html" title=" " alt="" coords="263,219,379,245"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="324,171,324,203,318,203,318,171"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="285,248,158,291,156,286,283,243"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="360,243,486,285,484,290,358,248"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="288,293,354,320"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="324,246,324,278,318,278,318,246"/>
+</map>

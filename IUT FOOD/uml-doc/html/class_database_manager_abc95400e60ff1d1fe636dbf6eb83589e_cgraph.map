@@ -1,0 +1,9 @@
+<map id="DatabaseManager::updateMenuItem" name="DatabaseManager::updateMenuItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,238,61"/>
+<area shape="rect" id="Node000002" href="$class_database_manager.html#abf1daa555b813fbe82c7a8e052cbbac4" title=" " alt="" coords="286,27,467,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,45,270,45,270,51,238,51"/>
+<area shape="rect" id="Node000003" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="515,5,695,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,34,499,30,500,35,467,39"/>
+<area shape="rect" id="Node000004" href="$class_database_manager.html#a3ec32076c78711bd7514b665a3c71ec2" title=" " alt="" coords="516,56,694,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="467,57,501,61,500,67,467,62"/>
+</map>

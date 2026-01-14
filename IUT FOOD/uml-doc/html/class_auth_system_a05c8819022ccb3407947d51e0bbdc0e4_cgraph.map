@@ -1,0 +1,12 @@
+<map id="AuthSystem::deleteAccount" name="AuthSystem::deleteAccount">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,190,69"/>
+<area shape="rect" id="Node000002" href="$class_auth_system.html#ac165bb2d47886b1e765faeb4b0b3b2ce" title=" " alt="" coords="238,5,426,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,42,222,38,222,43,190,47"/>
+<area shape="rect" id="Node000004" href="$class_auth_system.html#aacf80e6b55c579370ae5bb0749e53b9d" title=" " alt="" coords="688,47,882,73"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="190,56,238,57,673,58,673,64,238,63,190,62"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html#a5d7fb1863d7c548b828c4ad3f8118956" title=" " alt="" coords="474,17,640,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,26,458,26,458,32,426,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="641,39,673,43,673,48,640,44"/>
+<area shape="rect" id="Node000005" href="$class_security_utils.html#a0eb92f84b7409a1ea736365a8230602f" title=" " alt="" coords="930,47,1123,73"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="882,57,914,57,914,63,882,63"/>
+</map>

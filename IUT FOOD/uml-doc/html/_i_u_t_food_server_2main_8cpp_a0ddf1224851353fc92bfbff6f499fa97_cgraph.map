@@ -1,0 +1,19 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,55,184"/>
+<area shape="rect" id="Node000002" href="$class_database_manager.html#a882401a6678934fe7a2b747ae815aca4" title=" " alt="" coords="114,56,295,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="38,156,64,124,101,92,112,87,115,91,104,97,68,127,42,159"/>
+<area shape="rect" id="Node000006" href="$class_database_manager.html#adc77584b498f23cb33c9fc2d0422a73f" title=" " alt="" coords="103,107,306,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="54,159,102,143,129,135,130,140,103,148,56,164"/>
+<area shape="rect" id="Node000007" href="$class_server.html#a22dbfd5db73d391d615a0bfd69077fb6" title=" " alt="" coords="137,157,272,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="55,168,121,168,121,173,55,173"/>
+<area shape="rect" id="Node000008" href="$class_database_manager.html#a58367b27036f6fc0ad04c4722d42d384" title=" " alt="" coords="113,208,296,251"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="56,177,104,193,123,200,121,205,102,199,54,182"/>
+<area shape="rect" id="Node000009" href="$class_server.html#a117a1e799d6acf6c3d306b9d291b7cbd" title=" " alt="" coords="158,275,251,301"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="40,183,65,222,83,243,104,260,144,277,142,282,101,265,79,247,61,225,36,186"/>
+<area shape="rect" id="Node000003" href="$class_logger.html#afec28ae6d7bdf8f6a0734cb20756de10" title=" " alt="" coords="376,5,512,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,53,362,33,363,38,272,58"/>
+<area shape="rect" id="Node000004" href="$class_logger.html#acf07f1a7415f93b9b8b3212286f32fa0" title=" " alt="" coords="400,56,489,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="295,67,384,67,384,72,295,72"/>
+<area shape="rect" id="Node000005" href="$class_database_manager.html#a94489d5d7b4c8f5d3f62777030a77cfd" title=" " alt="" coords="354,107,534,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="272,81,363,100,362,106,271,86"/>
+</map>

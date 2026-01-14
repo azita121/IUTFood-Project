@@ -1,0 +1,53 @@
+<map id="Restaurant::fromJson" name="Restaurant::fromJson">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,365,153,392"/>
+<area shape="rect" id="Node000002" href="$class_restaurant.html#aba9ea9b4a1625524a12c9e23fd77f8af" title=" " alt="" coords="213,53,372,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,364,93,318,116,252,150,179,173,144,199,113,217,97,238,85,240,89,220,101,203,117,177,148,155,182,121,254,98,320,86,366"/>
+<area shape="rect" id="Node000004" href="$class_restaurant.html#a346116e4efa8b918235d4dc7f4d4c00a" title=" " alt="" coords="204,127,382,153"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="84,364,124,282,158,231,199,185,239,158,242,163,202,189,162,234,129,285,88,366"/>
+<area shape="rect" id="Node000006" href="$class_restaurant.html#a4438105fa1f907895b096e41f08d8512" title=" " alt="" coords="232,199,354,225"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="89,363,135,312,165,283,199,255,242,230,245,235,202,260,169,287,138,316,93,367"/>
+<area shape="rect" id="Node000008" href="$class_restaurant.html#a602638a3fc26be8737f4ca5f309a3fa6" title=" " alt="" coords="211,269,375,296"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="109,362,200,320,245,300,247,305,202,325,111,367"/>
+<area shape="rect" id="Node000010" href="$class_restaurant.html#a332af9d7754894746c8515daaf5280d6" title=" " alt="" coords="214,335,372,361"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="153,365,198,359,199,364,153,371"/>
+<area shape="rect" id="Node000012" href="$class_restaurant.html#a37aa09d75c58051000e62c4083fdccc8" title=" " alt="" coords="209,391,376,417"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="153,385,194,390,193,395,153,390"/>
+<area shape="rect" id="Node000014" href="$class_restaurant.html#a38d9651a9a223c4307e515c4adae9c6f" title=" " alt="" coords="220,447,366,473"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="113,390,202,427,235,439,233,444,200,432,111,395"/>
+<area shape="rect" id="Node000016" href="$class_restaurant.html#a18acc8da7726ad051e3a5a1c81be23aa" title=" " alt="" coords="218,509,368,536"/>
+<area shape="poly" id="edge22_Node000001_Node000016" title=" " alt="" coords="95,391,140,435,202,483,236,501,234,505,199,488,136,439,91,394"/>
+<area shape="rect" id="Node000018" href="$class_restaurant.html#a4695f14b85d1f5d1139f865ca7c12805" title=" " alt="" coords="201,584,385,611"/>
+<area shape="poly" id="edge25_Node000001_Node000018" title=" " alt="" coords="90,391,132,463,165,506,202,546,245,574,242,579,199,550,160,510,128,465,85,394"/>
+<area shape="rect" id="Node000020" href="$class_restaurant.html#aacffc0ae6a44e95ce6d814bf35396c7a" title=" " alt="" coords="223,683,362,709"/>
+<area shape="poly" id="edge28_Node000001_Node000020" title=" " alt="" coords="87,392,127,492,161,558,203,621,230,649,258,671,255,676,226,653,199,624,156,561,122,494,82,394"/>
+<area shape="rect" id="Node000003" href="$class_restaurant.html#aec235948cd053dfe6d14fd4d185228fd" title=" " alt="" coords="444,29,635,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,56,428,51,429,56,373,62"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="498,31,490,21,496,11,512,5,539,3,569,5,584,12,582,17,568,10,539,8,513,10,499,15,496,20,502,27"/>
+<area shape="rect" id="Node000005" href="$class_restaurant.html#acecc405bacc6046314250d3727c0d73e" title=" " alt="" coords="435,104,643,131"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="382,129,419,126,420,131,382,134"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="498,105,490,95,496,85,512,79,539,77,569,80,584,87,582,92,568,85,539,83,513,85,499,89,496,95,502,102"/>
+<area shape="rect" id="Node000007" href="$class_restaurant.html#a3f3916a4b6391f0ef23949abcd9ce553" title=" " alt="" coords="462,179,617,205"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="354,204,446,197,446,202,355,210"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="498,180,490,170,496,160,512,154,539,152,569,155,584,161,582,166,568,160,539,157,513,159,499,164,496,169,502,177"/>
+<area shape="rect" id="Node000009" href="$class_restaurant.html#aa522f6f21c719a646319a2c6ea112451" title=" " alt="" coords="440,253,638,280"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="375,275,425,271,425,277,376,280"/>
+<area shape="poly" id="edge12_Node000009_Node000009" title=" " alt="" coords="498,255,490,245,496,235,512,229,539,227,569,229,584,236,582,241,568,234,539,232,513,234,499,239,496,244,502,251"/>
+<area shape="rect" id="Node000011" href="$class_restaurant.html#ae18b7928e1b273d33953119e7e6cefdd" title=" " alt="" coords="446,328,633,355"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="372,343,430,342,430,347,372,349"/>
+<area shape="poly" id="edge15_Node000011_Node000011" title=" " alt="" coords="498,329,490,319,496,309,512,303,539,301,569,304,584,311,582,316,568,309,539,307,513,309,499,313,496,319,502,326"/>
+<area shape="rect" id="Node000013" href="$class_restaurant.html#ad92f3b0389d93bedc2db9a0ba9229705" title=" " alt="" coords="440,403,638,429"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="377,405,425,408,425,413,377,411"/>
+<area shape="poly" id="edge18_Node000013_Node000013" title=" " alt="" coords="498,404,490,394,496,384,512,378,539,376,569,379,584,385,582,390,568,384,539,381,513,383,499,388,496,393,502,401"/>
+<area shape="rect" id="Node000015" href="$class_restaurant.html#aad8f83e1d9a3282bb4c883a58a185952" title=" " alt="" coords="450,477,628,504"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="367,466,436,475,435,480,366,472"/>
+<area shape="poly" id="edge21_Node000015_Node000015" title=" " alt="" coords="498,479,490,469,496,459,512,453,539,451,569,453,584,460,582,465,568,458,539,456,513,458,499,463,496,468,502,475"/>
+<area shape="rect" id="Node000017" href="$class_restaurant.html#a3f2edd70cd0a133291e712685b9e198c" title=" " alt="" coords="450,552,628,579"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="368,533,444,546,443,551,367,538"/>
+<area shape="poly" id="edge24_Node000017_Node000017" title=" " alt="" coords="498,553,490,543,496,533,512,527,539,525,569,528,584,535,582,540,568,533,539,531,513,533,499,537,496,543,502,550"/>
+<area shape="rect" id="Node000019" href="$class_restaurant.html#a86772058a1fe18675f11a7b013c4d003" title=" " alt="" coords="433,627,645,653"/>
+<area shape="poly" id="edge26_Node000018_Node000019" title=" " alt="" coords="374,609,444,621,443,626,373,614"/>
+<area shape="poly" id="edge27_Node000019_Node000019" title=" " alt="" coords="498,628,490,618,496,608,512,602,539,600,569,603,584,609,582,614,568,608,539,605,513,607,499,612,496,617,502,625"/>
+<area shape="rect" id="Node000021" href="$class_restaurant.html#a15535ac68bf2f581da4d3d036dc5aa4a" title=" " alt="" coords="454,701,624,728"/>
+<area shape="poly" id="edge29_Node000020_Node000021" title=" " alt="" coords="363,699,438,704,438,710,362,704"/>
+<area shape="poly" id="edge30_Node000021_Node000021" title=" " alt="" coords="498,703,490,693,496,683,512,677,539,675,569,677,584,684,582,689,568,682,539,680,513,682,499,687,496,692,502,699"/>
+</map>

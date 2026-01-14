@@ -1,0 +1,85 @@
+\doxysection{restaurantownermenu.\+h}
+\hypertarget{restaurantownermenu_8h_source}{}\label{restaurantownermenu_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/restaurantownermenu.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/restaurantownermenu.h}}
+\mbox{\hyperlink{restaurantownermenu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTOWNERMENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTOWNERMENU\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QScrollArea>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurantitem_8h}{restaurantitem.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fooditemwidget_8h}{fooditemwidget.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QInputDialog>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1restaurantownermenu}{restaurantownermenu}};}
+\DoxyCodeLine{00014\ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classrestaurantownermenu_ac2d495666d2603c8ccc32c30d93dc914}{restaurantownermenu}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classrestaurantownermenu_ac2d495666d2603c8ccc32c30d93dc914}{restaurantownermenu}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classrestaurantownermenu_ad360f17c8082aad26e740932cf9949ed}{\string~restaurantownermenu}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantownermenu_a9aa019d72fcdd436b7a78c87ea1f2faa}{renderOrders}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantownermenu_a2826ab05eb0e2c745724c83799052bb5}{renderMenuItems}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantownermenu_a20126420bdd5d76e0981f3c9d36fafc9}{addFoodItem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classrestaurantownermenu_aaec63c8601ce2085693f7741ee8e9d00}{renderAcceptedOrders}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_addFoodButton\_clicked();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_viewOrdersButton\_clicked();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_ChangeOfStatusButton\_clicked();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_menuManagementButton\_2\_clicked();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_ChangeOfStatusButton\_2\_clicked();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_menuManagementButton\_5\_clicked();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_viewOrdersButton\_5\_clicked();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_ui_1_1restaurantownermenu}{Ui::restaurantownermenu}}\ *ui;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ QList<MenuItem>\ foodList;}
+\DoxyCodeLine{00048\ \ \ \ \ QScrollArea*\ scrollArea;}
+\DoxyCodeLine{00049\ \ \ \ \ QWidget*\ container;}
+\DoxyCodeLine{00050\ \ \ \ \ QVBoxLayout*\ layout;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ QScrollArea*\ orderScrollArea;}
+\DoxyCodeLine{00053\ \ \ \ \ QWidget*\ orderContainer;}
+\DoxyCodeLine{00054\ \ \ \ \ QVBoxLayout*\ orderLayout;}
+\DoxyCodeLine{00055\ \ \ \ \ QList<MenuItem>\ incomingOrders;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ QList<MenuItem>\ orderList;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{struct\ }AcceptedOrder\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ QString\ customer;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_item}{MenuItem}}\ item;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ QString\ status;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_u_i_2restaurant_8h_ae7d7d3e380c835b41b4a16709f599f4a}{operator==}}(\textcolor{keyword}{const}\ AcceptedOrder\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ customer\ ==\ other.customer\ \&\&\ item.\mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}}\ ==\ other.item.\mbox{\hyperlink{class_menu_item_aa576d5761c3449d179e7a118aebba526}{name}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ QList<AcceptedOrder>\ acceptedOrders;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ QVBoxLayout*\ statusLayout;}
+\DoxyCodeLine{00072\ \ \ \ \ QWidget*\ statusContainer;}
+\DoxyCodeLine{00073\ \ \ \ \ QScrollArea*\ statusScrollArea;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTOWNERMENU\_H}}
+
+\end{DoxyCode}

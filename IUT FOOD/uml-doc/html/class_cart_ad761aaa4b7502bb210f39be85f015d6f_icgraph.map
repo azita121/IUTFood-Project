@@ -1,0 +1,11 @@
+<map id="Cart::restaurantIdChanged" name="Cart::restaurantIdChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="357,31,532,57"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="480,18,468,12,445,9,423,11,411,16,408,21,414,29,409,32,403,22,407,12,421,6,445,4,470,7,483,13"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#a618b8a521ab226e929c275f128709dbe" title=" " alt="" coords="194,5,276,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="342,34,277,26,277,21,342,29"/>
+<area shape="rect" id="Node000004" href="$class_cart.html#af333e415883c168ba6affe709a7a63ef" title=" " alt="" coords="162,56,309,83"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="342,59,310,63,309,58,341,54"/>
+<area shape="rect" id="Node000003" href="$class_cart.html#a297170ad44e6cebb6edd17f87296eb04" title=" " alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,29,114,39,114,34,179,24"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="146,59,114,54,115,49,147,54"/>
+</map>

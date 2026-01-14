@@ -1,0 +1,92 @@
+\doxysection{restaurantmanager.\+h}
+\hypertarget{_i_u_t_food_server_2restaurantmanager_8h_source}{}\label{_i_u_t_food_server_2restaurantmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/restaurantmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/restaurantmanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2restaurantmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESTAURANTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESTAURANTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{authsystem_8h}{authsystem.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_restaurant_manager}{RestaurantManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantManager*\ \mbox{\hyperlink{class_restaurant_manager_a0453d073f2bb66873164dd1363c659f9}{getInstance}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Menu\ Management}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_af7b0717f5c6ff8a9b88420985244b975}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonObject\&\ item);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a677ef350ed7b2052766395bde7e92ff7}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ itemId,\ \textcolor{keyword}{const}\ QJsonObject\&\ updates);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a1ac68f0f49ce90118449d615386bd991}{deleteMenuItem}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ itemId);}
+\DoxyCodeLine{00023\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a1d35b6848aba7d85fd3a10db7439b50e}{getMenuItems}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a9b14dc338d716edc4ddafe6e7be1819b}{updateMenuCategory}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ categoryId,\ \textcolor{keyword}{const}\ QJsonObject\&\ updates);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_aca06cccc9cebc371da3c6fd63ffa5fbf}{reorderMenuItems}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\&\ itemOrder);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Rating\ and\ Feedback}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a44d35897db51201c6887222842d00f91}{addRating}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keywordtype}{int}\ rating,\ \textcolor{keyword}{const}\ QString\&\ comment);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a9a5df37f7ffa58716c443088c1012038}{updateRating}}(\textcolor{keyword}{const}\ QString\&\ ratingId,\ \textcolor{keywordtype}{int}\ newRating,\ \textcolor{keyword}{const}\ QString\&\ newComment);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a2a4246452f5de396eb9ce6cfdc53cb44}{deleteRating}}(\textcolor{keyword}{const}\ QString\&\ ratingId);}
+\DoxyCodeLine{00031\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a7828ef9282506926f27762f93504832d}{getRestaurantRatings}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keywordtype}{int}\ limit\ =\ 10);}
+\DoxyCodeLine{00032\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_restaurant_manager_a1508182a6fd3fe808ad2930a297c7766}{getRestaurantRatingStats}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a489799f8e72d13f3b5ab57dce7ae0861}{reportRating}}(\textcolor{keyword}{const}\ QString\&\ ratingId,\ \textcolor{keyword}{const}\ QString\&\ reason);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ Search\ and\ Filtering}}
+\DoxyCodeLine{00036\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a948b2bf9ba3fe2685423b5e77e256afe}{searchRestaurants}}(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QJsonObject\&\ filters);}
+\DoxyCodeLine{00037\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a82e960ad76a8741ec3607a4e26e16ae6}{getRestaurantsByCategory}}(\textcolor{keyword}{const}\ QString\&\ category);}
+\DoxyCodeLine{00038\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a6990f4cba58958a6b1a114d984cf90e1}{getTopRatedRestaurants}}(\textcolor{keywordtype}{int}\ limit\ =\ 10);}
+\DoxyCodeLine{00039\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a316f89346b1f3358da40bad6ed8efacf}{getPopularRestaurants}}(\textcolor{keywordtype}{int}\ limit\ =\ 10);}
+\DoxyCodeLine{00040\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ac809a045910c9294c54e2f69156fe7ba}{getNearbyRestaurants}}(\textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude,\ \textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Enhanced\ Search\ Methods}}
+\DoxyCodeLine{00043\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a1c1d277691b9c47a46ac88976a075d74}{searchRestaurantsByLocation}}(\textcolor{keyword}{const}\ QString\&\ location,\ \textcolor{keywordtype}{double}\ radius);}
+\DoxyCodeLine{00044\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a9b2122d59f276f3157159cd99ae12ad2}{searchRestaurantsByType}}(\textcolor{keyword}{const}\ QString\&\ type);}
+\DoxyCodeLine{00045\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ab6a7fa9e551c4e9ccf0e6c94790da1cf}{searchRestaurantsByPriceRange}}(\textcolor{keywordtype}{double}\ minPrice,\ \textcolor{keywordtype}{double}\ maxPrice);}
+\DoxyCodeLine{00046\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ade09068342d0d725f64fabc3a8c9c8e6}{searchRestaurantsByCuisine}}(\textcolor{keyword}{const}\ QString\&\ cuisine);}
+\DoxyCodeLine{00047\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ac4827d46155227a48bbc895840deb491}{searchRestaurantsByOperatingHours}}(\textcolor{keyword}{const}\ QString\&\ day,\ \textcolor{keyword}{const}\ QString\&\ time);}
+\DoxyCodeLine{00048\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a99ae4bbf649217080992fef92580f462}{searchRestaurantsByFeatures}}(\textcolor{keyword}{const}\ QStringList\&\ features);}
+\DoxyCodeLine{00049\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a9a65e1c7e9be684ef41f692603835b79}{advancedRestaurantSearch}}(\textcolor{keyword}{const}\ QJsonObject\&\ criteria);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Menu\ Item\ Search\ and\ Filtering}}
+\DoxyCodeLine{00052\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ae1e0137d6fd6d1dcf746426391a7c29a}{searchMenuItems}}(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QJsonObject\&\ filters);}
+\DoxyCodeLine{00053\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a8d7eea7879880c777c7f225c91cf653b}{getMenuItemsByCategory}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ category);}
+\DoxyCodeLine{00054\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a3efb537b26b883c1aa8fb96ea54047a3}{getMenuItemsByPriceRange}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keywordtype}{double}\ minPrice,\ \textcolor{keywordtype}{double}\ maxPrice);}
+\DoxyCodeLine{00055\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a85bb1bfc9562411622f957041ee665db}{getMenuItemsByDietaryRestrictions}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QStringList\&\ restrictions);}
+\DoxyCodeLine{00056\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a1f84bd0601dbb4d4082e4a871eab24ce}{getMenuItemsByIngredients}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QStringList\&\ ingredients);}
+\DoxyCodeLine{00057\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_a75cbca4e82dfd0f60507031b8a5c6aca}{getMenuItemsByAvailability}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keywordtype}{bool}\ available);}
+\DoxyCodeLine{00058\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_restaurant_manager_ae3ac21e05603dc7a0896b3e7007cada9}{advancedMenuItemSearch}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonObject\&\ criteria);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ Profile}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_af847612fedb53d0f278087dccb315cf6}{updateRestaurantProfile}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonObject\&\ updates);}
+\DoxyCodeLine{00062\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_restaurant_manager_a781df967236f163737c065395746e721}{getRestaurantProfile}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_a153506733ba6ec0fbe47bbd934aa102c}{updateRestaurantHours}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonObject\&\ hours);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_restaurant_manager_ad31e8334fa5481586f13b74a290d9dc1}{updateRestaurantLocation}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keywordtype}{double}\ latitude,\ \textcolor{keywordtype}{double}\ longitude);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{explicit}\ RestaurantManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00068\ \ \ \ \ \string~RestaurantManager();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ RestaurantManager*\ instance;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_auth_system}{AuthSystem}}*\ m\_authSystem;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ validateRestaurantAccess(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QString\&\ userId);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ calculateDistance(\textcolor{keywordtype}{double}\ lat1,\ \textcolor{keywordtype}{double}\ lon1,\ \textcolor{keywordtype}{double}\ lat2,\ \textcolor{keywordtype}{double}\ lon2);}
+\DoxyCodeLine{00076\ \ \ \ \ QJsonObject\ calculateRatingStats(\textcolor{keyword}{const}\ QJsonArray\&\ ratings);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ notifyRatingUpdate(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Helper\ methods\ for\ search}}
+\DoxyCodeLine{00080\ \ \ \ \ QString\ buildSearchQuery(\textcolor{keyword}{const}\ QString\&\ baseQuery,\ \textcolor{keyword}{const}\ QStringList\&\ conditions,\ \textcolor{keyword}{const}\ QVariantMap\&\ bindValues);}
+\DoxyCodeLine{00081\ \ \ \ \ QString\ buildMenuItemSearchQuery(\textcolor{keyword}{const}\ QString\&\ baseQuery,\ \textcolor{keyword}{const}\ QStringList\&\ conditions,\ \textcolor{keyword}{const}\ QVariantMap\&\ bindValues);}
+\DoxyCodeLine{00082\ \ \ \ \ QJsonArray\ executeSearchQuery(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QVariantMap\&\ bindValues);}
+\DoxyCodeLine{00083\ \ \ \ \ QJsonArray\ executeMenuItemSearchQuery(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QVariantMap\&\ bindValues);}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESTAURANTMANAGER\_H\ }}
+
+\end{DoxyCode}

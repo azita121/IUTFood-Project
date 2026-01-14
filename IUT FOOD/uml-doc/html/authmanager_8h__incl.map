@@ -1,0 +1,26 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/authmanager.h" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/authmanager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="23,5,194,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="122,261,191,288"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,65,89,97,81,134,80,174,90,212,104,233,123,250,119,254,100,237,85,214,75,175,76,134,83,95,94,64"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,261,71,288"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,66,75,113,56,184,45,246,39,245,51,183,70,111,91,64"/>
+<area shape="rect" id="Node000004" href="$user_8h.html" title=" " alt="" coords="99,187,214,213"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="120,64,151,171,146,173,114,65"/>
+<area shape="rect" id="Node000006" href="$networkmanager_8h.html" title=" " alt="" coords="414,112,542,139"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="195,54,411,105,410,110,194,59"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="159,214,159,246,154,246,154,214"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="137,216,73,255,70,251,135,212"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="412,261,509,288"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="211,211,397,256,396,261,209,217"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="515,137,546,151,573,169,589,190,589,203,583,215,563,226,528,235,425,252,207,273,206,267,424,247,526,230,561,221,579,211,584,202,584,192,570,173,543,156,513,142"/>
+<area shape="poly" id="edge14_Node000006_Node000004" title=" " alt="" coords="422,142,228,185,227,180,421,137"/>
+<area shape="poly" id="edge11_Node000006_Node000005" title=" " alt="" coords="543,137,581,149,614,165,625,175,632,187,633,200,627,215,606,236,581,252,553,263,525,270,524,265,551,258,578,247,603,232,622,212,628,200,627,189,621,179,611,169,579,154,541,142"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="694,187,787,213"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="524,137,680,179,679,185,523,142"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="238,187,336,213"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="446,142,336,183,334,178,444,137"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="361,187,480,213"/>
+<area shape="poly" id="edge12_Node000006_Node000009" title=" " alt="" coords="470,141,442,176,438,173,466,138"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="504,187,569,213"/>
+<area shape="poly" id="edge13_Node000006_Node000010" title=" " alt="" coords="490,138,519,173,515,176,486,141"/>
+</map>

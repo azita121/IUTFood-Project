@@ -1,0 +1,70 @@
+\doxysection{chatmessage.\+h}
+\hypertarget{chatmessage_8h_source}{}\label{chatmessage_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/chatmessage.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/models/chatmessage.h}}
+\mbox{\hyperlink{chatmessage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHATMESSAGE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHATMESSAGE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{ChatMessage}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ WRITE\ \mbox{\hyperlink{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201}{setId}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36}{idChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{fromUserId}}\ READ\ \mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{fromUserId}}\ WRITE\ \mbox{\hyperlink{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7}{setFromUserId}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d}{fromUserIdChanged}})}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{toUserId}}\ READ\ \mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{toUserId}}\ WRITE\ \mbox{\hyperlink{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045}{setToUserId}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_a691a72cded6af451ffa086ba798a2a22}{toUserIdChanged}})}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}}\ READ\ \mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}}\ WRITE\ \mbox{\hyperlink{class_chat_message_ab7a9c338f962762e7283a299e0e034cb}{setContent}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_abce0d87412743a5637de519e1cc3adaf}{contentChanged}})}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_PROPERTY(QDateTime\ \mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}}\ READ\ \mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}}\ WRITE\ \mbox{\hyperlink{class_chat_message_ad629c2ca07954b6815df18536bc31003}{setTimestamp}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_af22ddc59329a842ea8fb55672239e05c}{timestampChanged}})}
+\DoxyCodeLine{00017\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{isRead}}\ READ\ \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{isRead}}\ WRITE\ \mbox{\hyperlink{class_chat_message_afe72f4cb2988ad088390d4999264f2d6}{setIsRead}}\ NOTIFY\ \mbox{\hyperlink{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4}{isReadChanged}})}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ public:}
+\DoxyCodeLine{00020\ \ \ \ \ explicit\ \mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{ChatMessage}}(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{ChatMessage}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00024\ \ \ \ \ QString\ \textcolor{keywordtype}{id}()\ const;}
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{fromUserId}}()\ const;}
+\DoxyCodeLine{00026\ \ \ \ \ QString\ \mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{toUserId}}()\ const;}
+\DoxyCodeLine{00027\ \ \ \ \ QString\ \mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}}()\ const;}
+\DoxyCodeLine{00028\ \ \ \ \ QDateTime\ \mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}}()\ const;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{isRead}}()\ const;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a01dadb69a1f17ba466bec6f5b4275201}{setId}}(const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a4cbf4750e6eaa8791e7cd04f1e628ff7}{setFromUserId}}(const\ QString\ \&\mbox{\hyperlink{class_chat_message_a329af56ad1d24eb0d4cb8d4a4cde9fd7}{fromUserId}});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a8c8c4f9e954baa758aae98e11f3fa045}{setToUserId}}(const\ QString\ \&\mbox{\hyperlink{class_chat_message_a4e67e5626317a399b5fa53ce7dc86572}{toUserId}});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_ab7a9c338f962762e7283a299e0e034cb}{setContent}}(const\ QString\ \&\mbox{\hyperlink{class_chat_message_a6d1eb52f53e07b194852f4a97704d7d7}{content}});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_ad629c2ca07954b6815df18536bc31003}{setTimestamp}}(const\ QDateTime\ \&\mbox{\hyperlink{class_chat_message_a0c0c90c6f8737ec2e08f0999eab29a5d}{timestamp}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_afe72f4cb2988ad088390d4999264f2d6}{setIsRead}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_chat_message_aaedafef36ed77d4b6bd64c3c51ff08d2}{isRead}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ JSON\ conversion}}
+\DoxyCodeLine{00040\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{class_chat_message_a078fd1f9a8c288b4b35e4064c1cd078e}{toJson}}()\ const;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a53f2510970fdc55c20cb2be246d71f9a}{fromJson}}(const\ QJsonObject\ \&json);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Static\ methods}}
+\DoxyCodeLine{00044\ \ \ \ \ static\ \mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{ChatMessage}}*\ \mbox{\hyperlink{class_chat_message_a65c2245a07705ba5759c40cc7eb5b3b1}{fromJsonObject}}(const\ QJsonObject\ \&json,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00045\ \ \ \ \ static\ QList<\mbox{\hyperlink{class_chat_message_ae0ab0b33442cccc05ec33d27045515ba}{ChatMessage}}*>\ \mbox{\hyperlink{class_chat_message_a5ea9c23fa04aa5927dd684f64c89ed4a}{fromJsonArray}}(const\ QJsonArray\ \&array,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ signals:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_adcc5430224c379c05ef60c39c8ea6f36}{idChanged}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a843bb7a7cde18ef01b09a76bcc982a0d}{fromUserIdChanged}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_a691a72cded6af451ffa086ba798a2a22}{toUserIdChanged}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_abce0d87412743a5637de519e1cc3adaf}{contentChanged}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_af22ddc59329a842ea8fb55672239e05c}{timestampChanged}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_chat_message_ad42fd32fc22e8fc886125e62a214d2f4}{isReadChanged}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ private:}
+\DoxyCodeLine{00056\ \ \ \ \ QString\ m\_id;}
+\DoxyCodeLine{00057\ \ \ \ \ QString\ m\_fromUserId;}
+\DoxyCodeLine{00058\ \ \ \ \ QString\ m\_toUserId;}
+\DoxyCodeLine{00059\ \ \ \ \ QString\ m\_content;}
+\DoxyCodeLine{00060\ \ \ \ \ QDateTime\ m\_timestamp;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isRead;}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHATMESSAGE\_H\ }}
+
+\end{DoxyCode}

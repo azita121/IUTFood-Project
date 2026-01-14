@@ -1,0 +1,26 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodServer/authsystem.h" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodServer/authsystem.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="620,5,856,48"/>
+<area shape="rect" id="Node000002" href="$_i_u_t_food_server_2adminmanager_8h.html" title=" " alt="" coords="19,96,272,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="604,51,273,100,273,94,604,45"/>
+<area shape="rect" id="Node000004" href="$authsystem_8cpp.html" title=" " alt="" coords="946,96,1196,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="831,50,993,93,992,98,830,55"/>
+<area shape="rect" id="Node000005" href="$_i_u_t_food_server_2restaurantmanager_8h.html" title=" " alt="" coords="304,96,580,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="655,55,512,98,510,93,653,50"/>
+<area shape="rect" id="Node000007" href="$server_8h.html" title=" " alt="" coords="916,187,1120,229"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="805,52,884,94,911,114,935,137,994,184,991,188,932,141,907,118,882,98,803,57"/>
+<area shape="rect" id="Node000010" href="$websocketserver_8h.html" title=" " alt="" coords="604,96,871,139"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="740,64,740,96,735,96,735,64"/>
+<area shape="rect" id="Node000003" href="$_i_u_t_food_server_2adminmanager_8cpp.html" title=" " alt="" coords="5,187,273,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,154,143,187,138,186,140,154"/>
+<area shape="rect" id="Node000006" href="$_i_u_t_food_server_2restaurantmanager_8cpp.html" title=" " alt="" coords="296,187,587,229"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="444,154,444,186,439,186,439,154"/>
+<area shape="rect" id="Node000008" href="$_i_u_t_food_server_2main_8cpp.html" title=" " alt="" coords="792,277,1003,320"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="980,241,927,279,924,275,976,236"/>
+<area shape="rect" id="Node000009" href="$server_8cpp.html" title=" " alt="" coords="1027,277,1246,320"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1059,237,1110,275,1107,279,1056,241"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="589,143,273,190,273,184,589,138"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="655,146,512,189,510,183,653,141"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="819,141,953,183,951,189,817,146"/>
+<area shape="rect" id="Node000011" href="$websocketserver_8cpp.html" title=" " alt="" coords="610,187,892,229"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="746,154,751,186,745,187,740,155"/>
+</map>

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['id_0',['id',['../class_chat_message.html#a60b24eb3bd119dac337423a0cb6ac94d',1,'ChatMessage::id()'],['../class_menu_item.html#a6f922e8d632ae0a960892fd8fa321c4a',1,'MenuItem::id()'],['../class_order.html#a9358257d5a2f3dd4306b7cf950a64603',1,'Order::id()'],['../class_restaurant.html#ad42d025b825ea36465ec8694522c4868',1,'Restaurant::id()'],['../class_user.html#a52a054713f457dc73a92110c5cde7483',1,'User::id()']]],
+  ['idchanged_1',['idChanged',['../class_chat_message.html#adcc5430224c379c05ef60c39c8ea6f36',1,'ChatMessage::idChanged()'],['../class_menu_item.html#aeec513ebc73bee79b9bf3e82cc9fe909',1,'MenuItem::idChanged()'],['../class_order.html#a991c2b90085a71bc04423671d59af15b',1,'Order::idChanged()'],['../class_restaurant.html#a3f3916a4b6391f0ef23949abcd9ce553',1,'Restaurant::idChanged()'],['../class_user.html#af20fc771ebf9e9730dd5c45617a1fcb8',1,'User::idChanged()']]],
+  ['imageurl_2',['imageUrl',['../class_menu_item.html#ab3e5f2537105135f574bfdd5ec6eed66',1,'MenuItem::imageUrl()'],['../class_restaurant.html#a009ecafd1042f307545bb61414824e11',1,'Restaurant::imageUrl()']]],
+  ['imageurlchanged_3',['imageUrlChanged',['../class_menu_item.html#ac70e9fee1c0567a86fc11686def0637d',1,'MenuItem::imageUrlChanged()'],['../class_restaurant.html#aa522f6f21c719a646319a2c6ea112451',1,'Restaurant::imageUrlChanged()']]],
+  ['info_4',['info',['../class_logger.html#acf07f1a7415f93b9b8b3212286f32fa0',1,'Logger']]],
+  ['ingredients_5',['ingredients',['../class_menu_item.html#aa204f42da668bae951c67dba203a4a81',1,'MenuItem']]],
+  ['ingredientschanged_6',['ingredientsChanged',['../class_menu_item.html#a70fe7a8f6154733a3cfbfbc624629bfa',1,'MenuItem']]],
+  ['initializeschema_7',['initializeSchema',['../class_database_manager.html#a58367b27036f6fc0ad04c4722d42d384',1,'DatabaseManager']]],
+  ['invoker_8',['Invoker',['../class_invoker.html#ae805eae6e2e728bc6a086b902b7ff61e',1,'Invoker']]],
+  ['isapproved_9',['isApproved',['../class_restaurant_owner.html#ac0f109151b4195948d301d37827acb92',1,'RestaurantOwner']]],
+  ['isapprovedchanged_10',['isApprovedChanged',['../class_restaurant_owner.html#a674191d0e6cb29fa3f0060ddf6b338bc',1,'RestaurantOwner']]],
+  ['isconnected_11',['isConnected',['../class_network_manager.html#a97d1fb741f609c2442efdfd92e944ed2',1,'NetworkManager::isConnected()'],['../class_database_manager.html#aa4191649a436b20af9d2151e141ee148',1,'DatabaseManager::isConnected()']]],
+  ['isempty_12',['isEmpty',['../class_cart.html#a2e1b8b33b46aedf08de85ba3a949fcf4',1,'Cart']]],
+  ['isloggedin_13',['isLoggedIn',['../class_auth_manager.html#a45f0e76d1a14b1641f72151a2fc81652',1,'AuthManager']]],
+  ['isread_14',['isRead',['../class_chat_message.html#af15f5927c4f06726fafb03d7b9e774b1',1,'ChatMessage']]],
+  ['isreadchanged_15',['isReadChanged',['../class_chat_message.html#ad42fd32fc22e8fc886125e62a214d2f4',1,'ChatMessage']]],
+  ['istokenexpired_16',['isTokenExpired',['../class_security_utils.html#a0eb92f84b7409a1ea736365a8230602f',1,'SecurityUtils']]],
+  ['isvalidstatus_17',['isValidStatus',['../class_order.html#a41252ee7accd2f36d7e3bade2277a1cf',1,'Order::isValidStatus()'],['../class_order_manager.html#a1d9dd456baf471d70c37a7ca43ea573f',1,'OrderManager::isValidStatus()'],['../class_order_status.html#a353e4718065e4645e3e372a4784cf435',1,'OrderStatus::isValidStatus()']]],
+  ['itemadded_18',['itemAdded',['../class_cart.html#a1633ea58a17fdba0b698e32db74ec794',1,'Cart']]],
+  ['itemcount_19',['itemCount',['../class_cart.html#af0d4048f0fdb62e799b4e3bdd07e865f',1,'Cart']]],
+  ['itemcountchanged_20',['itemCountChanged',['../class_cart.html#a3c5b111c12fafdde5c3d9ff9ad7a84cd',1,'Cart']]],
+  ['itemquantitychanged_21',['itemQuantityChanged',['../class_cart.html#a0fcc1cda3a3e66eb0caa05bd9505369e',1,'Cart']]],
+  ['itemremoved_22',['itemRemoved',['../class_cart.html#a00c69f6c1ba8fe018849c03a27ad2a92',1,'Cart']]],
+  ['items_23',['items',['../class_cart.html#a71ef208113172ea0912e60b9cbdb1583',1,'Cart::items()'],['../class_order.html#aa7eb33835d55f57431347df8f3beb077',1,'Order::items() const']]],
+  ['itemschanged_24',['itemsChanged',['../class_order.html#a0009ec7c52e2a39573d9c344ce0ab1ff',1,'Order']]]
+];

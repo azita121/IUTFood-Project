@@ -1,0 +1,152 @@
+\doxysection{Chat\+Manager Class Reference}
+\hypertarget{class_chat_manager}{}\label{class_chat_manager}\index{ChatManager@{ChatManager}}
+
+
+{\ttfamily \#include $<$chatmanager.\+h$>$}
+
+
+
+Inheritance diagram for Chat\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_chat_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Chat\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_chat_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_chat_manager_ad067c969f1f79c8a72b912e9068761f3}{message\+Received}} (\mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*}message)
+\item 
+void \mbox{\hyperlink{class_chat_manager_ae7e1707b1e0857a5379ab06c7e0866ab}{message\+Sent}} (\mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*}message)
+\item 
+void \mbox{\hyperlink{class_chat_manager_abdb8951853eb91c9e813afe64cef6126}{message\+Read}} (const QString \&message\+Id)
+\item 
+void \mbox{\hyperlink{class_chat_manager_abeaca3cdf262c44eee5353e2613e038f}{unread\+Count\+Changed}} (const QString \&user\+Id, int count)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_chat_manager_a0ed92523423943808862419a69a2fa18}{send\+Message}} (const QString \&to\+User\+Id, const QString \&content)
+\item 
+QList$<$ \mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_chat_manager_a584ea576b1b0d0d5eaff35ccfce9b22c}{get\+Chat\+History}} (const QString \&user\+Id)
+\item 
+void \mbox{\hyperlink{class_chat_manager_a2fbfbd875ac5f60a92169ead9cffc8ee}{mark\+Message\+As\+Read}} (const QString \&message\+Id)
+\item 
+void \mbox{\hyperlink{class_chat_manager_a75546eb1e8eb76be73228732153de057}{mark\+All\+Messages\+As\+Read}} (const QString \&user\+Id)
+\item 
+int \mbox{\hyperlink{class_chat_manager_a65d4a21bc41bdd467ef9e123c7ec86bc}{get\+Unread\+Message\+Count}} (const QString \&user\+Id) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_chat_manager}{Chat\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_chat_manager_a0dafd1d4059637b47ccf74d5bd4fb63a}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_chat_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chat_manager_a584ea576b1b0d0d5eaff35ccfce9b22c}\index{ChatManager@{ChatManager}!getChatHistory@{getChatHistory}}
+\index{getChatHistory@{getChatHistory}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{getChatHistory()}{getChatHistory()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a584ea576b1b0d0d5eaff35ccfce9b22c} 
+QList$<$ \mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*} $>$ Chat\+Manager\+::get\+Chat\+History (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_chat_manager_a0dafd1d4059637b47ccf74d5bd4fb63a}\index{ChatManager@{ChatManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a0dafd1d4059637b47ccf74d5bd4fb63a} 
+\mbox{\hyperlink{class_chat_manager}{Chat\+Manager}} \texorpdfstring{$\ast$}{*} Chat\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_chat_manager_a65d4a21bc41bdd467ef9e123c7ec86bc}\index{ChatManager@{ChatManager}!getUnreadMessageCount@{getUnreadMessageCount}}
+\index{getUnreadMessageCount@{getUnreadMessageCount}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{getUnreadMessageCount()}{getUnreadMessageCount()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a65d4a21bc41bdd467ef9e123c7ec86bc} 
+int Chat\+Manager\+::get\+Unread\+Message\+Count (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_chat_manager_a75546eb1e8eb76be73228732153de057}\index{ChatManager@{ChatManager}!markAllMessagesAsRead@{markAllMessagesAsRead}}
+\index{markAllMessagesAsRead@{markAllMessagesAsRead}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{markAllMessagesAsRead()}{markAllMessagesAsRead()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a75546eb1e8eb76be73228732153de057} 
+void Chat\+Manager\+::mark\+All\+Messages\+As\+Read (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_chat_manager_a2fbfbd875ac5f60a92169ead9cffc8ee}\index{ChatManager@{ChatManager}!markMessageAsRead@{markMessageAsRead}}
+\index{markMessageAsRead@{markMessageAsRead}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{markMessageAsRead()}{markMessageAsRead()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a2fbfbd875ac5f60a92169ead9cffc8ee} 
+void Chat\+Manager\+::mark\+Message\+As\+Read (\begin{DoxyParamCaption}\item[{const QString \&}]{message\+Id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_manager_a2fbfbd875ac5f60a92169ead9cffc8ee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_manager_abdb8951853eb91c9e813afe64cef6126}\index{ChatManager@{ChatManager}!messageRead@{messageRead}}
+\index{messageRead@{messageRead}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{messageRead}{messageRead}}
+{\footnotesize\ttfamily \label{class_chat_manager_abdb8951853eb91c9e813afe64cef6126} 
+void Chat\+Manager\+::message\+Read (\begin{DoxyParamCaption}\item[{const QString \&}]{message\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_manager_abdb8951853eb91c9e813afe64cef6126_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_manager_ad067c969f1f79c8a72b912e9068761f3}\index{ChatManager@{ChatManager}!messageReceived@{messageReceived}}
+\index{messageReceived@{messageReceived}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{messageReceived}{messageReceived}}
+{\footnotesize\ttfamily \label{class_chat_manager_ad067c969f1f79c8a72b912e9068761f3} 
+void Chat\+Manager\+::message\+Received (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_chat_manager_ae7e1707b1e0857a5379ab06c7e0866ab}\index{ChatManager@{ChatManager}!messageSent@{messageSent}}
+\index{messageSent@{messageSent}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{messageSent}{messageSent}}
+{\footnotesize\ttfamily \label{class_chat_manager_ae7e1707b1e0857a5379ab06c7e0866ab} 
+void Chat\+Manager\+::message\+Sent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chat_message}{Chat\+Message}} \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_manager_ae7e1707b1e0857a5379ab06c7e0866ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_manager_a0ed92523423943808862419a69a2fa18}\index{ChatManager@{ChatManager}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{class_chat_manager_a0ed92523423943808862419a69a2fa18} 
+void Chat\+Manager\+::send\+Message (\begin{DoxyParamCaption}\item[{const QString \&}]{to\+User\+Id}{, }\item[{const QString \&}]{content}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_chat_manager_a0ed92523423943808862419a69a2fa18_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_chat_manager_abeaca3cdf262c44eee5353e2613e038f}\index{ChatManager@{ChatManager}!unreadCountChanged@{unreadCountChanged}}
+\index{unreadCountChanged@{unreadCountChanged}!ChatManager@{ChatManager}}
+\doxysubsubsection{\texorpdfstring{unreadCountChanged}{unreadCountChanged}}
+{\footnotesize\ttfamily \label{class_chat_manager_abeaca3cdf262c44eee5353e2613e038f} 
+void Chat\+Manager\+::unread\+Count\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Id}{, }\item[{int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{chatmanager_8h}{chatmanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{chatmanager_8cpp}{chatmanager.\+cpp}}\end{DoxyCompactItemize}

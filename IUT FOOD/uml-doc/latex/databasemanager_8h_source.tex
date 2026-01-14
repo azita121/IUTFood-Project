@@ -1,0 +1,110 @@
+\doxysection{databasemanager.\+h}
+\hypertarget{databasemanager_8h_source}{}\label{databasemanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/databasemanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/databasemanager.h}}
+\mbox{\hyperlink{databasemanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QSqlQuery>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QSqlError>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QVariantList>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }DatabaseManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ DatabaseManager*\ \mbox{\hyperlink{class_database_manager_adc77584b498f23cb33c9fc2d0422a73f}{getInstance}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a41da8a8142a36d816efdf65130268980}{addChatMessage}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ fromUserId,\ \textcolor{keyword}{const}\ QString\&\ toUserId,\ \textcolor{keyword}{const}\ QString\&\ content);}
+\DoxyCodeLine{00021\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a81fa36594d48a11bb4f69df2fe44618d}{getChatHistory}}(\textcolor{keyword}{const}\ QString\&\ orderId);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a34df597fdb123a0ccff9761624601886}{addUserChatMessage}}(\textcolor{keyword}{const}\ QString\&\ fromUserId,\ \textcolor{keyword}{const}\ QString\&\ toUserId,\ \textcolor{keyword}{const}\ QString\&\ content);}
+\DoxyCodeLine{00023\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_ae5fce5a10a88a474345020d90b39b3ad}{getUserChatHistory}}(\textcolor{keyword}{const}\ QString\&\ userA,\ \textcolor{keyword}{const}\ QString\&\ userB);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a1fea04488c5cf3fb9f10cd7ecfce610a}{customerEmailExists}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a2b42859cabc16e5d694b1ed49a01bb9e}{customerPhoneExists}}(\textcolor{keyword}{const}\ QString\&\ phone);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a50261478b907df297396dc46b4ab55e4}{ownerEmailExists}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a42590247c42be2b5ee13e96b4dd10f47}{ownerPhoneExists}}(\textcolor{keyword}{const}\ QString\&\ phone);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Connection\ Management}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a882401a6678934fe7a2b747ae815aca4}{connect}}(\textcolor{keyword}{const}\ QString\&\ host,\ \textcolor{keyword}{const}\ QString\&\ database,\ \textcolor{keyword}{const}\ QString\&\ username,\ \textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_manager_a5da4f201fd5f9fe8f02ea9d64da9a803}{disconnect}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_aa4191649a436b20af9d2151e141ee148}{isConnected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Customer\ Management}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a4e4696121abcb7043f5ea1122167f31a}{createCustomer}}(\textcolor{keyword}{const}\ QString\&\ first\_name,\ \textcolor{keyword}{const}\ QString\&\ last\_name,\ \textcolor{keyword}{const}\ QString\&\ username,\ \textcolor{keyword}{const}\ QString\&\ email,\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ password\_hash,\ \textcolor{keyword}{const}\ QString\&\ phone,\ \textcolor{keyword}{const}\ QString\&\ address,\ \textcolor{keyword}{const}\ QString\&\ city,\ \textcolor{keyword}{const}\ QString\&\ location);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a7165c8f2ecc4ebe40c45d10d5a093e17}{updateCustomer}}(\textcolor{keyword}{const}\ QString\&\ customer\_id,\ \textcolor{keyword}{const}\ QVariantMap\&\ updates);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a85f0b780496914e1c219183cdaef2434}{deleteCustomer}}(\textcolor{keyword}{const}\ QString\&\ customer\_id);}
+\DoxyCodeLine{00039\ \ \ \ \ QString\ \mbox{\hyperlink{class_database_manager_a6961ab312112c6428ce37b3f2e550e74}{getCustomerId}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00040\ \ \ \ \ QString\ \mbox{\hyperlink{class_database_manager_afd41dbae0f0ea2e1ee60f57f105c89db}{getCustomerPasswordHash}}(\textcolor{keyword}{const}\ QString\&\ customer\_id);}
+\DoxyCodeLine{00041\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_database_manager_a1d5dae7bec003574cfffcacbe54838b4}{getCustomerProfile}}(\textcolor{keyword}{const}\ QString\&\ customer\_id);}
+\DoxyCodeLine{00042\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_database_manager_a7eb4309d543b137d031e37b3b24e91fb}{getCustomerByLoginId}}(\textcolor{keyword}{const}\ QString\&\ login\_id);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ Owner\ Management}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_aa94111739116b29b16cc1ca2f1043a1e}{createRestaurantOwner}}(\textcolor{keyword}{const}\ QString\&\ first\_name,\ \textcolor{keyword}{const}\ QString\&\ last\_name,\ \textcolor{keyword}{const}\ QString\&\ username,\ \textcolor{keyword}{const}\ QString\&\ email,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ password\_hash,\ \textcolor{keyword}{const}\ QString\&\ phone,\ \textcolor{keyword}{const}\ QString\&\ restaurant\_id,\ \textcolor{keyword}{const}\ QString\&\ city,\ \textcolor{keyword}{const}\ QString\&\ location);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ae7b15ddbec447a48f0cd89579fa17f66}{updateRestaurantOwner}}(\textcolor{keyword}{const}\ QString\&\ owner\_id,\ \textcolor{keyword}{const}\ QVariantMap\&\ updates);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a6f24a9d43d9760336f8ae903e616b3bf}{deleteRestaurantOwner}}(\textcolor{keyword}{const}\ QString\&\ owner\_id);}
+\DoxyCodeLine{00049\ \ \ \ \ QString\ \mbox{\hyperlink{class_database_manager_a327227d2e7f94faa494bd71719e0b0a8}{getRestaurantOwnerId}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00050\ \ \ \ \ QString\ \mbox{\hyperlink{class_database_manager_a41d159f8e711fcd570e44737236bf8d5}{getRestaurantOwnerPasswordHash}}(\textcolor{keyword}{const}\ QString\&\ owner\_id);}
+\DoxyCodeLine{00051\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_database_manager_a1390916727d241f8500b86ec588bbccb}{getRestaurantOwnerProfile}}(\textcolor{keyword}{const}\ QString\&\ owner\_id);}
+\DoxyCodeLine{00052\ \ \ \ \ QString\ \mbox{\hyperlink{class_database_manager_ab1702c35255f4d342bb2f822a4c0ae42}{getRestaurantIdByOwner}}(\textcolor{keyword}{const}\ QString\&\ owner\_id);}
+\DoxyCodeLine{00053\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_database_manager_acc9f372de30c8667cde2b17f19d72dc0}{getRestaurantOwnerByLoginId}}(\textcolor{keyword}{const}\ QString\&\ login\_id);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ Management}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ac74a37b648267fb255b6c3be884bd8df}{createRestaurant}}(\textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ address,\ \textcolor{keyword}{const}\ QString\&\ type,\ \textcolor{keyword}{const}\ QString\&\ image\_url\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a63cb9409a73ea6e57d795a0b3290f82b}{updateRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurant\_id,\ \textcolor{keyword}{const}\ QVariantMap\&\ updates);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a62f8422259f6c326d89d9ffd741db36a}{deleteRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurant\_id);}
+\DoxyCodeLine{00059\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_ae923e904280dfc75371033ec4f01634a}{getRestaurantsByOwner}}(\textcolor{keyword}{const}\ QString\&\ owner\_id);}
+\DoxyCodeLine{00060\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a662fc88903b21dae08750ce3ca97a903}{getAllRestaurants}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Menu\ Management}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a172ce3eef8e45c6e2ba9e1ae6d2b8547}{createMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurant\_id);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a14eeb626f6c25b4a7df235297f98e71c}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menu\_id,\ \textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keyword}{const}\ QString\&\ ingredients,\ \textcolor{keyword}{const}\ QString\&\ category,\ \textcolor{keyword}{const}\ QString\&\ image\_url\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_abc95400e60ff1d1fe636dbf6eb83589e}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menu\_id,\ \textcolor{keyword}{const}\ QString\&\ item\_id,\ \textcolor{keyword}{const}\ QVariantMap\&\ updates);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a3c33f9f9065dfebaaa5324a03987664c}{deleteMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menu\_id,\ \textcolor{keyword}{const}\ QString\&\ item\_id);}
+\DoxyCodeLine{00067\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a219d6f47428044a1217fc9cc8d9f2aa9}{getMenuItems}}(\textcolor{keyword}{const}\ QString\&\ restaurant\_id);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Order\ Management}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ac8047a4cea9488ae8becc3df01c7653b}{createOrder}}(\textcolor{keyword}{const}\ QString\&\ customer\_id,\ \textcolor{keyword}{const}\ QString\&\ restaurant\_id,\ \textcolor{keyword}{const}\ QVariantList\&\ items);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ae7e8e48624fa2436b34a0bd1f35e9444}{updateOrderStatus}}(\textcolor{keyword}{const}\ QString\&\ order\_id,\ \textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ace35ff161b6bed227686606b83a6e8e7}{deleteOrder}}(\textcolor{keyword}{const}\ QString\&\ order\_id);}
+\DoxyCodeLine{00073\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a29d237103a5ff1f035188b47cfc41289}{getCustomerOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ customer\_id);}
+\DoxyCodeLine{00074\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a29d4fcb3a5e4270db2746ccb5b297e90}{getOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ user\_id,\ \textcolor{keyword}{const}\ QString\&\ user\_type);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Order\ Feedback\ (comments\ only)}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a6ba7320a0d6285567329b1d291363dca}{addOrderComment}}(\textcolor{keyword}{const}\ QString\&\ order\_id,\ \textcolor{keyword}{const}\ QString\&\ customer\_id,\ \textcolor{keyword}{const}\ QString\&\ comment);}
+\DoxyCodeLine{00078\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_database_manager_a32b1ccdfd086221e237568430ed6b2fa}{getOrderComments}}(\textcolor{keyword}{const}\ QString\&\ order\_id);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ Query\ Execution}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_abf1daa555b813fbe82c7a8e052cbbac4}{executeQuery}}(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QVariantMap\&\ params);}
+\DoxyCodeLine{00082\ \ \ \ \ QSqlQuery\ \mbox{\hyperlink{class_database_manager_a3ec32076c78711bd7514b665a3c71ec2}{prepareQuery}}(\textcolor{keyword}{const}\ QString\&\ query,\ \textcolor{keyword}{const}\ QVariantMap\&\ params);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_database_manager_a94489d5d7b4c8f5d3f62777030a77cfd}{logError}}(\textcolor{keyword}{const}\ QString\&\ operation,\ \textcolor{keyword}{const}\ QSqlError\&\ error);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ User\ Management}}
+\DoxyCodeLine{00086\ \ \ \ \ QVariantMap\ \mbox{\hyperlink{class_database_manager_aa2b684cc0d8633add492a59309403a4c}{getUserById}}(\textcolor{keyword}{const}\ QString\&\ user\_id);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Transaction\ Management}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ae5b710336cd7ac882bfd30d2b4935b8b}{beginTransaction}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_ad1997bb34b2faa3b6c99d22fea3fb4f6}{commitTransaction}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_abce3065039dcb47f5874ffc14cdeaf6a}{rollbackTransaction}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_database_manager_a58367b27036f6fc0ad04c4722d42d384}{initializeSchema}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{explicit}\ DatabaseManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00097\ \ \ \ \ \string~DatabaseManager();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ DatabaseManager*\ instance;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ QSqlDatabase\ db;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ connected;}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASEMANAGER\_H\ }}
+
+\end{DoxyCode}

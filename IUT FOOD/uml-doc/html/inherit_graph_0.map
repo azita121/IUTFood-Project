@@ -1,0 +1,61 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,588,75,615"/>
+<area shape="rect" id="Node000001" href="$class_admin_manager.html" title=" " alt="" coords="155,5,264,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="39,573,42,458,54,300,64,219,78,145,97,85,121,42,136,30,154,22,156,27,139,34,125,46,102,87,83,147,69,220,59,300,48,458,44,573"/>
+<area shape="rect" id="Node000002" href="$class_auth_manager.html" title=" " alt="" coords="160,56,258,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="39,573,44,468,57,324,67,252,81,186,99,131,121,93,138,79,159,71,161,76,141,84,125,96,104,133,86,187,73,253,62,325,50,468,45,573"/>
+<area shape="rect" id="Node000003" href="$class_auth_system.html" title=" " alt="" coords="163,107,256,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="40,573,46,477,60,349,71,285,84,226,101,177,121,144,139,129,161,122,163,127,142,134,125,147,105,179,89,227,76,286,66,350,52,477,45,573"/>
+<area shape="rect" id="Node000004" href="$class_cart.html" title=" " alt="" coords="186,157,232,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="41,573,49,486,64,374,87,266,102,224,121,194,135,183,152,175,185,169,186,174,154,180,138,187,125,198,107,226,92,267,69,375,54,487,46,573"/>
+<area shape="rect" id="Node000005" href="$class_chat_manager.html" title=" " alt="" coords="160,208,259,235"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="42,572,51,496,67,398,90,306,104,270,121,245,138,232,158,224,160,229,141,236,125,248,109,272,95,308,72,399,56,497,47,573"/>
+<area shape="rect" id="Node000006" href="$class_chat_message.html" title=" " alt="" coords="158,259,260,285"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="38,572,40,515,51,441,61,402,76,363,95,327,121,295,138,283,157,275,159,280,140,288,125,299,100,330,81,365,66,403,56,442,45,515,43,572"/>
+<area shape="rect" id="Node000007" href="$class_command.html" title=" " alt="" coords="169,309,250,336"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="40,572,45,524,57,463,82,401,99,372,121,346,143,332,167,324,169,329,145,336,124,350,103,375,86,403,63,465,50,524,45,573"/>
+<area shape="rect" id="Node000009" href="$class_customer_manager.html" title=" " alt="" coords="145,360,274,387"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="42,573,50,533,65,486,87,438,103,416,121,397,143,383,146,387,124,401,107,419,92,441,70,488,55,535,47,574"/>
+<area shape="rect" id="Node000010" href="$class_database_manager.html" title=" " alt="" coords="146,411,273,437"/>
+<area shape="poly" id="edge10_Node000000_Node000010" title=" " alt="" coords="47,572,73,509,94,476,121,447,144,434,147,439,124,451,98,479,77,512,51,574"/>
+<area shape="rect" id="Node000011" href="$class_invoker.html" title=" " alt="" coords="177,461,242,488"/>
+<area shape="poly" id="edge11_Node000000_Node000011" title=" " alt="" coords="54,573,82,534,100,515,121,498,148,484,176,477,178,482,150,489,124,502,104,519,86,538,58,576"/>
+<area shape="rect" id="Node000012" href="$class_logger.html" title=" " alt="" coords="179,512,240,539"/>
+<area shape="poly" id="edge12_Node000000_Node000012" title=" " alt="" coords="71,577,122,548,178,529,180,534,124,553,74,582"/>
+<area shape="rect" id="Node000013" href="$class_menu_item.html" title=" " alt="" coords="170,563,249,589"/>
+<area shape="poly" id="edge13_Node000000_Node000013" title=" " alt="" coords="90,591,169,579,169,585,90,597"/>
+<area shape="rect" id="Node000014" href="$class_menu_manager.html" title=" " alt="" coords="158,613,261,640"/>
+<area shape="poly" id="edge14_Node000000_Node000014" title=" " alt="" coords="90,606,158,616,157,622,89,611"/>
+<area shape="rect" id="Node000015" href="$class_network_manager.html" title=" " alt="" coords="149,664,270,691"/>
+<area shape="poly" id="edge15_Node000000_Node000015" title=" " alt="" coords="74,621,124,650,154,661,152,666,122,654,71,626"/>
+<area shape="rect" id="Node000016" href="$class_observer.html" title=" " alt="" coords="172,715,246,741"/>
+<area shape="poly" id="edge16_Node000000_Node000016" title=" " alt="" coords="58,626,86,665,104,684,124,700,148,712,173,720,171,725,146,717,121,705,100,688,82,668,54,629"/>
+<area shape="rect" id="Node000018" href="$class_order.html" title=" " alt="" coords="183,765,236,792"/>
+<area shape="poly" id="edge18_Node000000_Node000018" title=" " alt="" coords="51,628,77,691,98,723,124,751,153,766,183,774,181,779,151,771,121,755,94,727,73,693,47,630"/>
+<area shape="rect" id="Node000019" href="$class_order_manager.html" title=" " alt="" coords="158,816,261,843"/>
+<area shape="poly" id="edge19_Node000000_Node000019" title=" " alt="" coords="47,629,55,668,70,715,92,762,107,783,124,802,140,813,158,820,156,825,138,817,121,806,103,787,87,764,65,717,50,669,42,630"/>
+<area shape="rect" id="Node000020" href="$class_order_status.html" title=" " alt="" coords="164,867,255,893"/>
+<area shape="poly" id="edge20_Node000000_Node000020" title=" " alt="" coords="45,630,50,678,63,738,86,800,103,828,124,853,143,865,164,873,163,878,140,870,121,857,99,831,82,802,57,740,45,679,40,630"/>
+<area shape="rect" id="Node000021" href="$class_restaurant.html" title=" " alt="" coords="167,917,252,944"/>
+<area shape="poly" id="edge21_Node000000_Node000021" title=" " alt="" coords="43,630,45,688,56,761,66,799,81,837,100,872,124,903,144,917,167,924,165,929,142,922,121,907,95,875,76,839,61,801,51,762,40,688,38,631"/>
+<area shape="rect" id="Node000022" href="$class_restaurant_manager.html" title=" " alt="" coords="142,968,277,995"/>
+<area shape="poly" id="edge22_Node000000_Node000022" title=" " alt="" coords="47,630,56,706,72,803,95,895,109,930,125,954,143,967,139,971,121,958,104,933,90,896,67,804,51,707,42,631"/>
+<area shape="rect" id="Node000023" href="$class_restaurant_owner_manager.html" title=" " alt="" coords="123,1019,296,1045"/>
+<area shape="poly" id="edge23_Node000000_Node000023" title=" " alt="" coords="46,630,54,716,69,828,92,935,107,977,125,1005,139,1016,136,1020,121,1008,102,979,87,937,64,829,49,716,41,630"/>
+<area shape="rect" id="Node000024" href="$class_server.html" title=" " alt="" coords="180,1069,239,1096"/>
+<area shape="poly" id="edge24_Node000000_Node000024" title=" " alt="" coords="45,630,52,725,66,853,76,917,89,975,105,1023,125,1056,136,1065,150,1072,180,1079,179,1084,148,1077,133,1070,121,1059,101,1025,84,977,71,918,60,854,46,726,40,630"/>
+<area shape="rect" id="Node000025" href="$class_user.html" title=" " alt="" coords="185,1120,234,1147"/>
+<area shape="poly" id="edge25_Node000000_Node000025" title=" " alt="" coords="45,630,50,735,62,878,73,950,86,1016,104,1070,125,1106,137,1117,153,1124,185,1130,184,1135,151,1129,135,1121,121,1110,99,1072,81,1017,67,951,57,878,44,735,39,630"/>
+<area shape="rect" id="Node000029" href="$class_web_socket_server.html" title=" " alt="" coords="146,1171,272,1197"/>
+<area shape="poly" id="edge29_Node000000_Node000029" title=" " alt="" coords="44,630,48,744,59,902,69,983,83,1056,102,1116,125,1157,147,1173,144,1177,121,1160,97,1118,78,1057,64,984,54,903,42,745,39,630"/>
+<area shape="rect" id="Node000008" href="$class_order_command.html" title=" " alt="" coords="360,309,473,336"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="266,320,359,320,359,325,266,325"/>
+<area shape="rect" id="Node000017" href="$class_order_status_observer.html" title=" " alt="" coords="344,715,488,741"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="262,725,344,725,344,731,262,731"/>
+<area shape="rect" id="Node000026" href="$class_admin.html" title=" " alt="" coords="387,1069,445,1096"/>
+<area shape="poly" id="edge26_Node000025_Node000026" title=" " alt="" coords="249,1121,386,1087,387,1092,250,1126"/>
+<area shape="rect" id="Node000027" href="$class_customer.html" title=" " alt="" coords="377,1120,455,1147"/>
+<area shape="poly" id="edge27_Node000025_Node000027" title=" " alt="" coords="249,1131,377,1131,377,1136,249,1136"/>
+<area shape="rect" id="Node000028" href="$class_restaurant_owner.html" title=" " alt="" coords="354,1171,478,1197"/>
+<area shape="poly" id="edge28_Node000025_Node000028" title=" " alt="" coords="250,1140,359,1167,358,1173,249,1146"/>
+</map>

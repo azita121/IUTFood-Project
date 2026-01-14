@@ -1,0 +1,81 @@
+\doxysection{customermanager.\+h}
+\hypertarget{_i_u_t_food_client_2src_2network_2customermanager_8h_source}{}\label{_i_u_t_food_client_2src_2network_2customermanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/customermanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/customermanager.h}}
+\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2customermanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CUSTOMERMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CUSTOMERMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{restaurant_8h}{../models/restaurant.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{order_8h}{../models/order.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menuitem_8h}{../models/menuitem.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }CustomerManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ CustomerManager*\ \mbox{\hyperlink{class_customer_manager_aef4ca214bca395fb2fb8625b6429f577}{getInstance}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_customer_manager_a47c5d64005fa0c4a779010eab692df4f}{\string~CustomerManager}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Restaurant\ browsing}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a305e44734a7442d4c3b35628153316ea}{getRestaurants}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a693a39582a7038249a8847db1453fe84}{getRestaurantMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00024\ \ \ \ \ QList<Restaurant*>\ \mbox{\hyperlink{class_customer_manager_a5680ea06e1aae91af0fa361cb0982766}{getRestaurantList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_restaurant}{Restaurant}}*\ \mbox{\hyperlink{class_customer_manager_a5d9475ad91a95950226d9e2668a7f413}{getRestaurant}}(\textcolor{keyword}{const}\ QString\&\ restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ QList<MenuItem*>\ \mbox{\hyperlink{class_customer_manager_a0f811c1e6a80f18f609e9acdf94ec3b7}{getMenuItems}}(\textcolor{keyword}{const}\ QString\&\ restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Order\ management}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_ad280acae02ac11f1d2bbf6fc43b437ac}{placeOrder}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QList<MenuItem*>\&\ items);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a75219a45ba5d433addc15b00cff182c5}{getOrders}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a6b427c530b551399f715438e4b528b35}{cancelOrder}}(\textcolor{keyword}{const}\ QString\&\ orderId);}
+\DoxyCodeLine{00032\ \ \ \ \ QList<Order*>\ \mbox{\hyperlink{class_customer_manager_ad5423ef36bec47d1099b1638d382db97}{getOrderList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_order}{Order}}*\ \mbox{\hyperlink{class_customer_manager_abe654b7eeea0816dcacf5ca8718b10f6}{getOrder}}(\textcolor{keyword}{const}\ QString\&\ orderId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Cart\ management}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a717cf555d9f319081878cdf3c2d1a26e}{addToCart}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item,\ \textcolor{keywordtype}{int}\ quantity);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a35f55c600ffa2207d1a2bb5add4757f0}{removeFromCart}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a947f38b22295bd15e7fbd45c94d24d8b}{clearCart}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00039\ \ \ \ \ QList<MenuItem*>\ \mbox{\hyperlink{class_customer_manager_a417b04c0db0dbb9b118604cc34ef3915}{getCartItems}}(\textcolor{keyword}{const}\ QString\&\ restaurantId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_customer_manager_ac63bd59643fbc7afe5d0330667c956f1}{getCartItemQuantity}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \mbox{\hyperlink{class_menu_item}{MenuItem}}*\ item)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Profile\ and\ order\ history}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a554734fcd4ccfb93cbff5479660df235}{fetchProfile}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a2b7d8a3cc378dfe3cdc7b4a733d44f0d}{fetchOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ customerId);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_af2489f395d34842ad7f1c3c56d696c60}{restaurantsReceived}}(\textcolor{keyword}{const}\ QList<Restaurant*>\&\ restaurants);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a5b6984dedf26154aeab37f8335f38f3b}{menuReceived}}(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QList<MenuItem*>\&\ menu);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a16d91458265390e01adc149cecb6637c}{ordersReceived}}(\textcolor{keyword}{const}\ QList<Order*>\&\ orders);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a66d93239c3d05ebb4afc5dd85b9ad66b}{orderPlaced}}(\textcolor{keyword}{const}\ QString\&\ orderId);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_a289b5ab48adb77eb96481e3f39f1ff0b}{orderCancelled}}(\textcolor{keyword}{const}\ QString\&\ orderId);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_abaecd24783a57827f8c3495d3a2f2335}{error}}(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_customer_manager_af0563c69f1d1392e50422c34f8133a7e}{profileReceived}}(\textcolor{keyword}{const}\ QJsonObject\&\ profile);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ orderHistoryReceived(\textcolor{keyword}{const}\ QJsonArray\&\ orderHistory);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{explicit}\ CustomerManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ CustomerManager*\ instance;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00063\ \ \ \ \ QList<Restaurant*>\ m\_restaurants;}
+\DoxyCodeLine{00064\ \ \ \ \ QMap<QString,\ QList<MenuItem*>>\ m\_menus;\ \textcolor{comment}{//\ restaurantId\ -\/>\ menu\ items}}
+\DoxyCodeLine{00065\ \ \ \ \ QList<Order*>\ m\_orders;}
+\DoxyCodeLine{00066\ \ \ \ \ QMap<QString,\ QMap<MenuItem*,\ int>>\ m\_cart;\ \textcolor{comment}{//\ restaurantId\ -\/>\ (MenuItem\ -\/>\ quantity)}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRestaurantsReceived(\textcolor{keyword}{const}\ QJsonArray\&\ restaurants);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ handleMenuReceived(\textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QJsonArray\&\ menu);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrdersReceived(\textcolor{keyword}{const}\ QJsonArray\&\ orders);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrderPlaced(\textcolor{keyword}{const}\ QJsonObject\&\ response);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ handleOrderCancelled(\textcolor{keyword}{const}\ QJsonObject\&\ response);}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CUSTOMERMANAGER\_H\ }}
+
+\end{DoxyCode}

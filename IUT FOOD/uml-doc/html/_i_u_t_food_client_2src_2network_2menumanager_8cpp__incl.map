@@ -1,0 +1,25 @@
+<map id="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/menumanager.cpp" name="IUTFood&#45;Project&#45;client&#45;codes/IUTFoodClient/src/network/menumanager.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="157,5,339,64"/>
+<area shape="rect" id="Node000002" href="$_i_u_t_food_client_2src_2network_2menumanager_8h.html" title=" " alt="" coords="119,112,233,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,66,198,101,194,98,223,63"/>
+<area shape="rect" id="Node000003" href="$networkmanager_8h.html" title=" " alt="" coords="257,112,385,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,63,303,98,299,101,270,66"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="73,261,143,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,140,105,166,42,180,14,189,9,197,8,205,18,222,38,238,63,252,60,257,35,243,14,226,3,207,4,196,10,185,40,174,104,161,256,134"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="24,187,117,213"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="278,142,130,184,129,179,277,137"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="141,187,240,213"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="300,142,228,181,226,176,297,137"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="489,261,586,288"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="386,128,453,134,524,145,585,161,609,172,625,185,630,195,631,206,622,225,603,242,580,256,578,252,600,238,618,222,626,205,625,197,621,188,606,176,583,166,522,150,452,139,386,133"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="403,187,522,213"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="347,137,426,177,423,182,345,142"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="546,187,611,213"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="367,137,532,183,531,188,365,142"/>
+<area shape="rect" id="Node000010" href="$user_8h.html" title=" " alt="" coords="264,187,379,213"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="324,139,324,171,319,171,319,139"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="285,216,158,259,156,254,283,211"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="360,211,486,253,484,258,358,216"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="289,261,354,288"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="324,214,324,246,319,246,319,214"/>
+</map>

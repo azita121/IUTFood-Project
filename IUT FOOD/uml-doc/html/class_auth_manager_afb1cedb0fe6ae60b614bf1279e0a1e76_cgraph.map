@@ -1,0 +1,12 @@
+<map id="AuthManager::logout" name="AuthManager::logout">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,147,147"/>
+<area shape="rect" id="Node000002" href="$class_auth_manager.html#a808b782a0ec22a41be2abc5bdd7f6020" title=" " alt="" coords="216,29,390,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,117,194,82,213,75,215,80,196,86,109,122"/>
+<area shape="rect" id="Node000003" href="$class_auth_manager.html#aa732c46f24f41fddd8f5710965872e21" title=" " alt="" coords="195,120,411,147"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="147,131,179,131,179,136,147,136"/>
+<area shape="rect" id="Node000004" href="$class_auth_manager.html#a01c335432f64dcbcd977636ffb4925fc" title=" " alt="" coords="207,195,399,221"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="120,145,246,187,244,192,118,150"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="260,29,258,19,265,10,280,5,303,3,327,5,342,11,340,16,326,10,303,8,281,10,268,15,263,21,265,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="265,121,258,111,262,101,278,95,303,93,330,96,344,102,342,107,328,101,303,99,279,101,266,105,263,111,269,118"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="265,196,258,186,262,176,278,170,303,168,330,171,344,177,342,182,328,176,303,173,279,175,266,180,263,185,269,193"/>
+</map>

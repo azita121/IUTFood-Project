@@ -1,0 +1,12 @@
+<map id="Cart::updateItemQuantity" name="Cart::updateItemQuantity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,174,131"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#a3c5b111c12fafdde5c3d9ff9ad7a84cd" title=" " alt="" coords="229,29,395,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,101,221,65,244,58,245,63,223,71,126,106"/>
+<area shape="rect" id="Node000003" href="$class_cart.html#a0fcc1cda3a3e66eb0caa05bd9505369e" title=" " alt="" coords="222,104,402,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="174,115,206,115,206,120,174,120"/>
+<area shape="rect" id="Node000004" href="$class_cart.html#ac4b8276f2f31cca966f814e3a0663871" title=" " alt="" coords="231,179,392,205"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="132,129,256,171,255,176,131,134"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="274,30,268,21,272,11,287,5,312,3,338,5,352,12,350,16,337,10,312,8,288,10,276,15,273,20,279,27"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="274,105,268,95,272,85,287,79,312,77,338,80,352,86,350,91,337,85,312,83,288,85,276,89,273,95,279,102"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="274,180,268,170,272,160,287,154,312,152,338,155,352,161,350,166,337,160,312,157,288,159,276,164,273,169,279,177"/>
+</map>

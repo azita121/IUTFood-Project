@@ -1,0 +1,28 @@
+\doxysection{command.\+h}
+\hypertarget{command_8h_source}{}\label{command_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/command.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/command.h}}
+\mbox{\hyperlink{command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_ae85e5e5e0fe5954a572605c5426cc1c4}{Command}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_command_ae85e5e5e0fe5954a572605c5426cc1c4}{Command}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_command_ab552bb3a07fdd1acbfd8ea76e69b2278}{\string~Command}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_a04eb1e90604f777c12cf8f0a77e870e9}{getPriority}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_a215abcdd07a0eae6227787d8a5a5d737}{setPriority}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_aeb44351c1ac36186171042e27f18d70b}{priority}})\ =\ 0;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_aeb44351c1ac36186171042e27f18d70b}{priority}};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMAND\_H\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\doxysection{ordercommand.\+h}
+\hypertarget{ordercommand_8h_source}{}\label{ordercommand_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/ordercommand.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/ordercommand.h}}
+\mbox{\hyperlink{ordercommand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ORDERCOMMAND\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ORDERCOMMAND\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{command_8h}{command.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QVariantList>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_order_command_a7f3ff249033353aeb6c4cd05e46439f3}{OrderCommand}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_command_ae85e5e5e0fe5954a572605c5426cc1c4}{Command}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08}{Type}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08a686e697538050e4664636337cc3b834f}{Create}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08a588d21810a086ab1ae436ef98380d099}{UpdateStatus}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08af2a6c498fb90ee345d997f888fce3b18}{Delete}}}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_order_command_a7f3ff249033353aeb6c4cd05e46439f3}{OrderCommand}}(\mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08}{Type}}\ type,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_order_command_ae838b3d8115275c464c12aefbbd54a93}{\string~OrderCommand}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_command_a4d5a2ab558792b9e782a93445ceca82b}{setOrderData}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ customerId,\ \textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QVariantList\&\ items\ =\ QVariantList());}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_command_a6265ab25833d2999503af857a79db09e}{setStatus}}(\textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_command_ade67b27b1d3c339752ae6b82257718cf}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_order_command_a082e4884773a2b5d14a687e96ef2b01b}{getPriority}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_order_command_a1d895e4d7c2648fe970f85d76a57fe1b}{setPriority}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_command_aeb44351c1ac36186171042e27f18d70b}{priority}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_order_command_a6f76d7b9a71e1b4d4204c387fa071f08}{Type}}\ commandType;}
+\DoxyCodeLine{00031\ \ \ \ \ QString\ orderId;}
+\DoxyCodeLine{00032\ \ \ \ \ QString\ customerId;}
+\DoxyCodeLine{00033\ \ \ \ \ QString\ restaurantId;}
+\DoxyCodeLine{00034\ \ \ \ \ QVariantList\ orderItems;}
+\DoxyCodeLine{00035\ \ \ \ \ QString\ status;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ dbManager;}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ORDERCOMMAND\_H\ }}
+
+\end{DoxyCode}

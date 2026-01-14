@@ -1,0 +1,19 @@
+\doxysection{menumanager.\+h}
+\hypertarget{_i_u_t_food_client_2src_2network_2menumanager_8h_source}{}\label{_i_u_t_food_client_2src_2network_2menumanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/menumanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/menumanager.h}}
+\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_abc454b825265d7957d1c70f4938767bc}{createMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ab610f58025a1ca8365212757de8d9425}{addMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description,\ \textcolor{keywordtype}{double}\ price,\ \textcolor{keyword}{const}\ QString\&\ ingredients,\ \textcolor{keyword}{const}\ QString\&\ category);}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a8369dc44e6d9def524181a4a790e2ece}{updateMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId,\ \textcolor{keyword}{const}\ QJsonObject\&\ updates);}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_aa9abf44b57257c3e8af45a6cbd8554d4}{deleteMenuItem}}(\textcolor{keyword}{const}\ QString\&\ menuId,\ \textcolor{keyword}{const}\ QString\&\ itemId);}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_aaabca6fe08c384557026289f01a74020}{fetchMenu}}(\textcolor{keyword}{const}\ QString\&\ restaurantId);}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ signals:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ab5e242360b619ce7238860471cabbb31}{menuCreated}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a2231efe338fdc0305540016e57ab2005}{menuItemAdded}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_af9ebce89be247dd84e222d3eec555c48}{menuItemUpdated}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_a0eef19bded65566840ef78a1c8ab2f19}{menuItemDeleted}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_i_u_t_food_client_2src_2network_2menumanager_8h_ad6f78c74f93dec52c3f398c9879de047}{menuReceived}}(\textcolor{keyword}{const}\ QJsonArray\&\ menu);\ }
+
+\end{DoxyCode}

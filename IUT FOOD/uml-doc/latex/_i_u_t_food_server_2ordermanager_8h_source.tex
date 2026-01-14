@@ -1,0 +1,33 @@
+\doxysection{ordermanager.\+h}
+\hypertarget{_i_u_t_food_server_2ordermanager_8h_source}{}\label{_i_u_t_food_server_2ordermanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/ordermanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/ordermanager.h}}
+\mbox{\hyperlink{_i_u_t_food_server_2ordermanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ORDERMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ORDERMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVariantMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_order_manager}{OrderManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ OrderManager*\ \mbox{\hyperlink{class_order_manager_a24f65ad13e2cbc140ebf02b9c1af96a8}{getInstance}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_order_manager_a279292d3abda9718bbf909d7c85ad055}{\string~OrderManager}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_order_manager_aef289ac56d2ceb59f2f62b8b224ce2a4}{createOrder}}(\textcolor{keyword}{const}\ QString\&\ customerId,\ \textcolor{keyword}{const}\ QString\&\ restaurantId,\ \textcolor{keyword}{const}\ QVariantList\&\ items);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_order_manager_ad50e027af09d223a47b0c0c5e6149c90}{updateOrderStatus}}(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00018\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{class_order_manager_ad426b3382f5c609a38c6f14ed5302dcc}{getOrderHistory}}(\textcolor{keyword}{const}\ QString\&\ userId,\ \textcolor{keyword}{const}\ QString\&\ userType);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Add\ more\ order-\/related\ methods\ as\ needed}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{explicit}\ OrderManager(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ OrderManager*\ instance;}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ORDERMANAGER\_H\ }}
+
+\end{DoxyCode}

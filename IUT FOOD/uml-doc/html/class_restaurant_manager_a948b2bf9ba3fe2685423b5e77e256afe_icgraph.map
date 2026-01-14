@@ -1,0 +1,15 @@
+<map id="RestaurantManager::searchRestaurants" name="RestaurantManager::searchRestaurants">
+<area shape="rect" id="Node000001" title=" " alt="" coords="269,176,412,219"/>
+<area shape="rect" id="Node000002" href="$class_restaurant_manager.html#ade09068342d0d725f64fabc3a8c9c8e6" title=" " alt="" coords="17,5,209,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="315,164,274,111,248,85,219,62,198,51,201,46,222,58,252,81,278,108,319,161"/>
+<area shape="rect" id="Node000003" href="$class_restaurant_manager.html#a99ae4bbf649217080992fef92580f462" title=" " alt="" coords="14,72,212,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="293,170,220,129,191,118,193,113,222,124,296,165"/>
+<area shape="rect" id="Node000004" href="$class_restaurant_manager.html#a1c1d277691b9c47a46ac88976a075d74" title=" " alt="" coords="15,139,211,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,186,211,179,212,174,254,180"/>
+<area shape="rect" id="Node000005" href="$class_restaurant_manager.html#ac4827d46155227a48bbc895840deb491" title=" " alt="" coords="11,205,215,264"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="254,214,215,221,215,215,253,209"/>
+<area shape="rect" id="Node000006" href="$class_restaurant_manager.html#ab6a7fa9e551c4e9ccf0e6c94790da1cf" title=" " alt="" coords="5,288,221,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="300,230,263,255,222,278,194,290,192,285,220,274,260,251,297,226"/>
+<area shape="rect" id="Node000007" href="$class_restaurant_manager.html#a9b2122d59f276f3157159cd99ae12ad2" title=" " alt="" coords="25,355,201,397"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="321,234,280,291,253,320,222,345,201,356,199,352,219,340,249,316,276,287,317,230"/>
+</map>

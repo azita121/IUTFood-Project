@@ -1,0 +1,115 @@
+\doxysection{Order\+Status\+Observer Class Reference}
+\hypertarget{class_order_status_observer}{}\label{class_order_status_observer}\index{OrderStatusObserver@{OrderStatusObserver}}
+
+
+{\ttfamily \#include $<$orderstatusobserver.\+h$>$}
+
+
+
+Inheritance diagram for Order\+Status\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_order_status_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Order\+Status\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_order_status_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_status_observer_ad2e852be895e32961a1d81828b30de62}{Order\+Status\+Observer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_order_status_observer_a3d506287a0c02ca0a6ca122946ac44d4}{\texorpdfstring{$\sim$}{\string~}\+Order\+Status\+Observer}} ()
+\item 
+void \mbox{\hyperlink{class_order_status_observer_aaad5ef90ff13d9a3d90784c0f2a7de55}{update}} (const QString \&order\+Id, const QString \&status) override
+\item 
+void \mbox{\hyperlink{class_order_status_observer_a502c7a4f150e6b9a00c1567a73657b23}{add\+Client\+Subscription}} (const QString \&order\+Id, QTcp\+Socket \texorpdfstring{$\ast$}{*}client)
+\item 
+void \mbox{\hyperlink{class_order_status_observer_ad5e6206469187a7ed7293aad48dc6a2d}{remove\+Client\+Subscription}} (const QString \&order\+Id, QTcp\+Socket \texorpdfstring{$\ast$}{*}client)
+\item 
+void \mbox{\hyperlink{class_order_status_observer_a247a6f894c9b5d49df6d454d914678b2}{remove\+Client\+Subscriptions}} (QTcp\+Socket \texorpdfstring{$\ast$}{*}client)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observer}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_observer_a535c8656871306792a63d03c0eda96c8}{Observer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_observer_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_observer}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observer_a7cc34c5357d829afe88c55b45674e3bb}{order\+Status\+Changed}} (const QString \&order\+Id, const QString \&status)
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_order_status_observer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_order_status_observer_ad2e852be895e32961a1d81828b30de62}\index{OrderStatusObserver@{OrderStatusObserver}!OrderStatusObserver@{OrderStatusObserver}}
+\index{OrderStatusObserver@{OrderStatusObserver}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{OrderStatusObserver()}{OrderStatusObserver()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_ad2e852be895e32961a1d81828b30de62} 
+Order\+Status\+Observer\+::\+Order\+Status\+Observer (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_order_status_observer_ad2e852be895e32961a1d81828b30de62_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_order_status_observer_a3d506287a0c02ca0a6ca122946ac44d4}\index{OrderStatusObserver@{OrderStatusObserver}!````~OrderStatusObserver@{\texorpdfstring{$\sim$}{\string~}OrderStatusObserver}}
+\index{````~OrderStatusObserver@{\texorpdfstring{$\sim$}{\string~}OrderStatusObserver}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}OrderStatusObserver()}{\string~OrderStatusObserver()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_a3d506287a0c02ca0a6ca122946ac44d4} 
+Order\+Status\+Observer\+::\texorpdfstring{$\sim$}{\string~}\+Order\+Status\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_order_status_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_order_status_observer_a502c7a4f150e6b9a00c1567a73657b23}\index{OrderStatusObserver@{OrderStatusObserver}!addClientSubscription@{addClientSubscription}}
+\index{addClientSubscription@{addClientSubscription}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{addClientSubscription()}{addClientSubscription()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_a502c7a4f150e6b9a00c1567a73657b23} 
+void Order\+Status\+Observer\+::add\+Client\+Subscription (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_observer_ad5e6206469187a7ed7293aad48dc6a2d}\index{OrderStatusObserver@{OrderStatusObserver}!removeClientSubscription@{removeClientSubscription}}
+\index{removeClientSubscription@{removeClientSubscription}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{removeClientSubscription()}{removeClientSubscription()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_ad5e6206469187a7ed7293aad48dc6a2d} 
+void Order\+Status\+Observer\+::remove\+Client\+Subscription (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_observer_a247a6f894c9b5d49df6d454d914678b2}\index{OrderStatusObserver@{OrderStatusObserver}!removeClientSubscriptions@{removeClientSubscriptions}}
+\index{removeClientSubscriptions@{removeClientSubscriptions}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{removeClientSubscriptions()}{removeClientSubscriptions()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_a247a6f894c9b5d49df6d454d914678b2} 
+void Order\+Status\+Observer\+::remove\+Client\+Subscriptions (\begin{DoxyParamCaption}\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_order_status_observer_aaad5ef90ff13d9a3d90784c0f2a7de55}\index{OrderStatusObserver@{OrderStatusObserver}!update@{update}}
+\index{update@{update}!OrderStatusObserver@{OrderStatusObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_order_status_observer_aaad5ef90ff13d9a3d90784c0f2a7de55} 
+void Order\+Status\+Observer\+::update (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_observer_aa1cf45e1abcfd8f217be3ce48e87102d}{Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{orderstatusobserver_8h}{orderstatusobserver.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{orderstatusobserver_8cpp}{orderstatusobserver.\+cpp}}\end{DoxyCompactItemize}

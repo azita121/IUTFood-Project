@@ -1,0 +1,89 @@
+\doxysection{Observer Class Reference}
+\hypertarget{class_observer}{}\label{class_observer}\index{Observer@{Observer}}
+
+
+{\ttfamily \#include $<$observer.\+h$>$}
+
+
+
+Inheritance diagram for Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observer_a7cc34c5357d829afe88c55b45674e3bb}{order\+Status\+Changed}} (const QString \&order\+Id, const QString \&status)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_observer_a535c8656871306792a63d03c0eda96c8}{Observer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_observer_a450645e61c136826f09940a1334c7f34}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\item 
+virtual void \mbox{\hyperlink{class_observer_aa1cf45e1abcfd8f217be3ce48e87102d}{update}} (const QString \&order\+Id, const QString \&status)=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_observer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_observer_a535c8656871306792a63d03c0eda96c8}\index{Observer@{Observer}!Observer@{Observer}}
+\index{Observer@{Observer}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{Observer()}{Observer()}}
+{\footnotesize\ttfamily \label{class_observer_a535c8656871306792a63d03c0eda96c8} 
+Observer\+::\+Observer (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_observer_a535c8656871306792a63d03c0eda96c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_observer_a450645e61c136826f09940a1334c7f34}\index{Observer@{Observer}!````~Observer@{\texorpdfstring{$\sim$}{\string~}Observer}}
+\index{````~Observer@{\texorpdfstring{$\sim$}{\string~}Observer}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Observer()}{\string~Observer()}}
+{\footnotesize\ttfamily \label{class_observer_a450645e61c136826f09940a1334c7f34} 
+Observer\+::\texorpdfstring{$\sim$}{\string~}\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_observer_a7cc34c5357d829afe88c55b45674e3bb}\index{Observer@{Observer}!orderStatusChanged@{orderStatusChanged}}
+\index{orderStatusChanged@{orderStatusChanged}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{orderStatusChanged}{orderStatusChanged}}
+{\footnotesize\ttfamily \label{class_observer_a7cc34c5357d829afe88c55b45674e3bb} 
+void Observer\+::order\+Status\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_observer_aa1cf45e1abcfd8f217be3ce48e87102d}\index{Observer@{Observer}!update@{update}}
+\index{update@{update}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_observer_aa1cf45e1abcfd8f217be3ce48e87102d} 
+virtual void Observer\+::update (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_order_status_observer_aaad5ef90ff13d9a3d90784c0f2a7de55}{Order\+Status\+Observer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{observer_8h}{observer.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{observer_8cpp}{observer.\+cpp}}\end{DoxyCompactItemize}

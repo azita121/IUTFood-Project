@@ -1,0 +1,106 @@
+\doxysection{Server Class Reference}
+\hypertarget{class_server}{}\label{class_server}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+
+
+Inheritance diagram for Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_server_a5ce22b7f2a3034ea26ecbe337051380a}{client\+Connected}} (QTcp\+Socket \texorpdfstring{$\ast$}{*}client)
+\item 
+void \mbox{\hyperlink{class_server_a94e1f77353957756463d545ece4b6f1d}{client\+Disconnected}} (QTcp\+Socket \texorpdfstring{$\ast$}{*}client)
+\item 
+void \mbox{\hyperlink{class_server_ab4c74ceee11a9559d3b728384e0020c4}{message\+Received}} (QTcp\+Socket \texorpdfstring{$\ast$}{*}client, const QByte\+Array \&message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_server_a117a1e799d6acf6c3d306b9d291b7cbd}{start}} (quint16 tcp\+Port=1234, quint16 ws\+Port=8081)
+\item 
+void \mbox{\hyperlink{class_server_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_server_a22dbfd5db73d391d615a0bfd69077fb6}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_server_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_a5ce22b7f2a3034ea26ecbe337051380a}\index{Server@{Server}!clientConnected@{clientConnected}}
+\index{clientConnected@{clientConnected}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{clientConnected}{clientConnected}}
+{\footnotesize\ttfamily \label{class_server_a5ce22b7f2a3034ea26ecbe337051380a} 
+void Server\+::client\+Connected (\begin{DoxyParamCaption}\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_server_a94e1f77353957756463d545ece4b6f1d}\index{Server@{Server}!clientDisconnected@{clientDisconnected}}
+\index{clientDisconnected@{clientDisconnected}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{clientDisconnected}{clientDisconnected}}
+{\footnotesize\ttfamily \label{class_server_a94e1f77353957756463d545ece4b6f1d} 
+void Server\+::client\+Disconnected (\begin{DoxyParamCaption}\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_server_a22dbfd5db73d391d615a0bfd69077fb6}\index{Server@{Server}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_server_a22dbfd5db73d391d615a0bfd69077fb6} 
+\mbox{\hyperlink{class_server}{Server}} \texorpdfstring{$\ast$}{*} Server\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_server_a22dbfd5db73d391d615a0bfd69077fb6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_ab4c74ceee11a9559d3b728384e0020c4}\index{Server@{Server}!messageReceived@{messageReceived}}
+\index{messageReceived@{messageReceived}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{messageReceived}{messageReceived}}
+{\footnotesize\ttfamily \label{class_server_ab4c74ceee11a9559d3b728384e0020c4} 
+void Server\+::message\+Received (\begin{DoxyParamCaption}\item[{QTcp\+Socket \texorpdfstring{$\ast$}{*}}]{client}{, }\item[{const QByte\+Array \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_server_a117a1e799d6acf6c3d306b9d291b7cbd}\index{Server@{Server}!start@{start}}
+\index{start@{start}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_server_a117a1e799d6acf6c3d306b9d291b7cbd} 
+bool Server\+::start (\begin{DoxyParamCaption}\item[{quint16}]{tcp\+Port}{ = {\ttfamily 1234}, }\item[{quint16}]{ws\+Port}{ = {\ttfamily 8081}}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_server_a117a1e799d6acf6c3d306b9d291b7cbd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_server_a07c45a7e101a3926d8f9685c3c5d14e4}\index{Server@{Server}!stop@{stop}}
+\index{stop@{stop}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_server_a07c45a7e101a3926d8f9685c3c5d14e4} 
+void Server\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

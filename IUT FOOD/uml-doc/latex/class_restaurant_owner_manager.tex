@@ -1,0 +1,305 @@
+\doxysection{Restaurant\+Owner\+Manager Class Reference}
+\hypertarget{class_restaurant_owner_manager}{}\label{class_restaurant_owner_manager}\index{RestaurantOwnerManager@{RestaurantOwnerManager}}
+
+
+{\ttfamily \#include $<$restaurantownermanager.\+h$>$}
+
+
+
+Inheritance diagram for Restaurant\+Owner\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_restaurant_owner_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Restaurant\+Owner\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_restaurant_owner_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_aeb8e1ff46878c99e31802afd64514ee9}{restaurant\+Info\+Received}} (const QJson\+Object \&info)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a7434c974756ba7e9fd3ffbedf67ee82f}{menu\+Received}} (const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&menu)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a6c855db40d9d422fecb15bacc8814b2a}{orders\+Received}} (const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&orders)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a637942258eee501e54dd99d2e5fafda1}{update\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_af2594d1309a88c11852db3d898e89743}{error}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_afa435bf7aa257f80a2116bbf5c32af1c}{profile\+Received}} (const QJson\+Object \&profile)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a94c328fed13e5c47291b33e2fd621c7d}{restaurants\+Received}} (const QJson\+Array \&restaurants)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}{\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a65c34ba8bf0d190879927506b55da426}{get\+Restaurant\+Info}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_aa64a6113d275007a207abebe1d15a1a9}{update\+Restaurant\+Info}} (const QJson\+Object \&info)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_ac1378a64ae10bae7f54bc339fcb2596d}{update\+Restaurant\+Status}} (bool is\+Open)
+\item 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_manager_ab861969f97ee00de1d5d76f20f6f1d36}{get\+Restaurant}} () const
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a57aedaf8b7df7accabb361d03d60d98e}{get\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_aec25c31fc9c55ec1722755026d42ff86}{add\+Menu\+Item}} (const QJson\+Object \&item)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_aadd53a81d81fd2ff8ccb436264ef2cee}{add\+Menu\+Item}} (const QString \&name, const QString \&description, double price, const QString \&ingredients, const QString \&category, const QString \&image\+Url="{}"{})
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a9e799e32f6914473b6295beca41120ff}{update\+Menu\+Item}} (const QString \&item\+Id, const QJson\+Object \&item)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a6ac0b7ca409f537cc4360b6e1a5fd4e3}{remove\+Menu\+Item}} (const QString \&item\+Id)
+\item 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_restaurant_owner_manager_a1a3524c6e659161197ee73413f709585}{get\+Menu\+Items}} () const
+\item 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_manager_ad964ae949bae859872f82c170ccf34f4}{get\+Menu\+Item}} (const QString \&item\+Id) const
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a930cc3d1e72c0cc5d749d4ae3aac608e}{get\+Orders}} ()
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_afba4359ab0129c26bdff96fa3ae4cdaf}{update\+Order\+Status}} (const QString \&order\+Id, const QString \&status)
+\item 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_restaurant_owner_manager_a52cf7d6d8e1bb23930f1449d2d312a79}{get\+Order\+List}} () const
+\item 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_manager_a9fc41c571b8e1358f2e21cd0326999f2}{get\+Order}} (const QString \&order\+Id) const
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_a28333be1d3ed242432b5ca717c147f5f}{fetch\+Profile}} (const QString \&owner\+Id)
+\item 
+void \mbox{\hyperlink{class_restaurant_owner_manager_af8d7537d7d8ff24e82e9f48d2523d0b2}{fetch\+Restaurants}} (const QString \&owner\+Id)
+\item 
+\mbox{\hyperlink{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}{\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner\+Manager}} ()
+\item 
+QVariant\+Map \mbox{\hyperlink{class_restaurant_owner_manager_a463ec8a09b3ddc2f3c1282dff8f9a00a}{get\+Profile}} (const QString \&owner\+Id)
+\item 
+QJson\+Array \mbox{\hyperlink{class_restaurant_owner_manager_a65e67135852fac31453ea8215448fe9a}{get\+Restaurants}} (const QString \&owner\+Id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_restaurant_owner_manager}{Restaurant\+Owner\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_manager_a1227c0aab66fcdd4b23e14084fb9ab60}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_restaurant_owner_manager}{Restaurant\+Owner\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_restaurant_owner_manager_a1dd070499ba72aeb4cb2617af18dbf35}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_restaurant_owner_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!````~RestaurantOwnerManager@{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager}}
+\index{````~RestaurantOwnerManager@{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager()}{\string~RestaurantOwnerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf} 
+Restaurant\+Owner\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!````~RestaurantOwnerManager@{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager}}
+\index{````~RestaurantOwnerManager@{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RestaurantOwnerManager()}{\string~RestaurantOwnerManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_ac670065667669ff8d03c84b49a6de0bf} 
+Restaurant\+Owner\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Restaurant\+Owner\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_restaurant_owner_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_restaurant_owner_manager_aec25c31fc9c55ec1722755026d42ff86}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_aec25c31fc9c55ec1722755026d42ff86} 
+void Restaurant\+Owner\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{item}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_aadd53a81d81fd2ff8ccb436264ef2cee}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!addMenuItem@{addMenuItem}}
+\index{addMenuItem@{addMenuItem}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{addMenuItem()}{addMenuItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_aadd53a81d81fd2ff8ccb436264ef2cee} 
+void Restaurant\+Owner\+Manager\+::add\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const QString \&}]{description}{, }\item[{double}]{price}{, }\item[{const QString \&}]{ingredients}{, }\item[{const QString \&}]{category}{, }\item[{const QString \&}]{image\+Url}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_manager_aadd53a81d81fd2ff8ccb436264ef2cee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_manager_af2594d1309a88c11852db3d898e89743}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!error@{error}}
+\index{error@{error}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_af2594d1309a88c11852db3d898e89743} 
+void Restaurant\+Owner\+Manager\+::error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_restaurant_owner_manager_af2594d1309a88c11852db3d898e89743_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_restaurant_owner_manager_a28333be1d3ed242432b5ca717c147f5f}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!fetchProfile@{fetchProfile}}
+\index{fetchProfile@{fetchProfile}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{fetchProfile()}{fetchProfile()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a28333be1d3ed242432b5ca717c147f5f} 
+void Restaurant\+Owner\+Manager\+::fetch\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_af8d7537d7d8ff24e82e9f48d2523d0b2}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!fetchRestaurants@{fetchRestaurants}}
+\index{fetchRestaurants@{fetchRestaurants}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{fetchRestaurants()}{fetchRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_af8d7537d7d8ff24e82e9f48d2523d0b2} 
+void Restaurant\+Owner\+Manager\+::fetch\+Restaurants (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_a1227c0aab66fcdd4b23e14084fb9ab60}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a1227c0aab66fcdd4b23e14084fb9ab60} 
+\mbox{\hyperlink{class_restaurant_owner_manager}{Restaurant\+Owner\+Manager}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_restaurant_owner_manager_a1dd070499ba72aeb4cb2617af18dbf35}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a1dd070499ba72aeb4cb2617af18dbf35} 
+\mbox{\hyperlink{class_restaurant_owner_manager}{Restaurant\+Owner\+Manager}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_restaurant_owner_manager_a57aedaf8b7df7accabb361d03d60d98e}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getMenu@{getMenu}}
+\index{getMenu@{getMenu}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getMenu()}{getMenu()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a57aedaf8b7df7accabb361d03d60d98e} 
+void Restaurant\+Owner\+Manager\+::get\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_ad964ae949bae859872f82c170ccf34f4}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getMenuItem@{getMenuItem}}
+\index{getMenuItem@{getMenuItem}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItem()}{getMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_ad964ae949bae859872f82c170ccf34f4} 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+Manager\+::get\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_manager_a1a3524c6e659161197ee73413f709585}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getMenuItems@{getMenuItems}}
+\index{getMenuItems@{getMenuItems}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getMenuItems()}{getMenuItems()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a1a3524c6e659161197ee73413f709585} 
+QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ Restaurant\+Owner\+Manager\+::get\+Menu\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_manager_a9fc41c571b8e1358f2e21cd0326999f2}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a9fc41c571b8e1358f2e21cd0326999f2} 
+\mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+Manager\+::get\+Order (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_manager_a52cf7d6d8e1bb23930f1449d2d312a79}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getOrderList@{getOrderList}}
+\index{getOrderList@{getOrderList}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getOrderList()}{getOrderList()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a52cf7d6d8e1bb23930f1449d2d312a79} 
+QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ Restaurant\+Owner\+Manager\+::get\+Order\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_manager_a930cc3d1e72c0cc5d749d4ae3aac608e}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getOrders@{getOrders}}
+\index{getOrders@{getOrders}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getOrders()}{getOrders()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a930cc3d1e72c0cc5d749d4ae3aac608e} 
+void Restaurant\+Owner\+Manager\+::get\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_a463ec8a09b3ddc2f3c1282dff8f9a00a}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getProfile@{getProfile}}
+\index{getProfile@{getProfile}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getProfile()}{getProfile()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a463ec8a09b3ddc2f3c1282dff8f9a00a} 
+QVariant\+Map Restaurant\+Owner\+Manager\+::get\+Profile (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_ab861969f97ee00de1d5d76f20f6f1d36}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getRestaurant@{getRestaurant}}
+\index{getRestaurant@{getRestaurant}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurant()}{getRestaurant()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_ab861969f97ee00de1d5d76f20f6f1d36} 
+\mbox{\hyperlink{class_restaurant}{Restaurant}} \texorpdfstring{$\ast$}{*} Restaurant\+Owner\+Manager\+::get\+Restaurant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_restaurant_owner_manager_a65c34ba8bf0d190879927506b55da426}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getRestaurantInfo@{getRestaurantInfo}}
+\index{getRestaurantInfo@{getRestaurantInfo}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurantInfo()}{getRestaurantInfo()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a65c34ba8bf0d190879927506b55da426} 
+void Restaurant\+Owner\+Manager\+::get\+Restaurant\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_a65e67135852fac31453ea8215448fe9a}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!getRestaurants@{getRestaurants}}
+\index{getRestaurants@{getRestaurants}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{getRestaurants()}{getRestaurants()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a65e67135852fac31453ea8215448fe9a} 
+QJson\+Array Restaurant\+Owner\+Manager\+::get\+Restaurants (\begin{DoxyParamCaption}\item[{const QString \&}]{owner\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_a7434c974756ba7e9fd3ffbedf67ee82f}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!menuReceived@{menuReceived}}
+\index{menuReceived@{menuReceived}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{menuReceived}{menuReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a7434c974756ba7e9fd3ffbedf67ee82f} 
+void Restaurant\+Owner\+Manager\+::menu\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_menu_item}{Menu\+Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{menu}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_owner_manager_a6c855db40d9d422fecb15bacc8814b2a}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!ordersReceived@{ordersReceived}}
+\index{ordersReceived@{ordersReceived}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{ordersReceived}{ordersReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a6c855db40d9d422fecb15bacc8814b2a} 
+void Restaurant\+Owner\+Manager\+::orders\+Received (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_order}{Order}} \texorpdfstring{$\ast$}{*} $>$ \&}]{orders}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_owner_manager_afa435bf7aa257f80a2116bbf5c32af1c}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!profileReceived@{profileReceived}}
+\index{profileReceived@{profileReceived}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{profileReceived}{profileReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_afa435bf7aa257f80a2116bbf5c32af1c} 
+void Restaurant\+Owner\+Manager\+::profile\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{profile}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_owner_manager_a6ac0b7ca409f537cc4360b6e1a5fd4e3}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!removeMenuItem@{removeMenuItem}}
+\index{removeMenuItem@{removeMenuItem}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{removeMenuItem()}{removeMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a6ac0b7ca409f537cc4360b6e1a5fd4e3} 
+void Restaurant\+Owner\+Manager\+::remove\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{item\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_aeb8e1ff46878c99e31802afd64514ee9}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!restaurantInfoReceived@{restaurantInfoReceived}}
+\index{restaurantInfoReceived@{restaurantInfoReceived}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{restaurantInfoReceived}{restaurantInfoReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_aeb8e1ff46878c99e31802afd64514ee9} 
+void Restaurant\+Owner\+Manager\+::restaurant\+Info\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_owner_manager_a94c328fed13e5c47291b33e2fd621c7d}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!restaurantsReceived@{restaurantsReceived}}
+\index{restaurantsReceived@{restaurantsReceived}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{restaurantsReceived}{restaurantsReceived}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a94c328fed13e5c47291b33e2fd621c7d} 
+void Restaurant\+Owner\+Manager\+::restaurants\+Received (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{restaurants}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_restaurant_owner_manager_a9e799e32f6914473b6295beca41120ff}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!updateMenuItem@{updateMenuItem}}
+\index{updateMenuItem@{updateMenuItem}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{updateMenuItem()}{updateMenuItem()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a9e799e32f6914473b6295beca41120ff} 
+void Restaurant\+Owner\+Manager\+::update\+Menu\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{item\+Id}{, }\item[{const QJson\+Object \&}]{item}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_afba4359ab0129c26bdff96fa3ae4cdaf}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!updateOrderStatus@{updateOrderStatus}}
+\index{updateOrderStatus@{updateOrderStatus}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{updateOrderStatus()}{updateOrderStatus()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_afba4359ab0129c26bdff96fa3ae4cdaf} 
+void Restaurant\+Owner\+Manager\+::update\+Order\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{order\+Id}{, }\item[{const QString \&}]{status}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_aa64a6113d275007a207abebe1d15a1a9}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!updateRestaurantInfo@{updateRestaurantInfo}}
+\index{updateRestaurantInfo@{updateRestaurantInfo}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantInfo()}{updateRestaurantInfo()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_aa64a6113d275007a207abebe1d15a1a9} 
+void Restaurant\+Owner\+Manager\+::update\+Restaurant\+Info (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{info}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_ac1378a64ae10bae7f54bc339fcb2596d}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!updateRestaurantStatus@{updateRestaurantStatus}}
+\index{updateRestaurantStatus@{updateRestaurantStatus}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{updateRestaurantStatus()}{updateRestaurantStatus()}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_ac1378a64ae10bae7f54bc339fcb2596d} 
+void Restaurant\+Owner\+Manager\+::update\+Restaurant\+Status (\begin{DoxyParamCaption}\item[{bool}]{is\+Open}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_restaurant_owner_manager_a637942258eee501e54dd99d2e5fafda1}\index{RestaurantOwnerManager@{RestaurantOwnerManager}!updateSuccess@{updateSuccess}}
+\index{updateSuccess@{updateSuccess}!RestaurantOwnerManager@{RestaurantOwnerManager}}
+\doxysubsubsection{\texorpdfstring{updateSuccess}{updateSuccess}}
+{\footnotesize\ttfamily \label{class_restaurant_owner_manager_a637942258eee501e54dd99d2e5fafda1} 
+void Restaurant\+Owner\+Manager\+::update\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantownermanager_8h}{restaurantownermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2restaurantownermanager_8h}{restaurantownermanager.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/network/\mbox{\hyperlink{_i_u_t_food_client_2src_2network_2restaurantownermanager_8cpp}{restaurantownermanager.\+cpp}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{_i_u_t_food_server_2restaurantownermanager_8cpp}{restaurantownermanager.\+cpp}}\end{DoxyCompactItemize}

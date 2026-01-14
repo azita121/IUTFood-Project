@@ -1,0 +1,12 @@
+<map id="Cart::removeItem" name="Cart::removeItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,129,131"/>
+<area shape="rect" id="Node000002" href="$class_cart.html#a3c5b111c12fafdde5c3d9ff9ad7a84cd" title=" " alt="" coords="177,29,343,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,101,176,66,194,59,196,64,178,70,98,106"/>
+<area shape="rect" id="Node000003" href="$class_cart.html#a00c69f6c1ba8fe018849c03a27ad2a92" title=" " alt="" coords="192,104,328,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="129,115,177,115,177,120,129,120"/>
+<area shape="rect" id="Node000004" href="$class_cart.html#ac4b8276f2f31cca966f814e3a0663871" title=" " alt="" coords="179,179,340,205"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="105,129,210,170,208,175,103,134"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="227,30,221,21,225,11,238,5,260,3,283,5,295,12,293,16,281,10,260,8,240,10,229,15,226,20,231,27"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="227,105,221,95,225,86,238,79,260,77,283,80,295,86,293,91,281,85,260,83,240,85,229,89,226,95,231,102"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="227,180,221,170,225,160,238,154,260,152,283,155,295,161,293,166,281,160,260,157,240,159,229,164,226,169,231,177"/>
+</map>

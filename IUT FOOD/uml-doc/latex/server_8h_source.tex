@@ -1,0 +1,65 @@
+\doxysection{server.\+h}
+\hypertarget{server_8h_source}{}\label{server_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/server.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodServer/server.h}}
+\mbox{\hyperlink{server_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{invoker_8h}{invoker.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{orderstatus_8h}{orderstatus.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{orderstatusobserver_8h}{orderstatusobserver.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databasemanager_8h}{databasemanager.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{authsystem_8h}{authsystem.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{websocketserver_8h}{websocketserver.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_database_manager}{DatabaseManager}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_auth_system}{AuthSystem}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_web_socket_server}{WebSocketServer}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }Server\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ Server*\ \mbox{\hyperlink{class_server_a22dbfd5db73d391d615a0bfd69077fb6}{getInstance}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a117a1e799d6acf6c3d306b9d291b7cbd}{start}}(quint16\ tcpPort\ =\ 1234,\ quint16\ wsPort\ =\ 8081);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ Server(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ \ \ \ \ \string~Server();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ Server*\ instance;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ QTcpServer*\ m\_tcpServer;}
+\DoxyCodeLine{00038\ \ \ \ \ QMap<QTcpSocket*,\ QString>\ m\_clients;\ \textcolor{comment}{//\ socket\ -\/>\ userId\ mapping}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_database_manager}{DatabaseManager}}*\ m\_dbManager;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_auth_system}{AuthSystem}}*\ m\_authSystem;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_web_socket_server}{WebSocketServer}}*\ m\_wsServer;}
+\DoxyCodeLine{00042\ \ \ \ \ std::unique\_ptr<Invoker>\ invoker;}
+\DoxyCodeLine{00043\ \ \ \ \ std::unique\_ptr<OrderStatus>\ orderStatus;}
+\DoxyCodeLine{00044\ \ \ \ \ std::unique\_ptr<OrderStatusObserver>\ orderStatusObserver;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ handleNewConnection();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ handleReadyRead();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ handleDisconnection();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ processRequest(QTcpSocket*\ client,\ \textcolor{keyword}{const}\ QJsonObject\&\ request);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ sendResponse(QTcpSocket*\ client,\ \textcolor{keyword}{const}\ QJsonObject\&\ response);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ broadcastOrderUpdate(\textcolor{keyword}{const}\ QString\&\ orderId,\ \textcolor{keyword}{const}\ QString\&\ status);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ signals:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a5ce22b7f2a3034ea26ecbe337051380a}{clientConnected}}(QTcpSocket*\ client);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a94e1f77353957756463d545ece4b6f1d}{clientDisconnected}}(QTcpSocket*\ client);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_ab4c74ceee11a9559d3b728384e0020c4}{messageReceived}}(QTcpSocket*\ client,\ \textcolor{keyword}{const}\ QByteArray\&\ message);}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVER\_H\ }}
+
+\end{DoxyCode}

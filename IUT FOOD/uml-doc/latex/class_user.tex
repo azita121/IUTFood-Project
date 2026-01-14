@@ -1,0 +1,619 @@
+\doxysection{User Class Reference}
+\hypertarget{class_user}{}\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_user__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_user__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}{id\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}{username\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_ac5499813d93d7036856298fc4dc0ee6d}{email\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8df73111f27ccb88fbca65780eb4f267}{user\+Type\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_aa5d86fe542df1e96fe0625785ca23598}{token\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8d0828282aa200e476a7e58424468cb8}{phone\+Number\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a8307723f04d3e841bd2a53a794dae448}{city\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}{location\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}{User}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_user_af9f90160504b90d8917182afb470f54a}{User}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+QString \mbox{\hyperlink{class_user_a52a054713f457dc73a92110c5cde7483}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_user_ad7d2bd0336217880b4d57a75c670c7fc}{username}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a0e27687d36ece83cf40b7c1ccc62d530}{email}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abb223364f7d797b5f054f49a3d41863b}{user\+Type}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a9f9ce917b9a77c20170ccc657d81c6cd}{token}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a5c1a695167d183203b34fa4935ce19fe}{phone\+Number}} () const
+\item 
+QString \mbox{\hyperlink{class_user_abde9fb5af6b50d274d8579ad064acefe}{city}} () const
+\item 
+QString \mbox{\hyperlink{class_user_a63e2a44219f7b621a5f188835585d7d3}{location}} () const
+\item 
+void \mbox{\hyperlink{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}{set\+Id}} (const QString \&\mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}})
+\item 
+void \mbox{\hyperlink{class_user_a3ff12162238cf1b18827800f790c42ea}{set\+Username}} (const QString \&\mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}})
+\item 
+void \mbox{\hyperlink{class_user_a13c5e816e990508b469096580884ce98}{set\+Email}} (const QString \&\mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}})
+\item 
+void \mbox{\hyperlink{class_user_adc479b6551831e6373a27f5b2c155f70}{set\+User\+Type}} (const QString \&\mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}})
+\item 
+void \mbox{\hyperlink{class_user_a57b247a7aee588731eba480e5b691afd}{set\+Token}} (const QString \&\mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}})
+\item 
+void \mbox{\hyperlink{class_user_aeb1c058607918bbac4087441aa6874da}{set\+Phone\+Number}} (const QString \&\mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}})
+\item 
+void \mbox{\hyperlink{class_user_a3e350353440e6a22e91c3f78a9a32a4f}{set\+City}} (const QString \&\mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}})
+\item 
+void \mbox{\hyperlink{class_user_a36ee92f0136e397676675c3023b59b9a}{set\+Location}} (const QString \&\mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}})
+\item 
+QJson\+Object \mbox{\hyperlink{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}{to\+Json}} () const
+\item 
+void \mbox{\hyperlink{class_user_a683f88bbea447ed676c792699fb408c0}{from\+Json}} (const QJson\+Object \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_user_a277da358c40ecdf8219b73115efb2dc2}{from\+Json\+Object}} (const QJson\+Object \&json, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}{id}}
+\item 
+QString \mbox{\hyperlink{class_user_ae4202de2b7974e92a55b913d20b03833}{username}}
+\item 
+QString \mbox{\hyperlink{class_user_a5b7a66a134d017ae18c2d1464f34eb67}{email}}
+\item 
+QString \mbox{\hyperlink{class_user_a28213d058e858f189b43ef9f98ca8fe4}{user\+Type}}
+\item 
+QString \mbox{\hyperlink{class_user_a9496496b134df3cabbdc9717df99cd3d}{token}}
+\item 
+QString \mbox{\hyperlink{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}{phone\+Number}}
+\item 
+QString \mbox{\hyperlink{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}{city}}
+\item 
+QString \mbox{\hyperlink{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}{location}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_user_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1}\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1} 
+User\+::\+User (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ae90821c4c8cc9a5a370f0ad6157adcc1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_af9f90160504b90d8917182afb470f54a}\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_user_af9f90160504b90d8917182afb470f54a} 
+User\+::\+User (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_af9f90160504b90d8917182afb470f54a_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_user_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_abde9fb5af6b50d274d8579ad064acefe}\index{User@{User}!city@{city}}
+\index{city@{city}!User@{User}}
+\doxysubsubsection{\texorpdfstring{city()}{city()}}
+{\footnotesize\ttfamily \label{class_user_abde9fb5af6b50d274d8579ad064acefe} 
+QString User\+::city (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_a8307723f04d3e841bd2a53a794dae448}\index{User@{User}!cityChanged@{cityChanged}}
+\index{cityChanged@{cityChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{cityChanged}{cityChanged}}
+{\footnotesize\ttfamily \label{class_user_a8307723f04d3e841bd2a53a794dae448} 
+void User\+::city\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_user_a8307723f04d3e841bd2a53a794dae448_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a8307723f04d3e841bd2a53a794dae448_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a0e27687d36ece83cf40b7c1ccc62d530}\index{User@{User}!email@{email}}
+\index{email@{email}!User@{User}}
+\doxysubsubsection{\texorpdfstring{email()}{email()}}
+{\footnotesize\ttfamily \label{class_user_a0e27687d36ece83cf40b7c1ccc62d530} 
+QString User\+::email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_ac5499813d93d7036856298fc4dc0ee6d}\index{User@{User}!emailChanged@{emailChanged}}
+\index{emailChanged@{emailChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{emailChanged}{emailChanged}}
+{\footnotesize\ttfamily \label{class_user_ac5499813d93d7036856298fc4dc0ee6d} 
+void User\+::email\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_user_ac5499813d93d7036856298fc4dc0ee6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ac5499813d93d7036856298fc4dc0ee6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a683f88bbea447ed676c792699fb408c0}\index{User@{User}!fromJson@{fromJson}}
+\index{fromJson@{fromJson}!User@{User}}
+\doxysubsubsection{\texorpdfstring{fromJson()}{fromJson()}}
+{\footnotesize\ttfamily \label{class_user_a683f88bbea447ed676c792699fb408c0} 
+void User\+::from\+Json (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a683f88bbea447ed676c792699fb408c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a683f88bbea447ed676c792699fb408c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a277da358c40ecdf8219b73115efb2dc2}\index{User@{User}!fromJsonObject@{fromJsonObject}}
+\index{fromJsonObject@{fromJsonObject}!User@{User}}
+\doxysubsubsection{\texorpdfstring{fromJsonObject()}{fromJsonObject()}}
+{\footnotesize\ttfamily \label{class_user_a277da358c40ecdf8219b73115efb2dc2} 
+\mbox{\hyperlink{class_user}{User}} \texorpdfstring{$\ast$}{*} User\+::from\+Json\+Object (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_user_a277da358c40ecdf8219b73115efb2dc2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a52a054713f457dc73a92110c5cde7483}\index{User@{User}!id@{id}}
+\index{id@{id}!User@{User}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_user_a52a054713f457dc73a92110c5cde7483} 
+QString User\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_af20fc771ebf9e9730dd5c45617a1fcb8}\index{User@{User}!idChanged@{idChanged}}
+\index{idChanged@{idChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{idChanged}{idChanged}}
+{\footnotesize\ttfamily \label{class_user_af20fc771ebf9e9730dd5c45617a1fcb8} 
+void User\+::id\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_user_af20fc771ebf9e9730dd5c45617a1fcb8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_af20fc771ebf9e9730dd5c45617a1fcb8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a63e2a44219f7b621a5f188835585d7d3}\index{User@{User}!location@{location}}
+\index{location@{location}!User@{User}}
+\doxysubsubsection{\texorpdfstring{location()}{location()}}
+{\footnotesize\ttfamily \label{class_user_a63e2a44219f7b621a5f188835585d7d3} 
+QString User\+::location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_a4f5a17e1d8042a47bc5198484f3fcce4}\index{User@{User}!locationChanged@{locationChanged}}
+\index{locationChanged@{locationChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{locationChanged}{locationChanged}}
+{\footnotesize\ttfamily \label{class_user_a4f5a17e1d8042a47bc5198484f3fcce4} 
+void User\+::location\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_user_a4f5a17e1d8042a47bc5198484f3fcce4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a4f5a17e1d8042a47bc5198484f3fcce4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a5c1a695167d183203b34fa4935ce19fe}\index{User@{User}!phoneNumber@{phoneNumber}}
+\index{phoneNumber@{phoneNumber}!User@{User}}
+\doxysubsubsection{\texorpdfstring{phoneNumber()}{phoneNumber()}}
+{\footnotesize\ttfamily \label{class_user_a5c1a695167d183203b34fa4935ce19fe} 
+QString User\+::phone\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_a8d0828282aa200e476a7e58424468cb8}\index{User@{User}!phoneNumberChanged@{phoneNumberChanged}}
+\index{phoneNumberChanged@{phoneNumberChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{phoneNumberChanged}{phoneNumberChanged}}
+{\footnotesize\ttfamily \label{class_user_a8d0828282aa200e476a7e58424468cb8} 
+void User\+::phone\+Number\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_user_a8d0828282aa200e476a7e58424468cb8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a8d0828282aa200e476a7e58424468cb8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a3e350353440e6a22e91c3f78a9a32a4f}\index{User@{User}!setCity@{setCity}}
+\index{setCity@{setCity}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setCity()}{setCity()}}
+{\footnotesize\ttfamily \label{class_user_a3e350353440e6a22e91c3f78a9a32a4f} 
+void User\+::set\+City (\begin{DoxyParamCaption}\item[{const QString \&}]{city}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_user_a3e350353440e6a22e91c3f78a9a32a4f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a3e350353440e6a22e91c3f78a9a32a4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a13c5e816e990508b469096580884ce98}\index{User@{User}!setEmail@{setEmail}}
+\index{setEmail@{setEmail}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setEmail()}{setEmail()}}
+{\footnotesize\ttfamily \label{class_user_a13c5e816e990508b469096580884ce98} 
+void User\+::set\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_user_a13c5e816e990508b469096580884ce98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a13c5e816e990508b469096580884ce98_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a418c2cecf45afb0abf67e6b00ffcc90f}\index{User@{User}!setId@{setId}}
+\index{setId@{setId}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_user_a418c2cecf45afb0abf67e6b00ffcc90f} 
+void User\+::set\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_user_a418c2cecf45afb0abf67e6b00ffcc90f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a418c2cecf45afb0abf67e6b00ffcc90f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a36ee92f0136e397676675c3023b59b9a}\index{User@{User}!setLocation@{setLocation}}
+\index{setLocation@{setLocation}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setLocation()}{setLocation()}}
+{\footnotesize\ttfamily \label{class_user_a36ee92f0136e397676675c3023b59b9a} 
+void User\+::set\+Location (\begin{DoxyParamCaption}\item[{const QString \&}]{location}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_user_a36ee92f0136e397676675c3023b59b9a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a36ee92f0136e397676675c3023b59b9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_aeb1c058607918bbac4087441aa6874da}\index{User@{User}!setPhoneNumber@{setPhoneNumber}}
+\index{setPhoneNumber@{setPhoneNumber}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPhoneNumber()}{setPhoneNumber()}}
+{\footnotesize\ttfamily \label{class_user_aeb1c058607918bbac4087441aa6874da} 
+void User\+::set\+Phone\+Number (\begin{DoxyParamCaption}\item[{const QString \&}]{phone\+Number}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_aeb1c058607918bbac4087441aa6874da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_aeb1c058607918bbac4087441aa6874da_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a57b247a7aee588731eba480e5b691afd}\index{User@{User}!setToken@{setToken}}
+\index{setToken@{setToken}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setToken()}{setToken()}}
+{\footnotesize\ttfamily \label{class_user_a57b247a7aee588731eba480e5b691afd} 
+void User\+::set\+Token (\begin{DoxyParamCaption}\item[{const QString \&}]{token}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_user_a57b247a7aee588731eba480e5b691afd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a57b247a7aee588731eba480e5b691afd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a3ff12162238cf1b18827800f790c42ea}\index{User@{User}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setUsername()}{setUsername()}}
+{\footnotesize\ttfamily \label{class_user_a3ff12162238cf1b18827800f790c42ea} 
+void User\+::set\+Username (\begin{DoxyParamCaption}\item[{const QString \&}]{username}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_user_a3ff12162238cf1b18827800f790c42ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a3ff12162238cf1b18827800f790c42ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_adc479b6551831e6373a27f5b2c155f70}\index{User@{User}!setUserType@{setUserType}}
+\index{setUserType@{setUserType}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setUserType()}{setUserType()}}
+{\footnotesize\ttfamily \label{class_user_adc479b6551831e6373a27f5b2c155f70} 
+void User\+::set\+User\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{user\+Type}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_user_adc479b6551831e6373a27f5b2c155f70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_adc479b6551831e6373a27f5b2c155f70_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6}\index{User@{User}!toJson@{toJson}}
+\index{toJson@{toJson}!User@{User}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily \label{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6} 
+QJson\+Object User\+::to\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a643ba45d6c1b05ed3b0a6db3e922fbf6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_a9f9ce917b9a77c20170ccc657d81c6cd}\index{User@{User}!token@{token}}
+\index{token@{token}!User@{User}}
+\doxysubsubsection{\texorpdfstring{token()}{token()}}
+{\footnotesize\ttfamily \label{class_user_a9f9ce917b9a77c20170ccc657d81c6cd} 
+QString User\+::token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_aa5d86fe542df1e96fe0625785ca23598}\index{User@{User}!tokenChanged@{tokenChanged}}
+\index{tokenChanged@{tokenChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{tokenChanged}{tokenChanged}}
+{\footnotesize\ttfamily \label{class_user_aa5d86fe542df1e96fe0625785ca23598} 
+void User\+::token\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_user_aa5d86fe542df1e96fe0625785ca23598_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_aa5d86fe542df1e96fe0625785ca23598_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_ad7d2bd0336217880b4d57a75c670c7fc}\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{username()}{username()}}
+{\footnotesize\ttfamily \label{class_user_ad7d2bd0336217880b4d57a75c670c7fc} 
+QString User\+::username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f}\index{User@{User}!usernameChanged@{usernameChanged}}
+\index{usernameChanged@{usernameChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{usernameChanged}{usernameChanged}}
+{\footnotesize\ttfamily \label{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f} 
+void User\+::username\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_ad708451f8a6c7c723c9c2ef31fcfac8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_user_abb223364f7d797b5f054f49a3d41863b}\index{User@{User}!userType@{userType}}
+\index{userType@{userType}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userType()}{userType()}}
+{\footnotesize\ttfamily \label{class_user_abb223364f7d797b5f054f49a3d41863b} 
+QString User\+::user\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_user_a8df73111f27ccb88fbca65780eb4f267}\index{User@{User}!userTypeChanged@{userTypeChanged}}
+\index{userTypeChanged@{userTypeChanged}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userTypeChanged}{userTypeChanged}}
+{\footnotesize\ttfamily \label{class_user_a8df73111f27ccb88fbca65780eb4f267} 
+void User\+::user\+Type\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_user_a8df73111f27ccb88fbca65780eb4f267_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user_a8df73111f27ccb88fbca65780eb4f267_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-property-members}
+\Hypertarget{class_user_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8}\index{User@{User}!city@{city}}
+\index{city@{city}!User@{User}}
+\doxysubsubsection{\texorpdfstring{city}{city}}
+{\footnotesize\ttfamily \label{class_user_a83caaef12c8b1bde0a23f2dbf9f9b0e8} 
+QString User\+::city\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_a5b7a66a134d017ae18c2d1464f34eb67}\index{User@{User}!email@{email}}
+\index{email@{email}!User@{User}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily \label{class_user_a5b7a66a134d017ae18c2d1464f34eb67} 
+QString User\+::email\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4}\index{User@{User}!id@{id}}
+\index{id@{id}!User@{User}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_user_ac58e3c6c7b6f4dc1444c5265049eaee4} 
+QString User\+::id\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b}\index{User@{User}!location@{location}}
+\index{location@{location}!User@{User}}
+\doxysubsubsection{\texorpdfstring{location}{location}}
+{\footnotesize\ttfamily \label{class_user_a1bae4ae779dae3bef0b5e03da3d0e89b} 
+QString User\+::location\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6}\index{User@{User}!phoneNumber@{phoneNumber}}
+\index{phoneNumber@{phoneNumber}!User@{User}}
+\doxysubsubsection{\texorpdfstring{phoneNumber}{phoneNumber}}
+{\footnotesize\ttfamily \label{class_user_a87c1d6ff82f0c0046ee4e039e125bcb6} 
+QString User\+::phone\+Number\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_a9496496b134df3cabbdc9717df99cd3d}\index{User@{User}!token@{token}}
+\index{token@{token}!User@{User}}
+\doxysubsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily \label{class_user_a9496496b134df3cabbdc9717df99cd3d} 
+QString User\+::token\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_ae4202de2b7974e92a55b913d20b03833}\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily \label{class_user_ae4202de2b7974e92a55b913d20b03833} 
+QString User\+::username\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_user_a28213d058e858f189b43ef9f98ca8fe4}\index{User@{User}!userType@{userType}}
+\index{userType@{userType}!User@{User}}
+\doxysubsubsection{\texorpdfstring{userType}{userType}}
+{\footnotesize\ttfamily \label{class_user_a28213d058e858f189b43ef9f98ca8fe4} 
+QString User\+::user\+Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Client/src/models/\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}

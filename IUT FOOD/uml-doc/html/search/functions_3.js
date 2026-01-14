@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['debug_0',['debug',['../class_logger.html#abb44146978306797963a5b719006bd25',1,'Logger']]],
+  ['deleteaccount_1',['deleteAccount',['../class_auth_system.html#a05c8819022ccb3407947d51e0bbdc0e4',1,'AuthSystem']]],
+  ['deletecustomer_2',['deleteCustomer',['../class_database_manager.html#a85f0b780496914e1c219183cdaef2434',1,'DatabaseManager']]],
+  ['deletemenuitem_3',['deleteMenuItem',['../class_network_manager.html#a10132227e3573fd0cf8c1728337a0d17',1,'NetworkManager::deleteMenuItem()'],['../class_database_manager.html#a3c33f9f9065dfebaaa5324a03987664c',1,'DatabaseManager::deleteMenuItem()'],['../class_menu_manager.html#a98522d59bbed70327dc368ef627e3c30',1,'MenuManager::deleteMenuItem()'],['../class_restaurant_manager.html#a1ac68f0f49ce90118449d615386bd991',1,'RestaurantManager::deleteMenuItem()'],['../_i_u_t_food_client_2src_2network_2menumanager_8h.html#aa9abf44b57257c3e8af45a6cbd8554d4',1,'deleteMenuItem():&#160;menumanager.h']]],
+  ['deleteorder_4',['deleteOrder',['../class_database_manager.html#ace35ff161b6bed227686606b83a6e8e7',1,'DatabaseManager']]],
+  ['deleterating_5',['deleteRating',['../class_restaurant_manager.html#a2a4246452f5de396eb9ce6cfdc53cb44',1,'RestaurantManager']]],
+  ['deleterestaurant_6',['deleteRestaurant',['../class_database_manager.html#a62f8422259f6c326d89d9ffd741db36a',1,'DatabaseManager']]],
+  ['deleterestaurantowner_7',['deleteRestaurantOwner',['../class_database_manager.html#a6f24a9d43d9760336f8ae903e616b3bf',1,'DatabaseManager']]],
+  ['deleteuser_8',['deleteUser',['../class_admin_manager.html#a464a7ad83b47c983068874398f08986a',1,'AdminManager']]],
+  ['deliverytime_9',['deliveryTime',['../class_order.html#a53d876a339c1d5a37606e503dbab3ddb',1,'Order']]],
+  ['deliverytimechanged_10',['deliveryTimeChanged',['../class_order.html#a74667124f4d3369baafdcae64c3112b8',1,'Order']]],
+  ['description_11',['description',['../class_menu_item.html#a44d8c64a13b1613f2cc7351fc818f1de',1,'MenuItem::description()'],['../class_restaurant.html#a317c14f6195c5aa06a73d79b020b4058',1,'Restaurant::description()']]],
+  ['descriptionchanged_12',['descriptionChanged',['../class_menu_item.html#abe20e155b355274a0eac06f785df9b29',1,'MenuItem::descriptionChanged()'],['../class_restaurant.html#acecc405bacc6046314250d3727c0d73e',1,'Restaurant::descriptionChanged()']]],
+  ['detach_13',['detach',['../class_order_status.html#a1f15fc83499e90dbcde0a3bb11a0b00d',1,'OrderStatus']]],
+  ['disconnect_14',['disconnect',['../class_network_manager.html#a751f87add468a5ddc70c4087ab80533f',1,'NetworkManager::disconnect()'],['../class_database_manager.html#a5da4f201fd5f9fe8f02ea9d64da9a803',1,'DatabaseManager::disconnect()']]],
+  ['disconnected_15',['disconnected',['../class_network_manager.html#a3c9d18963e77a155faf338b86927e2e5',1,'NetworkManager']]]
+];

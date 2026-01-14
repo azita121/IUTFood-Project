@@ -1,0 +1,54 @@
+\doxysection{authmanager.\+h}
+\hypertarget{authmanager_8h_source}{}\label{authmanager_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/authmanager.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/network/authmanager.h}}
+\mbox{\hyperlink{authmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AUTHMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AUTHMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{../models/user.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{networkmanager_8h}{networkmanager.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }AuthManager\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_auth_manager_a22ebdba5a5250d020d743e98884986f8}{currentUser}}\ READ\ \mbox{\hyperlink{class_auth_manager_a22ebdba5a5250d020d743e98884986f8}{currentUser}}\ NOTIFY\ \mbox{\hyperlink{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020}{currentUserChanged}})}
+\DoxyCodeLine{00013\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_auth_manager_a4452bb206c90c657f269d75447a6a761}{isLoggedIn}}\ READ\ \mbox{\hyperlink{class_auth_manager_a4452bb206c90c657f269d75447a6a761}{isLoggedIn}}\ NOTIFY\ \mbox{\hyperlink{class_auth_manager_aa732c46f24f41fddd8f5710965872e21}{loginStateChanged}})}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ public:}
+\DoxyCodeLine{00016\ \ \ \ \ static\ AuthManager*\ \mbox{\hyperlink{class_auth_manager_a4c3a961c32b040fa1c990f11e778b97b}{getInstance}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_ad1819697a153d833ed6ee3a9b558ff41}{login}}(const\ QString\ \&loginId,\ const\ QString\ \&password);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a27545eb79d41c6fdf32fbe811efb197d}{registerUser}}(const\ QString\ \&firstName,\ const\ QString\ \&lastName,\ const\ QString\ \&email,\ const\ QString\ \&phone,\ const\ QString\ \&password,\ const\ QString\ \&userType);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_afb1cedb0fe6ae60b614bf1279e0a1e76}{logout}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ \mbox{\hyperlink{class_auth_manager_a22ebdba5a5250d020d743e98884986f8}{currentUser}}()\ const;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_auth_manager_a4452bb206c90c657f269d75447a6a761}{isLoggedIn}}()\ const;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a71512e43eaa0b9dba241ba98491a3f2a}{registerCustomer}}(const\ QString\ \&firstName,\ const\ QString\ \&lastName,\ const\ QString\ \&email,\ const\ QString\ \&phone,\ const\ QString\ \&password,\ const\ QString\ \&location);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_aaf25ddf83c2c3b62e8d3220ab4ba88fc}{registerRestaurantOwner}}(const\ QString\ \&firstName,\ const\ QString\ \&lastName,\ const\ QString\ \&email,\ const\ QString\ \&phone,\ const\ QString\ \&password,\ const\ QString\ \&restaurantName,\ const\ QString\ \&restaurantNumber,\ const\ QString\ \&location);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ signals:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a7706b00fb312b43fd9a55e9362658226}{loginSuccess}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a154d3bbedf5d59e645c6bf2fa9f7a7e4}{loginFailed}}(const\ QString\ \&error);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a63ab7f1f77b04942dc39ebe5ce9cee19}{registerSuccess}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a4adf16581a720782f0ddda3811b08b4c}{registerFailed}}(const\ QString\ \&error);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a01c335432f64dcbcd977636ffb4925fc}{logoutSuccess}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_a808b782a0ec22a41be2abc5bdd7f6020}{currentUserChanged}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auth_manager_aa732c46f24f41fddd8f5710965872e21}{loginStateChanged}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ private:}
+\DoxyCodeLine{00035\ \ \ \ \ explicit\ AuthManager(QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00036\ \ \ \ \ \string~AuthManager();}
+\DoxyCodeLine{00037\ \ \ \ \ static\ AuthManager*\ instance;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_network_manager}{NetworkManager}}*\ m\_networkManager;}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_user}{User}}*\ m\_currentUser;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ handleLoginSuccess(const\ QJsonObject\ \&userData);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ handleLoginFailed(const\ QString\ \&error);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRegisterSuccess();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ handleRegisterFailed(const\ QString\ \&error);}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUTHMANAGER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<map id="User" name="User">
+<area shape="rect" id="Node000001" title=" " alt="" coords="204,123,328,576"/>
+<area shape="rect" id="Node000003" href="$class_admin.html" title=" " alt="" coords="5,667,175,885"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,514,138,668,133,666,196,512"/>
+<area shape="rect" id="Node000004" href="$class_customer.html" title=" " alt="" coords="200,624,333,928"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,591,269,624,264,624,264,591"/>
+<area shape="rect" id="Node000005" href="$class_restaurant_owner.html" title=" " alt="" coords="357,624,499,928"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="336,527,373,623,368,625,331,529"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="237,5,296,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,90,269,123,264,123,264,90"/>
+</map>

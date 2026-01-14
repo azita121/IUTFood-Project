@@ -1,0 +1,9 @@
+<map id="ChatMessage::setContent" name="ChatMessage::setContent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="481,31,655,57"/>
+<area shape="rect" id="Node000002" href="$class_chat_message.html#a53f2510970fdc55c20cb2be246d71f9a" title=" " alt="" coords="257,5,421,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,35,421,30,422,25,466,30"/>
+<area shape="rect" id="Node000004" href="$class_chat_manager.html#a0ed92523423943808862419a69a2fa18" title=" " alt="" coords="245,56,433,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="466,58,434,62,433,56,465,53"/>
+<area shape="rect" id="Node000003" href="$class_chat_message.html#a9f7245193bae14fc23d560a7c7527a10" title=" " alt="" coords="5,5,197,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="242,21,197,21,197,16,242,16"/>
+</map>

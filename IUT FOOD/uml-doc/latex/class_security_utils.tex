@@ -1,0 +1,133 @@
+\doxysection{Security\+Utils Class Reference}
+\hypertarget{class_security_utils}{}\label{class_security_utils}\index{SecurityUtils@{SecurityUtils}}
+
+
+{\ttfamily \#include $<$securityutils.\+h$>$}
+
+
+
+Collaboration diagram for Security\+Utils\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_security_utils__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_security_utils_ad5691c29a484cfb28720fbfe5b6b38bf}{hash\+Password}} (const QString \&password)
+\item 
+static bool \mbox{\hyperlink{class_security_utils_a1478f9e338c39a92d94defe4f7366263}{verify\+Password}} (const QString \&password, const QString \&hashed\+Password)
+\item 
+static QString \mbox{\hyperlink{class_security_utils_aaa5534edd2ddf9605dc5b2cbc2b2baeb}{generate\+Session\+Token}} ()
+\item 
+static bool \mbox{\hyperlink{class_security_utils_a0eb92f84b7409a1ea736365a8230602f}{is\+Token\+Expired}} (const QString \&token)
+\item 
+static QString \mbox{\hyperlink{class_security_utils_af8c7de102de7d3a7dff7990f67d579e2}{generate\+Salt}} ()
+\item 
+static QString \mbox{\hyperlink{class_security_utils_a1549b43a673848ef7bab3f5a8ac32ee6}{hash\+With\+Salt}} (const QString \&password, const QString \&salt)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_security_utils_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_security_utils_af8c7de102de7d3a7dff7990f67d579e2}\index{SecurityUtils@{SecurityUtils}!generateSalt@{generateSalt}}
+\index{generateSalt@{generateSalt}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{generateSalt()}{generateSalt()}}
+{\footnotesize\ttfamily \label{class_security_utils_af8c7de102de7d3a7dff7990f67d579e2} 
+QString Security\+Utils\+::generate\+Salt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_af8c7de102de7d3a7dff7990f67d579e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_security_utils_aaa5534edd2ddf9605dc5b2cbc2b2baeb}\index{SecurityUtils@{SecurityUtils}!generateSessionToken@{generateSessionToken}}
+\index{generateSessionToken@{generateSessionToken}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{generateSessionToken()}{generateSessionToken()}}
+{\footnotesize\ttfamily \label{class_security_utils_aaa5534edd2ddf9605dc5b2cbc2b2baeb} 
+QString Security\+Utils\+::generate\+Session\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_aaa5534edd2ddf9605dc5b2cbc2b2baeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_security_utils_ad5691c29a484cfb28720fbfe5b6b38bf}\index{SecurityUtils@{SecurityUtils}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{hashPassword()}{hashPassword()}}
+{\footnotesize\ttfamily \label{class_security_utils_ad5691c29a484cfb28720fbfe5b6b38bf} 
+QString Security\+Utils\+::hash\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_ad5691c29a484cfb28720fbfe5b6b38bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_ad5691c29a484cfb28720fbfe5b6b38bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_security_utils_a1549b43a673848ef7bab3f5a8ac32ee6}\index{SecurityUtils@{SecurityUtils}!hashWithSalt@{hashWithSalt}}
+\index{hashWithSalt@{hashWithSalt}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{hashWithSalt()}{hashWithSalt()}}
+{\footnotesize\ttfamily \label{class_security_utils_a1549b43a673848ef7bab3f5a8ac32ee6} 
+QString Security\+Utils\+::hash\+With\+Salt (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{, }\item[{const QString \&}]{salt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_a1549b43a673848ef7bab3f5a8ac32ee6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_security_utils_a0eb92f84b7409a1ea736365a8230602f}\index{SecurityUtils@{SecurityUtils}!isTokenExpired@{isTokenExpired}}
+\index{isTokenExpired@{isTokenExpired}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{isTokenExpired()}{isTokenExpired()}}
+{\footnotesize\ttfamily \label{class_security_utils_a0eb92f84b7409a1ea736365a8230602f} 
+bool Security\+Utils\+::is\+Token\+Expired (\begin{DoxyParamCaption}\item[{const QString \&}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_a0eb92f84b7409a1ea736365a8230602f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_security_utils_a1478f9e338c39a92d94defe4f7366263}\index{SecurityUtils@{SecurityUtils}!verifyPassword@{verifyPassword}}
+\index{verifyPassword@{verifyPassword}!SecurityUtils@{SecurityUtils}}
+\doxysubsubsection{\texorpdfstring{verifyPassword()}{verifyPassword()}}
+{\footnotesize\ttfamily \label{class_security_utils_a1478f9e338c39a92d94defe4f7366263} 
+bool Security\+Utils\+::verify\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{, }\item[{const QString \&}]{hashed\+Password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_a1478f9e338c39a92d94defe4f7366263_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_security_utils_a1478f9e338c39a92d94defe4f7366263_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{securityutils_8h}{securityutils.\+h}}\item 
+IUTFood-\/\+Project-\/client-\/codes/\+IUTFood\+Server/\mbox{\hyperlink{securityutils_8cpp}{securityutils.\+cpp}}\end{DoxyCompactItemize}

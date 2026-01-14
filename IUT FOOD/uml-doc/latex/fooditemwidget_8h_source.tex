@@ -1,0 +1,48 @@
+\doxysection{fooditemwidget.\+h}
+\hypertarget{fooditemwidget_8h_source}{}\label{fooditemwidget_8h_source}\index{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/fooditemwidget.h@{IUTFood-\/Project-\/client-\/codes/IUTFoodClient/src/UI/fooditemwidget.h}}
+\mbox{\hyperlink{fooditemwidget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FOODITEMWIDGET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FOODITEMWIDGET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_u_i_2restaurant_8h}{restaurant.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMenu>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_food_item_widget}{FoodItemWidget}};}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_food_item_widget_a26e38c9eab3a2afa9e0379cb4f2c59e4}{FoodItemWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_food_item_widget_a26e38c9eab3a2afa9e0379cb4f2c59e4}{FoodItemWidget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_food_item_widget_a5c43e4a90dc7f9f8df7a16b2c0efdcd8}{\string~FoodItemWidget}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_ad616a90cf90fbe373ea0be3cac9680b1}{setFoodData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_a7b1be1bc227b1f0f5c989c4bfed3feb5}{setReadOnly}}(\textcolor{keywordtype}{bool}\ readOnly);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_a9b45c3bfe6ac10c25f763ad1a6e23786}{setOwnerMode}}(\textcolor{keywordtype}{bool}\ owner);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_a442fbbd1ff545974a02cf322d794d791}{setShowAddButton}}(\textcolor{keywordtype}{bool}\ show);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_ade2fdeb2c1576a6832fd73bc5a200728}{hidePlusMinusButtons}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_addFoodButton\_triggered(QAction\ *arg1);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_removeFoodButton\_triggered(QAction\ *arg1);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ signals:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_aa0fd3f3192ad4f88461ab70f73f14551}{foodAdded}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_food_item_widget_a10ac346762853fa57c9b73d3a52a5cb2}{foodRemoved}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_menu_item}{MenuItem}}\&\ item);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_ui_1_1_food_item_widget}{Ui::FoodItemWidget}}\ *ui;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInCart\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_menu_item}{MenuItem}}\ menuItem;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ showAddButton\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FOODITEMWIDGET\_H}}
+
+\end{DoxyCode}

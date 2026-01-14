@@ -1,0 +1,10 @@
+<map id="Order::statusChanged" name="Order::statusChanged">
+<area shape="rect" id="Node000001" title=" " alt="" coords="475,29,625,56"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="581,16,570,10,550,8,531,10,521,15,519,20,523,28,519,30,513,21,517,11,530,5,550,3,572,5,583,12"/>
+<area shape="rect" id="Node000002" href="$class_order.html#ae7f4be90e1c8f7975e3e4ac890b95e5b" title=" " alt="" coords="310,29,427,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,45,428,45,428,40,460,40"/>
+<area shape="rect" id="Node000003" href="$class_order.html#aac8bd43eeb1f1310e67d4817f7ef9786" title=" " alt="" coords="147,29,262,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,45,263,45,263,40,294,40"/>
+<area shape="rect" id="Node000004" href="$class_order.html#aed3f48b286fcb784a14c80d066349fc8" title=" " alt="" coords="5,29,99,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,45,99,45,99,40,131,40"/>
+</map>
